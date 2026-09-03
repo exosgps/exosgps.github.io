@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support & Contact | EXOS GPS</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .support-wrap {
+      padding: 60px 0 100px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .support-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-bottom: 30px;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 20px 0;
+    }
+    .faq-q {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: var(--accent-green);
+      margin-bottom: 8px;
+    }
+    .faq-a {
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <header class="navbar">
+    <div class="nav-brand">
+      <a href="index.html" style="display:flex; align-items:center; gap:12px;">
+        <img src="assets/icon.png" alt="EXOS GPS" class="brand-icon">
+        <span class="brand-text">EXOS GPS</span>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#wayfinder" class="nav-link">Wayfinder</a>
+      <a href="index.html#hardware" class="nav-link">EXOS-GPS</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+    </nav>
+    <a href="index.html#beta" class="nav-cta">TEST BETA</a>
+  </header>
+
+  <main class="container support-wrap">
+    <div class="section-tag" style="text-align:center;">HELP DESK & FIELD OPERATIONS</div>
+    <h1 style="font-family:var(--font-display); text-align:center; font-size:2.5rem; margin-bottom:40px;">
+      EXOS SUPPORT & INQUIRIES
+    </h1>
+
+    <div class="support-card" style="text-align:center;">
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; margin-bottom:12px; color:#fff;">DIRECT DEVELOPER CONTACT</h3>
+      <p style="color:var(--text-muted); margin-bottom:24px;">
+        Have a bug report, hardware integration inquiry, or closed testing feedback? Reach out directly to our engineering team:
+      </p>
+      <div style="font-family:var(--font-mono); font-size:1.2rem; background:rgba(0,255,136,0.1); border:1px solid var(--border-subtle); display:inline-block; padding:12px 24px; border-radius:var(--radius-sm); color:var(--accent-green); margin-bottom:20px;">
+        exosgps@gmail.com
+      </div>
+      <div>
+        <a href="mailto:exosgps@gmail.com" class="btn-primary">SEND EMAIL</a>
+      </div>
+    </div>
+
+    <h2 style="font-family:var(--font-display); font-size:1.8rem; margin: 40px 0 20px;">FREQUENTLY ASKED QUESTIONS</h2>
+
+    <div class="support-card">
+      <div class="faq-item">
+        <div class="faq-q">Does EXOS Wayfinder require cellular coverage or internet?</div>
+        <div class="faq-a">
+          No. EXOS Wayfinder is built strictly for offline autonomy. All compass computations, waypoint bearings, coordinate conversions, and backtrack records run 100% on-device using local sensors and satellite GNSS fixes.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How does the app connect to the EXOS-GPS hardware puck?</div>
+        <div class="faq-a">
+          The app natively supports two connection pipelines: wireless Bluetooth Low Energy (BLE 5.2) and wired USB-C Serial (OTG). It automatically detects and parses high-frequency NMEA-0183 sentences ($GPRMC, $GPGGA, $GPGSV) at baud rates up to 115200.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">How do I become a Google Play beta tester?</div>
+        <div class="faq-a">
+          First, join our Google Group at <a href="https://groups.google.com/g/exos-gps-testers" style="color:var(--accent-green);">groups.google.com/g/exos-gps-testers</a>. Once joined, visit the opt-in page at <a href="https://play.google.com/apps/testing/com.exos.wayfinder" style="color:var(--accent-cyan);">play.google.com/apps/testing/com.exos.wayfinder</a> and click "Become a Tester".
+        </div>
+      </div>
+
+      <div class="faq-item" style="border-bottom:none;">
+        <div class="faq-q">What coordinate systems are supported?</div>
+        <div class="faq-a">
+          Wayfinder supports Military Grid Reference System (MGRS), Universal Transverse Mercator (UTM), Degrees Minutes Seconds (DMS), and standard Decimal Degrees (DD WGS-84).
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 EXOS GPS Ecosystem. All rights reserved.</div>
+      <div><a href="privacy.html" style="color:var(--text-muted); margin-right:16px;">Privacy Policy</a> <a href="terms.html" style="color:var(--text-muted);">Terms of Service</a></div>
+    </div>
+  </footer>
+</body>
+</html>

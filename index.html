@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXOS GPS Ecosystem | Wayfinder App, EXOS-GPS & EXOS-Station</title>
+  <meta name="description" content="Military-grade off-grid tactical navigation and telemetry ecosystem. Native Android companion app, autonomous EXOS-GPS receiver puck, and EXOS-Station basecamp relay.">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top Telemetry Status Ticker -->
+  <div class="telemetry-ticker">
+    <div class="ticker-items">
+      <div><span class="pulse-dot"></span>SYS STATUS: <strong style="color:#fff;">OPERATIONAL</strong></div>
+      <div>GNSS FIX: <strong id="live-fix" style="color:var(--accent-cyan);">3D DGPS LOCK</strong></div>
+      <div>SATELLITES: <strong id="live-sats" style="color:#fff;">28 SATS</strong></div>
+      <div>COORDINATES: <strong id="live-coord" style="color:var(--accent-green);">34.0522°N 118.2437°W</strong></div>
+    </div>
+    <div class="ticker-right" style="color:var(--text-muted); font-size:0.7rem;">
+      PROTOCOL: EXOS-NMEA-0183 // BLE 5.2 LR
+    </div>
+  </div>
+
+  <!-- Main Navigation -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <img src="assets/icon.png" alt="EXOS GPS Logo" class="brand-icon">
+      <div>
+        <div class="brand-text">EXOS GPS</div>
+      </div>
+      <span class="brand-tag">TACTICAL ECOSYSTEM</span>
+    </div>
+    <nav class="nav-links">
+      <a href="#wayfinder" class="nav-link">Wayfinder App</a>
+      <a href="#hardware" class="nav-link">EXOS-GPS Puck</a>
+      <a href="#station" class="nav-link">EXOS-Station</a>
+      <a href="#specs" class="nav-link">Specifications</a>
+      <a href="#beta" class="nav-link" style="color:var(--accent-green);">Beta Testing</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </nav>
+    <a href="#beta" class="nav-cta">GET WAYFINDER BETA</a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-badge">
+        <span class="pulse-dot"></span> MILITARY-GRADE OFF-GRID NAVIGATION & TELEMETRY
+      </div>
+      <h1 class="hero-title">
+        MISSION CRITICAL <span class="glow-green">WAYFINDING</span> & <span class="glow-cyan">OFF-GRID TELEMETRY</span>
+      </h1>
+      <p class="hero-subtitle">
+        Built for backcountry mountaineering, remote overland expeditions, and tactical operations. Complete off-grid synergy between the <strong>EXOS Wayfinder</strong> Android software, the autonomous <strong>EXOS-GPS</strong> hardware transceiver, and the <strong>EXOS-Station</strong> tactical basecamp hub.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#beta" class="btn-primary">
+          <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.996 1.996 0 0 1-.61-.318V2.132c.187-.113.398-.216.609-.318zm11.603 11.603l2.544-2.544L5.65 4.093l9.562 9.324zm0-2.834L5.65 19.907l12.106-6.78-2.544-2.544zm3.968-1.503c.535.3.82.787.82 1.32 0 .533-.285 1.02-.82 1.32l-1.89 1.058-2.316-2.317 2.316-2.317 1.89 1.058z"/></svg>
+          JOIN GOOGLE PLAY BETA
+        </a>
+        <a href="#specs" class="btn-secondary">
+          <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2zM9 9h6v6H9V9z"/></svg>
+          EXPLORE HARDWARE SPECS
+        </a>
+      </div>
+
+      <!-- Hero Visual Showcase -->
+      <div class="hero-visual-card">
+        <div class="hero-visual-header">
+          <div>COCKPIT HUD INTEGRATION // SATELLITE TELEMETRY READY</div>
+          <div style="color:var(--accent-green);">STREAM: 50Hz ACTIVE</div>
+        </div>
+        <img src="assets/cockpit_hud.jpg" alt="EXOS Wayfinder Windscreen HUD Cockpit View" class="hero-visual-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- The 3 Pillars of EXOS -->
+  <section class="container" style="padding: 40px 24px 80px;">
+    <div class="section-title-wrap">
+      <div class="section-tag">UNIFIED TACTICAL ARCHITECTURE</div>
+      <h2 class="section-title">THE EXOS TRIPOD</h2>
+    </div>
+
+    <div class="pillar-grid">
+      <!-- Pillar 1: Software -->
+      <div class="pillar-card" id="wayfinder">
+        <span class="pillar-badge badge-software">SOFTWARE LAYER</span>
+        <h3 class="pillar-title">EXOS Wayfinder</h3>
+        <p class="pillar-desc">
+          Zero-reception tactical navigation for Android. Military compass with 3D bubble leveling, waypoint radar, breadcrumb backtracking, and night HUD windscreen reflection.
+        </p>
+        <ul class="pillar-specs">
+          <li>100% Offline Autonomy</li>
+          <li>MGRS, UTM, DMS & Lat/Lon</li>
+          <li>Tactical Spirit Leveling & Azimuth</li>
+          <li>Foreground SOS Emergency Beacon</li>
+        </ul>
+        <a href="#beta" class="btn-secondary" style="margin-top:auto; font-size:0.85rem; justify-content:center;">TEST ON GOOGLE PLAY</a>
+      </div>
+
+      <!-- Pillar 2: Hardware Puck -->
+      <div class="pillar-card cyan" id="hardware">
+        <span class="pillar-badge badge-hardware">HARDWARE TRANSCEIVER</span>
+        <h3 class="pillar-title">EXOS-GPS Puck</h3>
+        <p class="pillar-desc">
+          Ruggedized IP68 GNSS receiver & transmitter. Connects wirelessly over Bluetooth Low Energy 5.2 or hardwired USB-C Serial to stream raw NMEA telemetry to Wayfinder.
+        </p>
+        <ul class="pillar-specs">
+          <li>Multi-Band L1/L5 GNSS (GPS, GLONASS, Galileo, BeiDou)</li>
+          <li>BLE 5.2 Long Range & High-Speed USB Serial</li>
+          <li>Sub-Meter Tactical Accuracy</li>
+          <li>30+ Hour Battery Field Endurance</li>
+        </ul>
+        <a href="#specs" class="btn-secondary" style="margin-top:auto; font-size:0.85rem; justify-content:center; color:var(--accent-cyan); border-color:var(--border-cyan);">VIEW HARDWARE SPECS</a>
+      </div>
+
+      <!-- Pillar 3: Ground Station -->
+      <div class="pillar-card amber" id="station">
+        <span class="pillar-badge badge-station">BASECAMP COMMAND</span>
+        <h3 class="pillar-title">EXOS-Station</h3>
+        <p class="pillar-desc">
+          Tactical basecamp hub & long-range telemetry downlink. Monitors multiple outdoor units, relays emergency SOS beacons, and syncs expedition waypoints without internet.
+        </p>
+        <ul class="pillar-specs">
+          <li>Off-Grid LoRa/UHF Mesh Downlink</li>
+          <li>Multi-Target Tactical Tracking Display</li>
+          <li>Solar-Backed Deployable Field Casing</li>
+          <li>Encrypted Team Telemetry Gateway</li>
+        </ul>
+        <a href="support.html" class="btn-secondary" style="margin-top:auto; font-size:0.85rem; justify-content:center; color:var(--accent-amber); border-color:rgba(255,179,0,0.3);">REQUEST BRIEFING</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep Dive Features -->
+  <section class="features-section container">
+    <!-- Feature 1 -->
+    <div class="feature-split">
+      <div class="feature-text-content">
+        <div class="section-tag">PRECISION NAVIGATION</div>
+        <h3>Tactical Compass & 3D Spirit Leveling</h3>
+        <p>
+          Engineered for mountaineers and tactical explorers navigating rugged topography. Includes a fluid 50Hz dynamic azimuth compass dial, real-time spirit leveling bubble, and instantaneous magnetic declination calculations.
+        </p>
+        <ul class="feature-points">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Dual-sensor sensor fusion (accelerometer, magnetometer + external EXOS GNSS).</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Line-of-Sight (LOS) Distance-To-Go (DTG) destination telemetry badge.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="feature-img-card">
+        <img src="assets/feature_graphic.png" alt="Tactical Compass Dial">
+      </div>
+    </div>
+
+    <!-- Feature 2 -->
+    <div class="feature-split reverse">
+      <div class="feature-text-content">
+        <div class="section-tag">COCKPIT OPTIMIZATION</div>
+        <h3>Night Windscreen Speedometer HUD</h3>
+        <p>
+          Mount your device on your vehicle dashboard facing the windshield. With HUD Invert Mode, the speedometer, heading, and distance targets mirror flawlessly against the glass for zero-distraction night overlanding.
+        </p>
+        <ul class="feature-points">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Instantaneous horizontal inversion switch for windscreen projection.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Smooth velocity hold filter with high-contrast tactical night green display.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="feature-img-card">
+        <img src="assets/hud_mode.png" alt="Night Windscreen HUD Mode">
+      </div>
+    </div>
+
+    <!-- Feature 3 -->
+    <div class="feature-split">
+      <div class="feature-text-content">
+        <div class="section-tag">SURVIVAL & RECOVERY</div>
+        <h3>Breadcrumb Backtrack & Guardian SOS</h3>
+        <p>
+          Never lose your bearings in whiteouts or uncharted canyons. Backtrack drops high-fidelity breadcrumbs along your expedition, while Guardian SOS beacons broadcast exact coordinates and rescue codes.
+        </p>
+        <ul class="feature-points">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Autonomous trail retracing without cellular or map tile dependencies.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span>Emergency Guardian SOS strobe and coordinate broadcasting.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="feature-img-card">
+        <img src="assets/backtrack.png" alt="Satellite Backtrack Trail">
+      </div>
+    </div>
+  </section>
+
+  <!-- Specifications Table -->
+  <section class="spec-section" id="specs">
+    <div class="container">
+      <div class="section-title-wrap">
+        <div class="section-tag">HARDWARE & TELEMETRY PROTOCOL</div>
+        <h2 class="section-title">TECHNICAL SPECIFICATIONS</h2>
+      </div>
+
+      <div class="spec-table-wrap">
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Feature / Component</th>
+              <th>EXOS Wayfinder (App)</th>
+              <th>EXOS-GPS (Puck)</th>
+              <th>EXOS-Station (Hub)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary Function</strong></td>
+              <td>Tactical HUD & Nav Computer</td>
+              <td>Off-Grid GNSS Transceiver</td>
+              <td>Fleet Basecamp Relay</td>
+            </tr>
+            <tr>
+              <td><strong>Constellation Support</strong></td>
+              <td>Internal GNSS / EXOS Stream</td>
+              <td class="highlight">GPS, GLONASS, Galileo, BeiDou, QZSS</td>
+              <td class="highlight">Multi-Constellation L1/L2/L5</td>
+            </tr>
+            <tr>
+              <td><strong>Protocols & Ingestion</strong></td>
+              <td class="highlight">NMEA-0183 ($GPRMC, $GPGGA, $GPGSV)</td>
+              <td>Raw NMEA + EXOS Binary Telemetry</td>
+              <td>LoRa Mesh + USB/Ethernet Telemetry</td>
+            </tr>
+            <tr>
+              <td><strong>Wireless Connectivity</strong></td>
+              <td>Bluetooth 5.2 / BLE / Wi-Fi Direct</td>
+              <td class="highlight">BLE 5.2 Long-Range + USB-C Serial</td>
+              <td class="highlight">LoRa 868/915 MHz + Wi-Fi AP</td>
+            </tr>
+            <tr>
+              <td><strong>Power & Endurance</strong></td>
+              <td>Optimized Battery-Saver Engine</td>
+              <td class="highlight">32h Continuous GNSS Logging</td>
+              <td>Solar DC Input + Internal Battery</td>
+            </tr>
+            <tr>
+              <td><strong>Enclosure Rating</strong></td>
+              <td>IP68 Device Dependent</td>
+              <td class="highlight">IP68 Mil-Std-810H Ruggedized</td>
+              <td class="highlight">IP67 Field Deployment Case</td>
+            </tr>
+            <tr>
+              <td><strong>Coordinate Systems</strong></td>
+              <td>MGRS, UTM, DMS, Decimal Degrees</td>
+              <td>WGS-84 Native Raw Fix</td>
+              <td>Multi-Grid Conversion Gateway</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beta Program & Closed Testing -->
+  <section class="container" id="beta">
+    <div class="beta-portal">
+      <div class="section-tag" style="color:var(--accent-cyan);">JOIN THE EXPEDITION</div>
+      <h2>BECOME AN EXOS TESTER</h2>
+      <p>
+        Help battle-test EXOS Wayfinder during our 14-day closed testing window on Google Play. Install the app, test off-grid features, and shape the tactical ecosystem.
+      </p>
+
+      <div class="beta-steps-grid">
+        <div class="beta-step-card">
+          <div class="beta-step-num">01</div>
+          <h4>Join Google Group</h4>
+          <p>Get instant opt-in credentials by joining our public beta testers group.</p>
+          <a href="https://groups.google.com/g/exos-gps-testers" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:16px; font-size:0.8rem; width:100%; justify-content:center;">JOIN GROUP</a>
+        </div>
+
+        <div class="beta-step-card">
+          <div class="beta-step-num">02</div>
+          <h4>Opt-In on Play Store</h4>
+          <p>Accept your Google Play tester invitation with your Google account.</p>
+          <a href="https://play.google.com/apps/testing/com.exos.wayfinder" target="_blank" rel="noopener" class="btn-secondary" style="margin-top:16px; font-size:0.8rem; width:100%; justify-content:center; color:var(--accent-green); border-color:var(--border-glow);">ACCEPT INVITE</a>
+        </div>
+
+        <div class="beta-step-card">
+          <div class="beta-step-num">03</div>
+          <h4>Download & Review</h4>
+          <p>Install the app, run the compass and waypoints, and leave private feedback!</p>
+          <a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener" class="btn-primary" style="margin-top:16px; font-size:0.8rem; width:100%; justify-content:center;">DOWNLOAD APP</a>
+        </div>
+      </div>
+
+      <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);">
+        Questions or hardware developer access? Contact us directly: <a href="mailto:exosgps@gmail.com" style="color:var(--accent-green); text-decoration:underline;">exosgps@gmail.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="nav-brand" style="margin-bottom:16px;">
+            <img src="assets/icon.png" alt="EXOS GPS" class="brand-icon">
+            <span class="brand-text">EXOS GPS</span>
+          </div>
+          <p style="color:var(--text-muted); line-height:1.6; max-width:320px;">
+            Tactical off-grid GPS navigation, telemetry transceivers, and basecamp command hardware for the most demanding wilderness environments.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ecosystem</h5>
+          <ul class="footer-links">
+            <li><a href="#wayfinder">EXOS Wayfinder App</a></li>
+            <li><a href="#hardware">EXOS-GPS Puck</a></li>
+            <li><a href="#station">EXOS-Station</a></li>
+            <li><a href="#specs">Telemetry Specs</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Testers & Devs</h5>
+          <ul class="footer-links">
+            <li><a href="https://groups.google.com/g/exos-gps-testers" target="_blank" rel="noopener">Google Group</a></li>
+            <li><a href="https://play.google.com/apps/testing/com.exos.wayfinder" target="_blank" rel="noopener">Play Store Opt-In</a></li>
+            <li><a href="https://github.com/exosgps" target="_blank" rel="noopener">GitHub Organization</a></li>
+            <li><a href="support.html">Contact & FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Legal & Policies</h5>
+          <ul class="footer-links">
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms of Service</a></li>
+            <li><a href="support.html">Support Desk</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 EXOS GPS Ecosystem. All rights reserved.</div>
+        <div>DOMAIN: <span style="color:var(--accent-green);">EXOSGPS.COM</span> // HOSTED VIA GITHUB PAGES</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

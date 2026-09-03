@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | EXOS GPS & EXOS Wayfinder</title>
+  <meta name="description" content="Privacy Policy for EXOS Wayfinder Android application and EXOS GPS hardware ecosystem.">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .legal-content {
+      padding: 60px 0 100px;
+      max-width: 860px;
+      margin: 0 auto;
+      line-height: 1.8;
+      color: #c9d1d9;
+    }
+    .legal-content h1 {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+    }
+    .legal-meta {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent-green);
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 16px;
+    }
+    .legal-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: var(--accent-cyan);
+      margin: 36px 0 16px;
+    }
+    .legal-content p {
+      margin-bottom: 18px;
+    }
+    .legal-content ul {
+      margin-bottom: 24px;
+      padding-left: 24px;
+    }
+    .legal-content li {
+      margin-bottom: 8px;
+    }
+    .legal-alert {
+      background: rgba(0, 255, 136, 0.08);
+      border-left: 4px solid var(--accent-green);
+      padding: 16px 20px;
+      border-radius: 4px;
+      margin: 24px 0;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-brand">
+      <a href="index.html" style="display:flex; align-items:center; gap:12px;">
+        <img src="assets/icon.png" alt="EXOS GPS" class="brand-icon">
+        <span class="brand-text">EXOS GPS</span>
+      </a>
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="index.html#wayfinder" class="nav-link">Wayfinder App</a>
+      <a href="index.html#specs" class="nav-link">Hardware</a>
+      <a href="support.html" class="nav-link">Support</a>
+    </nav>
+    <a href="index.html#beta" class="nav-cta">TEST BETA</a>
+  </header>
+
+  <main class="container legal-content">
+    <h1>Privacy Policy</h1>
+    <div class="legal-meta">
+      EFFECTIVE DATE: SEPTEMBER 3, 2026 // APPLICABLE TO: EXOS WAYFINDER & EXOS-GPS HARDWARE
+    </div>
+
+    <div class="legal-alert">
+      <strong>Core Principle:</strong> EXOS Wayfinder is an <strong>offline-first, zero-telemetry</strong> tactical navigation system. Your GPS coordinates, breadcrumb tracks, and marked waypoints never leave your physical device. We do not operate tracking servers, we do not profile users, and we do not sell data.
+    </div>
+
+    <h2>1. Introduction & Developer Identity</h2>
+    <p>
+      This Privacy Policy governs the <strong>EXOS Wayfinder</strong> Android application (package: <code>com.exos.wayfinder</code>) and the companion <strong>EXOS-GPS</strong> hardware ecosystem operated by EXOS GPS ("we", "us", or "our"). For privacy inquiries, contact us at <a href="mailto:exosgps@gmail.com" style="color:var(--accent-green);">exosgps@gmail.com</a>.
+    </p>
+
+    <h2>2. Permissions & Data Collection</h2>
+    <p>EXOS Wayfinder requests only the minimum permissions essential for mission-critical off-grid navigation:</p>
+
+    <ul>
+      <li>
+        <strong>Precise & Approximate Location (ACCESS_FINE_LOCATION, ACCESS_COARSE_LOCATION):</strong>
+        Required to determine your real-time geographic position, calculate bearing and azimuth to targets, compute magnetic declination, and power the 3D tactical compass dial.
+      </li>
+      <li>
+        <strong>Foreground Service - Location (FOREGROUND_SERVICE_LOCATION):</strong>
+        Required when the user actively engages <em>Expedition Backtracking</em> or <em>Guardian SOS Mode</em> with the screen turned off or while switching applications. This ensures hikers and overlanders do not lose their breadcrumb return path in hazardous wilderness environments. A persistent notification is always visible when this service is running.
+      </li>
+      <li>
+        <strong>Bluetooth & USB Hardware Access (BLUETOOTH_SCAN, BLUETOOTH_CONNECT):</strong>
+        Required to discover and ingest raw NMEA-0183 telemetry data from the companion external <strong>EXOS-GPS Puck</strong> or external GNSS sensors.
+      </li>
+      <li>
+        <strong>Device Sensors (Magnetometer, Accelerometer, Gyroscope):</strong>
+        Used entirely on-device to power the 50Hz dynamic compass heading and the tactical 3D spirit leveling bubble.
+      </li>
+      <li>
+        <strong>Camera & Photo Metadata (Optional):</strong>
+        Used only if you choose to import a geotagged photo to extract EXIF coordinates and plot a target waypoint. No photos are uploaded or shared.
+      </li>
+    </ul>
+
+    <h2>3. Data Storage & Retention</h2>
+    <p>
+      All waypoints, tracks, calibration offsets, and expedition logs are stored locally on your device within a private SQLite database. You have 100% control over this data and can export, reset, or purge all waypoints and trails instantly within the app settings.
+    </p>
+
+    <h2>4. Third-Party Sharing & Analytics</h2>
+    <p>
+      We do <strong>NOT</strong> embed third-party advertising SDKs, tracking pixels, or data broker libraries. Crash reporting and basic telemetry conform strictly to Google Play’s anonymized developer vitals.
+    </p>
+
+    <h2>5. Children’s Privacy</h2>
+    <p>
+      Our software and hardware products are not directed at children under the age of 13. We do not knowingly collect information from children.
+    </p>
+
+    <h2>6. Changes to this Policy</h2>
+    <p>
+      Any updates to this policy will be posted on this page (<code>https://exosgps.com/privacy</code>) with a revised effective date.
+    </p>
+
+    <h2>7. Contact & Data Deletion Requests</h2>
+    <p>
+      If you have questions about this policy or your data, reach out to our team:
+      <br><br>
+      <strong>EXOS GPS Support Desk</strong><br>
+      Email: <a href="mailto:exosgps@gmail.com" style="color:var(--accent-green);">exosgps@gmail.com</a><br>
+      Website: <a href="https://exosgps.com" style="color:var(--accent-cyan);">https://exosgps.com</a>
+    </p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-bottom">
+      <div>&copy; 2026 EXOS GPS Ecosystem. All rights reserved.</div>
+      <div><a href="terms.html" style="color:var(--text-muted); margin-right:16px;">Terms of Service</a> <a href="support.html" style="color:var(--text-muted);">Support Desk</a></div>
+    </div>
+  </footer>
+
+</body>
+</html>
