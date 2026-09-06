@@ -50,6 +50,7 @@
       <a href="index.html" class="nav-link">Home</a>
       <a href="index.html#wayfinder" class="nav-link">Wayfinder</a>
       <a href="index.html#hardware" class="nav-link">EXOS-GPS</a>
+      <a href="station-guide.html" class="nav-link" style="color:var(--accent-cyan); font-weight:700;">Station Guide</a>
       <a href="privacy.html" class="nav-link">Privacy</a>
     </nav>
     <a href="index.html#beta" class="nav-cta">TEST BETA</a>
@@ -67,16 +68,30 @@
         Have a bug report, hardware integration inquiry, or closed testing feedback? Reach out directly to our engineering team:
       </p>
       <div style="font-family:var(--font-mono); font-size:1.2rem; background:rgba(0,255,136,0.1); border:1px solid var(--border-subtle); display:inline-block; padding:12px 24px; border-radius:var(--radius-sm); color:var(--accent-green); margin-bottom:20px;">
-        exosgps@gmail.com
+        support@exosgps.com
       </div>
       <div>
-        <a href="mailto:exosgps@gmail.com" class="btn-primary">SEND EMAIL</a>
+        <a href="mailto:support@exosgps.com" class="btn-primary">SEND EMAIL</a>
       </div>
     </div>
 
     <h2 style="font-family:var(--font-display); font-size:1.8rem; margin: 40px 0 20px;">FREQUENTLY ASKED QUESTIONS</h2>
 
     <div class="support-card">
+            <div class="faq-item">
+        <div class="faq-q">What is EXOS-GPS Station and how does it differ from Wayfinder?</div>
+        <div class="faq-a">
+          EXOS Wayfinder is a tactical navigation computer and HUD. EXOS-GPS Station is a hardware/software GNSS transceiver bridge for Android and Windows. It broadcasts your device's raw GPS fixes over Bluetooth SPP to other devices, or receives external GPS fixes and injects them into Android system location for apps like Google Maps, ATAK, and OsmAnd. For detailed instructions, visit our <a href="station-guide.html" style="color:var(--accent-green); text-decoration:underline;">Station User Guide</a>.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Why does EXOS-GPS Station require Developer Options for Mock Location?</div>
+        <div class="faq-a">
+          Android's security architecture strictly isolates system location updates. In Receiver mode, to inject external satellite telemetry into Google Maps and other third-party navigation apps, Android requires explicitly designating "Exos GPS Solutions" as your system's Mock Location App in Developer Options. Our built-in Smart Guided Assistant verifies this setup automatically.
+        </div>
+      </div>
+
       <div class="faq-item">
         <div class="faq-q">Does EXOS Wayfinder require cellular coverage or internet?</div>
         <div class="faq-a">

@@ -772,6 +772,7 @@
       <a href="#wayfinder" class="nav-link">Wayfinder App</a>
       <a href="#hardware" class="nav-link">EXOS-GPS Puck</a>
       <a href="#station" class="nav-link">EXOS-Station</a>
+        <a href="station-guide.html" class="nav-link" style="color:var(--accent-cyan); font-weight:700;">Station Guide</a>
       <a href="#specs" class="nav-link">Specifications</a>
       <a href="#beta" class="nav-link" style="color:var(--accent-green);">Beta Testing</a>
       <a href="support.html" class="nav-link">Support</a>
@@ -854,26 +855,62 @@
         <a href="#specs" class="btn-secondary" style="margin-top:auto; font-size:0.85rem; justify-content:center; color:var(--accent-cyan); border-color:var(--border-cyan);">VIEW HARDWARE SPECS</a>
       </div>
 
-      <!-- Pillar 3: Ground Station -->
+      <!-- Pillar 3: Ground Station & Multi-Client Bridge -->
       <div class="pillar-card amber" id="station">
-        <span class="pillar-badge badge-station">BASECAMP COMMAND</span>
-        <h3 class="pillar-title">EXOS-Station</h3>
+        <span class="pillar-badge badge-station">TELEMETRY BRIDGE</span>
+        <h3 class="pillar-title">EXOS-GPS Station</h3>
         <p class="pillar-desc">
-          Tactical basecamp hub & long-range telemetry downlink. Monitors multiple outdoor units, relays emergency SOS beacons, and syncs expedition waypoints without internet.
+          Autonomous peer-to-peer GNSS transceiver bridge for Android & Windows. Broadcasts raw NMEA telemetry over Bluetooth SPP and injects external satellite fixes into Google Maps & ATAK via Smart Mock Location.
         </p>
         <ul class="pillar-specs">
-          <li>Off-Grid LoRa/UHF Mesh Downlink</li>
-          <li>Multi-Target Tactical Tracking Display</li>
-          <li>Solar-Backed Deployable Field Casing</li>
-          <li>Encrypted Team Telemetry Gateway</li>
+          <li>Dual Modes: Transmitter & Receiver</li>
+          <li>Smart Guided Mock Location for Google Maps</li>
+          <li>Windows Desktop Client with Virtual COM Ports</li>
+          <li>100% Offline with Zero Cloud Dependency</li>
         </ul>
-        <a href="support.html" class="btn-secondary" style="margin-top:auto; font-size:0.85rem; justify-content:center; color:var(--accent-amber); border-color:rgba(255,179,0,0.3);">REQUEST BRIEFING</a>
+        <div style="display:flex; gap:10px; margin-top:auto; flex-wrap:wrap;">
+          <a href="station-guide.html" class="btn-primary" style="font-size:0.8rem; justify-content:center; flex:1;">USER GUIDE</a>
+          <a href="https://play.google.com/apps/testing/com.ritym.exosgps" target="_blank" rel="noopener" class="btn-secondary" style="font-size:0.8rem; justify-content:center; color:var(--accent-amber); border-color:rgba(255,179,0,0.3); flex:1;">PLAY BETA</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Deep Dive Features -->
   <section class="features-section container">
+
+    <!-- Feature: EXOS-GPS Station Dual-Engine Spotlight -->
+    <div class="feature-split" id="station-spotlight" style="margin-bottom:60px;">
+      <div class="feature-text-content">
+        <div class="section-tag" style="color:var(--accent-cyan);">OFFLINE BLUETOOTH GNSS BRIDGE</div>
+        <h3>EXOS-GPS Station (Android & Windows)</h3>
+        <p>
+          Whether operating in dense wilderness, maritime coastal navigation, or tactical field operations, EXOS-GPS Station enables any Android phone, tablet, or Windows laptop to act as a standalone GPS broadcasting station or high-precision external receiver.
+        </p>
+        <ul class="feature-points">
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span><strong>Transmitter Mode:</strong> Streams continuous NMEA-0183 ($GPGGA, $GPRMC, $GPGSV) sentences over Bluetooth SPP.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span><strong>Smart Guided Mock Location:</strong> Injects external satellite fixes directly into Google Maps, ATAK-CIV, and OsmAnd.</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+            <span><strong>Windows Desktop Client:</strong> Exposes telemetry across virtual COM ports for QGIS, OpenCPN, and flight simulators.</span>
+          </li>
+        </ul>
+        <div style="display:flex; gap:14px; margin-top:24px; flex-wrap:wrap;">
+          <a href="station-guide.html" class="btn-primary">EXPLORE STATION GUIDE</a>
+          <a href="https://youtu.be/T90EW8cUiNY" target="_blank" rel="noopener" class="btn-secondary" style="color:var(--accent-cyan); border-color:var(--border-cyan);">WATCH VIDEO WALKTHROUGH</a>
+        </div>
+      </div>
+      <div class="feature-img-card">
+        <img src="assets/station_hero.png" alt="EXOS-GPS Station Overview" onerror="this.src='station_hero.png'">
+      </div>
+    </div>
+
     <!-- Feature 1 -->
     <div class="feature-split">
       <div class="feature-text-content">
@@ -1047,7 +1084,7 @@
       </div>
 
       <div style="font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);">
-        Questions or hardware developer access? Contact us directly: <a href="mailto:exosgps@gmail.com" style="color:var(--accent-green); text-decoration:underline;">exosgps@gmail.com</a>
+        Questions or hardware developer access? Contact us directly: <a href="mailto:support@exosgps.com" style="color:var(--accent-green); text-decoration:underline;">support@exosgps.com</a>
       </div>
     </div>
   </section>
