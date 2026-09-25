@@ -761,6 +761,7 @@
     .nav-menu {
       display: none;
     }
+    .mobile-quick-nav { display: flex; align-items: center; }
     .nav-cta-btn {
       padding: 7px 12px;
       font-size: 0.8rem;
@@ -887,8 +888,8 @@
   <!-- Primary Sticky Header Navigation -->
   <header class="navbar">
     <div class="nav-container">
-      <a href="index.html" class="brand-logo-wrap" title="EXOS Navigation Systems">
-        <img src="assets/exos_logo_dark.png" alt="EXOS Advanced Navigation Systems" class="brand-logo-img">
+      <a href="/" class="brand-logo-wrap" title="EXOS Navigation Systems">
+        <img src="/assets/exos_logo_dark.png" alt="EXOS Advanced Navigation Systems" class="brand-logo-img">
       </a>
 
       <nav>
@@ -908,6 +909,17 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Quick Navigation Strip -->
+  <div class="mobile-quick-nav">
+    <a href="#transceiver" class="mobile-quick-pill">1. Transceiver</a>
+    <a href="#wayfinder" class="mobile-quick-pill">2. Wayfinder</a>
+    <a href="#echo" class="mobile-quick-pill">3. ECHO</a>
+    <a href="#watchout" class="mobile-quick-pill">4. Watchout</a>
+    <a href="#specifications" class="mobile-quick-pill">Specs</a>
+    <a href="#privacy" class="mobile-quick-pill privacy-pill">&#x1F6E1;&#xFE0F; Privacy Policy</a>
+    <a href="https://ritym.com" target="_blank" rel="noopener" class="mobile-quick-pill" style="color:#38bdf8;">RiTym Labs &nearr;</a>
+  </div>
 
   <!-- ========================================================================= -->
   <!-- HERO SECTION                                                              -->
@@ -1601,58 +1613,277 @@
   </section>
 
 <!-- ========================================================================= -->
-  <!-- PRIVACY & DATA SOVEREIGNTY SECTION                                        -->
+  <!-- PRIVACY & DATA SOVEREIGNTY SECTION (AUDIT-READY LIKE EXOSGPS.COM/PRIVACY) -->
   <!-- ========================================================================= -->
   <section class="section" id="privacy">
     <div class="container">
       <div class="section-header">
-        <span class="section-eyebrow" style="background-color:#dcfce7; color:#15803d;">Offline-First Data Sovereignty</span>
-        <h2 class="section-title">Privacy by Design: Zero Telemetry &bull; Zero Cloud</h2>
+        <span class="section-eyebrow" style="background-color:#dcfce7; color:#15803d; border:1px solid #86efac;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:6px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          Offline-First Data Sovereignty &bull; Audit Compliance
+        </span>
+        <h2 class="section-title">Privacy Architecture: Zero Telemetry &bull; Zero Cloud &bull; 100% Local Control</h2>
         <p class="section-desc">
-          Unlike consumer navigation apps that continuously upload your GPS breadcrumbs and device metrics to cloud servers, the entire EXOS ecosystem operates with strict on-device data sovereignty.
+          Unlike commercial navigation apps that harvest your GPS breadcrumbs and device metrics for advertising profiles, the entire EXOS ecosystem is engineered from the bare metal up for strict offline data sovereignty. All satellite fixes, sensor telemetry, voice packets, and waypoint logs execute 100% locally on your physical hardware.
         </p>
       </div>
 
-      <div class="overview-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 40px;">
+      <!-- Core Guarantee Box -->
+      <div style="background-color:#f0fdf4; border:2px solid #86efac; border-radius:14px; padding:28px; margin-bottom:44px; box-shadow:0 4px 6px -1px rgba(16,185,129,0.06);">
+        <div style="display:flex; align-items:center; gap:12px; margin-bottom:12px;">
+          <div style="width:36px; height:36px; border-radius:8px; background:#dcfce7; display:flex; align-items:center; justify-content:center; color:#15803d; font-size:1.2rem;">
+            &#x1F6E1;&#xFE0F;
+          </div>
+          <h3 style="font-size:1.25rem; font-weight:800; color:#166534; margin:0;">
+            Strict Offline-First Data Sovereignty Guarantee
+          </h3>
+        </div>
+        <p style="font-size:0.96rem; color:#15803d; line-height:1.7; margin-bottom:16px;">
+          RiTym Technologies and EXOS Navigation Systems operate under a strict zero-knowledge architecture. All satellite coordinates, sensor calculations, NMEA sentences, digital voice frames, and trail logs are processed entirely within physical device memory. We do not operate cloud ingestion endpoints, we do not require account logins, we bundle zero advertising networks, and we never monetize user movements.
+        </p>
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; font-size:0.88rem; color:#166534; font-weight:600;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            100% On-Device Local Execution
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Zero Account Registration Required
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Zero Ad SDKs (No AdMob / Unity)
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            Zero Analytics Trackers (No Firebase)
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 Pillars Grid -->
+      <div class="overview-grid" style="grid-template-columns: repeat(4, 1fr); margin-bottom: 48px;">
         <div class="overview-card" style="border-top: 4px solid #10b981;">
-          <h3 class="card-title" style="font-size:1.15rem; margin-top:8px;">Zero Cloud Transmissions</h3>
+          <div style="color:#059669; font-size:1.5rem; margin-bottom:8px;">&#x1F4E1;</div>
+          <h3 class="card-title" style="font-size:1.15rem; margin-top:0;">Zero Cloud Transmissions</h3>
           <p class="card-desc" style="font-size:0.9rem;">
             All GNSS calculations, NMEA sentences, coordinate conversions, and backtrack logs execute 100% locally in device memory or local SQLite databases.
           </p>
         </div>
 
         <div class="overview-card" style="border-top: 4px solid #10b981;">
-          <h3 class="card-title" style="font-size:1.15rem; margin-top:8px;">Zero Ads & Trackers</h3>
+          <div style="color:#059669; font-size:1.5rem; margin-bottom:8px;">&#x1F6AB;</div>
+          <h3 class="card-title" style="font-size:1.15rem; margin-top:0;">Zero Ads & Trackers</h3>
           <p class="card-desc" style="font-size:0.9rem;">
             No commercial advertising SDKs, no Google Analytics/Firebase, and zero data brokers. We never track, profile, or monetize your movements.
           </p>
         </div>
 
         <div class="overview-card" style="border-top: 4px solid #10b981;">
-          <h3 class="card-title" style="font-size:1.15rem; margin-top:8px;">Ephemeral Sensor Fusion</h3>
+          <div style="color:#059669; font-size:1.5rem; margin-bottom:8px;">&#x2764;&#xFE0F;</div>
+          <h3 class="card-title" style="font-size:1.15rem; margin-top:0;">Ephemeral Sensor Fusion</h3>
           <p class="card-desc" style="font-size:0.9rem;">
             Smartwatch heart rate readings on Watchout and real-time voice packets on ECHO are processed ephemerally in RAM and never written to flash storage.
           </p>
         </div>
 
         <div class="overview-card" style="border-top: 4px solid #10b981;">
-          <h3 class="card-title" style="font-size:1.15rem; margin-top:8px;">Complete User Control</h3>
+          <div style="color:#059669; font-size:1.5rem; margin-bottom:8px;">&#x1F510;</div>
+          <h3 class="card-title" style="font-size:1.15rem; margin-top:0;">Complete User Sovereignty</h3>
           <p class="card-desc" style="font-size:0.9rem;">
-            All saved waypoints and trail logs remain strictly in your device storage. Reset your local database at any time with a single tap.
+            All saved waypoints and trail logs remain strictly in your device storage. Reset your local database at any time with a single tap in settings.
           </p>
         </div>
       </div>
 
-      <div style="background-color:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:28px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+      <!-- Covered Applications Matrix -->
+      <div style="margin-bottom: 48px;">
+        <h3 style="font-size:1.4rem; font-weight:800; color:var(--text-heading); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+          <span>Covered Applications & Privacy Profiles</span>
+        </h3>
+        <p style="font-size:0.94rem; color:var(--text-muted); margin-bottom:16px;">
+          Official package identifiers, execution targets, and verifiable zero-cloud transmission audit metrics for each application:
+        </p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">Application / System</th>
+                <th style="width:26%;">Package Identifier / Target</th>
+                <th style="width:16%;">Target OS</th>
+                <th style="width:18%;">Data Storage</th>
+                <th style="width:16%;">Cloud Transmission</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>1. EXOS GPS Transceiver</strong></td>
+                <td><code>com.ritym.exosgps</code></td>
+                <td>Android 8.0+</td>
+                <td>Local RAM & SQLite</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
+              </tr>
+              <tr>
+                <td><strong>2. EXOS Wayfinder</strong></td>
+                <td><code>com.exos.wayfinder</code></td>
+                <td>Android 8.0+</td>
+                <td>Local SQLite Only</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
+              </tr>
+              <tr>
+                <td><strong>3. EXOS ECHO</strong></td>
+                <td><code>exos.echo.mesh</code></td>
+                <td>Android 8.0+</td>
+                <td>Ephemeral RAM Buffer</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">P2P Radio Only (0 Cloud)</span></td>
+              </tr>
+              <tr>
+                <td><strong>4. Exos Watchout (Watch Face)</strong></td>
+                <td><code>exos.ritym.watchout.watchface</code></td>
+                <td>Wear OS (WFF v1)</td>
+                <td>RAM Complication Only</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
+              </tr>
+              <tr>
+                <td><strong>5. Exos Watchout (Companion)</strong></td>
+                <td><code>exos.ritym.watchout</code></td>
+                <td>Android & Wear OS</td>
+                <td>Local RAM Only</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
+              </tr>
+              <tr>
+                <td><strong>6. EXOS GPS Windows Bridge</strong></td>
+                <td>Desktop Virtual COM Bridge</td>
+                <td>Windows 10/11 (x64)</td>
+                <td>Local COM Buffer</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
+              </tr>
+              <tr>
+                <td><strong>7. RiTym ESP32 Console Stations</strong></td>
+                <td>ESP32-S3 Hardware Stations</td>
+                <td>FreeRTOS Embedded</td>
+                <td>Ephemeral Hardware Bus</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Granular Permissions & Technical Necessity Table -->
+      <div style="margin-bottom: 48px;">
+        <h3 style="font-size:1.4rem; font-weight:800; color:var(--text-heading); margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+          <span>Granular Permissions Disclosure & Technical Purpose</span>
+        </h3>
+        <p style="font-size:0.94rem; color:var(--text-muted); margin-bottom:16px;">
+          Compliant with Google Play Developer Program Policies and Microsoft Store Application Verification standards:
+        </p>
+        <div class="spec-table-wrap">
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th style="width:24%;">Permission Name</th>
+                <th style="width:20%;">Applicable App(s)</th>
+                <th style="width:30%;">Technical Necessity</th>
+                <th style="width:26%;">Data Retention & Handling</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <code>ACCESS_FINE_LOCATION</code><br>
+                  <code>ACCESS_COARSE_LOCATION</code>
+                </td>
+                <td>Transceiver,<br>Wayfinder,<br>Watchout</td>
+                <td>Required to read on-device GNSS satellite fixes (latitude, longitude, altitude, speed, and heading) for NMEA sentence generation, coordinate projection, and trail plotting.</td>
+                <td>Processed strictly in RAM in real time. Never logged to external servers; never shared with third parties. Waypoints stored only in on-device SQLite.</td>
+              </tr>
+              <tr>
+                <td><code>ACCESS_MOCK_LOCATION</code></td>
+                <td>Transceiver</td>
+                <td>Enables Receiver Mode to feed high-precision satellite coordinates received via Bluetooth directly into Android's system location provider.</td>
+                <td>Injected solely into the local Android OS location subsystem so external mapping apps (ATAK, Google Maps, OpenCPN) can read external fixes. Zero cloud transmission.</td>
+              </tr>
+              <tr>
+                <td>
+                  <code>BLUETOOTH</code><br>
+                  <code>BLUETOOTH_CONNECT</code><br>
+                  <code>BLUETOOTH_SCAN</code><br>
+                  <code>BLUETOOTH_ADVERTISE</code>
+                </td>
+                <td>Transceiver,<br>Wayfinder,<br>ECHO</td>
+                <td>Establishes local point-to-point RFCOMM/SPP and BLE serial bridges with paired external GNSS hardware receivers, marine plotters, PC COM ports, and peer radar beacons.</td>
+                <td>All data packets remain on local short-range radio connections. No data is stored externally or routed across internet infrastructure.</td>
+              </tr>
+              <tr>
+                <td><code>RECORD_AUDIO</code></td>
+                <td>ECHO</td>
+                <td>Captures half-duplex digital voice only when the user actively presses and holds the Push-to-Talk (PTT) interface.</td>
+                <td>Audio frames are encoded locally into real-time packets and streamed peer-to-peer over Wi-Fi Direct/BLE mesh. Audio is never recorded to disk, never transcribed, and never sent to any server.</td>
+              </tr>
+              <tr>
+                <td><code>BODY_SENSORS</code></td>
+                <td>Watchout (Wear OS)</td>
+                <td>Accesses the smartwatch photoplethysmogram (PPG) sensor to display current beats-per-minute (BPM) on the 3 o'clock subdial of the watch face.</td>
+                <td>Processed ephemerally in watch memory. Sensor data is never saved to flash memory, never synced to Google Fit or Health Connect, and never transmitted remotely.</td>
+              </tr>
+              <tr>
+                <td><code>FOREGROUND_SERVICE</code></td>
+                <td>Transceiver,<br>Wayfinder,<br>ECHO</td>
+                <td>Maintains continuous satellite streaming, trail breadcrumb recording, or mesh radio listening when the app is minimized, accompanied by a persistent notification in the Android status bar.</td>
+                <td>Executed purely to prevent Android OS process death during active outdoor navigation sessions.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Wear OS & Health Data Compliance Highlight -->
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:24px; margin-bottom:48px;">
+        <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:12px; padding:24px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <div style="font-size:1.3rem;">&#x231A;</div>
+            <h4 style="font-size:1.1rem; font-weight:700; color:var(--text-heading); margin:0;">Wear OS Watch Face Format (WFF v1)</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.65; margin:0;">
+            Exos Watchout strictly adopts Google's declarative Watch Face Format. The ambient Always-On Display (AOD) maintains an On-Pixel Ratio (OPR) below 2.5%, completely eliminating display burn-in and background battery drain while providing zero vector for unauthorized background code execution.
+          </p>
+        </div>
+
+        <div style="background:#ffffff; border:1px solid var(--border-light); border-radius:12px; padding:24px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <div style="font-size:1.3rem;">&#x1F5D1;&#xFE0F;</div>
+            <h4 style="font-size:1.1rem; font-weight:700; color:var(--text-heading); margin:0;">Instant Data Deletion & Zero Accounts</h4>
+          </div>
+          <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.65; margin:0;">
+            Because all waypoint markers and trail records reside exclusively in your device's private SQLite storage, you can purge everything at any time by tapping <em>Clear Local Database</em> or by uninstalling the application. No user account records exist on remote servers to delete.
+          </p>
+        </div>
+      </div>
+
+      <!-- Action & Full Policy Document Banner -->
+      <div style="background-color:#0f172a; color:#ffffff; border-radius:14px; padding:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; box-shadow:var(--shadow-md);">
         <div>
-          <h4 style="font-size:1.15rem; font-weight:700; color:#166534; margin-bottom:6px;">Review Our Comprehensive Audit-Ready Privacy Policy</h4>
-          <p style="font-size:0.92rem; color:#15803d; margin:0;">
-            Compliant with Google Play Developer Program Policies, the Wear OS Data Policy, and Microsoft Application Developer standards.
+          <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span style="background:rgba(16,185,129,0.2); color:#86efac; border:1px solid rgba(16,185,129,0.4); border-radius:4px; padding:2px 8px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">
+              Audit-Ready Documentation
+            </span>
+            <span style="color:#94a3b8; font-size:0.85rem;">Revision 2.4 &bull; September 2026</span>
+          </div>
+          <h4 style="font-size:1.3rem; font-weight:800; color:#ffffff; margin-bottom:8px;">
+            Read Full Standalone Privacy Policy & Legal Disclosures
+          </h4>
+          <p style="font-size:0.92rem; color:#cbd5e1; margin:0; max-width:680px; line-height:1.6;">
+            Formatted specifically for compliance audits with Google Play Developer Program Policies, the Wear OS Health Policy, and Microsoft Application Developer standards.
           </p>
         </div>
         <div style="display:flex; gap:12px; flex-wrap:wrap;">
-          <a href="privacy.html" class="btn btn-primary" style="background-color:#059669;">Read Official Privacy Policy &rarr;</a>
-          <a href="https://ritym.com/privacy.html" target="_blank" rel="noopener" class="btn btn-secondary">RiTym Corporate Policy &nearr;</a>
+          <a href="privacy.html" class="btn btn-primary" style="background-color:#10b981; border-color:#10b981;">
+            View exosgps.com/privacy &rarr;
+          </a>
+          <a href="https://ritym.com/privacy.html" target="_blank" rel="noopener" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.2); color:#ffffff;">
+            RiTym Corporate Policy &nearr;
+          </a>
         </div>
       </div>
     </div>
@@ -1665,7 +1896,7 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" class="footer-logo">
+          <img src="/assets/exos_logo_dark.png" alt="EXOS Navigation Systems" class="footer-logo">
           <p class="footer-company-desc">
             EXOS is an advanced navigation, GNSS telemetry, and radio mesh platform engineered and maintained by <strong>RiTym Technologies</strong>. Specializing in embedded systems, custom ESP32 hardware engineering, and high-reliability offline mobile software.
           </p>
