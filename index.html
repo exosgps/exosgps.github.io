@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>EXOS | Offline Navigation, GNSS Telemetry & Mesh Communications</title>
-  <meta name="description" content="Professional offline navigation and communication systems. Featuring EXOS Wayfinder for Wear OS, EXOS Transceiver GNSS Bridge, and EXOS ECHO peer-to-peer walkie-talkie.">
+  <meta name="description" content="Professional field systems for zero-reception environments. Featuring EXOS Transceiver GNSS Bridge, EXOS Wayfinder Offline Navigation, EXOS ECHO Mesh Walkie-Talkie, and Exos Watchout Wear OS Watch Face.">
   <link rel="icon" type="image/png" href="icon.png">
 
-  <!-- Clean Corporate Typography (Inter & JetBrains Mono) -->
+  <!-- Clean Enterprise Typography (Inter & JetBrains Mono) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
@@ -21,10 +21,10 @@
       --accent-blue: #2563eb;
       --accent-amber: #d97706;
       --accent-emerald: #059669;
+      --accent-teal: #0d9488;
       --bg-white: #ffffff;
       --bg-slate: #f8fafc;
       --bg-slate-alt: #f1f5f9;
-      --bg-card: #ffffff;
       --border-light: #e2e8f0;
       --border-dark: #cbd5e1;
       --text-heading: #0f172a;
@@ -34,7 +34,7 @@
       --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
       --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.04);
       --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.09), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
       --radius-sm: 6px;
       --radius-md: 10px;
       --radius-lg: 16px;
@@ -42,11 +42,7 @@
       --font-mono: 'JetBrains Mono', Consolas, monospace;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     html {
       scroll-behavior: smooth;
@@ -68,20 +64,19 @@
       transition: all 0.2s ease;
     }
 
-    /* Container Utility */
     .container {
       max-width: 1240px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Top Utility Strip (Hitachi / Dell Style) */
+    /* Top Informational Strip (Dell / Hitachi Header Style) */
     .top-strip {
       background-color: #0b1329;
       color: #94a3b8;
       font-size: 0.78rem;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 7px 0;
+      padding: 8px 0;
     }
 
     .top-strip-inner {
@@ -108,7 +103,7 @@
       box-shadow: 0 0 6px #10b981;
     }
 
-    /* Primary Navigation Bar (Dell Header Style) */
+    /* Navigation Bar */
     .navbar {
       background-color: #ffffff;
       border-bottom: 1px solid var(--border-light);
@@ -162,12 +157,12 @@
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 28px;
+      gap: 24px;
       align-items: center;
     }
 
     .nav-item a {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       font-weight: 500;
       color: var(--text-body);
       padding: 6px 0;
@@ -196,10 +191,10 @@
     .nav-actions {
       display: flex;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
     }
 
-    /* Primary and Secondary Buttons */
+    /* Buttons */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -241,19 +236,19 @@
     .hero {
       background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
       border-bottom: 1px solid var(--border-light);
-      padding: 68px 0 60px;
+      padding: 64px 0 56px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 48px;
       align-items: center;
     }
 
     .hero-eyebrow {
       display: inline-block;
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
@@ -265,7 +260,7 @@
     }
 
     .hero-heading {
-      font-size: 2.75rem;
+      font-size: 2.7rem;
       font-weight: 800;
       letter-spacing: -0.03em;
       color: var(--text-heading);
@@ -274,7 +269,7 @@
     }
 
     .hero-desc {
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: #475569;
       line-height: 1.7;
       margin-bottom: 28px;
@@ -284,54 +279,95 @@
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
-      margin-bottom: 36px;
+      margin-bottom: 34px;
     }
 
     .hero-metrics {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
       border-top: 1px solid var(--border-light);
-      padding-top: 24px;
+      padding-top: 22px;
     }
 
     .metric-item-num {
-      font-size: 1.35rem;
+      font-size: 1.25rem;
       font-weight: 800;
       color: var(--text-heading);
       letter-spacing: -0.01em;
     }
 
     .metric-item-label {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       margin-top: 2px;
+      line-height: 1.3;
     }
 
-    .hero-visual-card {
-      background-color: #ffffff;
+    /* Cohesive Multi-Device Hero Card */
+    .hero-composite-frame {
+      background-color: #0b1329;
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
-      padding: 16px;
+      padding: 24px;
       box-shadow: var(--shadow-xl);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-visual-card img {
+    .hero-devices-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      width: 100%;
+    }
+
+    .hero-phone-mini {
+      width: 135px;
+      border-radius: 12px;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      background: #000;
+      flex-shrink: 0;
+    }
+
+    .hero-phone-mini img {
       width: 100%;
       height: auto;
-      border-radius: var(--radius-md);
       display: block;
-      object-fit: cover;
     }
 
-    .hero-visual-caption {
-      margin-top: 12px;
-      font-size: 0.82rem;
-      color: var(--text-muted);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 4px;
+    .hero-watch-mini {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid #475569;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      flex-shrink: 0;
+      background: #000;
+    }
+
+    .hero-watch-mini img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hero-composite-caption {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-align: center;
+      width: 100%;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 12px;
     }
 
     /* Section Utilities */
@@ -346,8 +382,8 @@
     }
 
     .section-header {
-      max-width: 780px;
-      margin: 0 auto 52px;
+      max-width: 820px;
+      margin: 0 auto 50px;
       text-align: center;
     }
 
@@ -375,18 +411,18 @@
       line-height: 1.65;
     }
 
-    /* 3 Apps Architecture Grid (Dell Product Category Cards) */
+    /* 4-App Summary Architecture Grid (Dell Style) */
     .apps-summary-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
     }
 
     .app-summary-card {
       background-color: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
-      padding: 32px 28px;
+      padding: 28px 24px;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
@@ -399,44 +435,51 @@
       border-color: #cbd5e1;
     }
 
+    .app-order-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #64748b;
+      margin-bottom: 6px;
+      font-family: var(--font-mono);
+    }
+
     .app-category-tag {
       font-size: 0.74rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.06em;
-      color: var(--primary);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .app-card-title {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       font-weight: 800;
       color: var(--text-heading);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       letter-spacing: -0.01em;
     }
 
     .app-card-desc {
-      font-size: 0.94rem;
+      font-size: 0.9rem;
       color: #475569;
       line-height: 1.6;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .app-card-specs {
       list-style: none;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      font-size: 0.86rem;
+      gap: 9px;
+      font-size: 0.84rem;
       color: var(--text-body);
     }
 
     .app-card-specs li {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      align-items: flex-start;
+      gap: 8px;
     }
 
     .check-icon {
@@ -444,16 +487,17 @@
       height: 16px;
       color: var(--primary);
       flex-shrink: 0;
+      margin-top: 2px;
     }
 
-    /* Product Detailed Deep Dive (Hitachi Innovation Showcase Style) */
+    /* Product Detailed Deep Dive Showcase (Hitachi Style) */
     .product-showcase {
-      margin-bottom: 75px;
       background-color: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-md);
       overflow: hidden;
+      margin-bottom: 65px;
     }
 
     .product-showcase:last-child {
@@ -491,11 +535,9 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      color: var(--primary);
-      background-color: var(--primary-light);
       padding: 4px 10px;
       border-radius: 4px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       align-self: flex-start;
     }
 
@@ -504,7 +546,7 @@
       font-weight: 800;
       color: var(--text-heading);
       letter-spacing: -0.02em;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       line-height: 1.25;
     }
 
@@ -519,17 +561,17 @@
       background-color: var(--bg-slate);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
-      padding: 20px;
-      margin-bottom: 24px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
     }
 
     .use-cases-title {
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--text-heading);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .use-cases-list {
@@ -545,60 +587,61 @@
       color: var(--text-heading);
     }
 
+    /* Media Containers & Authentic Device Mockups */
     .showcase-media {
       background-color: #0b1329;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 36px 30px;
+      padding: 34px 28px;
       position: relative;
     }
 
-    .showcase-dual-container {
+    .phone-mockup {
+      width: 220px;
+      border-radius: 20px;
+      border: 3px solid #334155;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+      overflow: hidden;
+      background: #000;
+      flex-shrink: 0;
+    }
+
+    .phone-mockup img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    .dual-phones-row {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       align-items: center;
       justify-content: center;
       width: 100%;
     }
 
-    .watch-frame {
-      width: 165px;
-      height: 165px;
+    .watch-bezel-frame {
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
-      border: 4px solid #334155;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+      border: 5px solid #475569;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6), inset 0 0 12px rgba(0,0,0,0.8);
       overflow: hidden;
       flex-shrink: 0;
-      background-color: #000000;
+      background-color: #000;
     }
 
-    .watch-frame img {
+    .watch-bezel-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
     }
 
-    .phone-frame {
-      max-width: 250px;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      background-color: #000;
-    }
-
-    .phone-frame img {
-      width: 100%;
-      height: auto;
-      max-height: 440px;
-      object-fit: contain;
-      display: block;
-    }
-
-    .telemetry-preview-strip {
+    .telemetry-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
@@ -606,16 +649,15 @@
       margin-top: 18px;
     }
 
-    .telemetry-card {
+    .telemetry-box {
       background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-sm);
       padding: 8px;
       text-align: center;
-      transition: background 0.2s;
     }
 
-    .telemetry-card img {
+    .telemetry-box img {
       width: 100%;
       height: auto;
       border-radius: 4px;
@@ -623,7 +665,7 @@
       margin-bottom: 6px;
     }
 
-    .telemetry-title {
+    .telemetry-box-title {
       font-size: 0.72rem;
       color: #cbd5e1;
       font-weight: 600;
@@ -634,9 +676,10 @@
       font-size: 0.8rem;
       color: #94a3b8;
       text-align: center;
+      line-height: 1.4;
     }
 
-    /* Industry Solutions (Dell / Hitachi Style) */
+    /* Solutions Grid */
     .solutions-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -676,7 +719,7 @@
       line-height: 1.6;
     }
 
-    /* Technical Specifications Table (Dell Enterprise Table) */
+    /* Specifications Table (Dell Enterprise Table Style) */
     .specs-table-container {
       background-color: #ffffff;
       border: 1px solid var(--border-light);
@@ -689,13 +732,13 @@
       width: 100%;
       border-collapse: collapse;
       text-align: left;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
     }
 
     .specs-table th {
       background-color: #0b1329;
       color: #ffffff;
-      padding: 16px 20px;
+      padding: 16px 18px;
       font-weight: 600;
       letter-spacing: 0.02em;
     }
@@ -706,7 +749,7 @@
     }
 
     .specs-table td {
-      padding: 16px 20px;
+      padding: 15px 18px;
       border-bottom: 1px solid var(--border-light);
       color: #334155;
     }
@@ -730,7 +773,7 @@
       background-color: #ffffff;
       border: 1px solid var(--border-light);
       border-radius: var(--radius-lg);
-      padding: 36px 28px;
+      padding: 34px 28px;
       box-shadow: var(--shadow-sm);
       display: flex;
       flex-direction: column;
@@ -742,7 +785,7 @@
       font-weight: 800;
       color: var(--primary);
       line-height: 1;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       letter-spacing: -0.03em;
     }
 
@@ -757,11 +800,11 @@
       font-size: 0.92rem;
       color: #475569;
       line-height: 1.6;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
       flex-grow: 1;
     }
 
-    /* Professional Corporate Footer */
+    /* Corporate Footer */
     .footer {
       background-color: #0b1329;
       color: #cbd5e1;
@@ -831,24 +874,29 @@
     }
 
     /* Responsive */
-    @media (max-width: 1024px) {
+    @media (max-width: 1100px) {
+      .apps-summary-grid { grid-template-columns: 1fr 1fr; }
+      .solutions-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 900px) {
       .hero-grid { grid-template-columns: 1fr; }
-      .apps-summary-grid { grid-template-columns: 1fr; }
       .showcase-grid, .showcase-grid.reverse { grid-template-columns: 1fr; }
       .showcase-grid.reverse .showcase-content { order: 1; }
       .showcase-grid.reverse .showcase-media { order: 2; }
-      .solutions-grid { grid-template-columns: 1fr 1fr; }
       .steps-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero-metrics { grid-template-columns: 1fr 1fr; }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 640px) {
       .nav-menu { display: none; }
+      .apps-summary-grid { grid-template-columns: 1fr; }
       .solutions-grid { grid-template-columns: 1fr; }
       .footer-grid { grid-template-columns: 1fr; }
-      .showcase-content { padding: 32px 24px; }
-      .hero { padding: 50px 0; }
-      .showcase-dual-container { flex-direction: column; }
+      .showcase-content { padding: 30px 20px; }
+      .hero { padding: 45px 0; }
+      .dual-phones-row { flex-direction: column; }
     }
   </style>
 </head>
@@ -862,20 +910,20 @@
           <span class="status-dot"></span>
           EXOS Field Systems: Production Ready
         </span>
-        <span>Independent GNSS, Smartwatch & Peer-to-Peer Radio Solutions</span>
+        <span>Four Dedicated Platforms: Transceiver &bull; Wayfinder &bull; ECHO &bull; Watchout</span>
       </div>
       <div style="display:flex; gap:18px;">
-        <span>Domain: <strong>exosgps.com</strong></span>
-        <span>Support: <strong>support@exosgps.com</strong></span>
+        <span>Official Domain: <strong>exosgps.com</strong></span>
+        <span>Engineering Desk: <strong>support@exosgps.com</strong></span>
       </div>
     </div>
   </div>
 
-  <!-- Primary Header & Navigation -->
+  <!-- Primary Navigation Bar -->
   <header class="navbar">
     <div class="container navbar-inner">
       <a href="index.html" class="brand-logo">
-        <img src="assets/icon.png" alt="EXOS Brand Icon" onerror="this.src='icon.png'">
+        <img src="assets/icon.png" alt="EXOS Navigation & Communications" onerror="this.src='icon.png'">
         <div class="brand-text">
           <span class="brand-name">EXOS</span>
           <span class="brand-tagline">Navigation & Communications</span>
@@ -884,18 +932,18 @@
 
       <nav>
         <ul class="nav-menu">
-          <li class="nav-item"><a href="#applications">Applications</a></li>
-          <li class="nav-item"><a href="#wayfinder">Wayfinder</a></li>
           <li class="nav-item"><a href="#transceiver">Transceiver</a></li>
+          <li class="nav-item"><a href="#wayfinder">Wayfinder</a></li>
           <li class="nav-item"><a href="#echo">ECHO</a></li>
+          <li class="nav-item"><a href="#watchout">Watchout</a></li>
           <li class="nav-item"><a href="#solutions">Solutions</a></li>
-          <li class="nav-item"><a href="#specifications">Specifications</a></li>
+          <li class="nav-item"><a href="#specifications">Specs</a></li>
           <li class="nav-item"><a href="#getting-started">Testing Guide</a></li>
         </ul>
       </nav>
 
       <div class="nav-actions">
-        <a href="#getting-started" class="btn btn-primary">Download Apps</a>
+        <a href="#getting-started" class="btn btn-primary">Join Field Testing</a>
       </div>
     </div>
   </header>
@@ -905,86 +953,79 @@
     <div class="container hero-grid">
       <div class="hero-content">
         <span class="hero-eyebrow">Enterprise Field Technology</span>
-        <h1 class="hero-heading">Reliable Navigation & Communications Without Cellular Dependence</h1>
+        <h1 class="hero-heading">Engineered Field Systems for Environments Where Cellular Does Not Exist</h1>
         <p class="hero-desc">
-          EXOS develops dedicated software applications and hardware bridge solutions for outdoor expedition teams, emergency responders, and field engineers who operate in remote areas where cellular and internet coverage does not exist.
+          EXOS engineers four specialized software platforms and hardware bridge systems designed for wilderness expeditions, maritime operators, emergency responders, and technical field teams who require guaranteed orientation, satellite bridging, and radio voice without cellular coverage.
         </p>
 
         <div class="hero-buttons">
-          <a href="#applications" class="btn btn-primary">Explore 3 Applications</a>
-          <a href="#specifications" class="btn btn-secondary">Technical Specifications</a>
+          <a href="#transceiver" class="btn btn-primary">Explore All 4 Platforms</a>
+          <a href="#specifications" class="btn btn-secondary">Technical Architecture</a>
         </div>
 
         <div class="hero-metrics">
           <div>
-            <div class="metric-item-num">100% Offline</div>
-            <div class="metric-item-label">Zero cell or satellite fee required</div>
+            <div class="metric-item-num">1. Transceiver</div>
+            <div class="metric-item-label">Sub-meter GNSS bridge</div>
           </div>
           <div>
-            <div class="metric-item-num">&lt; 100 ms</div>
-            <div class="metric-item-label">Low-latency digital PTT voice</div>
+            <div class="metric-item-num">2. Wayfinder</div>
+            <div class="metric-item-label">Offline trail & HUD</div>
           </div>
           <div>
-            <div class="metric-item-num">Sub-Meter</div>
-            <div class="metric-item-label">GNSS positioning bridge accuracy</div>
+            <div class="metric-item-num">3. ECHO</div>
+            <div class="metric-item-label">&lt;100ms mesh PTT</div>
+          </div>
+          <div>
+            <div class="metric-item-num">4. Watchout</div>
+            <div class="metric-item-label">Standalone Wear OS</div>
           </div>
         </div>
       </div>
 
       <div class="hero-visual">
-        <div class="hero-visual-card">
-          <img src="assets/wayfinder_companion_teal.png" alt="EXOS Wayfinder running on Samsung Galaxy S24 FE paired with Galaxy Watch4 Classic" onerror="this.src='wayfinder_companion_teal.png'">
-          <div class="hero-visual-caption">
-            <span>EXOS Wayfinder: Live Companion & Watch Face Synchronization</span>
-            <span style="font-weight:600; color:var(--primary);">Verified Physical Device Testing</span>
+        <div class="hero-composite-frame">
+          <div class="hero-devices-row">
+            <!-- Transceiver Phone -->
+            <div class="hero-phone-mini">
+              <img src="assets/transceiver_live_tx.png" alt="EXOS Transceiver Live Transmitter" onerror="this.src='transceiver_live_tx.png'">
+            </div>
+            <!-- Watchout Wear OS -->
+            <div class="hero-watch-mini">
+              <img src="assets/wayfinder_watch_orange.png" alt="Exos Watchout Smartwatch Face" onerror="this.src='wayfinder_watch_orange.png'">
+            </div>
+            <!-- ECHO Walkie Phone -->
+            <div class="hero-phone-mini">
+              <img src="assets/echo_walkie.png" alt="EXOS ECHO Walkie-Talkie" onerror="this.src='echo_walkie.png'">
+            </div>
+          </div>
+          <div class="hero-composite-caption">
+            <strong>EXOS Field Ecosystem</strong> &bull; GNSS Bridge &bull; Offline Navigation &bull; Mesh Radio &bull; Smartwatch Compass
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Applications Overview Grid -->
+  <!-- Applications Architecture Grid (4 Cards in Exact Sequence) -->
   <section class="section section-slate" id="applications">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">Our Software Suite</div>
-        <h2 class="section-title">Three Specialized Applications for Field Operations</h2>
+        <div class="section-eyebrow">Product Architecture</div>
+        <h2 class="section-title">Four Purpose-Built Systems for Field Operations</h2>
         <p class="section-subtitle">
-          Each application is purpose-built to solve a distinct operational challenge: wrist-worn navigation, external satellite positioning bridging, and off-grid voice communication.
+          Engineered to operate independently or as a coordinated system to conquer the four fundamental demands of off-grid deployment.
         </p>
       </div>
 
       <div class="apps-summary-grid">
-        <!-- Card 1: Wayfinder -->
+        <!-- Card 1: EXOS Transceiver -->
         <div class="app-summary-card">
-          <span class="app-category-tag">Wear OS & Mobile Navigation</span>
-          <h3 class="app-card-title">EXOS Wayfinder</h3>
+          <div class="app-order-badge">PLATFORM 01</div>
+          <span class="app-category-tag" style="color:#0284c7;">GNSS Hardware & Bridge</span>
+          <h3 class="app-card-title">EXOS Transceiver</h3>
           <p class="app-card-desc">
-            A standalone Wear OS smartwatch watch face and companion mobile application offering real-time orientation, heading tracking, and emergency backtracking for wilderness navigation.
-          </p>
-          <ul class="app-card-specs">
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Tactical Teal & Heritage Orange dial designs</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Built natively with Google Watch Face Format (WFF)</span>
-            </li>
-            <li>
-              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Windscreen HUD reflection & breadcrumb return</span>
-            </li>
-          </ul>
-          <a href="#wayfinder" class="btn btn-secondary" style="margin-top:auto;">Read Details & Use Cases</a>
-        </div>
-
-        <!-- Card 2: Transceiver -->
-        <div class="app-summary-card">
-          <span class="app-category-tag">GNSS Hardware & Telemetry Bridge</span>
-          <h3 class="app-card-title">EXOS GPS Transceiver</h3>
-          <p class="app-card-desc">
-            A high-precision satellite telemetry bridge that connects external GNSS receivers to Android's mock location provider and Windows virtual COM ports.
+            A high-precision GNSS satellite bridge connecting external positioning receivers to Android's mock location provider and Windows virtual COM ports.
           </p>
           <ul class="app-card-specs">
             <li>
@@ -993,22 +1034,48 @@
             </li>
             <li>
               <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Smart Guided Mock Location for Google Maps & ATAK</span>
+              <span>Smart Guided Mock Location for ATAK & Maps</span>
             </li>
             <li>
               <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Bluetooth SPP & Windows virtual COM ports</span>
+              <span>Bluetooth SPP, BLE, & USB-C Serial</span>
             </li>
           </ul>
-          <a href="#transceiver" class="btn btn-secondary" style="margin-top:auto;">Read Details & Use Cases</a>
+          <a href="#transceiver" class="btn btn-secondary" style="margin-top:auto;">View Transceiver</a>
         </div>
 
-        <!-- Card 3: ECHO -->
+        <!-- Card 2: EXOS Wayfinder -->
         <div class="app-summary-card">
-          <span class="app-category-tag">Peer-to-Peer Mesh Communications</span>
+          <div class="app-order-badge">PLATFORM 02</div>
+          <span class="app-category-tag" style="color:#2563eb;">Offline Navigation & HUD</span>
+          <h3 class="app-card-title">EXOS Wayfinder</h3>
+          <p class="app-card-desc">
+            An offline-first Android navigation handset application featuring 3D tactical compass heading, emergency breadcrumb backtracking, and windshield HUD.
+          </p>
+          <ul class="app-card-specs">
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Autonomous offline trail backtracking</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Cockpit Windscreen HUD reflection mode</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Target waypoints, azimuth, & speedometer</span>
+            </li>
+          </ul>
+          <a href="#wayfinder" class="btn btn-secondary" style="margin-top:auto;">View Wayfinder</a>
+        </div>
+
+        <!-- Card 3: EXOS ECHO -->
+        <div class="app-summary-card">
+          <div class="app-order-badge">PLATFORM 03</div>
+          <span class="app-category-tag" style="color:#d97706;">Peer-to-Peer Mesh Radio</span>
           <h3 class="app-card-title">EXOS ECHO</h3>
           <p class="app-card-desc">
-            An off-grid digital walkie-talkie connecting teams over Wi-Fi Direct and Bluetooth Low Energy with low-latency push-to-talk voice, 10 isolated channels, and emergency distress beaconing.
+            An off-grid digital walkie-talkie connecting teams over Wi-Fi Direct and Bluetooth Low Energy with sub-100ms voice, text chat, and distress beacons.
           </p>
           <ul class="app-card-specs">
             <li>
@@ -1017,87 +1084,53 @@
             </li>
             <li>
               <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>10 separate channels with Dual-Watch monitoring</span>
+              <span>10 channels with Dual-Watch monitoring</span>
             </li>
             <li>
               <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
-              <span>Zero cellular, internet, or subscription requirement</span>
+              <span>Offline encrypted P2P text & team roster</span>
             </li>
           </ul>
-          <a href="#echo" class="btn btn-secondary" style="margin-top:auto;">Read Details & Use Cases</a>
+          <a href="#echo" class="btn btn-secondary" style="margin-top:auto;">View ECHO</a>
+        </div>
+
+        <!-- Card 4: EXOS Watchout -->
+        <div class="app-summary-card">
+          <div class="app-order-badge">PLATFORM 04</div>
+          <span class="app-category-tag" style="color:#0d9488;">Wear OS Smartwatch</span>
+          <h3 class="app-card-title">Exos Watchout</h3>
+          <p class="app-card-desc">
+            A standalone Wear OS compass watch face engineered with Google's Watch Face Format (WFF v1), paired with a synchronized phone companion.
+          </p>
+          <ul class="app-card-specs">
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Two luxury themes: Heritage Orange & Teal</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>Rotating 4:30 compass with 50Hz heading</span>
+            </li>
+            <li>
+              <svg class="check-icon" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              <span>BPM, steps, battery %, & date subdials</span>
+            </li>
+          </ul>
+          <a href="#watchout" class="btn btn-secondary" style="margin-top:auto;">View Watchout</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- PRODUCT 1 DEEP DIVE: EXOS WAYFINDER                                       -->
+  <!-- 1. DEEP DIVE: EXOS TRANSCEIVER (FIRST)                                    -->
   <!-- ========================================================================= -->
-  <section class="section" id="wayfinder">
+  <section class="section" id="transceiver">
     <div class="container">
       <div class="product-showcase">
         <div class="showcase-grid">
           <div class="showcase-content">
-            <span class="showcase-badge">Application 01 &bull; Wear OS & Android</span>
-            <h2 class="showcase-title">EXOS Wayfinder</h2>
-            <p class="showcase-lead">
-              EXOS Wayfinder provides glanceable, wrist-accessible navigation for Wear OS smartwatches (including Samsung Galaxy Watch series and Google Pixel Watch) and paired Android handsets. Built natively using Google's Watch Face Format (WFF v1), it operates completely offline without cellular reception.
-            </p>
-
-            <div class="use-cases-box">
-              <div class="use-cases-title">Operational Use Cases</div>
-              <ul class="use-cases-list">
-                <li>
-                  <strong>Backcountry Hiking & Mountaineering:</strong> Check current heading, altitude, and destination distance with a quick glance at your wrist while keeping both hands free for trekking poles or climbing gear.
-                </li>
-                <li>
-                  <strong>Vehicle Night Overlanding:</strong> Place your mobile phone on the vehicle dashboard with HUD Windscreen Reflection Mode enabled to mirror speed and heading clearly on the glass without night-blindness.
-                </li>
-                <li>
-                  <strong>Trail Backtracking & Emergency Return:</strong> Record breadcrumb waypoints automatically along your trail. If fog, blizzard, or darkness sets in, Wayfinder leads you step-by-step back to your safe starting point.
-                </li>
-              </ul>
-            </div>
-
-            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:24px;">
-              <strong>Key Technical Specifications:</strong> Two original WFF design themes (Tactical Teal & Heritage Orange), 50Hz dynamic heading sensor fusion, real-time Day/Date calendar window, live battery %, heart rate BPM, step count subdials, and rotating 4:30 compass medallion.
-            </p>
-
-            <div style="display:flex; gap:12px; flex-wrap:wrap;">
-              <a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout.watchface" target="_blank" rel="noopener" class="btn btn-primary">Google Play Store</a>
-              <a href="#specifications" class="btn btn-secondary">Compare Specs</a>
-            </div>
-          </div>
-
-          <div class="showcase-media">
-            <div class="showcase-dual-container">
-              <!-- Watch Face Frame -->
-              <div class="watch-frame">
-                <img src="assets/wayfinder_watch_orange.png" alt="EXOS Wayfinder Watch Face on Wear OS" onerror="this.src='wayfinder_watch_orange.png'">
-              </div>
-              <!-- Companion Phone Frame -->
-              <div class="phone-frame">
-                <img src="assets/wayfinder_companion_orange.png" alt="EXOS Wayfinder Heritage Orange Theme on Phone Companion" onerror="this.src='wayfinder_companion_orange.png'">
-              </div>
-            </div>
-            <div class="showcase-media-caption">
-              Actual application capture: Standalone Wear OS Watch Face paired with Android Mobile Companion (Heritage Orange Theme).
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========================================================================= -->
-  <!-- PRODUCT 2 DEEP DIVE: EXOS GPS TRANSCEIVER                                 -->
-  <!-- ========================================================================= -->
-  <section class="section section-slate" id="transceiver">
-    <div class="container">
-      <div class="product-showcase">
-        <div class="showcase-grid reverse">
-          <div class="showcase-content">
-            <span class="showcase-badge" style="background-color:#eff6ff; color:#1d4ed8;">Application 02 &bull; Android & Windows</span>
+            <span class="showcase-badge" style="background-color:#e0f2fe; color:#0284c7;">Platform 01 &bull; Android & Windows Desktop</span>
             <h2 class="showcase-title">EXOS GPS Transceiver</h2>
             <p class="showcase-lead">
               EXOS GPS Transceiver serves as a dedicated communications bridge between external GNSS hardware receivers (such as the EXOS-GPS Puck or high-gain marine GPS units) and host computers. It feeds high-precision satellite telemetry into standard applications like Google Maps, ATAK-CIV, and QGIS.
@@ -1107,50 +1140,51 @@
               <div class="use-cases-title">Operational Use Cases</div>
               <ul class="use-cases-list">
                 <li>
-                  <strong>Search & Rescue (SAR) Incident Management:</strong> Feed high-accuracy external satellite coordinates into team tablets via Android's Smart Guided Mock Location service, eliminating phone antenna drift under thick forest canopy.
+                  <strong>Search & Rescue (SAR) Mapping:</strong> Feed high-accuracy external satellite coordinates into team tablets via Android's Smart Guided Mock Location service, eliminating phone antenna drift under thick forest canopy.
                 </li>
                 <li>
-                  <strong>Marine Coastal & Offshore Chart Plotting:</strong> Connect external GNSS hardware via Bluetooth SPP or USB-C Serial to broadcast NMEA-0183 sentences ($GPGGA, $GPRMC) directly into marine chart plotters and navigation software.
+                  <strong>Marine Coastal & Offshore Chart Plotting:</strong> Connect external GNSS hardware via Bluetooth SPP or USB-C Serial to broadcast NMEA-0183 sentences ($GPGGA, $GPRMC) directly into navigation software running on Windows laptops.
                 </li>
                 <li>
-                  <strong>Elevation & Weather Monitoring:</strong> Utilize integrated barometric altimeter readings and atmospheric pressure trends to monitor approaching weather fronts during high-altitude field ascents.
+                  <strong>Elevation & Atmospheric Trend Tracking:</strong> Monitor real-time barometric altimeter readings and pressure trends to detect approaching weather fronts during mountain ascents.
                 </li>
               </ul>
             </div>
 
             <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:24px;">
-              <strong>Key Technical Specifications:</strong> Ingestion of GPS, GLONASS, Galileo, BeiDou, and QZSS constellations; sub-meter positioning accuracy; dual Transmitter and Receiver operating modes; virtual COM port multiplexer for Windows desktop integration.
+              <strong>Technical Specifications:</strong> Ingestion of GPS, GLONASS, Galileo, BeiDou, and QZSS constellations; sub-meter positioning accuracy; dual Transmitter and Receiver operating modes; virtual COM port multiplexer for Windows desktop integration.
             </p>
 
             <div style="display:flex; gap:12px; flex-wrap:wrap;">
-              <a href="station-guide.html" class="btn btn-primary" style="background-color:#1d4ed8;">View Station Guide</a>
+              <a href="station-guide.html" class="btn btn-primary">View Station Guide</a>
               <a href="#getting-started" class="btn btn-secondary">Request Beta Access</a>
             </div>
           </div>
 
-          <div class="showcase-media" style="background-color:#0f172a;">
-            <div class="phone-frame" style="max-width:280px;">
-              <img src="assets/transceiver_connected.png" alt="EXOS GPS Transceiver active telemetry connection screen" onerror="this.src='transceiver_connected.png'">
+          <div class="showcase-media">
+            <!-- Transceiver Phone Mockup -->
+            <div class="phone-mockup">
+              <img src="assets/transceiver_live_tx.png" alt="EXOS GPS Transceiver live NMEA transmitter screen" onerror="this.src='transceiver_live_tx.png'">
             </div>
-            
-            <!-- Telemetry Sub-Cards -->
-            <div class="telemetry-preview-strip">
-              <div class="telemetry-card">
-                <img src="assets/transceiver_compass.png" alt="Compass Telemetry" onerror="this.src='transceiver_compass.png'">
-                <div class="telemetry-title">50Hz Heading</div>
+
+            <!-- Telemetry Sub-Cards (Compass, Altimeter, Waypoint) -->
+            <div class="telemetry-row">
+              <div class="telemetry-box">
+                <img src="assets/transceiver_compass.png" alt="50Hz Digital Compass" onerror="this.src='transceiver_compass.png'">
+                <div class="telemetry-box-title">50Hz Heading</div>
               </div>
-              <div class="telemetry-card">
-                <img src="assets/transceiver_altimeter.png" alt="Altimeter Telemetry" onerror="this.src='transceiver_altimeter.png'">
-                <div class="telemetry-title">Altimeter</div>
+              <div class="telemetry-box">
+                <img src="assets/transceiver_altimeter.png" alt="Barometric Altimeter" onerror="this.src='transceiver_altimeter.png'">
+                <div class="telemetry-box-title">Altimeter</div>
               </div>
-              <div class="telemetry-card">
-                <img src="assets/transceiver_waypoint.png" alt="Waypoint Telemetry" onerror="this.src='transceiver_waypoint.png'">
-                <div class="telemetry-title">Bearing Vector</div>
+              <div class="telemetry-box">
+                <img src="assets/transceiver_waypoint.png" alt="Waypoint Azimuth" onerror="this.src='transceiver_waypoint.png'">
+                <div class="telemetry-box-title">Bearing Vector</div>
               </div>
             </div>
 
             <div class="showcase-media-caption">
-              Actual application screenshots: Active GNSS bridge status with real-time digital compass, barometric elevation, and waypoint guidance.
+              Actual application screenshots: Active GNSS bridge status with real-time digital compass, barometric elevation, and waypoint telemetry.
             </div>
           </div>
         </div>
@@ -1159,17 +1193,89 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- PRODUCT 3 DEEP DIVE: EXOS ECHO                                            -->
+  <!-- 2. DEEP DIVE: EXOS WAYFINDER (SECOND)                                     -->
+  <!-- ========================================================================= -->
+  <section class="section section-slate" id="wayfinder">
+    <div class="container">
+      <div class="product-showcase">
+        <div class="showcase-grid reverse">
+          <div class="showcase-content">
+            <span class="showcase-badge" style="background-color:#eff6ff; color:#1d4ed8;">Platform 02 &bull; Android Handsets & Tablets</span>
+            <h2 class="showcase-title">EXOS Wayfinder</h2>
+            <p class="showcase-lead">
+              EXOS Wayfinder is an autonomous offline mobile navigation application engineered for wilderness expeditions, night overlanding, and search teams. It operates 100% offline without cellular reception, relying strictly on internal handset sensors and raw satellite fixes.
+            </p>
+
+            <div class="use-cases-box">
+              <div class="use-cases-title">Operational Use Cases</div>
+              <ul class="use-cases-list">
+                <li>
+                  <strong>Wilderness Trail Backtracking:</strong> Automatically drops GPS breadcrumbs along your expedition route. If fog, blizzard, or darkness sets in, Wayfinder leads you step-by-step back to camp or your trailhead.
+                </li>
+                <li>
+                  <strong>Vehicle Nighttime Overlanding:</strong> Place your handset on the vehicle dashboard with HUD Windscreen Reflection Mode enabled to mirror speed, heading, and distance directly on the glass without night-blindness.
+                </li>
+                <li>
+                  <strong>Target Waypoint & Azimuth Plotting:</strong> Store critical rendezvous coordinates, water sources, and shelters, with real-time azimuth tracking and course-over-ground vectors.
+                </li>
+              </ul>
+            </div>
+
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:24px;">
+              <strong>Technical Specifications:</strong> 50Hz sensor fusion, 3D leveling bubble, integrated GPS speedometer and odometer, offline private SQLite database, and foreground battery-optimized tracking service.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="https://play.google.com/store/apps/details?id=exos.wayfinder" target="_blank" rel="noopener" class="btn btn-primary" style="background-color:#1d4ed8;">Google Play Store</a>
+              <a href="#specifications" class="btn btn-secondary">Compare Specs</a>
+            </div>
+          </div>
+
+          <div class="showcase-media" style="background-color:#0b1329;">
+            <div class="dual-phones-row">
+              <!-- Backtrack Screen -->
+              <div class="phone-mockup">
+                <img src="assets/backtrack.png" alt="EXOS Wayfinder Trail Backtrack Navigation" onerror="this.src='backtrack.png'">
+              </div>
+              <!-- HUD Windscreen Screen -->
+              <div class="phone-mockup">
+                <img src="assets/hud_mode.png" alt="EXOS Wayfinder Windscreen HUD Reflection Mode" onerror="this.src='hud_mode.png'">
+              </div>
+            </div>
+
+            <!-- Waypoint & Speedometer Micro-Row -->
+            <div class="telemetry-row" style="grid-template-columns: 1fr 1fr;">
+              <div class="telemetry-box">
+                <img src="assets/waypoints.png" alt="Target Waypoint Coordinates" onerror="this.src='waypoints.png'">
+                <div class="telemetry-box-title">Waypoint Bearing</div>
+              </div>
+              <div class="telemetry-box">
+                <img src="assets/speedometer.png" alt="GPS Speedometer & Odometer" onerror="this.src='speedometer.png'">
+                <div class="telemetry-box-title">Speedometer</div>
+              </div>
+            </div>
+
+            <div class="showcase-media-caption">
+              Actual application screenshots: EXOS Wayfinder trail backtracking, windscreen reflection HUD, and waypoint navigation.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 3. DEEP DIVE: EXOS ECHO (THIRD)                                           -->
   <!-- ========================================================================= -->
   <section class="section" id="echo">
     <div class="container">
       <div class="product-showcase">
         <div class="showcase-grid">
           <div class="showcase-content">
-            <span class="showcase-badge" style="background-color:#fef3c7; color:#b45309;">Application 03 &bull; Android Handheld & Tablet</span>
+            <span class="showcase-badge" style="background-color:#fef3c7; color:#b45309;">Platform 03 &bull; Android Handheld & Tablet Mesh</span>
             <h2 class="showcase-title">EXOS ECHO: Walkie-Talkie</h2>
             <p class="showcase-lead">
-              EXOS ECHO turns any standard Android smartphone into a standalone, off-grid digital walkie-talkie and wilderness mesh transceiver. Connecting devices peer-to-peer via Wi-Fi Direct and Bluetooth Low Energy, it delivers reliable voice communication where telecom towers do not reach.
+              EXOS ECHO turns any standard Android smartphone into an off-grid digital walkie-talkie and wilderness mesh transceiver. Connecting devices peer-to-peer via Wi-Fi Direct and Bluetooth Low Energy, it delivers reliable voice communication and text messaging where telecom networks do not reach.
             </p>
 
             <div class="use-cases-box">
@@ -1188,7 +1294,7 @@
             </div>
 
             <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:24px;">
-              <strong>Key Technical Specifications:</strong> Sub-100ms Push-to-Talk latency, 16 kHz HD IMA-ADPCM digital audio compression, 10 cryptographically isolated channels with Dual-Watch standby monitoring, background call ringing with screen locked, and 100% free emergency SOS distress beacon.
+              <strong>Technical Specifications:</strong> Sub-100ms Push-to-Talk latency, 16 kHz HD IMA-ADPCM digital audio compression, 10 cryptographically isolated channels with Dual-Watch standby monitoring, background call ringing with screen locked, and 100% free emergency SOS distress beacon.
             </p>
 
             <div style="display:flex; gap:12px; flex-wrap:wrap;">
@@ -1198,16 +1304,115 @@
           </div>
 
           <div class="showcase-media" style="background-color:#1e1e24;">
-            <div class="showcase-dual-container">
-              <div class="phone-frame" style="max-width:210px;">
+            <div class="dual-phones-row">
+              <!-- Walkie PTT Screen -->
+              <div class="phone-mockup">
                 <img src="assets/echo_walkie.png" alt="EXOS ECHO Walkie-Talkie Push-to-Talk Interface" onerror="this.src='echo_walkie.png'">
               </div>
-              <div class="phone-frame" style="max-width:210px;">
-                <img src="assets/echo_msgs.png" alt="EXOS ECHO Offline P2P Text Messaging" onerror="this.src='echo_msgs.png'">
+              <!-- Offline Messaging Screen -->
+              <div class="phone-mockup">
+                <img src="assets/echo_msgs.png" alt="EXOS ECHO Offline P2P Encrypted Text Messaging" onerror="this.src='echo_msgs.png'">
               </div>
             </div>
+
+            <!-- Team Channel Sub-Box -->
+            <div class="telemetry-row" style="grid-template-columns: 1fr;">
+              <div class="telemetry-box" style="display:flex; align-items:center; gap:12px; padding:10px 14px; text-align:left;">
+                <div style="width:50px; height:50px; border-radius:6px; overflow:hidden; flex-shrink:0;">
+                  <img src="assets/echo_team.png" alt="Mesh Team Channel Roster" style="margin:0; width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div>
+                  <div style="font-size:0.78rem; font-weight:700; color:#ffffff;">Team Mesh Roster & Presence</div>
+                  <div style="font-size:0.72rem; color:#94a3b8;">Real-time RSSI signal strength, battery levels, & channel membership.</div>
+                </div>
+              </div>
+            </div>
+
             <div class="showcase-media-caption">
-              Actual application screenshots: Low-latency Push-to-Talk voice interface and offline peer-to-peer text messaging.
+              Actual application screenshots: EXOS ECHO push-to-talk voice interface, offline text messaging, and mesh member discovery.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 4. DEEP DIVE: EXOS WATCHOUT (FOURTH)                                      -->
+  <!-- ========================================================================= -->
+  <section class="section section-slate" id="watchout">
+    <div class="container">
+      <div class="product-showcase">
+        <div class="showcase-grid reverse">
+          <div class="showcase-content">
+            <span class="showcase-badge" style="background-color:#ccfbf1; color:#0f766e;">Platform 04 &bull; Wear OS Smartwatches & Companion</span>
+            <h2 class="showcase-title">Exos Watchout: Tactical Watch Face</h2>
+            <p class="showcase-lead">
+              Exos Watchout is a standalone Wear OS smartwatch watch face and paired mobile companion application. Engineered natively with Google's Watch Face Format (WFF v1), it delivers glanceable heading guidance, compass telemetry, and biometric indicators directly to your wrist.
+            </p>
+
+            <div class="use-cases-box">
+              <div class="use-cases-title">Operational Use Cases</div>
+              <ul class="use-cases-list">
+                <li>
+                  <strong>Hands-Free Alpine Mountaineering:</strong> Check current heading, altitude, and bearing with a natural wrist glance while keeping both hands secure on trekking poles, ice axes, or ropes.
+                </li>
+                <li>
+                  <strong>Dual Bespoke Field Themes:</strong> Switch instantly between Heritage Orange (warm aviation instrument styling) and Tactical Teal (high-contrast cockpit dial for night navigation).
+                </li>
+                <li>
+                  <strong>Comprehensive Health & Power Subdials:</strong> Monitor live heart rate (BPM), daily step count, device battery percentage, and calendar date without switching away from your navigation instruments.
+                </li>
+              </ul>
+            </div>
+
+            <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:24px;">
+              <strong>Technical Specifications:</strong> Google Watch Face Format (WFF v1), standalone Wear OS 4/5 compatibility (Samsung Galaxy Watch 4/5/6/7, Google Pixel Watch 1/2/3), rotating 4:30 compass medallion with 50Hz sensor fusion, and zero battery drain in Always-On Display (AOD) ambient mode.
+            </p>
+
+            <div style="display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout.watchface" target="_blank" rel="noopener" class="btn btn-primary" style="background-color:#0d9488;">Google Play Store</a>
+              <a href="#specifications" class="btn btn-secondary">View Watch Specs</a>
+            </div>
+          </div>
+
+          <div class="showcase-media" style="background-color:#0b1329;">
+            <div class="dual-phones-row" style="align-items:center;">
+              <!-- Circular Watch Face Frame -->
+              <div class="watch-bezel-frame">
+                <img src="assets/wayfinder_watch_orange.png" alt="Exos Watchout Heritage Orange Wear OS Circular Dial" onerror="this.src='wayfinder_watch_orange.png'">
+              </div>
+              <!-- Paired Companion Phone -->
+              <div class="phone-mockup">
+                <img src="assets/wayfinder_companion_orange.png" alt="Exos Watchout Mobile Companion Phone App" onerror="this.src='wayfinder_companion_orange.png'">
+              </div>
+            </div>
+
+            <!-- Teal Theme Secondary Strip -->
+            <div class="telemetry-row" style="grid-template-columns: 1fr 1fr; margin-top:16px;">
+              <div class="telemetry-box" style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-align:left;">
+                <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; border:2px solid #0d9488; flex-shrink:0;">
+                  <img src="assets/wayfinder_watch_teal.png" alt="Tactical Teal Watch Dial" style="margin:0; width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div>
+                  <div style="font-size:0.74rem; font-weight:700; color:#ffffff;">Tactical Teal Dial</div>
+                  <div style="font-size:0.68rem; color:#94a3b8;">Night-vision cockpit theme</div>
+                </div>
+              </div>
+
+              <div class="telemetry-box" style="display:flex; align-items:center; gap:10px; padding:8px 12px; text-align:left;">
+                <div style="width:40px; height:40px; border-radius:50%; overflow:hidden; border:2px solid #d97706; flex-shrink:0;">
+                  <img src="assets/wayfinder_watch_orange.png" alt="Heritage Orange Watch Dial" style="margin:0; width:100%; height:100%; object-fit:cover;">
+                </div>
+                <div>
+                  <div style="font-size:0.74rem; font-weight:700; color:#ffffff;">Heritage Orange Dial</div>
+                  <div style="font-size:0.68rem; color:#94a3b8;">Daylight expedition theme</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="showcase-media-caption">
+              Actual application screenshots: Standalone Wear OS circular watch face synchronized with Android mobile companion (Heritage Orange & Tactical Teal).
             </div>
           </div>
         </div>
@@ -1216,13 +1421,13 @@
   </section>
 
   <!-- Solutions & Real-World Field Scenarios (Hitachi Style) -->
-  <section class="section section-slate" id="solutions">
+  <section class="section" id="solutions">
     <div class="container">
       <div class="section-header">
         <div class="section-eyebrow">Real-World Deployment</div>
         <h2 class="section-title">Designed for Demanding Operational Environments</h2>
         <p class="section-subtitle">
-          From alpine trails to open water, discover how our integrated software and hardware platforms maintain mission continuity.
+          Discover how our four software platforms operate in the field when commercial networks fail.
         </p>
       </div>
 
@@ -1233,7 +1438,7 @@
           </div>
           <h3 class="solution-title">Search & Rescue</h3>
           <p class="solution-desc">
-            Equip ground search personnel with EXOS ECHO for low-latency peer-to-peer voice and EXOS Transceiver for sub-meter mapping precision in heavily forested terrain.
+            Deploy EXOS Transceiver for sub-meter mock location mapping in ATAK, EXOS ECHO for low-latency team voice, and Watchout for hands-free wrist orientation.
           </p>
         </div>
 
@@ -1243,7 +1448,7 @@
           </div>
           <h3 class="solution-title">Alpine Mountaineering</h3>
           <p class="solution-desc">
-            Hands-free wrist orientation with EXOS Wayfinder on Wear OS smartwatches, tracking bearings and barometric altitude shifts during extreme weather ascents.
+            Navigate through blizzards with EXOS Wayfinder trail backtracking, track barometric pressure fronts, and verify wrist headings with Exos Watchout.
           </p>
         </div>
 
@@ -1253,7 +1458,7 @@
           </div>
           <h3 class="solution-title">Maritime & Coastal</h3>
           <p class="solution-desc">
-            Stream NMEA-0183 position sentences over Bluetooth to navigation laptops running OpenCPN or marine chart plotters without requiring satellite subscriptions.
+            Broadcast high-precision NMEA-0183 sentences over Bluetooth SPP to Windows navigation laptops running OpenCPN without subscription fees.
           </p>
         </div>
 
@@ -1261,9 +1466,9 @@
           <div class="solution-icon-wrap">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           </div>
-          <h3 class="solution-title">Disaster Preparedness</h3>
+          <h3 class="solution-title">Disaster Response</h3>
           <p class="solution-desc">
-            Autonomous peer-to-peer radio mesh networks that deploy instantly when storms, floods, or infrastructure failures disable commercial cellular networks.
+            Instant peer-to-peer radio mesh network deployment using EXOS ECHO when storm damage, flooding, or grid failures disable cellular infrastructure.
           </p>
         </div>
       </div>
@@ -1271,7 +1476,7 @@
   </section>
 
   <!-- Technical Specifications Matrix (Dell Enterprise Table Style) -->
-  <section class="section" id="specifications">
+  <section class="section section-slate" id="specifications">
     <div class="container">
       <div class="section-header">
         <div class="section-eyebrow">Technical Architecture</div>
@@ -1286,64 +1491,73 @@
           <thead>
             <tr>
               <th>Specification Parameter</th>
-              <th class="highlight-col">EXOS Wayfinder</th>
-              <th>EXOS Transceiver</th>
-              <th>EXOS ECHO</th>
+              <th class="highlight-col">1. EXOS Transceiver</th>
+              <th>2. EXOS Wayfinder</th>
+              <th>3. EXOS ECHO</th>
+              <th>4. Exos Watchout</th>
               <th>EXOS-GPS Puck (Hardware)</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Primary Function</strong></td>
-              <td>Smartwatch & Mobile HUD Navigation</td>
               <td>GNSS Telemetry & Mock Location Bridge</td>
+              <td>Offline Mobile Navigation & HUD</td>
               <td>Off-Grid PTT Voice & Mesh Radio</td>
-              <td>High-Precision GNSS Receiver</td>
+              <td>Wear OS Compass Watch Face</td>
+              <td>Autonomous GNSS Receiver</td>
             </tr>
             <tr>
               <td><strong>Supported Platforms</strong></td>
-              <td>Wear OS 4/5 & Android 10+</td>
               <td>Android 8.0+ & Windows 10/11</td>
+              <td>Android 10.0+ Handsets & Tablets</td>
               <td>Android 9.0+ Handheld & Tablet</td>
+              <td>Wear OS 4/5 (Galaxy & Pixel Watch)</td>
               <td>Autonomous Embedded Firmware</td>
             </tr>
             <tr>
               <td><strong>Communications Link</strong></td>
-              <td>Wearable DataLayer & Bluetooth 5.2</td>
               <td>Bluetooth SPP & USB-C Serial</td>
+              <td>Internal Sensor Fusion / External GNSS</td>
               <td>Wi-Fi Direct (P2P) + BLE 5.0+</td>
-              <td>Bluetooth 5.2 Long Range & USB Serial</td>
+              <td>Wearable DataLayer & Bluetooth 5.2</td>
+              <td>Bluetooth 5.2 Long Range & USB</td>
             </tr>
             <tr>
               <td><strong>Voice & Audio Latency</strong></td>
-              <td>Haptic Alerts & Audio Beacons</td>
               <td>N/A (Telemetry Stream Only)</td>
+              <td>Audio Alerts & Voice Cues</td>
               <td>&lt; 100 ms (16 kHz HD IMA-ADPCM)</td>
+              <td>Haptic Alerts & Chimes</td>
               <td>N/A</td>
             </tr>
             <tr>
               <td><strong>Satellite Constellations</strong></td>
-              <td>Internal Sensor Fusion / External GNSS</td>
               <td>GPS, GLONASS, Galileo, BeiDou, QZSS</td>
-              <td>Offline Map & GPS Coordinate Share</td>
+              <td>All Handset GNSS Constellations</td>
+              <td>Offline GPS Coordinate Share</td>
+              <td>Internal Watch Sensors & Handset GPS</td>
               <td>Multi-Band L1/L5 GNSS Receiver</td>
             </tr>
             <tr>
               <td><strong>System Mock Location</strong></td>
-              <td>Target Coordinate Ingestion</td>
               <td>Smart Guided Mock Provider</td>
-              <td>Background Tactical Waypoint Plotting</td>
-              <td>Raw NMEA-0183 Stream Output</td>
+              <td>Target Coordinate Ingestion</td>
+              <td>Tactical Waypoint Plotting</td>
+              <td>Complication Telemetry Ingestion</td>
+              <td>Raw NMEA-0183 Output Stream</td>
             </tr>
             <tr>
               <td><strong>Emergency SOS Distress</strong></td>
+              <td>Distress Telemetry Packet</td>
               <td>Foreground Emergency Flash Beacon</td>
-              <td>Emergency Distress Telemetry Packet</td>
               <td>100% Free Acoustic Alarm & Coordinates</td>
-              <td>Autonomous Panic Beacon Switch</td>
+              <td>High-Visibility Compass Flare</td>
+              <td>Autonomous Panic Switch</td>
             </tr>
             <tr>
               <td><strong>Cellular / Cloud Requirement</strong></td>
+              <td>100% Offline (No Data Needed)</td>
               <td>100% Offline (No Data Needed)</td>
               <td>100% Offline (No Data Needed)</td>
               <td>100% Offline (No Data Needed)</td>
@@ -1355,11 +1569,11 @@
     </div>
   </section>
 
-  <!-- Getting Started & Testing Guide (ShoutMeLoud Style) -->
-  <section class="section section-slate" id="getting-started">
+  <!-- Getting Started & Testing Guide (ShoutMeLoud Steps) -->
+  <section class="section" id="getting-started">
     <div class="container">
       <div class="section-header">
-        <div class="section-eyebrow">Evaluation & Testing</div>
+        <div class="section-eyebrow">Field Evaluation & Testing</div>
         <h2 class="section-title">How to Evaluate EXOS Applications</h2>
         <p class="section-subtitle">
           Follow these simple steps to join our closed testing fleet on Google Play and begin field trials.
@@ -1380,9 +1594,9 @@
           <div class="step-number">02</div>
           <h3 class="step-title">Opt-In on Google Play</h3>
           <p class="step-desc">
-            Open the Google Play opt-in invitation links for Wayfinder, Transceiver, or ECHO to authorize your account for immediate beta app downloads.
+            Open the Google Play opt-in invitation links for Transceiver, Wayfinder, ECHO, or Watchout to authorize your account for immediate beta app downloads.
           </p>
-          <a href="https://play.google.com/apps/testing/exos.wayfinder" target="_blank" rel="noopener" class="btn btn-secondary" style="width:100%;">Accept Web Opt-In</a>
+          <a href="https://play.google.com/apps/testing/com.ritym.exosgps" target="_blank" rel="noopener" class="btn btn-secondary" style="width:100%;">Accept Beta Opt-In</a>
         </div>
 
         <div class="step-card">
@@ -1391,7 +1605,7 @@
           <p class="step-desc">
             Install the applications onto your physical Samsung Galaxy Watch or Android mobile device. Verify offline orientation and direct mesh communications in your local area.
           </p>
-          <a href="https://play.google.com/store/apps/details?id=exos.wayfinder" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">Download Applications</a>
+          <a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;">Download Applications</a>
         </div>
       </div>
     </div>
@@ -1414,17 +1628,17 @@
         <div class="footer-col">
           <div class="footer-col-title">Applications</div>
           <ul class="footer-links">
-            <li><a href="#wayfinder">EXOS Wayfinder (Wear OS)</a></li>
-            <li><a href="#transceiver">EXOS Transceiver (GNSS Bridge)</a></li>
-            <li><a href="#echo">EXOS ECHO (Walkie-Talkie)</a></li>
-            <li><a href="station-guide.html">Station Field Manual</a></li>
+            <li><a href="#transceiver">1. EXOS Transceiver (GNSS Bridge)</a></li>
+            <li><a href="#wayfinder">2. EXOS Wayfinder (Offline Navigation)</a></li>
+            <li><a href="#echo">3. EXOS ECHO (Mesh Walkie-Talkie)</a></li>
+            <li><a href="#watchout">4. Exos Watchout (Wear OS Watch)</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
           <div class="footer-col-title">Documentation</div>
           <ul class="footer-links">
-            <li><a href="station-guide.html">EXOS-Station User Guide</a></li>
+            <li><a href="station-guide.html">EXOS-Station Field Manual</a></li>
             <li><a href="#specifications">Technical Specifications</a></li>
             <li><a href="https://groups.google.com/g/exos-gps-testers" target="_blank" rel="noopener">Testing Group Portal</a></li>
             <li><a href="support.html">Technical Support Desk</a></li>

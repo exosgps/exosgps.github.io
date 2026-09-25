@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Technical Support Desk | EXOS GPS Field Systems</title>
-  <meta name="description" content="Technical support, documentation, and troubleshooting guide for EXOS Wayfinder, EXOS GPS Transceiver, and EXOS ECHO.">
+  <meta name="description" content="Technical support, documentation, and troubleshooting guide for EXOS Transceiver, EXOS Wayfinder, EXOS ECHO, and Exos Watchout.">
   <link rel="icon" type="image/png" href="icon.png">
 
   <!-- Clean Corporate Typography -->
@@ -44,7 +44,7 @@
       background-color: #0b1329;
       color: #94a3b8;
       font-size: 0.78rem;
-      padding: 7px 0;
+      padding: 8px 0;
     }
 
     .navbar {
@@ -182,14 +182,14 @@
     <div class="support-header">
       <h1>Technical Support & Field Desk</h1>
       <p style="font-size:1.1rem; color:var(--text-muted);">
-        Need help with device pairing, Smart Guided Mock Location, or Wear OS installation? Our engineering team is here to assist.
+        Engineering assistance, hardware bridge pairing guides, and Google Play beta testing instructions for all four EXOS platforms.
       </p>
     </div>
 
     <div class="contact-grid">
       <div class="contact-card">
         <h3>Email Engineering Support</h3>
-        <p>Send diagnostic logs, bug reports, or compatibility questions directly to our software engineering team.</p>
+        <p>Send diagnostic logs, NMEA sentence stream questions, or hardware pairing reports directly to our engineers.</p>
         <div>
           <a href="mailto:support@exosgps.com" style="font-weight:700; font-size:1.05rem;">support@exosgps.com</a>
         </div>
@@ -208,23 +208,30 @@
       <h2 class="faq-title">Frequently Asked Questions</h2>
 
       <div class="faq-item">
-        <div class="faq-q">How do I install EXOS Wayfinder on my Samsung Galaxy Watch?</div>
+        <div class="faq-q">1. What is Smart Guided Mock Location in EXOS GPS Transceiver?</div>
         <div class="faq-a">
-          Ensure your watch is paired with your Android handset via the Galaxy Wearable app. Once enrolled in our Google Play testing track, download the watch face directly from the Wear OS Google Play Store on your watch. After installation, touch and hold your current watch face, swipe right to the '+' icon, and select EXOS Wayfinder under Downloaded.
+          Android includes a developer feature called 'Select mock location app.' When enabled with EXOS GPS Transceiver, external satellite coordinates ingested via Bluetooth from the EXOS-GPS Puck or high-gain marine GPS are injected directly into Android's core location framework. This allows third-party navigation apps (Google Maps, Waze, ATAK, OsmAnd) to navigate with sub-meter external precision.
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">What is Smart Guided Mock Location in EXOS GPS Transceiver?</div>
+        <div class="faq-q">2. How does EXOS Wayfinder trail backtracking work offline?</div>
         <div class="faq-a">
-          Android includes a developer feature called "Select mock location app." When enabled with EXOS GPS Transceiver, external satellite coordinates ingested via Bluetooth from the EXOS-GPS Puck or high-gain marine GPS are injected into Android's core location framework. This allows third-party navigation apps (Google Maps, Waze, ATAK, OsmAnd) to navigate with sub-meter external precision.
+          EXOS Wayfinder records GPS breadcrumbs locally into an on-device sandboxed SQLite database as you travel. When you engage Backtrack mode, it calculates real-time azimuth and distance to each recorded point in reverse sequence, leading you safely back through fog, blizzards, or heavy canopy without needing mobile internet or cloud maps.
         </div>
       </div>
 
       <div class="faq-item">
-        <div class="faq-q">Does EXOS ECHO require cellular towers or mobile data?</div>
+        <div class="faq-q">3. Does EXOS ECHO require cellular towers or mobile data?</div>
         <div class="faq-a">
-          No. EXOS ECHO establishes direct peer-to-peer Wi-Fi Direct and Bluetooth Low Energy RF links between handsets. It works 100% off-grid in remote canyons, open water, dense forest, or during total infrastructure blackouts.
+          No. EXOS ECHO establishes direct peer-to-peer Wi-Fi Direct and Bluetooth Low Energy RF links between handsets. It works 100% off-grid in remote canyons, open water, dense forest, or during total infrastructure blackouts with sub-100ms Push-to-Talk audio and encrypted text.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">4. How do I install Exos Watchout on my Samsung Galaxy Watch?</div>
+        <div class="faq-a">
+          Ensure your watch is paired with your Android phone via the Galaxy Wearable app. Once enrolled in our Google Play testing track, download Exos Watchout from the Wear OS Google Play Store on your watch. After installation, touch and hold your current watch face, swipe right to the '+' icon, and select Exos Watchout under Downloaded.
         </div>
       </div>
 

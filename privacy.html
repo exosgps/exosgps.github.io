@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | EXOS GPS Field Systems</title>
-  <meta name="description" content="Official Privacy Policy for EXOS Wayfinder, EXOS GPS Transceiver, and EXOS ECHO applications.">
+  <meta name="description" content="Official Privacy Policy for EXOS Transceiver, EXOS Wayfinder, EXOS ECHO, and Exos Watchout applications.">
   <link rel="icon" type="image/png" href="icon.png">
 
   <!-- Clean Corporate Typography -->
@@ -39,13 +39,13 @@
     a { color: var(--primary); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 920px; margin: 0 auto; padding: 0 24px; }
 
     .top-strip {
       background-color: #0b1329;
       color: #94a3b8;
       font-size: 0.78rem;
-      padding: 7px 0;
+      padding: 8px 0;
       border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
@@ -120,7 +120,7 @@
       background-color: var(--bg-slate);
       border: 1px solid var(--border-light);
       border-radius: 8px;
-      padding: 20px 24px;
+      padding: 22px 24px;
       margin-bottom: 24px;
     }
 
@@ -164,7 +164,7 @@
   <main class="container legal-content">
     <h1>Privacy Policy</h1>
     <div class="legal-meta">
-      Published by RiTym Technologies &bull; Applicable to: EXOS Wayfinder, EXOS GPS Transceiver, and EXOS ECHO
+      Published by RiTym Technologies &bull; Applicable to: EXOS Transceiver, EXOS Wayfinder, EXOS ECHO, and Exos Watchout
     </div>
 
     <div class="legal-alert">
@@ -173,28 +173,19 @@
 
     <h2>1. Introduction & Developer Identity</h2>
     <p>
-      This Privacy Policy governs the suite of field applications developed and operated by RiTym Technologies under the EXOS brand:
+      This Privacy Policy governs the suite of four specialized field applications developed and operated by RiTym Technologies under the EXOS brand:
     </p>
     <ul>
-      <li><strong>EXOS Wayfinder:</strong> Wear OS Watch Face & Android Mobile Companion (Package: <code>exos.wayfinder</code> / <code>exos.ritym.watchout.watchface</code>)</li>
-      <li><strong>EXOS GPS Transceiver:</strong> GNSS Telemetry & Mock Location Bridge (Package: <code>com.ritym.exosgps</code> / <code>exos.ritym.transceiver</code>)</li>
-      <li><strong>EXOS ECHO:</strong> Peer-to-Peer Walkie-Talkie & Mesh Communicator (Package: <code>exos.echo.mesh</code>)</li>
+      <li><strong>1. EXOS GPS Transceiver:</strong> GNSS Telemetry & Mock Location Bridge (Package: <code>com.ritym.exosgps</code> / <code>exos.ritym.transceiver</code>)</li>
+      <li><strong>2. EXOS Wayfinder:</strong> Offline Mobile Navigation & HUD (Package: <code>exos.wayfinder</code>)</li>
+      <li><strong>3. EXOS ECHO:</strong> Peer-to-Peer Walkie-Talkie & Mesh Communicator (Package: <code>exos.echo.mesh</code>)</li>
+      <li><strong>4. Exos Watchout:</strong> Wear OS Watch Face & Companion (Package: <code>exos.ritym.watchout.watchface</code> / <code>exos.ritym.watchout</code>)</li>
     </ul>
 
-    <h2>2. Permissions & Data Usage by Application</h2>
+    <h2>2. Permissions & Data Usage Across All 4 Applications</h2>
 
     <div class="app-box">
-      <h3>A. EXOS Wayfinder (Wear OS & Mobile Companion)</h3>
-      <p>
-        <strong>Precise Location (ACCESS_FINE_LOCATION):</strong> Used strictly on-device to compute real-time bearing, speed, and emergency breadcrumb trail backtracking. Location data is stored ephemerally in a local on-device database and is never transmitted over the internet.<br>
-        <strong>Foreground Service - Location (FOREGROUND_SERVICE_LOCATION):</strong> Allows continuous breadcrumb recording during active wilderness hikes when the screen is turned off.<br>
-        <strong>Device Sensors (Compass & Gyroscope):</strong> Used on-device to drive the 50Hz dynamic heading compass and 3D spirit level dial.<br>
-        <strong>Health Data (Wear OS BPM & Steps):</strong> Read locally from Wear OS health provider complications to display on watch face subdials. No biometric data is stored or transferred.
-      </p>
-    </div>
-
-    <div class="app-box">
-      <h3>B. EXOS GPS Transceiver</h3>
+      <h3>1. EXOS GPS Transceiver</h3>
       <p>
         <strong>Precise Location & Mock Location:</strong> Used to stream raw NMEA-0183 sentences ($GPGGA, $GPRMC) over Bluetooth Classic SPP or USB Serial to external navigation tablets or chartplotters, and to inject high-accuracy external GNSS fixes into Android's Smart Guided Mock Location provider.<br>
         <strong>Foreground Service - Connected Device:</strong> Maintains an uninterrupted RFCOMM serial stream to paired marine displays or Windows PCs while running in the background.
@@ -202,11 +193,28 @@
     </div>
 
     <div class="app-box">
-      <h3>C. EXOS ECHO (Walkie-Talkie)</h3>
+      <h3>2. EXOS Wayfinder</h3>
+      <p>
+        <strong>Precise Location (ACCESS_FINE_LOCATION):</strong> Used strictly on-device to compute real-time bearing, speed, and emergency breadcrumb trail backtracking. Location data is stored ephemerally in a local on-device database and is never transmitted over the internet.<br>
+        <strong>Foreground Service - Location (FOREGROUND_SERVICE_LOCATION):</strong> Allows continuous breadcrumb recording during active wilderness hikes when the screen is turned off.<br>
+        <strong>Device Sensors (Compass & Gyroscope):</strong> Used on-device to drive the 50Hz dynamic heading compass and 3D spirit level dial.
+      </p>
+    </div>
+
+    <div class="app-box">
+      <h3>3. EXOS ECHO (Walkie-Talkie)</h3>
       <p>
         <strong>Microphone (RECORD_AUDIO):</strong> Used exclusively while the user actively presses the Push-to-Talk (PTT) button to encode real-time digital voice packets for peer-to-peer transmission. Audio is never recorded to disk or uploaded to cloud servers.<br>
         <strong>Nearby Devices & Wi-Fi Direct:</strong> Used to discover neighboring teammates and establish direct ad-hoc peer-to-peer Wi-Fi sockets without internet routing.<br>
         <strong>Local Notifications:</strong> Provides background ringing and incoming transmission alerts when fellow team members transmit on the active frequency channel.
+      </p>
+    </div>
+
+    <div class="app-box">
+      <h3>4. Exos Watchout (Wear OS Watch Face & Companion)</h3>
+      <p>
+        <strong>Wear OS Sensors & Complications:</strong> Reads local watch sensors for 50Hz dynamic compass orientation, heart rate BPM, daily step count, and battery levels via standard Wear OS complications. All processing occurs locally on the watch with zero cloud transmission.<br>
+        <strong>Wearable DataLayer:</strong> Synchronizes theme settings (Heritage Orange vs Tactical Teal) between the paired phone and watch over Bluetooth.
       </p>
     </div>
 
