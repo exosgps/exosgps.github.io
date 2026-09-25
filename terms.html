@@ -3,100 +3,180 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terms of Service | EXOS GPS</title>
-  <link rel="icon" type="image/png" href="assets/icon.png">
+  <title>Terms of Service | EXOS GPS Field Systems</title>
+  <meta name="description" content="Terms of Service for EXOS Wayfinder, EXOS GPS Transceiver, and EXOS ECHO applications.">
+  <link rel="icon" type="image/png" href="icon.png">
+
+  <!-- Clean Corporate Typography -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
+    :root {
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --secondary: #0f172a;
+      --bg-white: #ffffff;
+      --bg-slate: #f8fafc;
+      --border-light: #e2e8f0;
+      --text-heading: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg-white);
+      color: var(--text-body);
+      font-family: var(--font-main);
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+    .top-strip {
+      background-color: #0b1329;
+      color: #94a3b8;
+      font-size: 0.78rem;
+      padding: 7px 0;
+    }
+
+    .navbar {
+      background-color: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .navbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-heading);
+    }
+
+    .brand-logo img { width: 38px; height: 38px; border-radius: 8px; }
+    .brand-name { font-size: 1.2rem; font-weight: 800; }
+
     .legal-content {
       padding: 60px 0 100px;
-      max-width: 860px;
-      margin: 0 auto;
-      line-height: 1.8;
-      color: #c9d1d9;
     }
-    .legal-content h1 {
-      font-family: var(--font-display);
+
+    h1 {
       font-size: 2.4rem;
-      color: #ffffff;
-      margin-bottom: 12px;
+      font-weight: 800;
+      color: var(--text-heading);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
     }
+
     .legal-meta {
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--accent-green);
-      margin-bottom: 40px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      padding-bottom: 16px;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 18px;
+      margin-bottom: 30px;
     }
-    .legal-content h2 {
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      color: var(--accent-cyan);
-      margin: 36px 0 16px;
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-heading);
+      margin: 32px 0 12px;
     }
-    .legal-content p {
-      margin-bottom: 18px;
+
+    p { margin-bottom: 18px; }
+    ul { margin-bottom: 24px; padding-left: 24px; }
+    li { margin-bottom: 10px; }
+
+    .footer {
+      background-color: #0b1329;
+      color: #94a3b8;
+      padding: 40px 0;
+      font-size: 0.82rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
   </style>
 </head>
 <body>
-  <header class="navbar">
-    <div class="nav-brand">
-      <a href="index.html" style="display:flex; align-items:center; gap:12px;">
-        <img src="assets/icon.png" alt="EXOS GPS" class="brand-icon">
-        <span class="brand-text">EXOS GPS</span>
-      </a>
+
+  <div class="top-strip">
+    <div class="container" style="display:flex; justify-content:space-between;">
+      <span>EXOS Field Systems Legal Portal</span>
+      <span>Terms of Service</span>
     </div>
-    <nav class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="privacy.html" class="nav-link">Privacy Policy</a>
-      <a href="support.html" class="nav-link">Support</a>
-    </nav>
-    <a href="index.html#beta" class="nav-cta">TEST BETA</a>
+  </div>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/icon.png" alt="EXOS" onerror="this.src='icon.png'">
+        <span class="brand-name">EXOS</span>
+      </a>
+      <div>
+        <a href="index.html" style="font-weight:600; font-size:0.9rem;">&larr; Back to Home</a>
+      </div>
+    </div>
   </header>
 
   <main class="container legal-content">
     <h1>Terms of Service</h1>
     <div class="legal-meta">
-      LAST REVISED: SEPTEMBER 3, 2026 // APPLICABLE TO: EXOS WAYFINDER & EXOS-GPS HARDWARE
+      Last Updated: September 2026 &bull; RiTym Technologies
     </div>
 
     <h2>1. Acceptance of Terms</h2>
     <p>
-      By downloading, installing, or operating the EXOS Wayfinder mobile application or any EXOS GPS hardware device, you agree to be bound by these Terms of Service. If you do not agree with any provision, please uninstall the app and discontinue use.
+      By downloading, installing, or operating EXOS Wayfinder, EXOS GPS Transceiver, or EXOS ECHO, you agree to be bound by these Terms of Service. If you do not agree, do not install or use these applications.
     </p>
 
-    <h2>2. Tactical Navigation & Safety Warning</h2>
+    <h2>2. Field Navigation & Safety Disclaimer</h2>
     <p>
-      EXOS Wayfinder and EXOS-GPS hardware are tools designed to assist in situational awareness, backcountry orientation, and waypoint navigation. <strong>Outdoor backcountry travel and navigation in wilderness environments involve inherent risks.</strong>
+      EXOS applications and hardware adapters are designed as navigational aids for outdoor exploration, wilderness recreation, and technical field operations. While built to high standards of reliability and precision, satellite signals can be subject to atmospheric conditions, terrain obstruction, and electronic interference.
     </p>
     <p>
-      Never rely solely on any electronic device, battery-powered receiver, or satellite software for life-critical navigation. Users must always carry physical topographic maps, a mechanical magnetic compass, and emergency survival gear.
+      <strong>Do not rely solely on electronic instruments for life-safety navigation.</strong> Always carry secondary physical navigational aids, including a magnetic baseplate compass, topographical paper maps, and adequate survival supplies when venturing into wilderness or remote marine environments.
     </p>
 
-    <h2>3. License & Intellectual Property</h2>
+    <h2>3. Peer-to-Peer Radio & Frequency Regulations</h2>
     <p>
-      EXOS GPS grants you a personal, revocable, non-exclusive, non-transferable license to use the EXOS Wayfinder application for personal and expedition use in accordance with these terms.
+      EXOS ECHO utilizes standard Wi-Fi Direct and Bluetooth Low Energy spectrum bands. Users are responsible for complying with all regional telecommunication laws and local radio frequency regulations applicable in their jurisdiction.
     </p>
 
     <h2>4. Limitation of Liability</h2>
     <p>
-      In no event shall EXOS GPS, its developers, or affiliates be liable for any direct, indirect, incidental, or consequential damages resulting from navigational error, GPS signal attenuation, satellite outage, or hardware failure.
+      To the maximum extent permitted by applicable law, RiTym Technologies and its contributors shall not be liable for any indirect, incidental, special, consequential, or punitive damages resulting from the use or inability to use the software.
     </p>
 
     <h2>5. Contact Information</h2>
     <p>
-      For legal notices or questions regarding these terms, contact <a href="mailto:exosgps@gmail.com" style="color:var(--accent-green);">exosgps@gmail.com</a>.
+      Questions regarding these Terms should be directed to:
+      <br><br>
+      <strong>RiTym Technologies &bull; Legal Affairs</strong><br>
+      Email: <a href="mailto:support@exosgps.com">support@exosgps.com</a>
     </p>
   </main>
 
   <footer class="footer">
-    <div class="container footer-bottom">
-      <div>&copy; 2026 EXOS GPS Ecosystem. All rights reserved.</div>
-      <div><a href="privacy.html" style="color:var(--text-muted); margin-right:16px;">Privacy Policy</a> <a href="support.html" style="color:var(--text-muted);">Support Desk</a></div>
+    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+      <div>&copy; 2026 EXOS GPS Ecosystem &bull; RiTym Technologies. All rights reserved.</div>
+      <div>
+        <a href="privacy.html" style="color:#94a3b8; margin-right:18px;">Privacy Policy</a>
+        <a href="support.html" style="color:#94a3b8;">Support Desk</a>
+      </div>
     </div>
   </footer>
 </body>
