@@ -3,255 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technical Support Desk | EXOS GPS Field Systems</title>
-  <meta name="description" content="Technical support, documentation, and troubleshooting guide for EXOS Transceiver, EXOS Wayfinder, EXOS ECHO, and Exos Watchout.">
-  <link rel="icon" type="image/png" href="icon.png">
-
-  <!-- Clean Corporate Typography -->
+  <title>Technical Support & Field Guide | EXOS Navigation Systems</title>
+  <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --primary: #0284c7;
-      --primary-dark: #0369a1;
-      --secondary: #0f172a;
-      --bg-white: #ffffff;
-      --bg-slate: #f8fafc;
-      --border-light: #e2e8f0;
-      --border-dark: #cbd5e1;
-      --text-heading: #0f172a;
-      --text-body: #334155;
-      --text-muted: #64748b;
-      --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-white);
-      color: var(--text-body);
-      font-family: var(--font-main);
-      line-height: 1.7;
-    }
-
-    a { color: var(--primary); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-
-    .container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
-
-    .top-strip {
-      background-color: #0b1329;
-      color: #94a3b8;
-      font-size: 0.78rem;
-      padding: 8px 0;
-    }
-
-    .navbar {
-      background-color: #ffffff;
-      border-bottom: 1px solid var(--border-light);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .navbar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 70px;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--text-heading);
-    }
-
-    .brand-logo img { width: 38px; height: 38px; border-radius: 8px; }
-    .brand-name { font-size: 1.2rem; font-weight: 800; }
-
-    .support-wrap { padding: 60px 0 100px; }
-
-    .support-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 48px;
-    }
-
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      letter-spacing: -0.02em;
-      margin-bottom: 12px;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 50px;
-    }
-
-    .contact-card {
-      background-color: var(--bg-slate);
-      border: 1px solid var(--border-light);
-      border-radius: 12px;
-      padding: 28px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-card h3 {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--text-heading);
-      margin-bottom: 8px;
-    }
-
-    .contact-card p {
-      font-size: 0.9rem;
-      color: #475569;
-      margin-bottom: 18px;
-      flex-grow: 1;
-    }
-
-    .faq-section {
-      border-top: 1px solid var(--border-light);
-      padding-top: 48px;
-    }
-
-    .faq-title {
-      font-size: 1.6rem;
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 28px;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--border-light);
-      padding: 20px 0;
-    }
-
-    .faq-q {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--text-heading);
-      margin-bottom: 8px;
-    }
-
-    .faq-a {
-      font-size: 0.94rem;
-      color: #475569;
-      line-height: 1.65;
-    }
-
-    .footer {
-      background-color: #0b1329;
-      color: #94a3b8;
-      padding: 40px 0;
-      font-size: 0.82rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
+    body { font-family: 'Inter', sans-serif; line-height: 1.7; color: #334155; margin: 0; padding: 0; background-color: #f8fafc; }
+    .header { background: #0f172a; color: #fff; padding: 18px 24px; }
+    .header-container { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
+    .header img { height: 32px; }
+    .content-wrap { max-width: 1000px; margin: 40px auto; background: #fff; padding: 48px; border-radius: 12px; border: 1px solid #e2e8f0; }
+    h1 { color: #0f172a; font-size: 2.2rem; margin-bottom: 8px; font-weight: 800; }
+    h2 { color: #0f172a; font-size: 1.35rem; margin-top: 36px; margin-bottom: 14px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; }
+    p, li { font-size: 0.96rem; color: #475569; }
+    .faq-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 16px; }
+    .faq-q { font-weight: 700; color: #0f172a; margin-bottom: 8px; font-size: 1.05rem; }
+    .faq-a { color: #475569; font-size: 0.94rem; }
+    code { font-family: 'JetBrains Mono', monospace; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.88rem; }
+    .footer { text-align: center; padding: 40px 20px; font-size: 0.85rem; color: #64748b; }
   </style>
 </head>
 <body>
-
-  <div class="top-strip">
-    <div class="container" style="display:flex; justify-content:space-between;">
-      <span>EXOS Technical Support & Field Assistance</span>
-      <span>Direct Engineer Desk</span>
-    </div>
-  </div>
-
-  <header class="navbar">
-    <div class="container navbar-inner">
-      <a href="index.html" class="brand-logo">
-        <img src="assets/icon.png" alt="EXOS" onerror="this.src='icon.png'">
-        <span class="brand-name">EXOS</span>
-      </a>
-      <div>
-        <a href="index.html" style="font-weight:600; font-size:0.9rem;">&larr; Back to Home</a>
-      </div>
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html"><img src="assets/exos_logo_dark.png" alt="EXOS Logo"></a>
+      <a href="index.html" style="color:#cbd5e1; text-decoration:none; font-size:0.9rem; font-weight:600;">&larr; Back to EXOS Home</a>
     </div>
   </header>
 
-  <main class="container support-wrap">
-    <div class="support-header">
-      <h1>Technical Support & Field Desk</h1>
-      <p style="font-size:1.1rem; color:var(--text-muted);">
-        Engineering assistance, hardware bridge pairing guides, and Google Play beta testing instructions for all four EXOS platforms.
-      </p>
-    </div>
+  <div class="content-wrap">
+    <h1>Technical Support & Engineering FAQ</h1>
+    <p>Operational guides and engineering assistance for the EXOS suite and RiTym ESP32 hardware.</p>
 
-    <div class="contact-grid">
-      <div class="contact-card">
-        <h3>Email Engineering Support</h3>
-        <p>Send diagnostic logs, NMEA sentence stream questions, or hardware pairing reports directly to our engineers.</p>
-        <div>
-          <a href="mailto:support@exosgps.com" style="font-weight:700; font-size:1.05rem;">support@exosgps.com</a>
-        </div>
-      </div>
-
-      <div class="contact-card">
-        <h3>Google Play Testing Group</h3>
-        <p>Join our official Google Group for closed beta updates, release notes, and direct developer discussions.</p>
-        <div>
-          <a href="https://groups.google.com/g/exos-gps-testers" target="_blank" rel="noopener" style="font-weight:700; font-size:1.05rem;">groups.google.com/g/exos-gps-testers &rarr;</a>
-        </div>
+    <h2>1. EXOS GPS Transceiver Configuration</h2>
+    <div class="faq-box">
+      <div class="faq-q">How do I configure Android Mock Location for EXOS Transceiver?</div>
+      <div class="faq-a">
+        1. Open your Android device <strong>Settings</strong> &gt; <strong>About Phone</strong>.<br>
+        2. Tap <strong>Build Number</strong> seven times to enable Developer Options.<br>
+        3. Navigate to <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Developer Options</strong>.<br>
+        4. Scroll to <strong>Select mock location app</strong> and select <code>EXOS GPS</code>.<br>
+        5. Return to EXOS Transceiver, enable <em>Receiver Mode</em>, and pair with your external GNSS beacon. All mapping apps will now consume external coordinates.
       </div>
     </div>
 
-    <div class="faq-section">
-      <h2 class="faq-title">Frequently Asked Questions</h2>
-
-      <div class="faq-item">
-        <div class="faq-q">1. What is Smart Guided Mock Location in EXOS GPS Transceiver?</div>
-        <div class="faq-a">
-          Android includes a developer feature called 'Select mock location app.' When enabled with EXOS GPS Transceiver, external satellite coordinates ingested via Bluetooth from the EXOS-GPS Puck or high-gain marine GPS are injected directly into Android's core location framework. This allows third-party navigation apps (Google Maps, Waze, ATAK, OsmAnd) to navigate with sub-meter external precision.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">2. How does EXOS Wayfinder trail backtracking work offline?</div>
-        <div class="faq-a">
-          EXOS Wayfinder records GPS breadcrumbs locally into an on-device sandboxed SQLite database as you travel. When you engage Backtrack mode, it calculates real-time azimuth and distance to each recorded point in reverse sequence, leading you safely back through fog, blizzards, or heavy canopy without needing mobile internet or cloud maps.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">3. Does EXOS ECHO require cellular towers or mobile data?</div>
-        <div class="faq-a">
-          No. EXOS ECHO establishes direct peer-to-peer Wi-Fi Direct and Bluetooth Low Energy RF links between handsets. It works 100% off-grid in remote canyons, open water, dense forest, or during total infrastructure blackouts with sub-100ms Push-to-Talk audio and encrypted text.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">4. How do I install Exos Watchout on my Samsung Galaxy Watch?</div>
-        <div class="faq-a">
-          Ensure your watch is paired with your Android phone via the Galaxy Wearable app. Once enrolled in our Google Play testing track, download Exos Watchout from the Wear OS Google Play Store on your watch. After installation, touch and hold your current watch face, swipe right to the '+' icon, and select Exos Watchout under Downloaded.
-        </div>
-      </div>
-
-      <div class="faq-item">
-        <div class="faq-q">Where can I find the EXOS-Station technical manual?</div>
-        <div class="faq-a">
-          The complete hardware and multi-client documentation is available at our <a href="station-guide.html">EXOS-Station Field Manual</a>.
-        </div>
+    <div class="faq-box">
+      <div class="faq-q">How do I stream GPS coordinates to Windows 10/11 laptops?</div>
+      <div class="faq-a">
+        Pair your Android smartphone running EXOS Transceiver in <em>Transmitter Mode</em> with your Windows PC via Bluetooth. Windows will establish a standard incoming Serial Port (e.g. <code>COM3</code> or <code>COM4</code>). In your GIS software (OpenCPN, QGIS, ArcGIS), select this COM port at <code>9600</code> or <code>38400</code> baud to ingest live NMEA sentences.
       </div>
     </div>
-  </main>
+
+    <h2>2. Exos Watchout Wear OS Assistance</h2>
+    <div class="faq-box">
+      <div class="faq-q">How do I switch between Obsidian Teal and Heritage Orange themes?</div>
+      <div class="faq-a">
+        Touch and hold (long-press) the watch face dial &gt; tap <strong>Customize</strong> (pencil icon) &gt; swipe or turn the physical bezel to toggle between <em>Obsidian Teal</em> and <em>Heritage Orange</em> &gt; press the top physical button to save.
+      </div>
+    </div>
+
+    <div class="faq-box">
+      <div class="faq-q">How do I launch the full-screen 3D Compass from the watch face?</div>
+      <div class="faq-a">
+        Tap the miniature compass medallion located at the 4:30 position on the watch face to jump directly into the full-screen 50Hz sensor-fused 3D compass telemetry screen.
+      </div>
+    </div>
+
+    <h2>3. Direct Contact & Developer Support</h2>
+    <p>For custom firmware integration, ESP32 hardware inquiries, or bug reports, contact our engineering team directly:</p>
+    <p>
+      <strong>Support Email:</strong> <a href="mailto:support@exosgps.com">support@exosgps.com</a><br>
+      <strong>RiTym Engineering Labs:</strong> <a href="https://ritym.com" target="_blank">https://ritym.com</a>
+    </p>
+  </div>
 
   <footer class="footer">
-    <div class="container" style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px;">
-      <div>&copy; 2026 EXOS GPS Ecosystem &bull; RiTym Technologies. All rights reserved.</div>
-      <div>
-        <a href="privacy.html" style="color:#94a3b8; margin-right:18px;">Privacy Policy</a>
-        <a href="terms.html" style="color:#94a3b8;">Terms of Service</a>
-      </div>
-    </div>
+    &copy; 2026 RiTym Technologies &bull; EXOS Navigation Systems. All rights reserved.
   </footer>
 </body>
 </html>
