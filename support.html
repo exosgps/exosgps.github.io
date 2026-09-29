@@ -3,25 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>Technical Support & Field Guide | EXOS Navigation Systems</title>
+  <title>Customer Support & Helpdesk | EXOS Navigation Systems</title>
   <link rel="icon" type="image/png" href="assets/icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', sans-serif; line-height: 1.7; color: #334155; margin: 0; padding: 0; background-color: #f8fafc; }
-    .header { background: #0f172a; color: #fff; padding: 18px 24px; }
+    .header { background: #0f172a; color: #fff; padding: 18px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); }
     .header-container { max-width: 1000px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; }
-    .header img { height: 52px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)); }
-    .content-wrap { max-width: 1000px; margin: 40px auto; background: #fff; padding: 48px; border-radius: 12px; border: 1px solid #e2e8f0; }
+    .header img { height: 50px; width: auto; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.35)); }
+    .content-wrap { max-width: 1000px; margin: 40px auto; background: #fff; padding: 48px; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
     h1 { color: #0f172a; font-size: 2.2rem; margin-bottom: 8px; font-weight: 800; }
     h2 { color: #0f172a; font-size: 1.35rem; margin-top: 36px; margin-bottom: 14px; border-bottom: 1px solid #e2e8f0; padding-bottom: 8px; }
     p, li { font-size: 0.96rem; color: #475569; }
     .faq-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 16px; }
     .faq-q { font-weight: 700; color: #0f172a; margin-bottom: 8px; font-size: 1.05rem; }
     .faq-a { color: #475569; font-size: 0.94rem; }
+    .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin: 24px 0; }
+    .contact-card { background: #f1f5f9; border: 1px solid #cbd5e1; border-radius: 8px; padding: 22px; }
+    .contact-card h3 { margin-top: 0; color: #0f172a; font-size: 1.15rem; }
+    .contact-card a { color: #0284c7; text-decoration: none; font-weight: 600; }
+    .contact-card a:hover { text-decoration: underline; }
+    .badge { display: inline-block; background: #0284c7; color: #fff; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
     code { font-family: 'JetBrains Mono', monospace; background: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.88rem; }
     .footer { text-align: center; padding: 40px 20px; font-size: 0.85rem; color: #64748b; }
+    .footer a { color: #64748b; margin: 0 10px; text-decoration: none; }
+    .footer a:hover { color: #0f172a; }
   </style>
 </head>
 <body>
@@ -33,10 +41,56 @@
   </header>
 
   <div class="content-wrap">
-    <h1>Technical Support & Engineering FAQ</h1>
-    <p>Operational guides and engineering assistance for the EXOS suite and RiTym ESP32 hardware.</p>
+    <span class="badge">Official Support & Helpdesk</span>
+    <h1>Customer Support & Grievance Redressal</h1>
+    <p>Operational guides, technical support, billing inquiries, and grievance redressal for the EXOS Navigation Systems suite, operated by RiTym Technologies.</p>
 
-    <h2>1. EXOS GPS Transceiver Configuration</h2>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>📞 Customer Telephone Helpline</h3>
+        <p>Direct phone support for immediate technical troubleshooting, order inquiries, and app assistance.</p>
+        <p><strong>Customer Care:</strong> <a href="tel:+917996753319">+91 7996753319</a></p>
+        <p><strong>Hours:</strong> Monday – Saturday, 9:00 AM – 6:00 PM IST</p>
+      </div>
+
+      <div class="contact-card">
+        <h3>✉️ Helpdesk & Billing Email</h3>
+        <p>Fast customer care for in-app purchases, licensing questions, refunds, and hardware integrations.</p>
+        <p><strong>Primary Support:</strong> <a href="mailto:assist@ritym.com">assist@ritym.com</a></p>
+        <p><strong>Product Desk:</strong> <a href="mailto:support@exosgps.com">support@exosgps.com</a></p>
+        <p><strong>Turnaround:</strong> Within 24–48 business hours</p>
+      </div>
+    </div>
+
+    <h2>1. Company & Merchant Identity</h2>
+    <div class="contact-card" style="background:#fff; border-color:#e2e8f0;">
+      <p style="margin:0 0 6px 0;"><strong>Parent Engineering Organization:</strong> RiTym Technologies</p>
+      <p style="margin:0 0 6px 0;"><strong>Division:</strong> EXOS Navigation Systems</p>
+      <p style="margin:0 0 6px 0;"><strong>Principal Office:</strong> Bengaluru, Karnataka, India</p>
+      <p style="margin:0 0 6px 0;"><strong>Official Domains:</strong> <a href="https://exosgps.com">https://exosgps.com</a> &bull; <a href="https://ritym.com" target="_blank">https://ritym.com</a></p>
+      <p style="margin:0;"><strong>Registered Helpline:</strong> <a href="tel:+917996753319">+91 7996753319</a></p>
+    </div>
+
+    <h2>2. Grievance Redressal Officer</h2>
+    <p>Per the Information Technology (Intermediary Guidelines and Digital Media Ethics Code) Rules and RBI Payment Aggregator regulations, our Grievance Officer details are published below:</p>
+    <div class="contact-card" style="background:#fff; border-color:#e2e8f0;">
+      <p style="margin:0 0 6px 0;"><strong>Grievance Officer:</strong> Sinu Chacko</p>
+      <p style="margin:0 0 6px 0;"><strong>Designation:</strong> Grievance Officer & Compliance Lead</p>
+      <p style="margin:0 0 6px 0;"><strong>Phone:</strong> <a href="tel:+917996753319">+91 7996753319</a></p>
+      <p style="margin:0 0 6px 0;"><strong>Email:</strong> <a href="mailto:assist@ritym.com">assist@ritym.com</a> (Attn: Grievance Officer)</p>
+      <p style="margin:0;"><strong>Mailing Address:</strong> RiTym Technologies, Bengaluru, Karnataka, India</p>
+    </div>
+
+    <h2>3. Product & Payment Information</h2>
+    <ul>
+      <li><strong>Flagship Application:</strong> EXOS GPS Transceiver (com.ritym.exosgps) on Google Play.</li>
+      <li><strong>Functionality:</strong> Precision GNSS Satellite Telemetry Transceiver, Bluetooth NMEA Serial Bridge, and Android Mock Location Provider.</li>
+      <li><strong>In-App Purchase Pricing:</strong> Includes a 5-hour fully functional free trial, with an optional one-time Pro Lifetime upgrade at $7.99 USD / &#8377;699 INR.</li>
+      <li><strong>Digital Fulfillment:</strong> Instant activation upon successful payment through Google Play In-App Billing.</li>
+      <li><strong>Refund Support:</strong> Read our complete <a href="refund.html" style="color:#0284c7; font-weight:600;">Refund & Cancellation Policy</a>. For any refund assistance, email <a href="mailto:assist@ritym.com">assist@ritym.com</a> with your Google Play Order ID.</li>
+    </ul>
+
+    <h2>4. Technical FAQ & Operational Guides</h2>
     <div class="faq-box">
       <div class="faq-q">How do I configure Android Mock Location for EXOS Transceiver?</div>
       <div class="faq-a">
@@ -44,42 +98,27 @@
         2. Tap <strong>Build Number</strong> seven times to enable Developer Options.<br>
         3. Navigate to <strong>Settings</strong> &gt; <strong>System</strong> &gt; <strong>Developer Options</strong>.<br>
         4. Scroll to <strong>Select mock location app</strong> and select <code>EXOS GPS</code>.<br>
-        5. Return to EXOS Transceiver, enable <em>Receiver Mode</em>, and pair with your external GNSS beacon. All mapping apps will now consume external coordinates.
+        5. Return to EXOS Transceiver, enable <em>Receiver Mode</em>, and pair with your external GNSS beacon. All mapping apps (Google Maps, Waze, etc.) will now ingest external coordinates seamlessly.
       </div>
     </div>
 
     <div class="faq-box">
       <div class="faq-q">How do I stream GPS coordinates to Windows 10/11 laptops?</div>
       <div class="faq-a">
-        Pair your Android smartphone running EXOS Transceiver in <em>Transmitter Mode</em> with your Windows PC via Bluetooth. Windows will establish a standard incoming Serial Port (e.g. <code>COM3</code> or <code>COM4</code>). In your GIS software (OpenCPN, QGIS, ArcGIS), select this COM port at <code>9600</code> or <code>38400</code> baud to ingest live NMEA sentences.
+        Pair your Android smartphone running EXOS Transceiver in <em>Transmitter Mode</em> with your Windows PC via Bluetooth. Windows will establish a standard incoming Serial Port (e.g. <code>COM3</code> or <code>COM4</code>). In your navigation or GIS software (OpenCPN, QGIS, ArcGIS), select this COM port at <code>9600</code> or <code>38400</code> baud to ingest live NMEA sentences.
       </div>
     </div>
-
-    <h2>2. Exos Watchout Wear OS Assistance</h2>
-    <div class="faq-box">
-      <div class="faq-q">How do I switch between Obsidian Teal and Heritage Orange themes?</div>
-      <div class="faq-a">
-        Touch and hold (long-press) the watch face dial &gt; tap <strong>Customize</strong> (pencil icon) &gt; swipe or turn the physical bezel to toggle between <em>Obsidian Teal</em> and <em>Heritage Orange</em> &gt; press the top physical button to save.
-      </div>
-    </div>
-
-    <div class="faq-box">
-      <div class="faq-q">How do I launch the full-screen 3D Compass from the watch face?</div>
-      <div class="faq-a">
-        Tap the miniature compass medallion located at the 4:30 position on the watch face to jump directly into the full-screen 50Hz sensor-fused 3D compass telemetry screen.
-      </div>
-    </div>
-
-    <h2>3. Direct Contact & Developer Support</h2>
-    <p>For custom firmware integration, ESP32 hardware inquiries, or bug reports, contact our engineering team directly:</p>
-    <p>
-      <strong>Support Email:</strong> <a href="mailto:support@exosgps.com">support@exosgps.com</a><br>
-      <strong>RiTym Engineering Labs:</strong> <a href="https://ritym.com" target="_blank">https://ritym.com</a>
-    </p>
   </div>
 
   <footer class="footer">
-    &copy; 2026 RiTym Technologies &bull; EXOS Navigation Systems. All rights reserved.
+    <p>&copy; 2026 RiTym Technologies &bull; EXOS Navigation Systems. All rights reserved.</p>
+    <p>
+      <a href="/">Home</a> &bull;
+      <a href="privacy.html">Privacy Policy</a> &bull;
+      <a href="terms.html">Terms of Service</a> &bull;
+      <a href="refund.html">Refund Policy</a> &bull;
+      <a href="support.html">Customer Support</a>
+    </p>
   </footer>
 </body>
 </html>
