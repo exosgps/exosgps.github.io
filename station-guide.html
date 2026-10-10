@@ -501,6 +501,52 @@
           </div>
         </div>
 
+        <!-- Android EXOS Transceiver to Windows Bridge Callout -->
+        <div style="background:linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%); border:1px solid rgba(0, 255, 136, 0.35); border-radius:var(--radius-md); padding:26px; margin-bottom:32px; box-shadow:0 8px 30px rgba(0,0,0,0.35);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+            <span style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; background:rgba(0, 255, 136, 0.15); color:var(--accent-green); padding:3px 10px; border-radius:var(--radius-sm); border:1px solid rgba(0, 255, 136, 0.3); font-weight:700;">KEY WORKFLOW</span>
+            <span style="font-family:var(--font-mono); font-size:0.78rem; color:#94a3b8;">Android Phone &rarr; Windows Navigation Bridge</span>
+          </div>
+          <h3 style="font-family:var(--font-display); font-size:1.35rem; color:#ffffff; margin-bottom:10px;">
+            Pair with EXOS Transceiver (Android) for Live GPS &amp; Compass Heading
+          </h3>
+          <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.6; margin-bottom:18px;">
+            Most field laptops and Windows rugged tablets do not have built-in GPS or electronic compass hardware. With EXOS, you do not need expensive proprietary external antennas: simply run <strong>EXOS Transceiver</strong> on any Android phone or tablet to turn it into a high-precision satellite telemetry and compass emitter for Windows.
+          </p>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:16px;">
+            <div style="background:rgba(7, 10, 13, 0.6); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-sm); padding:16px;">
+              <div style="color:var(--accent-green); font-family:var(--font-mono); font-size:0.82rem; font-weight:700; margin-bottom:6px;">
+                1. Full NMEA GNSS + Compass Stream
+              </div>
+              <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">
+                The Android phone accesses raw hardware GNSS satellites and its 3-axis geomagnetic compass sensor, broadcasting standard <code>$GPRMC</code>, <code>$GPGGA</code>, and true heading <code>$GPHDT</code> sentences.
+              </p>
+            </div>
+            <div style="background:rgba(7, 10, 13, 0.6); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-sm); padding:16px;">
+              <div style="color:var(--accent-green); font-family:var(--font-mono); font-size:0.82rem; font-weight:700; margin-bottom:6px;">
+                2. Wireless Peer-to-Peer Transmission
+              </div>
+              <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">
+                Connect over Bluetooth Classic SPP (RFCOMM), Bluetooth Low Energy (BLE), or local Wi-Fi LAN hotspot with zero internet, zero cellular data, and zero cloud accounts required.
+              </p>
+            </div>
+            <div style="background:rgba(7, 10, 13, 0.6); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-sm); padding:16px;">
+              <div style="color:var(--accent-green); font-family:var(--font-mono); font-size:0.82rem; font-weight:700; margin-bottom:6px;">
+                3. Windows Navigation Platform Active
+              </div>
+              <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">
+                EXOS GPS Station receives the stream, draws live orbital satellites, and feeds fixes into the Windows Location Platform and virtual COM ports for <strong>Google Maps, QGIS, OpenCPN, and WinTAK</strong>.
+              </p>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-family:var(--font-mono); font-size:0.8rem; color:#94a3b8; border-top:1px solid rgba(255,255,255,0.08); padding-top:14px;">
+            <div>Companion App: <strong style="color:#ffffff;">EXOS Transceiver for Android</strong> (Google Play Store)</div>
+            <a href="#transceiver" style="color:var(--accent-green); text-decoration:underline;">Read Android Transceiver Manual &rarr;</a>
+          </div>
+        </div>
+
         <!-- Live Application Snapshot Showcase -->
         <div style="margin-bottom:36px;">
           <h3 style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:12px;">
