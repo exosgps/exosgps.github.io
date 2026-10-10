@@ -216,7 +216,7 @@
     <a href="#transmitter" class="guide-tab-link">Transmitter Mode</a>
     <a href="#receiver" class="guide-tab-link">Receiver Mode</a>
     <a href="#mock-location" class="guide-tab-link">Mock Location Guide</a>
-    <a href="#windows" class="guide-tab-link">Windows Client</a>
+    <a href="#windows" class="guide-tab-link">Windows App</a>
     <a href="#specs" class="guide-tab-link">Telemetry Specs</a>
   </div>
 
@@ -460,33 +460,184 @@
 
     <!-- Section: Windows Client -->
     <section id="windows" style="margin-bottom:60px;">
-      <div class="guide-card">
-        <div class="section-tag">WORKSTATION & BASECAMP CONSOLE</div>
-        <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:16px; color:#fff;">
-          WINDOWS CLIENT INTEGRATION
+      <div class="guide-card cyan">
+        <div class="section-tag" style="color:var(--accent-cyan);">WORKSTATION & MISSION CONTROL CONSOLE</div>
+        <h2 style="font-family:var(--font-display); font-size:2rem; margin-bottom:16px; color:#fff;">
+          EXOS GPS STATION FOR WINDOWS (v0.17)
         </h2>
-        <p style="color:var(--text-muted); line-height:1.7; margin-bottom:20px;">
-          Need GPS telemetry on a Windows laptop in the field? EXOS-GPS Station provides native Python and Windows workstation clients (`gps_station.py` and `gps_receiver.py`) that create virtual serial COM ports.
+        <p style="color:var(--text-muted); line-height:1.7; font-size:1.05rem; margin-bottom:24px;">
+          The standalone mission control and GNSS telemetry command center for field laptops and rugged mobile workstations. EXOS GPS Station bridges high-accuracy satellite telemetry across USB COM ports, Bluetooth SPP, Bluetooth Low Energy (BLE), and Wi-Fi networks directly into Windows mapping environments, native location sensors, and marine GIS applications.
         </p>
 
-        <h3 style="font-family:var(--font-display); font-size:1.15rem; color:#fff; margin-bottom:10px;">
-          1. Quick Start Execution:
-        </h3>
-        <div class="code-box">
-          <span class="comment"># Clone the EXOS GPS System repository</span><br>
-          <span class="cmd">git clone</span> https://github.com/exosgps/EXOS-GPS-SYSTEM.git<br>
-          <span class="cmd">cd</span> EXOS-GPS-SYSTEM/clients/windows-desktop<br><br>
-          <span class="comment"># Install serial and Bluetooth dependencies</span><br>
-          <span class="cmd">pip install</span> -r requirements.txt<br><br>
-          <span class="comment"># Launch the Station GUI Console</span><br>
-          <span class="cmd">python</span> gps_station.py
+        <!-- Windows Setup App Download Banner -->
+        <div style="background:linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(13, 25, 38, 0.95) 100%); border:1px solid rgba(0, 229, 255, 0.3); border-radius:var(--radius-md); padding:28px; margin-bottom:32px; box-shadow:0 8px 32px rgba(0,0,0,0.4);">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
+            <div>
+              <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+                <span style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; background:rgba(0, 229, 255, 0.15); color:var(--accent-cyan); padding:3px 10px; border-radius:var(--radius-sm); border:1px solid rgba(0, 229, 255, 0.3);">Official Windows Release</span>
+                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8;">Build 0.17.0.0 &bull; Standalone Setup</span>
+              </div>
+              <h3 style="font-family:var(--font-display); font-size:1.45rem; color:#ffffff; margin-bottom:6px;">
+                EXOS GPS Station Windows Installer
+              </h3>
+              <p style="color:#cbd5e1; font-size:0.92rem; margin:0; max-width:620px; line-height:1.5;">
+                Native 64-bit Windows setup application with zero prerequisites. Installs the complete runtime, BLE WinRT drivers, C# Windows Location Sensor provider, and offline celestial maps with a clean uninstaller.
+              </p>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px; min-width:240px;">
+              <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-primary" style="text-align:center; background:linear-gradient(135deg, #0284c7, #00e5ff); color:#041019; font-weight:700; border:none; padding:14px 24px; font-size:0.95rem; box-shadow:0 0 20px rgba(0, 229, 255, 0.35);">
+                DOWNLOAD SETUP (17.2 MB) &darr;
+              </a>
+              <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; padding:0 4px;">
+                <span>Windows 10 / 11 (64-bit)</span>
+                <span>Self-Contained Exe</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08); font-family:var(--font-mono); font-size:0.78rem; color:#94a3b8;">
+            <div><strong style="color:#f1f5f9;">Architecture:</strong> x86_64 / ARM64 (x64 Emulation)</div>
+            <div><strong style="color:#f1f5f9;">Dependencies:</strong> None (Bundled Python 3.11 + WinRT + PySerial)</div>
+            <div><strong style="color:#f1f5f9;">Installation:</strong> Dual-Mode (Standard User or Administrator)</div>
+          </div>
         </div>
 
-        <h3 style="font-family:var(--font-display); font-size:1.15rem; color:#fff; margin-top:28px; margin-bottom:10px;">
-          2. Virtual COM Port Routing (QGIS, OpenCPN, WinTAK):
+        <!-- Live Application Snapshot Showcase -->
+        <div style="margin-bottom:36px;">
+          <h3 style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:12px;">
+            MISSION CONTROL WORKBENCH
+          </h3>
+          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:16px; line-height:1.6;">
+            High-resolution view of the active station console executing on Windows 11. The dashboard unifies orbital telemetry projections, satellite fix health, hardware connection status, and live NMEA stream logging into a single dark-mode command center.
+          </p>
+          <div style="position:relative; border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(0, 229, 255, 0.25); box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#0b0e17;">
+            <div style="background:#0f172a; padding:10px 16px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; font-family:var(--font-mono); font-size:0.8rem; color:#94a3b8;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#ef4444;"></span>
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#f59e0b;"></span>
+                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#10b981;"></span>
+                <span style="margin-left:8px; color:#cbd5e1; font-weight:600;">Exos GPS Station v0.17 &mdash; Telemetry Command Center</span>
+              </div>
+              <span style="color:var(--accent-cyan); font-weight:600;">Native Windows Execution</span>
+            </div>
+            <img src="assets/station_windows_live.png" alt="EXOS GPS Station Windows Application Interface" style="width:100%; height:auto; display:block;">
+          </div>
+          <div style="text-align:center; margin-top:10px; font-size:0.82rem; color:var(--text-muted); font-family:var(--font-mono);">
+            Figure 1.0: Real running instance of EXOS GPS Station v0.17 on Windows OS displaying 3D orbital radar, telemetry gauges, and NMEA log stream.
+          </div>
+        </div>
+
+        <!-- Core Feature Breakdown -->
+        <h3 style="font-family:var(--font-display); font-size:1.35rem; color:#fff; margin-bottom:20px;">
+          ENGINEERING ARCHITECTURE & CAPABILITIES
         </h3>
-        <p style="color:var(--text-muted); line-height:1.6; margin-bottom:16px;">
-          Using <strong>com0com</strong> (Null-modem emulator) or Windows Bluetooth Serial Port, the Windows client exposes standard NMEA sentences on a virtual COM port (e.g. `COM5` ➔ `COM6` at 115200 baud). Any desktop GIS or marine software connects to `COM6` as if a commercial Trimble or Garmin antenna was plugged in!
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; margin-bottom:36px;">
+          <!-- Feature 1 -->
+          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">01</span>
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">3D Celestial Skyview & Vector Globe</h4>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
+              Bundled with offline Natural Earth geographic vector maps (<code>world_110m.geojson</code>), the interactive radar projects real-time satellite orbital azimuths, elevation masks, and polar constellations without an active internet connection.
+            </p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">02</span>
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Native Windows Location Sensor Engine</h4>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
+              Includes an in-house C# sensor provider (<code>ExosWindowsSensor.exe</code>) that links directly to the Microsoft Windows Location Sensor API. Injects received GPS fixes system-wide so Microsoft Maps, Edge, Weather, and third-party apps detect live positioning.
+            </p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">03</span>
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Multi-Transport Hardware Interfacing</h4>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
+              Autonomously discovers and connects to Seeed XIAO ESP32-S3 emitters, u-blox NEO-M9N GNSS antennas, Quectel EC200U cellular modems, standard USB-serial dongles, Bluetooth Classic SPP COM channels, and Bluetooth Low Energy (BLE NUS) streams.
+            </p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">04</span>
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Chromium & Google Maps Live Bridge</h4>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
+              Includes an automated Chrome and Microsoft Edge DevTools Protocol (CDP port 9222) geolocation override bridge with pre-approved permissions and bundled browser extension. One tap launches Google Maps with live tracking on the blue location dot.
+            </p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">05</span>
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Dual Receiver & Transmitter Modes</h4>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
+              Operate as a dedicated basecamp receiver acquiring remote telemetry from field devices, or switch to <strong>Transmitter Mode</strong> to broadcast a local USB GPS dongle's NMEA stream out to paired Android devices over Bluetooth or Wi-Fi TCP.
+            </p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">06</span>
+              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Location Override & GIS Simulation</h4>
+            </div>
+            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
+              Equipped with a precision coordinate simulator with world presets (Berlin, Tokyo, New York, London, custom coordinates) enabling surveyors and developers to simulate satellite movement and test WinTAK, QGIS, and OpenCPN navigation software.
+            </p>
+          </div>
+        </div>
+
+        <!-- 3-Step Setup Instructions -->
+        <h3 style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:16px;">
+          DEPLOYMENT & INSTALLATION STEPS
+        </h3>
+        <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:32px;">
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <span class="step-number-badge">1</span>
+            <div>
+              <strong style="color:#ffffff; font-size:1rem;">Download and Run the Installer</strong>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px; line-height:1.5;">
+                Download <code>EXOS-GPS-Station-Setup-v0.17.exe</code> from the download card above. Launch the setup wizard. You can install for the current user (no Administrator elevation needed) or for all users on the workstation.
+              </p>
+            </div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <span class="step-number-badge">2</span>
+            <div>
+              <strong style="color:#ffffff; font-size:1rem;">Connect Your GPS Device or Network Source</strong>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px; line-height:1.5;">
+                Plug in your USB GPS receiver, or pair your Bluetooth Transceiver / ESP32 emitter in Windows Bluetooth Settings. Launch EXOS GPS Station from the Start Menu or Desktop shortcut, click <strong>Rescan Ports</strong>, and select your hardware.
+              </p>
+            </div>
+          </div>
+          <div style="display:flex; gap:16px; align-items:flex-start;">
+            <span class="step-number-badge">3</span>
+            <div>
+              <strong style="color:#ffffff; font-size:1rem;">Initiate Live Telemetry & Windows Sensor Bridge</strong>
+              <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px; line-height:1.5;">
+                Click <strong>Connect Station</strong>. Live NMEA satellite strings will stream into the log console, the 3D globe will track your position, and the native Windows Location Sensor engine will publish satellite fixes system-wide.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Virtual COM Port Routing for GIS & Marine Software -->
+        <h3 style="font-family:var(--font-display); font-size:1.15rem; color:#fff; margin-bottom:10px;">
+          Virtual COM Port Routing (QGIS, OpenCPN, WinTAK):
+        </h3>
+        <p style="color:var(--text-muted); line-height:1.6; margin-bottom:16px; font-size:0.92rem;">
+          Using <strong>com0com</strong> (Null-modem emulator) or Windows Bluetooth Serial Port, the Windows client exposes standard NMEA sentences on a virtual COM port (e.g. <code>COM5</code> &rarr; <code>COM6</code> at 115200 baud). Any desktop GIS or marine software connects to <code>COM6</code> as if a commercial Trimble or Garmin antenna was plugged in!
         </p>
 
         <div class="code-box">
