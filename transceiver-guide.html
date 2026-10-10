@@ -53,7 +53,7 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 28px;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       transition: border-color 0.2s ease;
     }
     .feature-card:hover {
@@ -83,15 +83,15 @@
       background: #090d14;
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
-      padding: 10px 14px;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
       justify-content: center;
       box-shadow: 0 4px 12px rgba(0,0,0,0.4);
     }
     .feature-thumb-wrap img {
-      max-height: 52px;
-      max-width: 320px;
+      max-height: 48px;
+      max-width: 220px;
       object-fit: contain;
     }
     .feature-title-wrap h3 {
@@ -105,6 +105,37 @@
       font-size: 0.8rem;
       color: #94a3b8;
     }
+    
+    /* Snapshot Display Card */
+    .feature-snapshot-wrap {
+      background: #070a12;
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    .feature-snapshot-wrap img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      display: block;
+      background: #070a12;
+    }
+    .feature-snapshot-caption {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 9px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
     .feature-layman {
       background: rgba(0, 229, 255, 0.06);
       border-left: 4px solid #00e5ff;
@@ -224,13 +255,11 @@
 
   <!-- Sub-Navigation Bar -->
   <div class="guide-nav-bar">
-    <a href="#overview" class="guide-tab-link active">Overview &amp; Screens</a>
+    <a href="#overview" class="guide-tab-link active">Transceiver Overview</a>
     <a href="#modes" class="guide-tab-link">Dual Architecture</a>
-    <a href="#top-bar" class="guide-tab-link">Top Bar Actions</a>
-    <a href="#transmitter-mode" class="guide-tab-link">Transmitter Controls</a>
-    <a href="#receiver-mode" class="guide-tab-link">Receiver Controls</a>
+    <a href="#transmitter-mode" class="guide-tab-link">Transmitter Mode</a>
+    <a href="#receiver-mode" class="guide-tab-link">Receiver Mode</a>
     <a href="#mock-location" class="guide-tab-link">Mock Location Setup</a>
-    <a href="#diagnostics" class="guide-tab-link">Diagnostic Tools</a>
     <a href="#specs" class="guide-tab-link">Tech Specs</a>
   </div>
 
@@ -239,16 +268,16 @@
     <section class="guide-hero" id="overview">
       <div style="display:inline-block; margin-bottom:12px;" class="feature-badge">UNIVERSAL BLUETOOTH GNSS BRIDGE &bull; MOCK LOCATION &bull; COMPASS HDT</div>
       <h1 style="font-family:var(--font-display); font-size:2.4rem; color:#f0f6fc; margin-bottom:12px;">
-        EXOS Transceiver Field Operations Manual
+        EXOS Transceiver Tactical Field Operations Manual
       </h1>
       <p style="color:#94a3b8; max-width:760px; margin:0 auto 28px; font-size:1.05rem; line-height:1.6;">
-        Complete field manual and detailed button-by-button operational guide for EXOS Transceiver (<code>com.ritym.exosgps</code>). Learn how to broadcast raw NMEA satellite fixes and compass heading to Windows laptops, or bridge external high-precision GNSS hardware into Android apps via Smart Guided Mock Location.
+        Comprehensive, button-by-button operational field guide for EXOS Transceiver (<code>com.ritym.exosgps</code>). Every button is highlighted on the actual Samsung Galaxy Note 8 user interface snapshot, with layman explanations, real-world field scenarios, and underlying technical protocols.
       </p>
       <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
         <a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7;">
           Get Transceiver on Google Play Store &rarr;
         </a>
-        <a href="station-guide.html#windows" class="btn-secondary">
+        <a href="station-guide.html" class="btn-secondary">
           Windows Desktop Station &rarr;
         </a>
       </div>
@@ -257,7 +286,7 @@
     <!-- App Screen Showcase -->
     <section style="margin-bottom:48px;">
       <h2 style="font-family:var(--font-display); color:#f0f6fc; text-align:center; margin-bottom:8px;">Live Production Interface Screens</h2>
-      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">Authentic screenshots captured directly on Samsung Galaxy field hardware running EXOS Transceiver v1.1.4.</p>
+      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">Screenshots captured directly on Samsung Galaxy Note 8 field hardware running EXOS Transceiver v1.1.4.</p>
       
       <div class="screens-showcase-grid">
         <div class="screen-card">
@@ -283,128 +312,204 @@
       </div>
     </section>
 
-    <!-- SECTION 1: DUAL ARCHITECTURE -->
-    <section id="modes" style="margin-bottom:60px;">
+    <!-- BUTTON BREAKDOWN CARDS -->
+    <section id="buttons" style="margin-bottom:60px;">
       <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        1. Primary Mode Selection Cards
+        Complete Button-by-Button Tactical Breakdown
       </h2>
 
-      <!-- Mode 1: Transmitter -->
-      <div class="feature-card">
-        <div class="feature-badge">MODE 01 &bull; SENSOR BROADCASTER</div>
+      <!-- Transmitter Mode (Broadcast GPS & Compass) -->
+      <div class="feature-card" id="transceiver_tab_tx">
+        <div class="feature-badge">MODE 01 • SENSOR BROADCASTER</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_tab_tx.png" alt="Transmitter Mode Card">
+            <img src="assets/guides/crops/transceiver_tab_tx.png" alt="Transmitter Mode (Broadcast GPS & Compass) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">Transmitter Mode (Broadcast GPS &amp; Compass)</h3>
-            <span class="feature-label">Primary Mode Card &bull; Top Left</span>
+            <h3 class="feature-title">Transmitter Mode (Broadcast GPS & Compass)</h3>
+            <span class="feature-label">Primary Mode Card • Top Left</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_tab_tx_highlight.png" alt="Actual App Snapshot: Transmitter Mode (Broadcast GPS & Compass) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>Turns your Android phone into an external Bluetooth GPS antenna and electronic compass for other computers. When active, your phone sends its raw GPS satellite coordinates and True Heading ($GPHDT) to your Windows laptop or tablet over Bluetooth.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are navigating a sailboat or field vehicle using a rugged Windows laptop running OpenCPN or QGIS. The laptop has no built-in GPS or compass hardware. You open EXOS Transceiver on your Android phone, select <code>Transmitter Mode</code>, and place the phone near the dashboard window. The laptop connects to the phone over Bluetooth and receives high-precision position and heading updates at 1 Hz, turning the laptop into a marine navigation chartplotter.</p>
+          <p>You are navigating a sailboat or field vehicle using a rugged Windows laptop running OpenCPN or QGIS. The laptop has no built-in GPS or compass hardware. You open EXOS Transceiver on your Android phone, select Transmitter Mode, and place the phone near the dashboard window. The laptop connects to the phone over Bluetooth and receives high-precision position and heading updates at 1 Hz, turning the laptop into a marine navigation chartplotter.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Bluetooth SPP Server:</strong> Listens on RFCOMM channel 1 with standard Serial Port Profile UUID <code>00001101-0000-1000-8000-00805F9B34FB</code>.</li>
-            <li><strong>NMEA Protocol:</strong> Transmits standard NMEA 0183 v4.10 sentences: <code>$GPGGA</code>, <code>$GPRMC</code>, <code>$GPGSA</code>, <code>$GPGSV</code>, and true heading <code>$GPHDT</code>.</li>
+            <li>Bluetooth SPP Server: Listens on RFCOMM channel 1 with standard Serial Port Profile UUID 00001101-0000-1000-8000-00805F9B34FB.</li><li>NMEA Protocol: Transmits standard NMEA 0183 v4.10 sentences: $GPGGA, $GPRMC, $GPGSA, $GPGSV, and true heading $GPHDT.</li><li>BLE Telemetry: Concurrently advertises proprietary BLE GATT service for low-energy telemetry listeners.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Mode 2: Receiver -->
-      <div class="feature-card">
-        <div class="feature-badge">MODE 02 &bull; EXTERNAL RECEIVER BRIDGE</div>
+      <!-- Receiver Mode (Bridge External Hardware GPS) -->
+      <div class="feature-card" id="transceiver_tab_rx">
+        <div class="feature-badge">MODE 02 • EXTERNAL RECEIVER BRIDGE</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_tab_rx.png" alt="Receiver Mode Card">
+            <img src="assets/guides/crops/transceiver_tab_rx.png" alt="Receiver Mode (Bridge External Hardware GPS) Icon Crop">
           </div>
           <div class="feature-title-wrap">
             <h3 class="feature-title">Receiver Mode (Bridge External Hardware GPS)</h3>
-            <span class="feature-label">Primary Mode Card &bull; Top Right</span>
+            <span class="feature-label">Primary Mode Card • Top Right</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_tab_rx_highlight.png" alt="Actual App Snapshot: Receiver Mode (Bridge External Hardware GPS) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>Connects your phone to an external high-accuracy GPS puck (like a professional survey antenna or ESP32 RTK GPS). Your phone receives survey-grade position data and replaces its internal phone GPS so Google Maps or ATAK benefits from sub-meter accuracy.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are performing forestry surveying where heavy tree canopy blocks consumer phone GPS signals. You carry an external helical antenna on your survey pole connected to an ESP32 GNSS receiver. In EXOS Transceiver, you select <code>Receiver Mode</code>, pair with the survey pole, and activate Mock Location. Your surveying GIS app now maps trees with centimeter precision.</p>
+          <p>You are performing forestry surveying where heavy tree canopy blocks consumer phone GPS signals. You carry an external helical antenna on your survey pole connected to an ESP32 GNSS receiver. In EXOS Transceiver, you select Receiver Mode, pair with the survey pole, and activate Mock Location. Your surveying GIS app now maps trees with centimeter precision.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Baud Rate Support:</strong> Connects to external Bluetooth serial devices at 4800, 9600, 38400, 57600, 115200, and 230400 bps.</li>
-            <li><strong>Parser Engine:</strong> Asynchronous circular buffer with real-time XOR checksum verification and RTK differential fix parsing (GGA Fix Quality 4 &amp; 5).</li>
+            <li>Baud Rate Support: Connects to external Bluetooth serial devices at 4800, 9600, 38400, 57600, 115200, and 230400 bps.</li><li>Parser Engine: Asynchronous circular buffer with real-time XOR checksum verification and RTK differential fix parsing (GGA Fix Quality 4 & 5).</li><li>Auto-Reconnection: Exponential backoff reconnect watchdog (1s–30s) automatically recovers dropped RFCOMM connections.</li>
           </ul>
         </div>
       </div>
 
-    </section>
-
-    <!-- SECTION 2: TOP BAR ACTIONS -->
-    <section id="top-bar" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        2. Top Action Bar Controls
-      </h2>
-
-      <!-- Button: TRIAL Badge & Upgrade -->
-      <div class="feature-card">
-        <div class="feature-badge">LICENSING &bull; TOP RIGHT</div>
+      <!-- Trial Budget Badge (5-Hour Transmission Counter) -->
+      <div class="feature-card" id="transceiver_btn_trial">
+        <div class="feature-badge">EVALUATION BUDGET & TIME METER</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_btn_trial.png" alt="TRIAL Badge Crop">
-            <img src="assets/guides/crops/transceiver_btn_upgrade.png" alt="Upgrade Button Crop" style="margin-left:8px;">
+            <img src="assets/guides/crops/transceiver_btn_trial.png" alt="Trial Budget Badge (5-Hour Transmission Counter) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">Trial Budget Badge &amp; Upgrade Button</h3>
-            <span class="feature-label">Status Badge &bull; Top Bar Right</span>
+            <h3 class="feature-title">Trial Budget Badge (5-Hour Transmission Counter)</h3>
+            <span class="feature-label">Status Badge • Top Bar Right</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_trial_highlight.png" alt="Actual App Snapshot: Trial Budget Badge (5-Hour Transmission Counter) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Shows how much free satellite broadcasting time you have left (every user gets 5 free hours). Tapping Upgrade unlocks unlimited, perpetual lifetime satellite streaming without subscriptions.</p>
+          <p>Shows how much free satellite broadcasting time you have left (every user gets 5 free hours). It only counts down while actively broadcasting data over Bluetooth, letting you test your complete navigation setup thoroughly before deciding to purchase.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are testing EXOS Transceiver on a weekend off-road trip. The counter starts at 5h 00m. It only counts down while actively broadcasting data over Bluetooth. After testing, you tap Upgrade to unlock permanent unlimited operation for your vehicle navigation rig.</p>
+          <p>You are testing EXOS Transceiver on a weekend off-road trip. The counter starts at 5h 00m. While stopped at camp with the transmitter paused, zero time is deducted. Only during active transit while broadcasting coordinates to your laptop does the budget decrement.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Metering Accuracy:</strong> Increments consumption based strictly on active RFCOMM transmission byte streams; pauses immediately when disconnected.</li>
-            <li><strong>Licensing:</strong> Google Play In-App Billing (IAP v6) one-time non-consumable unlock token stored securely with cryptographic receipt verification.</li>
+            <li>Consumption logic bound strictly to active RFCOMM socket byte throughput; paused automatically when sockets close.</li><li>Cryptographically hashed timestamp tokens prevent clock-tampering on client devices.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: TT -->
-      <div class="feature-card">
-        <div class="feature-badge">ACTION &bull; ACCESSIBILITY</div>
+      <!-- Upgrade $7.99 (Perpetual Lifetime Satellite Bridge License) -->
+      <div class="feature-card" id="transceiver_btn_upgrade">
+        <div class="feature-badge">PERPETUAL COMMERCIAL UNLOCK</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_btn_tt.png" alt="TT Font Size Button Crop">
+            <img src="assets/guides/crops/transceiver_btn_upgrade.png" alt="Upgrade $7.99 (Perpetual Lifetime Satellite Bridge License) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">TT (Text &amp; Terminal Size Toggle)</h3>
-            <span class="feature-label">Push Button &bull; Top Bar Diagnostic Row</span>
+            <h3 class="feature-title">Upgrade $7.99 (Perpetual Lifetime Satellite Bridge License)</h3>
+            <span class="feature-label">Action Button • Budget Banner</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_upgrade_highlight.png" alt="Actual App Snapshot: Upgrade $7.99 (Perpetual Lifetime Satellite Bridge License) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Unlocks unlimited, lifetime satellite broadcasting with a single one-time payment. No monthly subscriptions, no recurring fees, and no internet connection required once unlocked.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>After testing during sea trials, you tap Upgrade. Google Play processes the one-time $7.99 purchase. The trial banner disappears permanently, unlocking unlimited 24/7 satellite streaming for your vessel navigation system forever.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Integrates Google Play In-App Billing (IAP v6) non-consumable product SKU.</li><li>Receipt verification stored locally in encrypted Keystore-backed shared preferences for 100% offline license persistence.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TT (Text & Terminal Size Dynamic Scaler) -->
+      <div class="feature-card" id="transceiver_btn_tt">
+        <div class="feature-badge">HIGH-VISIBILITY ACCESSIBILITY</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_tt.png" alt="TT (Text & Terminal Size Dynamic Scaler) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">TT (Text & Terminal Size Dynamic Scaler)</h3>
+            <span class="feature-label">Push Button • Top Bar Action Row</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_tt_highlight.png" alt="Actual App Snapshot: TT (Text & Terminal Size Dynamic Scaler) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>Increases or decreases font sizes on screen. Perfect when the phone is mounted on a vehicle windshield several feet away so you can read coordinates and satellite counts without taking your eyes off the trail.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> Your phone is clamped to the passenger dashboard in direct desert sunlight while navigating a 4x4 trail. The standard font is too small to read at a glance. You tap <code>TT</code> to toggle high-visibility large typography, making coordinates and satellite SNR instantly readable.</p>
+          <p>Your phone is clamped to the passenger dashboard in direct desert sunlight while navigating a 4x4 trail. The standard font is too small to read at a glance. You tap TT to toggle high-visibility large typography, making coordinates and satellite SNR instantly readable.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
@@ -413,26 +518,38 @@
         </div>
       </div>
 
-      <!-- Button: User Guide -->
-      <div class="feature-card">
-        <div class="feature-badge">DOCUMENTATION &bull; TOP BAR</div>
+      <!-- User Guide (Field Documentation Dialog) -->
+      <div class="feature-card" id="transceiver_btn_guide">
+        <div class="feature-badge">OFFLINE FIELD DOCUMENTATION</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_btn_guide.png" alt="User Guide Button Crop">
+            <img src="assets/guides/crops/transceiver_btn_guide.png" alt="User Guide (Field Documentation Dialog) Icon Crop">
           </div>
           <div class="feature-title-wrap">
             <h3 class="feature-title">User Guide (Field Documentation Dialog)</h3>
-            <span class="feature-label">Action Icon &bull; Top Bar</span>
+            <span class="feature-label">Action Icon • Top Bar Center</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_guide_highlight.png" alt="Actual App Snapshot: User Guide (Field Documentation Dialog) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>Opens an offline field guide right on your screen explaining how to pair with Windows, set up Google Maps mock location, and configure NMEA stream baud rates without needing an internet connection.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are setting up your navigation rig in an area with zero cellular service. You forget which Bluetooth menu setting to enable on Windows. You tap the <code>User Guide</code> icon on Transceiver and read the exact step-by-step pairing instructions cached offline in memory.</p>
+          <p>You are setting up your navigation rig in an area with zero cellular service. You forget which Bluetooth menu setting to enable on Windows. You tap the User Guide icon on Transceiver and read the exact step-by-step pairing instructions cached offline in memory.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
@@ -441,194 +558,318 @@
         </div>
       </div>
 
-      <!-- Button: Info / About -->
-      <div class="feature-card">
-        <div class="feature-badge">INFO &bull; ABOUT DIALOG</div>
+      <!-- About & Legal Architecture Dialog -->
+      <div class="feature-card" id="transceiver_btn_info">
+        <div class="feature-badge">SYSTEM VERSION & ENTITY INFO</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_btn_info.png" alt="About Button Crop">
+            <img src="assets/guides/crops/transceiver_btn_info.png" alt="About & Legal Architecture Dialog Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">About &amp; System Version Dialog</h3>
-            <span class="feature-label">Action Icon &bull; Top Bar Right</span>
+            <h3 class="feature-title">About & Legal Architecture Dialog</h3>
+            <span class="feature-label">Action Icon • Top Bar Right</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_info_highlight.png" alt="Actual App Snapshot: About & Legal Architecture Dialog Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>Displays application version, build number, Bluetooth MAC address, copyright notices, and RITYM Technologies engineering details.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> An enterprise fleet manager needs to verify that all tablets are updated to version 1.1.4 before an expedition. Tapping <code>About</code> displays the exact build hash, package name, and legal entity verification.</p>
+          <p>An enterprise fleet manager needs to verify that all tablets are updated to version 1.1.4 before an expedition. Tapping About displays the exact build hash, package name, and legal entity verification.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li>Queries Android <code>PackageManager.getPackageInfo()</code> and displays official signature fingerprints and legal entity verification for RITYM Technologies.</li>
+            <li>Queries Android PackageManager.getPackageInfo() and displays official signature fingerprints and legal entity verification for RITYM Technologies.</li>
           </ul>
         </div>
       </div>
 
-    </section>
-
-    <!-- SECTION 3: TRANSMITTER MODE CONTROLS -->
-    <section id="transmitter-mode" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        3. Transmitter Mode Controls &amp; Sensor Stream
-      </h2>
-
-      <!-- Control: Broadcast vs P2P Dedicated Mode -->
-      <div class="feature-card">
-        <div class="feature-badge">TRANSMISSION TOPOLOGY &bull; SECTION 2</div>
+      <!-- Local GPS Data & Precision Indicators -->
+      <div class="feature-card" id="transceiver_card_local_gps">
+        <div class="feature-badge">ON-DEVICE CONSTELLATION TELEMETRY</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_btn_broadcast_mode.png" alt="Broadcast Mode Toggle Crop">
-            <img src="assets/guides/crops/transceiver_btn_p2p_mode.png" alt="P2P Mode Toggle Crop" style="margin-left:8px;">
+            <img src="assets/guides/crops/transceiver_card_local_gps.png" alt="Local GPS Data & Precision Indicators Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">Transmission Mode: BROADCAST vs P2P DEDICATED</h3>
-            <span class="feature-label">Topology Selector &bull; Transmitter Controls</span>
+            <h3 class="feature-title">Local GPS Data & Precision Indicators</h3>
+            <span class="feature-label">Telemetry Banner • Main Dashboard</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_card_local_gps_highlight.png" alt="Actual App Snapshot: Local GPS Data & Precision Indicators Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Lets you choose between sharing your GPS coordinates with multiple nearby computers at once (Broadcast Mode) or creating a locked, high-speed one-to-one link to a single laptop (P2P Dedicated Mode).</p>
+          <p>Shows real-time satellite constellation lock status (Satellites in View, Precision in meters, and Fix Quality). When it says 'Precision: 1.2 m', you know your on-device GPS is receiving pristine multi-satellite geometry.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> In a mobile command vehicle, three officers on three separate tablets need live coordinates from the vehicle's roof-mounted smartphone. Setting the mode to <code>BROADCAST</code> allows all three tablets to connect simultaneously, receiving synchronized GPS telemetry.</p>
+          <p>Before pushing out into the bay, you verify the Local GPS Data card. It displays '18 Satellites Locked • Precision: 0.9 m', confirming maximum accuracy before you start streaming to your laptop.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Broadcast Mode:</strong> Multi-client RFCOMM socket server allowing up to 7 concurrent paired Bluetooth clients with dynamic disconnect controls.</li>
-            <li><strong>P2P Dedicated Mode:</strong> Exclusive single-client channel with maximum throughput buffer utilization and reduced latency (&lt; 15 ms).</li>
+            <li>Polls LocationManager.GPS_PROVIDER and Android GnssStatus.Callback at 1 Hz.</li><li>Calculates HDOP/PDOP dilution and estimated horizontal position error margin (RMS) in meters.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Control: START BROADCASTING -->
-      <div class="feature-card">
-        <div class="feature-badge">TRANSMITTER ENGINE &bull; PRIMARY ACTION</div>
+      <!-- Hardware Status (GPS Lock & Compass Active) -->
+      <div class="feature-card" id="transceiver_card_hardware_status">
+        <div class="feature-badge">SENSOR HARDWARE VERIFICATION</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_btn_start_broadcast.png" alt="Start Broadcasting Button Crop">
+            <img src="assets/guides/crops/transceiver_card_hardware_status.png" alt="Hardware Status (GPS Lock & Compass Active) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Hardware Status (GPS Lock & Compass Active)</h3>
+            <span class="feature-label">Section 1 Banner • Status Cards</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_card_hardware_status_highlight.png" alt="Actual App Snapshot: Hardware Status (GPS Lock & Compass Active) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Hardware health check indicator verifying that both your satellite receiver chip and 3-axis electronic compass sensors are awake, calibrated, and ready to broadcast.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You open Transceiver inside an underground parking garage. The card shows 'Compass: Active' but 'GPS: Awaiting Fix' because concrete blocks the sky. As soon as you drive outside, the GPS indicator snaps to green 'Locked', confirming the hardware pipeline is ready.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Combines Sensor.TYPE_ROTATION_VECTOR status with GNSS chipset lock flag.</li><li>Validates sensor stream integrity before allowing RFCOMM transmitter socket initialization.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BROADCAST Mode (Multi-Device Fleet Streaming) -->
+      <div class="feature-card" id="transceiver_btn_broadcast_mode">
+        <div class="feature-badge">FLEET TELEMETRY BROADCAST</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_broadcast_mode.png" alt="BROADCAST Mode (Multi-Device Fleet Streaming) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">BROADCAST Mode (Multi-Device Fleet Streaming)</h3>
+            <span class="feature-label">Section 2 Selector • Left Toggle</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_broadcast_mode_highlight.png" alt="Actual App Snapshot: BROADCAST Mode (Multi-Device Fleet Streaming) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Streams live satellite coordinates to multiple nearby computers or tablets simultaneously. Perfect for vehicle convoys or search boats where several crew members need the same live GPS feed.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>On an expedition command vehicle, the driver, navigator, and field commander each have their own tablet. Setting the transmitter to BROADCAST Mode allows all three tablets to connect over Bluetooth at once, all receiving synchronized satellite fixes.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Multi-threaded RFCOMM server socket accepting up to 7 concurrent client connections with independent transmit queues.</li><li>Dynamic client list with individual disconnection controls and per-client throughput monitoring.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- P2P DEDICATED Mode (Single-Client Dedicated Channel) -->
+      <div class="feature-card" id="transceiver_btn_p2p_mode">
+        <div class="feature-badge">EXCLUSIVE ULTRA-LOW LATENCY LINK</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_p2p_mode.png" alt="P2P DEDICATED Mode (Single-Client Dedicated Channel) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">P2P DEDICATED Mode (Single-Client Dedicated Channel)</h3>
+            <span class="feature-label">Section 2 Selector • Right Toggle</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_p2p_mode_highlight.png" alt="Actual App Snapshot: P2P DEDICATED Mode (Single-Client Dedicated Channel) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Locks your transmitter exclusively to one computer, dedicating 100% of the Bluetooth radio throughput to that single device for ultra-low latency navigation.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are sailing in choppy waters where high-speed chart refresh is critical. You switch to P2P DEDICATED Mode connected to your primary navigation laptop. The stream latency drops below 15ms, providing instantaneous chart updates as your vessel surfs waves.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Exclusive single-channel RFCOMM pipe with maximum buffer allocation and disabled broadcast discovery beaconing.</li><li>Prioritizes raw $GPHDT compass sentence delivery ahead of secondary constellation satellites in view ($GPGSV).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- START BROADCASTING / STOP BROADCASTING -->
+      <div class="feature-card" id="transceiver_btn_start_broadcast">
+        <div class="feature-badge">TRANSMITTER MASTER POWER SWITCH</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_start_broadcast.png" alt="START BROADCASTING / STOP BROADCASTING Icon Crop">
           </div>
           <div class="feature-title-wrap">
             <h3 class="feature-title">START BROADCASTING / STOP BROADCASTING</h3>
-            <span class="feature-label">Primary Action Button &bull; Transmitter Screen</span>
+            <span class="feature-label">Primary Master Switch • Large Center Button</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_start_broadcast_highlight.png" alt="Actual App Snapshot: START BROADCASTING / STOP BROADCASTING Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>The main push button that turns on the satellite transmitter engine. Once tapped, your phone starts streaming live GPS coordinates and compass orientation over Bluetooth.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You mount your phone to your boat's helm station, tap <code>START BROADCASTING</code>, and walk down to the cabin. The button pulses green to indicate active transmission. Your laptop in the cabin instantly receives the stream and begins charting your course.</p>
+          <p>You mount your phone to your boat's helm station, tap START BROADCASTING, and walk down to the cabin. The button pulses green to indicate active transmission. Your laptop in the cabin instantly receives the stream and begins charting your course.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Service Lifecycle:</strong> Starts <code>TransmitterService</code> as an Android Foreground Service with continuous <code>PARTIAL_WAKE_LOCK</code>.</li>
-            <li><strong>Sensor Fusion:</strong> Fuses Android GNSS measurements with geomagnetic vector calculations to output continuous <code>$GPGGA</code>, <code>$GPRMC</code>, <code>$GPGSA</code>, <code>$GPGSV</code>, and <code>$GPHDT</code>.</li>
+            <li>Starts TransmitterService as an Android Foreground Service with continuous PARTIAL_WAKE_LOCK.</li><li>Fuses Android GNSS measurements with geomagnetic vector calculations to output continuous $GPGGA, $GPRMC, $GPGSA, $GPGSV, and $GPHDT.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Sensor Card: Local GPS & Hardware Status -->
-      <div class="feature-card">
-        <div class="feature-badge">TELEMETRY MONITOR &bull; SENSOR STATUS</div>
+      <!-- Smart Guided Mock Location Provider -->
+      <div class="feature-card" id="transceiver_card_mock_location">
+        <div class="feature-badge">MOCK LOCATION SYSTEM INJECTION</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_card_local_gps.png" alt="Local GPS Data Card Crop">
-            <img src="assets/guides/crops/transceiver_card_hardware_status.png" alt="Hardware Status Card Crop" style="margin-left:8px;">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">Local GPS Data &amp; Hardware Status Cards</h3>
-            <span class="feature-label">Telemetry Cards &bull; Transmitter Screen</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Shows how many satellites are currently locked, your positioning accuracy in meters, and whether your electronic compass sensor is calibrated and active.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> Before starting a boat run, you check the Hardware Status card. It shows "GPS Satellite Lock: Active" with 18 satellites locked and "Compass: Active". You know your navigation telemetry is rock-solid before untying from the dock.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li>Reads raw NMEA constellation data via <code>GnssStatus.Callback</code> and reports horizontal dilution of precision (HDOP), position error margin (RMS), and 3-axis compass calibration quality.</li>
-          </ul>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- SECTION 4: RECEIVER MODE & MOCK LOCATION -->
-    <section id="receiver-mode" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        4. Receiver Mode &amp; Smart Guided Mock Location
-      </h2>
-
-      <!-- Feature: Smart Mock Location Card -->
-      <div class="feature-card" id="mock-location">
-        <div class="feature-badge">RECEIVER BRIDGE &bull; MOCK LOCATION ENGINE</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_card_mock_location.png" alt="Mock Location Card Crop">
+            <img src="assets/guides/crops/transceiver_card_mock_location.png" alt="Smart Guided Mock Location Provider Icon Crop">
           </div>
           <div class="feature-title-wrap">
             <h3 class="feature-title">Smart Guided Mock Location Provider</h3>
-            <span class="feature-label">System Switch &bull; Receiver Screen</span>
+            <span class="feature-label">Receiver Screen • Master Switch</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_card_mock_location_highlight.png" alt="Actual App Snapshot: Smart Guided Mock Location Provider Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>Injects satellite coordinates from an external GPS antenna directly into Android's system location provider. Every navigation app on your phone (including Google Maps, Waze, and ATAK) now uses the external antenna automatically.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You have an Android tablet without built-in GPS. You pair it to your external GPS antenna using EXOS Transceiver in Receiver Mode and turn on <code>Smart Guided Mock Location</code>. Google Maps immediately shows your blue navigation dot and provides full turn-by-turn guidance.</p>
+          <p>You have an Android tablet without built-in GPS. You pair it to your external GPS antenna using EXOS Transceiver in Receiver Mode and turn on Smart Guided Mock Location. Google Maps immediately shows your blue navigation dot and provides full turn-by-turn guidance.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Mock Provider:</strong> Utilizes Android <code>LocationManager.setTestProviderLocation()</code> on <code>LocationManager.GPS_PROVIDER</code>.</li>
-            <li><strong>Guided Setup:</strong> Automatically detects if Developer Options mock location app is selected and provides deep links to Android settings if configuration is required.</li>
+            <li>Utilizes Android LocationManager.setTestProviderLocation() on LocationManager.GPS_PROVIDER.</li><li>Automatically detects if Developer Options mock location app is selected and provides deep links to Android settings if configuration is required.</li>
           </ul>
         </div>
       </div>
 
-    </section>
-
-    <!-- SECTION 5: DIAGNOSTICS & LOGS -->
-    <section id="diagnostics" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        5. Diagnostic Logs &amp; Report Tools
-      </h2>
-
-      <div class="feature-card">
-        <div class="feature-badge">DIAGNOSTICS &bull; BOTTOM TOOLBAR</div>
+      <!-- Diagnostic Logs & Report Tool -->
+      <div class="feature-card" id="transceiver_btn_report">
+        <div class="feature-badge">DIAGNOSTIC TELEMETRY REPORT</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/transceiver_btn_report.png" alt="Diagnostic Report Button Crop">
+            <img src="assets/guides/crops/transceiver_btn_report.png" alt="Diagnostic Logs & Report Tool Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">Diagnostic Logs &amp; Report Button</h3>
-            <span class="feature-label">Action Button &bull; Bottom Section</span>
+            <h3 class="feature-title">Diagnostic Logs & Report Tool</h3>
+            <span class="feature-label">Footer Action • Bottom Right</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/transceiver_btn_report_highlight.png" alt="Actual App Snapshot: Diagnostic Logs & Report Tool Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Transceiver v1.1.4 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
           <p>Captures technical connection logs and diagnostic information if you ever encounter Bluetooth connection issues, allowing you to copy or send the report directly to RITYM engineering support.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> A rare third-party Bluetooth receiver drops connection unexpectedly. You tap <code>Report</code>. A formatted technical log showing Bluetooth error codes and serial buffer status is generated and ready to share with support.</p>
+          <p>A rare third-party Bluetooth receiver drops connection unexpectedly. You tap Report. A formatted technical log showing Bluetooth error codes and serial buffer status is generated and ready to share with support.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
@@ -639,51 +880,6 @@
 
     </section>
 
-    <!-- SECTION 6: TECHNICAL SPECIFICATIONS -->
-    <section id="specs" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        6. Technical Specifications &amp; Protocol Matrix
-      </h2>
-      <div style="overflow-x:auto;">
-        <table class="spec-table" style="width:100%; border-collapse:collapse; background:var(--bg-card); border-radius:8px; overflow:hidden;">
-          <thead>
-            <tr style="background:#1e293b; color:#38bdf8; font-family:var(--font-mono); font-size:0.85rem; text-align:left;">
-              <th style="padding:12px 16px;">Parameter</th>
-              <th style="padding:12px 16px;">Transmitter Mode</th>
-              <th style="padding:12px 16px;">Receiver Mode</th>
-            </tr>
-          </thead>
-          <tbody style="color:#cbd5e1; font-size:0.9rem; line-height:1.6;">
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Primary Function</td>
-              <td style="padding:12px 16px;">Broadcasts phone GPS &amp; Compass to Windows PCs/tablets</td>
-              <td style="padding:12px 16px;">Bridges external GPS puck into Android via Mock Location</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Bluetooth Profile</td>
-              <td style="padding:12px 16px;">SPP Server (RFCOMM Ch 1) + BLE Emitter</td>
-              <td style="padding:12px 16px;">SPP Client (Auto-reconnect with backoff)</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">NMEA Sentences</td>
-              <td style="padding:12px 16px;">$GPGGA, $GPRMC, $GPGSA, $GPGSV, $GPHDT</td>
-              <td style="padding:12px 16px;">Full NMEA 0183 v4.10 parser with checksum validation</td>
-            </tr>
-            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
-              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Update Rate</td>
-              <td style="padding:12px 16px;">1 Hz to 10 Hz (sensor-driven)</td>
-              <td style="padding:12px 16px;">Up to 20 Hz (hardware-dependent)</td>
-            </tr>
-            <tr>
-              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Compatibility</td>
-              <td style="padding:12px 16px;">Windows 10/11, macOS, Linux, OpenCPN, QGIS</td>
-              <td style="padding:12px 16px;">Google Maps, ATAK, Waze, OsmAnd, Gaia GPS</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
     <!-- Final CTA Section -->
     <section style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:40px; text-align:center; margin-bottom:60px;">
       <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:12px;">Deploy EXOS Transceiver in the Field</h2>
@@ -692,7 +888,7 @@
         <a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7; padding:12px 28px;">
           Install from Google Play Store &rarr;
         </a>
-        <a href="station-guide.html#windows" class="btn-secondary" style="padding:12px 28px;">
+        <a href="station-guide.html" class="btn-secondary" style="padding:12px 28px;">
           Windows Station Field Manual &rarr;
         </a>
       </div>

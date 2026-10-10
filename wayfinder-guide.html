@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EXOS Wayfinder | Complete User Guide & Tactical Navigation Field Manual</title>
-  <meta name="description" content="Official user manual and technical guide for EXOS Wayfinder. Learn how to operate the offline vector topo navigation suite, MGRS grids, trail backtrack, and 3D compass dial.">
+  <title>EXOS Wayfinder | Complete User Guide &amp; Tactical Backcountry Field Manual</title>
+  <meta name="description" content="Official user manual and technical guide for EXOS Wayfinder. Standalone backcountry navigation, offline vector maps, military MGRS target tracking, and reverse backtrack trail guidance.">
   <link rel="icon" type="image/png" href="assets/icon.png">
   
   <!-- Modern Tactical Fonts -->
@@ -44,29 +44,29 @@
       border: 1px solid transparent;
     }
     .guide-tab-link:hover, .guide-tab-link.active {
-      color: #f97316;
-      border-color: rgba(249, 115, 22, 0.4);
-      background: rgba(249, 115, 22, 0.08);
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.08);
     }
     .feature-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 28px;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       transition: border-color 0.2s ease;
     }
     .feature-card:hover {
-      border-color: #f97316;
+      border-color: #38bdf8;
     }
     .feature-badge {
       display: inline-block;
       font-family: var(--font-mono);
       font-size: 0.72rem;
       font-weight: 700;
-      color: #f97316;
-      background: rgba(249, 115, 22, 0.12);
-      border: 1px solid rgba(249, 115, 22, 0.3);
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
       padding: 3px 10px;
       border-radius: 4px;
       margin-bottom: 16px;
@@ -83,7 +83,7 @@
       background: #090d14;
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
-      padding: 10px 14px;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -91,7 +91,7 @@
     }
     .feature-thumb-wrap img {
       max-height: 48px;
-      max-width: 240px;
+      max-width: 220px;
       object-fit: contain;
     }
     .feature-title-wrap h3 {
@@ -105,15 +105,46 @@
       font-size: 0.8rem;
       color: #94a3b8;
     }
+    
+    /* Snapshot Display Card */
+    .feature-snapshot-wrap {
+      background: #070a12;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    .feature-snapshot-wrap img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      display: block;
+      background: #070a12;
+    }
+    .feature-snapshot-caption {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 9px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
     .feature-layman {
-      background: rgba(249, 115, 22, 0.06);
-      border-left: 4px solid #f97316;
+      background: rgba(2, 132, 199, 0.06);
+      border-left: 4px solid #0284c7;
       padding: 16px 20px;
       border-radius: 0 8px 8px 0;
       margin-bottom: 18px;
     }
     .feature-layman h4 {
-      color: #fb923c;
+      color: #38bdf8;
       font-size: 0.95rem;
       margin: 0 0 8px 0;
       font-family: var(--font-mono);
@@ -125,14 +156,14 @@
       margin: 0;
     }
     .feature-scenario {
-      background: rgba(16, 185, 129, 0.06);
-      border-left: 4px solid #10b981;
+      background: rgba(0, 255, 136, 0.06);
+      border-left: 4px solid #00ff88;
       padding: 16px 20px;
       border-radius: 0 8px 8px 0;
       margin-bottom: 18px;
     }
     .feature-scenario h4 {
-      color: #34d399;
+      color: #00ff88;
       font-size: 0.95rem;
       margin: 0 0 8px 0;
       font-family: var(--font-mono);
@@ -209,13 +240,13 @@
       </a>
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="transceiver-guide.html" class="nav-link">Transceiver</a>
-        <a href="wayfinder-guide.html" class="nav-link" style="color:#f97316; font-weight:700;">Wayfinder</a>
+        <a href="wayfinder-guide.html" class="nav-link" style="color:#38bdf8; font-weight:700;">Wayfinder</a>
         <a href="echo-guide.html" class="nav-link">ECHO Walkie-Talkie</a>
+        <a href="transceiver-guide.html" class="nav-link">Transceiver</a>
         <a href="station-guide.html" class="nav-link">Windows Station</a>
       </nav>
       <div>
-        <a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener" class="btn-primary" style="background-color:#ea580c; font-size:0.82rem; padding:8px 16px;">
+        <a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7; font-size:0.82rem; padding:8px 16px;">
           Google Play Store &rarr;
         </a>
       </div>
@@ -224,30 +255,29 @@
 
   <!-- Sub-Navigation Bar -->
   <div class="guide-nav-bar">
-    <a href="#overview" class="guide-tab-link active">Overview &amp; Screens</a>
-    <a href="#compass-bar" class="guide-tab-link">3D Compass &amp; Radar</a>
-    <a href="#action-grid" class="guide-tab-link">Tactical Action Grid</a>
-    <a href="#tabs" class="guide-tab-link">Waypoints &amp; Backtrack</a>
-    <a href="#speed-hud" class="guide-tab-link">Cockpit HUD &amp; Speed</a>
-    <a href="#specs" class="guide-tab-link">Tech Specs</a>
+    <a href="#overview" class="guide-tab-link active">Wayfinder Overview</a>
+    <a href="#compass-controls" class="guide-tab-link">Compass Controls</a>
+    <a href="#tactical-grid" class="guide-tab-link">Action Grid</a>
+    <a href="#navigation-tabs" class="guide-tab-link">Bottom Tabs</a>
+    <a href="#backtrack" class="guide-tab-link">Backtrack Guide</a>
   </div>
 
   <main class="container">
     <!-- Hero Section -->
     <section class="guide-hero" id="overview">
-      <div style="display:inline-block; margin-bottom:12px;" class="feature-badge">OFFLINE VECTOR CARTOGRAPHY &bull; MGRS &bull; 3D COMPASS</div>
+      <div style="display:inline-block; margin-bottom:12px;" class="feature-badge">STANDALONE EXPEDITION NAVIGATION &bull; 100% OFFLINE &bull; MGRS GRIDS</div>
       <h1 style="font-family:var(--font-display); font-size:2.4rem; color:#f0f6fc; margin-bottom:12px;">
-        EXOS Wayfinder Tactical Navigation
+        EXOS Wayfinder Tactical Field Operations Manual
       </h1>
       <p style="color:#94a3b8; max-width:760px; margin:0 auto 28px; font-size:1.05rem; line-height:1.6;">
-        Complete field manual and detailed button-by-button operational guide for EXOS Wayfinder (<code>com.exos.wayfinder</code>). Autonomous backcountry orientation, vector topographic contours, reverse breadcrumb backtrack, MGRS grid coordinates, and cockpit HUD telemetry with zero network connectivity.
+        Complete, button-by-button operational field guide for EXOS Wayfinder (<code>com.exos.wayfinder</code>). Every button is highlighted on the actual Samsung Galaxy Note 8 user interface snapshot, with layman explanations, real-world field scenarios, and underlying technical protocols.
       </p>
       <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-        <a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener" class="btn-primary" style="background-color:#ea580c;">
+        <a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7;">
           Get Wayfinder on Google Play Store &rarr;
         </a>
-        <a href="station-guide.html" class="btn-secondary">
-          Windows Telemetry Command Center &rarr;
+        <a href="transceiver-guide.html" class="btn-secondary">
+          EXOS Transceiver Guide &rarr;
         </a>
       </div>
     </section>
@@ -255,542 +285,809 @@
     <!-- App Screen Showcase -->
     <section style="margin-bottom:48px;">
       <h2 style="font-family:var(--font-display); color:#f0f6fc; text-align:center; margin-bottom:8px;">Live Production Interface Screens</h2>
-      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">Authentic screenshots captured directly on Samsung Galaxy field hardware running EXOS Wayfinder v1.1.4.</p>
+      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">Screenshots captured directly on Samsung Galaxy Note 8 field hardware running EXOS Wayfinder v1.2.0.</p>
       
       <div class="screens-showcase-grid">
         <div class="screen-card">
-          <img src="assets/guides/wayfinder_main_view.png" alt="EXOS Wayfinder Main 3D Compass Screen">
-          <h4>Tactical Compass &amp; Radar</h4>
-          <p>Analog bezel, pitch/roll crosshairs, True North, and proximity radar overlay.</p>
+          <img src="assets/guides/wayfinder_tab_compass.png" alt="EXOS Wayfinder Compass Screen">
+          <h4>Tactical Compass Screen</h4>
+          <p>Gyro-stabilized mil-spec compass rose with tilt horizon and waypoint markers.</p>
         </div>
         <div class="screen-card">
-          <img src="assets/guides/wayfinder_tab_waypoints.png" alt="EXOS Wayfinder Waypoint List Screen">
-          <h4>Waypoint Management</h4>
-          <p>Distance-to-go, target azimuth, MGRS 10-figure grid, and bearing line tracking.</p>
+          <img src="assets/guides/wayfinder_tab_waypoints.png" alt="EXOS Wayfinder Waypoints Screen">
+          <h4>Waypoint Target Database</h4>
+          <p>Saved target list with real-time distance, bearing, and MGRS military grid coordinates.</p>
         </div>
         <div class="screen-card">
           <img src="assets/guides/wayfinder_tab_backtrack.png" alt="EXOS Wayfinder Backtrack Screen">
-          <h4>Breadcrumb Backtrack</h4>
-          <p>Autonomous breadcrumb trail recording and step-by-step reverse route guidance to camp.</p>
+          <h4>Reverse Backtrack Screen</h4>
+          <p>Trail breadcrumb retracing engine with off-path deviation warnings.</p>
         </div>
         <div class="screen-card">
-          <img src="assets/guides/wayfinder_tab_speed.png" alt="EXOS Wayfinder Speedometer Screen">
-          <h4>Tactical Cockpit HUD</h4>
-          <p>High-contrast analog speedometer, pace gauge, altitude profile, and odometer.</p>
+          <img src="assets/guides/wayfinder_tab_speed.png" alt="EXOS Wayfinder Speed HUD Screen">
+          <h4>Tactical Speedometer HUD</h4>
+          <p>High-contrast speed, vertical descent rate, and elevation profile.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 1: 3D COMPASS & RADAR CONTROLS -->
-    <section id="compass-bar" style="margin-bottom:60px;">
+    <!-- BUTTON BREAKDOWN CARDS -->
+    <section id="buttons" style="margin-bottom:60px;">
       <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        1. 3D Compass &amp; Radar Controls
+        Complete Button-by-Button Tactical Breakdown
       </h2>
 
-      <!-- Button: SENSOR CALIBRATED -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 01 &bull; STATUS PILL</div>
+      <!-- 🟢 SENSOR CALIBRATED (Magnetometer Health Status) -->
+      <div class="feature-card" id="wayfinder_btn_sensor">
+        <div class="feature-badge">HARDWARE SENSOR INTEGRITY</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_sensor.png" alt="SENSOR CALIBRATED Status Pill">
+            <img src="assets/guides/crops/wayfinder_btn_sensor.png" alt="🟢 SENSOR CALIBRATED (Magnetometer Health Status) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">SENSOR CALIBRATED (Magnetometer Health)</h3>
-            <span class="feature-label">Status Indicator &bull; Top Left</span>
+            <h3 class="feature-title">🟢 SENSOR CALIBRATED (Magnetometer Health Status)</h3>
+            <span class="feature-label">Top Status Bar • Left Pill</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_sensor_highlight.png" alt="Actual App Snapshot: 🟢 SENSOR CALIBRATED (Magnetometer Health Status) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Tells you whether your phone's electronic compass is accurate and fully calibrated. When green, your heading is precise. If it turns yellow or red, it warns you to wave your phone in a figure-8 motion to clear magnetic interference.</p>
+          <p>Shows whether your phone's digital magnetic compass is calibrated and trustworthy. When green, your compass direction is accurate; if it turns yellow or red, it warns you to wave your phone in a figure-8 motion to clear nearby magnetic interference.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are navigating through dense pine forest in complete fog where you cannot see landmarks. You check the top bar: the green <code>SENSOR CALIBRATED</code> pill confirms that nearby magnetic anomalies (like steel bridges or car engines) are not pulling your needle off course. You can trust your 025° bearing with total confidence.</p>
+          <p>You are standing next to a metal vehicle engine hood. The pill turns amber reading 'CALIBRATE SENSOR' due to the engine block's magnetic field. You take five steps away into the open field and wave the phone in a figure-8. The pill turns solid green '🟢 SENSOR CALIBRATED', confirming your azimuth bearings are dead-on accurate.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Sensor Fusion Engine:</strong> Real-time Kalman fusion integrating 3-axis Magnetometer, 3-axis Accelerometer, and 3-axis Gyroscope.</li>
-            <li><strong>Accuracy Reporting:</strong> Monitors Android <code>SensorManager.SENSOR_STATUS_ACCURACY_HIGH</code> (3/3 confidence level) with automatic soft-iron compensation.</li>
+            <li>Monitors Android SensorManager.SENSOR_STATUS_ACCURACY_HIGH (3) from geomagnetic sensor.</li><li>Computes hard-iron and soft-iron magnetic distortion matrix in real-time.</li><li>Suppresses erratic needle spin using a low-pass Kalman filter combined with 3-axis accelerometer tilt compensation.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: ZOOM -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 02 &bull; COMPASS HEADER</div>
+      <!-- ZOOM 1X (Radar & Dial Scale Toggle) -->
+      <div class="feature-card" id="wayfinder_btn_zoom">
+        <div class="feature-badge">DISPLAY SCALE & RANGE</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_zoom.png" alt="ZOOM 1X Toggle Button">
+            <img src="assets/guides/crops/wayfinder_btn_zoom.png" alt="ZOOM 1X (Radar & Dial Scale Toggle) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">ZOOM 1X / 2X / 4X (Dial Scale Multiplier)</h3>
-            <span class="feature-label">Toggle Button &bull; Top Right</span>
+            <h3 class="feature-title">ZOOM 1X (Radar & Dial Scale Toggle)</h3>
+            <span class="feature-label">Top Status Bar • Right Pill</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_zoom_highlight.png" alt="Actual App Snapshot: ZOOM 1X (Radar & Dial Scale Toggle) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Expands the center radar rings on your compass dial, zooming in on nearby targets (33m, 66m, 100m) or expanding outward to 500m and 1km so you can see far-away waypoints.</p>
+          <p>Switches the zoom level of the central compass rose and radar display between 1X (standard overview), 2X (close inspection), and 5X (tight target tracking).</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are approaching a hidden cache buried in the snow. At 1X zoom, the cache waypoint is close to the center reticle. You tap <code>ZOOM</code> to switch to 4X zoom; the inner concentric circles expand to high magnification, letting you walk the final 15 meters directly to the exact shovel spot.</p>
+          <p>You are tracking three nearby waypoints clustered close together around an alpine spring. At 1X zoom, their icons overlap. You tap ZOOM 1X to toggle to ZOOM 2X, spreading out the targets on the radar disc so you can easily identify which spring is closest.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Cartographic Scaling:</strong> Multiplies the radar circle radius by 1x (100m), 2x (500m), or 4x (1000m) logarithmic range steps.</li>
+            <li>Adjusts radar projection scale matrix between 1.0f, 2.0f, and 5.0f zoom factors.</li><li>Recalculates target waypoint pixel offsets on the circular canvas dynamically without reloading coordinate lists.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: RADAR BAR -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 03 &bull; RADAR CONTROL</div>
+      <!-- RADAR : 100 m (+/- Range Adjuster Bar) -->
+      <div class="feature-card" id="wayfinder_btn_radar_bar">
+        <div class="feature-badge">RADAR PROXIMITY RADIUS</div>
         <div class="feature-header">
-          <div class="feature-thumb-wrap" style="width:100%; max-width:500px;">
-            <img src="assets/guides/crops/wayfinder_btn_radar_bar.png" alt="RADAR Control Bar" style="width:100%; max-width:460px;">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_radar_bar.png" alt="RADAR : 100 m (+/- Range Adjuster Bar) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">RADAR: 100 m [ + / - ] (Proximity Radar Bar)</h3>
-            <span class="feature-label">Switch &amp; Range Stepper &bull; Mid-Screen</span>
+            <h3 class="feature-title">RADAR : 100 m (+/- Range Adjuster Bar)</h3>
+            <span class="feature-label">Central Dial Overlay • Horizontal Bar</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_radar_bar_highlight.png" alt="Actual App Snapshot: RADAR : 100 m (+/- Range Adjuster Bar) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Turns the compass dial into a tactical radar screen. Toggling the cyan switch activates proximity blips for nearby waypoints and teammates. Tapping <code>+</code> or <code>-</code> increases or decreases the radar detection radius.</p>
+          <p>Expands or shrinks the distance covered by your on-screen radar circle. Tap '+' to view waypoints up to 50 km away across distant mountains, or tap '-' to zoom into 50 meters for close-range navigation.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are patrolling a basecamp perimeter at night. You toggle <code>RADAR: ON</code> with a 100-meter radius. All four perimeter sensors and your forward scout's beacon appear as glowing green blips directly on your rotating 360-degree compass dial, showing their exact distance and bearing relative to your body.</p>
+          <p>You are navigating through dense fog. You tap '-' until the radar bar reads 'RADAR : 50 m', giving you a high-precision close-range circular sweep showing your campsite tent pins as you approach.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Polar Projection:</strong> Projects geo-coordinates onto polar coordinate space (Azimuth $	heta$, Distance $r$) updated at 30 FPS.</li>
+            <li>Scales radar concentric range rings across discrete range steps (50m, 100m, 250m, 500m, 1km, 5km, 10km, 50km).</li><li>Calculates Haversine distance from current GNSS fix to all active targets and clips out-of-range waypoints to the radar perimeter ring.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: MARK WPT -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 04 &bull; WAYPOINT ENGINE</div>
+      <!-- MARK WPT (Instant GPS Waypoint Capture) -->
+      <div class="feature-card" id="wayfinder_btn_mark_wpt">
+        <div class="feature-badge">TARGET & POSITION LOGGING</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_mark_wpt.png" alt="MARK WPT Button">
+            <img src="assets/guides/crops/wayfinder_btn_mark_wpt.png" alt="MARK WPT (Instant GPS Waypoint Capture) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">MARK WPT (Instant Waypoint Bookmark)</h3>
-            <span class="feature-label">Push Button &bull; Telemetry Card</span>
+            <h3 class="feature-title">MARK WPT (Instant GPS Waypoint Capture)</h3>
+            <span class="feature-label">Live Telemetry Panel • Action Button</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_mark_wpt_highlight.png" alt="Actual App Snapshot: MARK WPT (Instant GPS Waypoint Capture) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Instantly bookmarks your exact physical location with a single tap. Saves your latitude, longitude, MGRS grid coordinates, elevation, and timestamp so you can navigate back to this exact spot later.</p>
+          <p>Your digital breadcrumb pin! Tapping MARK WPT instantly captures your exact current latitude, longitude, and elevation, saving it to your target list with a custom name like 'Camp 1', 'Water Source', or 'Vehicle'.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You discover a natural fresh water spring hidden in deep canyon woods. You tap <code>MARK WPT</code>. In less than one second, the app saves "WPT 04: Water Spring" with 10-figure MGRS precision. Two days later, your team can follow the compass needle straight back to the spring to refill water jugs.</p>
+          <p>You park your 4x4 at an unmarked wilderness trailhead before setting off on a 10-mile hike. Before walking away, you tap MARK WPT and name it 'Jeep'. Hours later when returning in darkness, Wayfinder's arrow points directly back to your vehicle with exact yardage.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Persistence:</strong> Saves to local SQLite database with WGS84 coordinates, ellipsoidal altitude, HDOP precision rating, and timestamp.</li>
-            <li><strong>Zero Latency:</strong> Executes synchronously in under 25ms without modal interruption.</li>
+            <li>Captures active Location(LocationManager.GPS_PROVIDER) fix with timestamp, WGS-84 decimal degrees, altitude (MSL), and horizontal accuracy (RMS).</li><li>Stores waypoint object in local SQLite/Room database with military MGRS and UTM grid translations.</li>
           </ul>
         </div>
+      </div>
+
+      <!-- TILT AUTO (Dynamic 2D / 3D Gimbal Horizon) -->
+      <div class="feature-card" id="wayfinder_btn_tilt">
+        <div class="feature-badge">ORIENTATION & PERSPECTIVE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_tilt.png" alt="TILT AUTO (Dynamic 2D / 3D Gimbal Horizon) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">TILT AUTO (Dynamic 2D / 3D Gimbal Horizon)</h3>
+            <span class="feature-label">Tactical Grid • Row 1 Button 1</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_tilt_highlight.png" alt="Actual App Snapshot: TILT AUTO (Dynamic 2D / 3D Gimbal Horizon) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Switches the compass view between a flat top-down 2D map view and an aircraft-style 3D tilting horizon view that moves as you tilt your phone up toward the sky or down at your boots.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are climbing a steep 35-degree mountain slope. In standard 2D view, looking at the screen while holding the phone tilted is awkward. You tap TILT AUTO: the compass disc immediately transitions into a 3D perspective gimbal that aligns with the slope of the hill.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Utilizes OpenGL ES 2.0 / Canvas 3D matrix transformations driven by sensor orientation angles (pitch, roll, yaw).</li><li>Smoothly interpolates rotation quaternions using spherical linear interpolation (SLERP) to eliminate gimbal lock.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EXPED (Expedition Trail Breadcrumb Logger) -->
+      <div class="feature-card" id="wayfinder_btn_exped">
+        <div class="feature-badge">TRACK RECORDING & EXPORT</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_exped.png" alt="EXPED (Expedition Trail Breadcrumb Logger) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">EXPED (Expedition Trail Breadcrumb Logger)</h3>
+            <span class="feature-label">Tactical Grid • Row 1 Button 2</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_exped_highlight.png" alt="Actual App Snapshot: EXPED (Expedition Trail Breadcrumb Logger) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Starts or pauses recording your hiking trail. As you walk, it drops an invisible trail of breadcrumbs every 5 meters. You can view your full path on the map or export it as a standard GPX file for Google Earth.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You embark on a backcountry traverse into uncharted canyons. You tap EXPED: a timer and distance tracker begin logging your path. Even if you wander off trails, your exact footsteps are preserved point-by-point in memory.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Runs background track recording service with distance-filtered location updates (minDistance = 5.0m, minTime = 2000ms).</li><li>Computes cumulative elevation gain/loss, average moving speed, and exports standard GPX 1.1 / KML XML format.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BUDDY (Tactical Team Radio Beacon & Radar) -->
+      <div class="feature-card" id="wayfinder_btn_buddy">
+        <div class="feature-badge">TEAM PROXIMITY TELEMETRY</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_buddy.png" alt="BUDDY (Tactical Team Radio Beacon & Radar) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">BUDDY (Tactical Team Radio Beacon & Radar)</h3>
+            <span class="feature-label">Tactical Grid • Row 1 Button 3</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_buddy_highlight.png" alt="Actual App Snapshot: BUDDY (Tactical Team Radio Beacon & Radar) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Links your Wayfinder compass with teammates running EXOS ECHO or EXOS Transceiver nearby. Teammates appear directly on your compass dial as glowing colored dots showing their direction and distance.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>In dense fog, you lose visual contact with your hiking partner. You tap BUDDY: their callsign 'ECHO-02' appears on your compass rim at bearing 045° at a distance of 85 meters. You walk straight toward their dot to reunite safely.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Listens for local UDP multicast beacon packets emitted by peer EXOS devices over Wi-Fi Direct or Bluetooth LE.</li><li>Renders dynamic target blips on the compass bezel with relative bearing and range updates at 1 Hz.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GUIDE (Offline Land Navigation Field Manual) -->
+      <div class="feature-card" id="wayfinder_btn_guide">
+        <div class="feature-badge">OFFLINE FIELD DOCUMENTATION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_guide.png" alt="GUIDE (Offline Land Navigation Field Manual) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">GUIDE (Offline Land Navigation Field Manual)</h3>
+            <span class="feature-label">Tactical Grid • Row 1 Button 4</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_guide_highlight.png" alt="Actual App Snapshot: GUIDE (Offline Land Navigation Field Manual) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>A complete wilderness navigation handbook built into the app. It teaches you how to read magnetic declination, triangulate landmarks, calculate pacing distance, and navigate by the sun and stars without internet.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You find a topographic paper map at a ranger station with MGRS grid coordinates, but forget how to convert magnetic north to true north for that region. You tap GUIDE, open the Declination section, and review the exact calculation formula offline.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Loads embedded, standalone HTML field manual with diagrams, formulas, and military navigation tables cached in memory.</li><li>Zero web connection or cloud access required.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EMERGENCY SOS (Optical Strobe & Distress Beacon) -->
+      <div class="feature-card" id="wayfinder_btn_sos">
+        <div class="feature-badge">LIFE-SAFETY DISTRESS SIGNAL</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_sos.png" alt="EMERGENCY SOS (Optical Strobe & Distress Beacon) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">EMERGENCY SOS (Optical Strobe & Distress Beacon)</h3>
+            <span class="feature-label">Tactical Grid • Row 2 Button 1</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_sos_highlight.png" alt="Actual App Snapshot: EMERGENCY SOS (Optical Strobe & Distress Beacon) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Emergency button! One tap turns your phone screen into a high-visibility flashing optical signal while activating your camera LED flashlight in international SOS Morse code, simultaneously broadcasting an emergency distress beacon.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>Night falls in freezing temperatures and a team member is injured. You tap EMERGENCY SOS. Your phone pulses high-contrast red/white flashes visible for miles across open valleys, allowing rescue helicopters to spot your location immediately.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Flashes display backlight at maximum brightness while modulating rear camera LED in Morse code sequence (... --- ...) via CameraManager API.</li><li>Transmits UDP distress beacon packets containing real-time WGS-84 coordinates on emergency broadcast channels.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SETUP (Declination, Datum & Coordinate Units) -->
+      <div class="feature-card" id="wayfinder_btn_setup">
+        <div class="feature-badge">GEODETIC DATUM & PREFERENCES</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_setup.png" alt="SETUP (Declination, Datum & Coordinate Units) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">SETUP (Declination, Datum & Coordinate Units)</h3>
+            <span class="feature-label">Tactical Grid • Row 2 Button 2</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_setup_highlight.png" alt="Actual App Snapshot: SETUP (Declination, Datum & Coordinate Units) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Configuration settings for serious navigators. Pick between MGRS military grid, UTM, or standard Latitude/Longitude; switch between Miles, Kilometers, and Nautical Miles; and configure automatic magnetic declination.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are coordinating with military rescue personnel who speak in MGRS grid coordinates (e.g. 4QFJ 1234 5678) rather than degrees. You tap SETUP, switch coordinate format to MGRS, and Wayfinder instantly displays all coordinates in standard NATO military grid format.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Supports WGS-84, NAD83, and ED50 geodetic datums.</li><li>Computes geomagnetic declination using the NOAA World Magnetic Model (WMM) algorithm based on current latitude, longitude, and elevation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SIMULATOR (GPS Orbit & Trajectory Simulator) -->
+      <div class="feature-card" id="wayfinder_btn_simulator">
+        <div class="feature-badge">TRAINING & FIELD SIMULATION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_simulator.png" alt="SIMULATOR (GPS Orbit & Trajectory Simulator) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">SIMULATOR (GPS Orbit & Trajectory Simulator)</h3>
+            <span class="feature-label">Tactical Grid • Row 2 Button 3</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_simulator_highlight.png" alt="Actual App Snapshot: SIMULATOR (GPS Orbit & Trajectory Simulator) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Lets you practice using Wayfinder indoors or during training sessions without being outside. It simulates realistic GPS movement, satellite acquisition, and compass heading for training and demonstrations.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>An outdoor guide is teaching a classroom of students how to navigate using Wayfinder before heading into the mountains. Tapping SIMULATOR lets students practice setting waypoints, tracking bearings, and following backtracks right inside the classroom.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Injects synthetic NMEA sentences into internal location pipeline with selectable trajectories (walking, driving, high-altitude flight).</li><li>Simulates realistic satellite DOP jitter and multipath interference for training realism.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- COMPASS TAB (Military Mil-Spec Dial & Gyro) -->
+      <div class="feature-card" id="wayfinder_tab_compass">
+        <div class="feature-badge">PRIMARY COMPASS NAVIGATION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_tab_compass.png" alt="COMPASS TAB (Military Mil-Spec Dial & Gyro) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">COMPASS TAB (Military Mil-Spec Dial & Gyro)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 1</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_tab_compass_highlight.png" alt="Actual App Snapshot: COMPASS TAB (Military Mil-Spec Dial & Gyro) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>The main navigation cockpit! Displays the primary 360-degree compass rose with heading degrees, cardinal points, pitch/roll levels, and active target guidance arrows.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are hiking along a bearing of 025° Northeast. The Compass tab keeps your target arrow centered at the top of the dial, vibrating gently if you drift off course.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Renders mil-spec 6400-mil and 360-degree scales with smooth 60 FPS hardware-accelerated gyro-stabilized motion.</li><li>Integrates World Magnetic Model (WMM) declination correction with True North indicator.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WAYPOINTS TAB (Target Database & MGRS Targets) -->
+      <div class="feature-card" id="wayfinder_tab_waypoints">
+        <div class="feature-badge">WAYPOINT MANAGEMENT SYSTEM</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_tab_waypoints.png" alt="WAYPOINTS TAB (Target Database & MGRS Targets) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">WAYPOINTS TAB (Target Database & MGRS Targets)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 2</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_tab_waypoints_highlight.png" alt="Actual App Snapshot: WAYPOINTS TAB (Target Database & MGRS Targets) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Your saved location organizer. View a list of all marked campsites, peaks, water sources, and vehicles, showing distance and direction to each point with a single tap to set navigation targets.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You have saved 10 hunting stands across a private property. Tapping the Waypoints tab shows all 10 stands sorted by distance. You tap 'Stand #4', hit Navigate, and your compass dial immediately points toward that stand.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>SQLite database with full-text search, GPX/KML file import/export, and sorting by proximity, name, or creation date.</li><li>Computes real-time azimuth and range to all stored waypoints at 1 Hz.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- BACKTRACK TAB (Reverse Breadcrumb Trail Return) -->
+      <div class="feature-card" id="wayfinder_tab_backtrack">
+        <div class="feature-badge">REVERSE TRAIL NAVIGATION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_tab_backtrack.png" alt="BACKTRACK TAB (Reverse Breadcrumb Trail Return) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">BACKTRACK TAB (Reverse Breadcrumb Trail Return)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 3</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_tab_backtrack_highlight.png" alt="Actual App Snapshot: BACKTRACK TAB (Reverse Breadcrumb Trail Return) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Your ultimate anti-lost safety net! Backtrack plots your return path along the exact footsteps you took on the way in, guiding you safely back to your starting point even if trails disappear under snow or darkness.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>A sudden whiteout blizzard covers your footsteps on an alpine pass. You open the Backtrack tab, tap 'Follow Return Trail', and Wayfinder guides you step-by-step in reverse along your recorded route, steering you safely around sheer drop-offs.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Inverts recorded GPS breadcrumb trajectory with dynamic point-snapping algorithm.</li><li>Provides off-trail cross-track error (XTE) warnings if user deviates more than 15 meters from original path.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SPEED TAB (HUD Tactical Speedometer & Elevation) -->
+      <div class="feature-card" id="wayfinder_tab_speed">
+        <div class="feature-badge">SPEED & ELEVATION HUD</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_tab_speed.png" alt="SPEED TAB (HUD Tactical Speedometer & Elevation) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">SPEED TAB (HUD Tactical Speedometer & Elevation)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 4</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_tab_speed_highlight.png" alt="Actual App Snapshot: SPEED TAB (HUD Tactical Speedometer & Elevation) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>A tactical digital speedometer and elevation gauge showing your current moving speed, average speed, max speed, and altitude above sea level with a live elevation profile graph.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are descending a steep mountain trail. You switch to the Speed tab to monitor your descent rate, pacing, and remaining vertical descent to the valley floor.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Calculates Doppler-derived speed over ground (SOG) from GNSS chipset with 5-sample exponential smoothing.</li><li>Barometric altimeter fusion calculates elevation change (VAM in m/h) and total ascent/descent metrics.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TRUE N / MAG N (North Azimuth Reference Toggle) -->
+      <div class="feature-card" id="wayfinder_btn_north_ref">
+        <div class="feature-badge">AZIMUTH REFERENCE SYSTEM</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_btn_north_ref.png" alt="TRUE N / MAG N (North Azimuth Reference Toggle) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">TRUE N / MAG N (North Azimuth Reference Toggle)</h3>
+            <span class="feature-label">Compass Dial • Top Right Pill</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_btn_north_ref_highlight.png" alt="Actual App Snapshot: TRUE N / MAG N (North Azimuth Reference Toggle) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Switches your compass between True North (geographic North Pole) and Magnetic North (where magnetic compass needles point). Essential when matching your digital compass to topographic paper maps.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are navigating with a USGS topographic paper map that requires True North bearings. You tap TRUE N: Wayfinder automatically applies the local +14.2° magnetic declination so your screen bearings match your paper map grid lines perfectly.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Toggles between raw magnetometer azimuth and declination-corrected True North azimuth via WMM NOAA geodetic lookup.</li><li>Displays current regional declination offset value directly on screen.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- GNSS FIX STATUS & Altitude Readout -->
+      <div class="feature-card" id="wayfinder_card_gnss_fix">
+        <div class="feature-badge">CONSTELLATION FIX QUALITY</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_card_gnss_fix.png" alt="GNSS FIX STATUS & Altitude Readout Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">GNSS FIX STATUS & Altitude Readout</h3>
+            <span class="feature-label">Telemetry Dashboard • Center Left Banner</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_card_gnss_fix_highlight.png" alt="Actual App Snapshot: GNSS FIX STATUS & Altitude Readout Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Shows real-time satellite lock quality (e.g. ACQUIRING GNSS... or 3D FIX: 18 SATS) and altitude. When it says '3D FIX', you know your position is locked onto multi-constellation satellites with meter-level precision.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You emerge from a deep slot canyon into an open plateau. Looking at the GNSS banner, you watch it transition from 'ACQUIRING GNSS' to '3D FIX: 22 SATS (GPS+GLONASS+GALILEO)', confirming your elevation and position are locked.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Reads raw GnssStatus reports from GPS (US), GLONASS (Russia), Galileo (EU), and BeiDou (China) constellations.</li><li>Displays 3D fix quality, HDOP/VDOP dilution values, and Mean Sea Level (MSL) altitude.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 025° NE Azimuth Heading Display -->
+      <div class="feature-card" id="wayfinder_dial_degrees">
+        <div class="feature-badge">REAL-TIME HEADING AZIMUTH</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/wayfinder_dial_degrees.png" alt="025° NE Azimuth Heading Display Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">025° NE Azimuth Heading Display</h3>
+            <span class="feature-label">Central Dial • Top Left Readout</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/wayfinder_dial_degrees_highlight.png" alt="Actual App Snapshot: 025° NE Azimuth Heading Display Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS Wayfinder v1.2.0 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>The large, high-visibility digital degree readout showing exactly which direction you are facing (e.g., 025° Northeast) in large, crisp military font.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>A teammate calls over the radio: 'Search bearing 025 degrees for the lost gear'. You turn your body until the large digital degree readout reads exactly 025° NE and walk straight along that azimuth line.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Displays 360-degree circular heading angle formatted as three-digit military azimuth (000° to 359°) with 16-point cardinal compass text.</li><li>Updated at 30 Hz with sub-degree numerical precision.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:40px; text-align:center; margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:12px;">Ready for Off-Grid Backcountry Navigation?</h2>
+      <p style="color:#94a3b8; max-width:640px; margin:0 auto 24px;">Download EXOS Wayfinder from the Google Play Store and master your orientation across uncharted terrain.</p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7; padding:12px 28px;">
+          Install from Google Play Store &rarr;
+        </a>
+        <a href="index.html" class="btn-secondary" style="padding:12px 28px;">
+          Return to EXOS GPS Home &rarr;
+        </a>
       </div>
     </section>
 
-    <!-- SECTION 2: TACTICAL ACTION GRID -->
-    <section id="action-grid" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        2. Tactical Action Grid Controls
-      </h2>
-
-      <!-- Button: TILT AUTO -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 05 &bull; ACTION GRID</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_tilt.png" alt="TILT AUTO Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">TILT AUTO (3D Tilt Compensation)</h3>
-            <span class="feature-label">Toggle Button &bull; Action Grid Row 1</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Allows your compass to stay completely accurate whether you hold your phone flat in your palm, tilted while walking, or upright in a chest pocket mount. Automatically corrects for pitch and roll.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are climbing a steep 45-degree mountain slope. Holding your phone perfectly level is impossible while balancing on rocks. With <code>TILT AUTO</code> enabled, you glance down at your tilted phone; the internal gyro compensates for the angle and gives you the exact True North heading without requiring level ground.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Euler Trigonometry:</strong> Computes gravity vectors using quaternions to project the 3-axis magnetic field vector onto the horizontal plane ($ec{B}_{horiz}$).</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: EXPED -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 06 &bull; ACTION GRID</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_exped.png" alt="EXPED Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">EXPED (Expedition Battery Saver Mode)</h3>
-            <span class="feature-label">Toggle Button &bull; Action Grid Row 1</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Dramatically extends your battery life on multi-day treks. Dims non-critical screen elements, lowers display frame rate, and duty-cycles GPS polling so your phone lasts days instead of hours.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are on day 3 of a 5-day backcountry traverse with no solar charger. Your battery is at 38%. You toggle <code>EXPED</code> mode on. The screen transitions to ultra-low-power dark tactical mode, while your background breadcrumb trail continues recording at 60-second intervals, safely preserving battery through the final trek day.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Duty Cycling:</strong> Throttles UI rendering to 5 FPS and schedules GNSS wakeups via Android AlarmManager/JobScheduler, reducing power consumption by up to 72%.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: BUDDY -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 07 &bull; ACTION GRID</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_buddy.png" alt="BUDDY Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">BUDDY (Buddy Beacon &amp; Team Tracking)</h3>
-            <span class="feature-label">Toggle Button &bull; Action Grid Row 1</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Pairs with EXOS ECHO or local Bluetooth beacons to display your teammates' locations as live target markers directly on your compass dial.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are hunting or hiking in a spread-out formation through heavy timber. You tap <code>BUDDY</code>. Your partner's call sign "EAGLE-2" appears at 280° at 140 meters. You always know where they are without having to shout or break radio silence.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Inter-App IPC:</strong> Subscribes to local broadcast intents from EXOS ECHO (<code>com.exos.mesh</code>) and Bluetooth LE proximity beacons.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: GUIDE -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 08 &bull; ACTION GRID</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_guide.png" alt="GUIDE Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">GUIDE (Tactical Field Manual &amp; Topo Principles)</h3>
-            <span class="feature-label">Push Button &bull; Action Grid Row 1</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Opens the built-in field manual explaining how to read MGRS grid coordinates, calculate magnetic declination, triangulate landmarks, and pace count.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are handed a paper military map with a 10-figure MGRS grid code like <code>32UMU 84920 12840</code>. You need a refresher on reading easting and northing lines. You tap <code>GUIDE</code> to view the quick reference diagram, convert your position, and mark it on your paper map.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li>Completely offline vector manual embedded in local assets; zero external dependencies.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: EMERGENCY SOS -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 09 &bull; ACTION GRID</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_sos.png" alt="EMERGENCY SOS Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">EMERGENCY SOS (Distress Beacon &amp; Coordinates SMS)</h3>
-            <span class="feature-label">Critical Action Button &bull; Action Grid Row 2</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>A high-priority emergency button that generates an immediate distress message with your exact GPS coordinates, altitude, Google Maps link, and battery level, ready to transmit via SMS or local mesh.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> Your vehicle breaks an axle on an unmaintained mountain pass with zero passing traffic. You tap <code>EMERGENCY SOS</code>. A pre-formatted rescue dispatch message appears with your exact coordinates: <code>"EMERGENCY: Need Assistance. Pos: 34.0522 N, 118.2437 W. MGRS: 11SMT84921284. Elev: 2,140m. Batt: 42%"</code>. You tap Send to dispatch it instantly.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Message Payload:</strong> Formats RFC 5870 <code>geo:</code> URI, MGRS 10-figure string, WGS84 decimal degrees, and timestamp compliant with search-and-rescue dispatch protocols.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: SETUP -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 10 &bull; ACTION GRID</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_setup.png" alt="SETUP Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">SETUP (Coordinate Formats, Datums &amp; Declination)</h3>
-            <span class="feature-label">Push Button &bull; Action Grid Row 2</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Lets you customize your navigation preferences: switch between MGRS, UTM, and Latitude/Longitude, select feet vs meters, and set magnetic declination to match your paper map.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are coordinating with European search teams who use UTM coordinates, but your paper map uses MGRS. You tap <code>SETUP</code>, toggle the primary display to UTM, and set elevation units to meters, ensuring zero conversion errors during joint radio transmissions.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Coordinate Engines:</strong> US Army MGRS (Military Grid Reference System), Universal Transverse Mercator (UTM), and Deg/Min/Sec (DMS) WGS84 datum transformations.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: SIMULATOR -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 11 &bull; ACTION GRID</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_btn_simulator.png" alt="SIMULATOR Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">SIMULATOR (Offline Route Replay &amp; Training Engine)</h3>
-            <span class="feature-label">Push Button &bull; Action Grid Row 2</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>A built-in simulator that plays pre-recorded navigation routes and NMEA satellite feeds indoors, allowing you to train your team on how to use the compass and backtrack features before stepping foot in the wild.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are teaching a wilderness navigation class in a classroom with thick concrete walls where real satellite signals cannot penetrate. You tap <code>SIMULATOR</code> to start an simulated mountain rescue route. Students see the compass rotate, speedometers register movement, and waypoints trigger alerts as if they were walking outside.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Replay Engine:</strong> Feeds virtual NMEA 0183 <code>$GPRMC</code> and <code>$GPGGA</code> sentences into Wayfinder's sensor pipeline with realistic drift and speed profiles.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: BOTTOM NAVIGATION TABS -->
-    <section id="tabs" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        3. Operational Tabs (Waypoints, Backtrack &amp; Speed)
-      </h2>
-
-      <!-- Tab: COMPASS -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 01 &bull; 3D COMPASS</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_tab_compass_icon.png" alt="COMPASS Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">COMPASS (Tactical Bearing &amp; Radar View)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>The primary compass navigation screen with the full rotating dial, artificial horizon reticle, radar overlay, and live heading readout.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> During active cross-country trekking, keep this tab open to hold a straight magnetic or true azimuth through woods and open plains.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li>Renders high-precision vector compass dial at 60 FPS with hardware tilt correction.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tab: WAYPOINTS -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 02 &bull; TARGET MANAGEMENT</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_tab_waypoints_icon.png" alt="WAYPOINTS Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">WAYPOINTS (Target Management &amp; Distance-to-Go)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Shows your complete list of saved waypoints. Selecting any waypoint highlights it on the compass with a dedicated bearing pointer and displays your remaining distance and estimated time of arrival.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You marked "Camp 1" at the start of your trek. After a long 8-mile hike, you open the <code>WAYPOINTS</code> tab and select "Camp 1". A bright orange bearing needle points directly at 214°, and the display reads "1.4 miles remaining". You follow the pointer straight to your tent.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Great-Circle Formula:</strong> Computes Haversine forward azimuth and rhumb line distance updated dynamically every 500ms.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tab: BACKTRACK -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 03 &bull; TRAIL SAFETY</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_tab_backtrack_icon.png" alt="BACKTRACK Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">BACKTRACK (Reverse Breadcrumb Route Navigation)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Records a digital breadcrumb trail of every step you take. If you get disoriented, lost, or caught in bad weather, tapping Backtrack reverses your exact footsteps and guides you safely back to where you started.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> A sudden mountain blizzard creates whiteout conditions with zero visibility. You can no longer see the trail. You open <code>BACKTRACK</code> and tap "Follow Trail Back". The screen displays your recorded breadcrumb path and guides you step-by-step along the safe path you walked earlier, steering you safely away from unseen cliff edges.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Polyline Compression:</strong> Douglas-Peucker algorithmic simplification storing high-resolution breadcrumbs at 5-meter resolution with minimal memory footprint.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tab: SPEED -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 04 &bull; COCKPIT HUD</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/wayfinder_tab_speed_icon.png" alt="SPEED Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">SPEED (Cockpit HUD, Speedometer &amp; Odometer)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Transforms your phone into an instrument cockpit. Features a large analog speedometer dial, maximum speed, total trip odometer, average moving pace, and vertical climb rate.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You mount your phone to your off-road ATV handlebar or sea kayak dashboard. The <code>SPEED</code> tab provides high-contrast, glanceable telemetry: 24 km/h current speed, 4.2 km total distance traveled, and exact compass course over ground (COG), even in bright sunlight.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Doppler Velocity:</strong> Calculates speed directly from GNSS Doppler shift (sub-0.1 m/s accuracy) rather than simple coordinate delta calculations.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: TECHNICAL SPECIFICATIONS -->
-    <section id="specs" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        4. Technical Parameters &amp; Navigation Matrix
-      </h2>
-      <div class="table-wrap">
-        <table class="spec-table">
-          <thead>
-            <tr>
-              <th>Parameter</th>
-              <th>EXOS Wayfinder Specification</th>
-              <th>Operational Significance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Application Package</strong></td>
-              <td><code>com.exos.wayfinder</code> (Production v1.1.4)</td>
-              <td>Standalone 64-bit Android application architecture.</td>
-            </tr>
-            <tr>
-              <td><strong>Coordinate Formats</strong></td>
-              <td>MGRS (10-figure), UTM (WGS84), Lat/Lon (DMS &amp; DD)</td>
-              <td>Full interoperability with military topographic maps and search-and-rescue grids.</td>
-            </tr>
-            <tr>
-              <td><strong>Cartography Engine</strong></td>
-              <td>Offline Vector Contours (100% On-Device)</td>
-              <td>Zero map download or cellular connection required in remote backcountry.</td>
-            </tr>
-            <tr>
-              <td><strong>Compass Sampling</strong></td>
-              <td>60 Hz 3D Tilt-Compensated Sensor Fusion</td>
-              <td>Smooth needle dynamics with artificial horizon pitch/roll leveling crosshairs.</td>
-            </tr>
-            <tr>
-              <td><strong>Backtrack Resolution</strong></td>
-              <td>5-meter Douglas-Peucker Polyline Recording</td>
-              <td>Precise reverse-route navigation through whiteouts, canyons, and dense timber.</td>
-            </tr>
-            <tr>
-              <td><strong>Distress Protocol</strong></td>
-              <td>One-Touch SMS + RFC 5870 Geo URI + MGRS String</td>
-              <td>Immediate emergency dispatch telemetry ready for satellite communicators or cellular.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-bottom">
-      <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-        <p style="margin:0; font-size:0.85rem; color:#94a3b8;">
-          &copy; 2026 RITYM Technologies &bull; exosgps.com &bull; All Rights Reserved.
-        </p>
-        <div style="display:flex; gap:20px; font-size:0.85rem;">
-          <a href="index.html" style="color:#94a3b8; text-decoration:none;">Home</a>
-          <a href="transceiver-guide.html" style="color:#94a3b8; text-decoration:none;">Transceiver Guide</a>
-          <a href="echo-guide.html" style="color:#94a3b8; text-decoration:none;">ECHO Guide</a>
-          <a href="station-guide.html" style="color:#94a3b8; text-decoration:none;">Windows Station Guide</a>
-          <a href="privacy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" style="height:36px; margin-bottom:12px;">
+          <p style="color:#64748b; font-size:0.85rem; line-height:1.6;">
+            Next-generation off-grid mesh communications, satellite telemetry bridges, and tactical mission-critical navigation platforms.
+          </p>
         </div>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Applications</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="wayfinder-guide.html" style="color:#38bdf8; text-decoration:none;">EXOS Wayfinder</a></li>
+            <li><a href="echo-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS ECHO Walkie-Talkie</a></li>
+            <li><a href="transceiver-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS Transceiver</a></li>
+            <li><a href="station-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS GPS Station (Windows)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Support &amp; Legal</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="index.html#getting-started" style="color:#94a3b8; text-decoration:none;">Getting Started</a></li>
+            <li><a href="privacy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color:#94a3b8; text-decoration:none;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; margin-top:32px; text-align:center; color:#64748b; font-size:0.8rem;">
+        &copy; 2026 RITYM Technologies &bull; exosgps.com &bull; All Rights Reserved.
       </div>
     </div>
   </footer>
+
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EXOS ECHO | Complete User Guide & Tactical Mesh Field Manual</title>
+  <title>EXOS ECHO | Complete User Guide &amp; Tactical Mesh Field Manual</title>
   <meta name="description" content="Official user manual and technical guide for EXOS ECHO. Learn how to operate the off-grid digital walkie-talkie, configure P2P mesh voice, set encryption keys, and use dual watch.">
   <link rel="icon" type="image/png" href="assets/icon.png">
   
@@ -53,7 +53,7 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
       padding: 28px;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       transition: border-color 0.2s ease;
     }
     .feature-card:hover {
@@ -83,7 +83,7 @@
       background: #090d14;
       border: 1px solid rgba(255, 255, 255, 0.15);
       border-radius: 8px;
-      padding: 10px 14px;
+      padding: 8px 12px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -105,6 +105,37 @@
       font-size: 0.8rem;
       color: #94a3b8;
     }
+    
+    /* Snapshot Display Card */
+    .feature-snapshot-wrap {
+      background: #070a12;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      border-radius: 10px;
+      overflow: hidden;
+      margin-bottom: 22px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+    .feature-snapshot-wrap img {
+      width: 100%;
+      max-height: 480px;
+      object-fit: contain;
+      display: block;
+      background: #070a12;
+    }
+    .feature-snapshot-caption {
+      background: rgba(15, 23, 42, 0.95);
+      padding: 9px 16px;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    
     .feature-layman {
       background: rgba(2, 132, 199, 0.06);
       border-left: 4px solid #0284c7;
@@ -125,14 +156,14 @@
       margin: 0;
     }
     .feature-scenario {
-      background: rgba(245, 158, 11, 0.06);
-      border-left: 4px solid #f59e0b;
+      background: rgba(0, 255, 136, 0.06);
+      border-left: 4px solid #00ff88;
       padding: 16px 20px;
       border-radius: 0 8px 8px 0;
       margin-bottom: 18px;
     }
     .feature-scenario h4 {
-      color: #fbbf24;
+      color: #00ff88;
       font-size: 0.95rem;
       margin: 0 0 8px 0;
       font-family: var(--font-mono);
@@ -209,13 +240,13 @@
       </a>
       <nav class="nav-links">
         <a href="index.html" class="nav-link">Home</a>
-        <a href="transceiver-guide.html" class="nav-link">Transceiver</a>
-        <a href="wayfinder-guide.html" class="nav-link">Wayfinder</a>
         <a href="echo-guide.html" class="nav-link" style="color:#38bdf8; font-weight:700;">ECHO Walkie-Talkie</a>
+        <a href="wayfinder-guide.html" class="nav-link">Wayfinder</a>
+        <a href="transceiver-guide.html" class="nav-link">Transceiver</a>
         <a href="station-guide.html" class="nav-link">Windows Station</a>
       </nav>
       <div>
-        <a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener" class="btn-primary" style="font-size:0.82rem; padding:8px 16px;">
+        <a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7; font-size:0.82rem; padding:8px 16px;">
           Google Play Store &rarr;
         </a>
       </div>
@@ -224,31 +255,31 @@
 
   <!-- Sub-Navigation Bar -->
   <div class="guide-nav-bar">
-    <a href="#overview" class="guide-tab-link active">Overview &amp; Screens</a>
-    <a href="#quick-bar" class="guide-tab-link">Tactical Bar</a>
-    <a href="#vfo-controls" class="guide-tab-link">VFO &amp; Dual Watch</a>
-    <a href="#ptt-voice" class="guide-tab-link">PTT Voice Engine</a>
-    <a href="#keypad" class="guide-tab-link">Keypad &amp; Channels</a>
-    <a href="#tabs" class="guide-tab-link">Team, Map &amp; Msgs</a>
-    <a href="#specs" class="guide-tab-link">Tech Specs</a>
+    <a href="#overview" class="guide-tab-link active">ECHO Overview</a>
+    <a href="#top-bar" class="guide-tab-link">Top Diagnostic Bar</a>
+    <a href="#tactical-bar" class="guide-tab-link">Tactical Bar</a>
+    <a href="#control-bar" class="guide-tab-link">Control Bar &amp; VFO</a>
+    <a href="#ptt-mic" class="guide-tab-link">PTT Microphone</a>
+    <a href="#keypad" class="guide-tab-link">Tactical Keypad</a>
+    <a href="#bottom-tabs" class="guide-tab-link">Navigation Tabs</a>
   </div>
 
   <main class="container">
     <!-- Hero Section -->
     <section class="guide-hero" id="overview">
-      <div style="display:inline-block; margin-bottom:12px;" class="feature-badge">OFF-GRID DIGITAL MESH &bull; ZERO INTERNET REQUIRED</div>
+      <div style="display:inline-block; margin-bottom:12px;" class="feature-badge">OFF-GRID DIGITAL MESH TRANSCEIVER &bull; ZERO CELL &bull; ZERO INTERNET</div>
       <h1 style="font-family:var(--font-display); font-size:2.4rem; color:#f0f6fc; margin-bottom:12px;">
-        EXOS ECHO Tactical Walkie-Talkie
+        EXOS ECHO Tactical Field Operations Manual
       </h1>
       <p style="color:#94a3b8; max-width:760px; margin:0 auto 28px; font-size:1.05rem; line-height:1.6;">
-        Complete field manual and detailed button-by-button operational guide for EXOS ECHO (<code>com.exos.mesh</code>). Direct smartphone-to-smartphone low-latency voice, dual watch monitoring, encrypted group chat, and offline distress beacons over Wi-Fi Direct and BLE mesh.
+        Comprehensive, button-by-button operational field guide for EXOS ECHO (<code>com.exos.mesh</code>). Every button is highlighted on the actual Samsung Galaxy Note 8 user interface snapshot, with layman explanations, real-world field scenarios, and underlying technical protocols.
       </p>
       <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
         <a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7;">
           Get ECHO on Google Play Store &rarr;
         </a>
-        <a href="station-guide.html" class="btn-secondary">
-          Windows Telemetry Station &rarr;
+        <a href="wayfinder-guide.html" class="btn-secondary">
+          EXOS Wayfinder Guide &rarr;
         </a>
       </div>
     </section>
@@ -256,650 +287,929 @@
     <!-- App Screen Showcase -->
     <section style="margin-bottom:48px;">
       <h2 style="font-family:var(--font-display); color:#f0f6fc; text-align:center; margin-bottom:8px;">Live Production Interface Screens</h2>
-      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">Authentic screenshots captured directly on Samsung Galaxy field hardware running EXOS ECHO v1.2.3.</p>
+      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">Screenshots captured directly on Samsung Galaxy Note 8 field hardware running EXOS ECHO v1.2.3.</p>
       
       <div class="screens-showcase-grid">
         <div class="screen-card">
-          <img src="assets/guides/echo_tab_walkie.png" alt="EXOS ECHO Walkie-Talkie Screen">
-          <h4>Tactical Walkie Tab</h4>
-          <p>Dual VFO channel display, audio metering, PTT, and tactical DTMF dialer.</p>
+          <img src="assets/guides/echo_tab_walkie.png" alt="EXOS ECHO Walkie Screen">
+          <h4>Walkie Transceiver Tab</h4>
+          <p>Main tactical push-to-talk station with VFO dual watch and quick controls.</p>
         </div>
         <div class="screen-card">
-          <img src="assets/guides/echo_tab_team.png" alt="EXOS ECHO Team Roster Screen">
-          <h4>Team Roster Tab</h4>
-          <p>Connected peer list, node callsigns, battery percentages, and RF signal strength.</p>
+          <img src="assets/guides/echo_tab_team.png" alt="EXOS ECHO Team Screen">
+          <h4>Team Mesh Radar Tab</h4>
+          <p>Real-time list of discovered network nodes, battery levels, and signal SNR.</p>
         </div>
         <div class="screen-card">
-          <img src="assets/guides/echo_tab_map.png" alt="EXOS ECHO Tactical Map Screen">
-          <h4>Tactical Map Tab</h4>
-          <p>Offline GPS breadcrumbs, squad member positions, and distress beacon coordinates.</p>
+          <img src="assets/guides/echo_tab_map.png" alt="EXOS ECHO Map Screen">
+          <h4>Tactical GPS Map Tab</h4>
+          <p>Offline vector mapping plotting the live coordinates of all team members.</p>
         </div>
         <div class="screen-card">
-          <img src="assets/guides/echo_tab_msgs.png" alt="EXOS ECHO Encrypted Messaging Screen">
-          <h4>Encrypted Messages Tab</h4>
-          <p>End-to-end AES-256 peer-to-peer text chat, canned tactical codes, and waypoint sharing.</p>
+          <img src="assets/guides/echo_tab_msgs.png" alt="EXOS ECHO Messages Screen">
+          <h4>Off-Grid Messages Tab</h4>
+          <p>Store-and-forward text messaging over Wi-Fi Direct and BLE radio mesh.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 1: TOP DIAGNOSTIC BAR -->
-    <section id="quick-bar" style="margin-bottom:60px;">
+    <!-- BUTTON BREAKDOWN CARDS -->
+    <section id="buttons" style="margin-bottom:60px;">
       <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        1. Top Header &amp; Diagnostic Controls
+        Complete Button-by-Button Tactical Breakdown
       </h2>
 
-      <!-- Button: TT -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 01 &bull; TOP BAR</div>
+      <!-- TT (Terminal Text Size Toggle) -->
+      <div class="feature-card" id="echo_btn_tt">
+        <div class="feature-badge">ACCESSIBILITY & TERMINAL DISPLAY</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_tt.png" alt="TT Audio Tone Test Button">
+            <img src="assets/guides/crops/echo_btn_tt.png" alt="TT (Terminal Text Size Toggle) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">TT (Tone Test &amp; Audio Loopback)</h3>
-            <span class="feature-label">Push Button &bull; Top Right Header</span>
+            <h3 class="feature-title">TT (Terminal Text Size Toggle)</h3>
+            <span class="feature-label">Top Diagnostic Bar • Left Icon</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_tt_highlight.png" alt="Actual App Snapshot: TT (Terminal Text Size Toggle) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Tapping <strong>TT</strong> sends a brief 1-second audio tone through your phone's microphone and speaker. It instantly tests whether your microphone, earpiece, and loud audio speaker are working properly before you head out into the field.</p>
+          <p>Changes the size of text across the walkie-talkie screen. Tapping it switches between compact, medium, and jumbo text sizes so you can read coordinates, channel names, and signal levels clearly without squinting in bright outdoor sunlight.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You just put on heavy tactical gloves and connected a wired 3.5mm throat mic or Bluetooth headset in freezing mountain weather. Before setting off from camp into canyon terrain where there is zero cellular signal, you tap <code>TT</code>. A crisp 1000 Hz beep chimes directly in your ear, confirming that your headset audio pipeline is live and ready for two-way voice transmission without needing another person to answer a radio check.</p>
+          <p>You are driving an open-top expedition vehicle over bumpy gravel roads with your phone mounted to the dashboard. The standard text is vibrating and hard to read. You tap TT once to expand all frequency numbers and channel names to high-visibility tactical large print, letting you check your team channel at a single glance without taking your eyes off the trail.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Audio Pipeline:</strong> Generates a local 1000 Hz sinusoidal test burst through Android's low-latency OpenSL ES / AAudio stream.</li>
-            <li><strong>Loopback Verification:</strong> Verifies the audio HAL hardware output buffer and microphone ADC without transmitting RF packets over the mesh socket.</li>
-            <li><strong>Sampling Frequency:</strong> 16,000 Hz, 16-bit mono PCM.</li>
+            <li>Dynamically rescales sp typographic density across the layout root without triggering Activity destruction or audio pipeline restarts.</li><li>Adjusts NMEA diagnostic output and signal terminal scrollback buffers between 11sp, 14sp, and 18sp monospace fonts.</li><li>Maintains strict UI layout bounds, preventing UI truncation on 18:9, 19.5:9, and 20:9 aspect ratios.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: DOC -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 02 &bull; TOP BAR</div>
+      <!-- DOC (Offline Tactical Operations Manual) -->
+      <div class="feature-card" id="echo_btn_doc">
+        <div class="feature-badge">FIELD DOCUMENTATION & PROTOCOLS</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_doc.png" alt="DOC Offline Documentation Button">
+            <img src="assets/guides/crops/echo_btn_doc.png" alt="DOC (Offline Tactical Operations Manual) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">DOC (Offline Field Documentation)</h3>
-            <span class="feature-label">Push Button &bull; Top Right Header</span>
+            <h3 class="feature-title">DOC (Offline Tactical Operations Manual)</h3>
+            <span class="feature-label">Top Diagnostic Bar • Center-Left Icon</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_doc_highlight.png" alt="Actual App Snapshot: DOC (Offline Tactical Operations Manual) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Opens the built-in, completely offline user manual, NATO phonetic alphabet chart, emergency radio protocols, and channel frequency directory right on your screen without requiring any internet connection.</p>
+          <p>Opens a complete, built-in instruction manual stored inside the app. It works 100% offline with no cell service or Wi-Fi, explaining mesh networking rules, voice protocol codes, and troubleshooting steps right when you are in the wild.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You need to coordinate with an allied search-and-rescue team who asks to switch to "Sub-Channel 4 Tone 12". You are 20 miles outside of cellular range and cannot Google the tone chart. You tap <code>DOC</code> to open the instant offline guide, review the CTCSS frequency table, and configure your radio to match their frequency in seconds.</p>
+          <p>Your search-and-rescue team is deployed in a deep mountain canyon with zero cellular reception. A new team volunteer forgets how to configure the dual watch sub-channel. You tap DOC, hand them the phone, and they immediately read the offline step-by-step instructions cached in memory.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Storage Architecture:</strong> Embedded compiled SQLite/Markdown asset bundled within the APK; zero network dependency.</li>
-            <li><strong>Reference Content:</strong> Standard VHF/UHF tactical preset tables, CTCSS/DCS sub-audible tone matrices, ITU/NATO phonetic tables, and emergency distress frequency guides.</li>
+            <li>Loads embedded compiled HTML/Markdown documentation from application asset storage (assets/docs/echo_manual.html).</li><li>Zero network requests, zero telemetry callbacks, and zero third-party web dependencies.</li><li>Includes cryptographic verification checklists and off-grid radio discipline standard operating procedures (SOP).</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: INF -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 03 &bull; TOP BAR</div>
+      <!-- INF (Node Diagnostics & Mesh Identity) -->
+      <div class="feature-card" id="echo_btn_inf">
+        <div class="feature-badge">DIAGNOSTICS & SYSTEM IDENTITY</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_inf.png" alt="INF Mesh Node Diagnostics Button">
+            <img src="assets/guides/crops/echo_btn_inf.png" alt="INF (Node Diagnostics & Mesh Identity) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">INF (Mesh Node Diagnostics &amp; IP Roster)</h3>
-            <span class="feature-label">Push Button &bull; Top Right Header</span>
+            <h3 class="feature-title">INF (Node Diagnostics & Mesh Identity)</h3>
+            <span class="feature-label">Top Diagnostic Bar • Center-Right Icon</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_inf_highlight.png" alt="Actual App Snapshot: INF (Node Diagnostics & Mesh Identity) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Shows your device's exact identity on the radio mesh: your assigned IP address (e.g. <code>192.168.49.1</code>), MAC address, Wi-Fi Direct Group Owner status, connected members, and background socket health.</p>
+          <p>Shows your walkie-talkie's unique identity card. It displays your radio callsign (e.g., STA: GALAXY NOTE8), current mesh network role (Host or Member), hardware Wi-Fi Direct MAC address, and active battery level.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You notice audio dropped momentarily during a convoy movement. You tap <code>INF</code> and immediately see that your phone transitioned from Group Member to Autonomous Group Owner, and the connection RSSI is -68 dBm. This confirms you are successfully holding the mesh root and other squad devices can link to your phone as they come back within 100 meters.</p>
+          <p>At an expedition basecamp, multiple field operators are configuring their devices. Tapping INF lets each member confirm their unique node ID and verify that their Wi-Fi Direct radio is operating as a Member node connected to the expedition Leader host.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Socket Architecture:</strong> UDP Multicast / Unicast streaming over port <code>42424</code>.</li>
-            <li><strong>Wi-Fi P2P Role:</strong> Displays <code>isGroupOwner</code> boolean, local IP lease, and P2P interface state via Android <code>WifiP2pManager</code>.</li>
+            <li>Queries Android WifiP2pManager for Group Owner (GO) status, P2P interface IP address, and MAC address.</li><li>Monitors battery level via sticky Intent.ACTION_BATTERY_CHANGED broadcast receiver and displays hardware temperature.</li><li>Displays AES-256 session key fingerprint and mesh hop count statistics.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: CFG -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 04 &bull; TOP BAR</div>
+      <!-- CFG (Radio Network Configuration) -->
+      <div class="feature-card" id="echo_btn_cfg">
+        <div class="feature-badge">NETWORK TOPOLOGY & HARDWARE SETUP</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_cfg.png" alt="CFG Mesh Configuration Button">
+            <img src="assets/guides/crops/echo_btn_cfg.png" alt="CFG (Radio Network Configuration) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">CFG (Mesh Configuration &amp; Encryption Key)</h3>
-            <span class="feature-label">Push Button &bull; Top Right Header</span>
+            <h3 class="feature-title">CFG (Radio Network Configuration)</h3>
+            <span class="feature-label">Top Diagnostic Bar • Right Icon</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_cfg_highlight.png" alt="Actual App Snapshot: CFG (Radio Network Configuration) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Opens the settings panel where you type in your Radio Call Sign (e.g. "EAGLE-1"), pick your Radio Group ID ("TEAM-ALPHA"), and set an AES-256 password so only your team can hear your voice and read your messages.</p>
+          <p>Opens the main settings window where you can change your radio callsign, set a custom group encryption password, pick which radio band to use (2.4 GHz vs 5 GHz Wi-Fi Direct), and adjust microphone audio sensitivity.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are arriving at a multi-agency wilderness command site. The incident commander says your team is "Squad Sierra". You tap <code>CFG</code>, change your Call Sign to <code>SIERRA-LEAD</code>, enter the squad's shared 8-digit mission code, and tap Save. From that moment, your radio only talks with Sierra squad members, preventing crosstalk with other teams in the same valley.</p>
+          <p>Your team needs to link up with a neighboring security patrol without hearing chatter from other groups. You tap CFG, set your network channel group to 'SEC-ALPHA' with a shared passkey, and save. Instantly, all radios sync onto an exclusive, encrypted communications loop.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Encryption:</strong> AES-256-GCM symmetric cryptographic engine. All Opus audio frames and JSON packets are salted and encrypted on-the-fly.</li>
-            <li><strong>Node Identification:</strong> 128-bit UUID paired with a human-readable 16-character UTF-8 Call Sign.</li>
+            <li>Configures WifiP2pConfig with custom WPS setup, operating frequency channel (IEEE 802.11a/b/g/n/ac), and group owner intent (0-15).</li><li>Applies PBKDF2 key derivation (10,000 rounds) on user passwords to generate 256-bit AES encryption keys for voice packets.</li><li>Configures Opus audio codec bitrates (16 kbps narrowband to 64 kbps fullband speech).</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: VOL SPK -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 05 &bull; QUICK TACTICAL BAR</div>
+      <!-- VOL SPK (Audio Output Speaker / Earpiece Toggle) -->
+      <div class="feature-card" id="echo_btn_vol_spk">
+        <div class="feature-badge">ACOUSTIC ROUTING & VOLUME MANAGEMENT</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_vol_spk.png" alt="VOL SPK Volume and Speakerphone Button">
+            <img src="assets/guides/crops/echo_btn_vol_spk.png" alt="VOL SPK (Audio Output Speaker / Earpiece Toggle) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">VOL SPK (Speaker Volume &amp; Routing Mode)</h3>
-            <span class="feature-label">Toggle Button &bull; Top Left</span>
+            <h3 class="feature-title">VOL SPK (Audio Output Speaker / Earpiece Toggle)</h3>
+            <span class="feature-label">Tactical Bar • Button 1 (Left)</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_vol_spk_highlight.png" alt="Actual App Snapshot: VOL SPK (Audio Output Speaker / Earpiece Toggle) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Switches between loud speakerphone mode (so everyone around you can hear incoming calls) and private earpiece mode (so only you can hear incoming voice when holding the phone to your ear). Also lets you set the maximum volume boost up to 85 dB.</p>
+          <p>Switches the sound between the loud bottom speaker and the quiet private ear speaker. Tap it to toggle between public hands-free mode for hearing voices across a campsite, or stealth mode for listening privately without alerting others nearby.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are on a stealth wildlife tracking patrol at dusk. A loud radio blast would scatter the animals. You tap <code>VOL SPK</code> to toggle from Speaker to Earpiece mode. Now, incoming squad transmissions play only through your phone's discreet ear receiver, keeping total tactical noise discipline.</p>
+          <p>You are on night patrol or birdwatching where absolute silence is required. Incoming loud voice transmissions from your partner would give away your position. You tap VOL SPK to route all incoming audio to the private earpiece speaker, holding the phone to your ear like a private phone call.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Audio Routing:</strong> Invokes <code>AudioManager.setSpeakerphoneOn(boolean)</code> and sets <code>STREAM_VOICE_CALL</code> routing parameters.</li>
-            <li><strong>Dynamic Gain:</strong> Software AGC (Automatic Gain Control) limiter preventing acoustic distortion up to 85 dB SPL output.</li>
+            <li>Toggles Android AudioManager.setSpeakerphoneOn(true/false) and switches STREAM_VOICE_CALL between AudioDeviceInfo.TYPE_BUILTIN_SPEAKER and TYPE_BUILTIN_EARPIECE.</li><li>Applies hardware acoustic echo cancellation (AEC) and noise suppression (NS) via android.media.audiofx.AcousticEchoCanceler.</li><li>Prevents acoustic feedback loop screeching when transmitting near other radios.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: CH Selector -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 06 &bull; QUICK TACTICAL BAR</div>
+      <!-- CH 06 (Quick Tactical Channel Selector) -->
+      <div class="feature-card" id="echo_btn_ch_sel">
+        <div class="feature-badge">TACTICAL CHANNEL DIRECT ACCESS</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_ch_sel.png" alt="CH Channel Selector Button">
+            <img src="assets/guides/crops/echo_btn_ch_sel.png" alt="CH 06 (Quick Tactical Channel Selector) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">CH 06 (Quick Channel Preset Switcher)</h3>
-            <span class="feature-label">Quick Selector &bull; Tactical Header</span>
+            <h3 class="feature-title">CH 06 (Quick Tactical Channel Selector)</h3>
+            <span class="feature-label">Tactical Bar • Button 2</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_ch_sel_highlight.png" alt="Actual App Snapshot: CH 06 (Quick Tactical Channel Selector) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Quickly switches between 10 standard preset channels (Channel 01 through Channel 10). Tapping it cycles through channels so everyone on the team can get on the same frequency with a single touch.</p>
+          <p>A quick-switch button displaying your current active radio channel (e.g., CH 06). Tapping it brings up a rapid selection wheel of all 16 preset tactical channels, letting you jump instantly from Camp Perimeter to Medical or Logistics.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> Team leader announces over Channel 1: "All units, switch to Channel 6 for fire perimeter operations." You tap the <code>CH</code> badge directly on screen; it immediately switches from CH 01 to CH 06, re-tuning your radio to the new channel without opening any complex settings menus.</p>
+          <p>During an outdoor festival, Channel 6 (Perimeter) is assigned to fence security, while Channel 1 is Emergency Medical. When someone reports an injury, you tap CH 06, instantly switch to CH 01 Medical, and coordinate first-aid support immediately.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Preset Architecture:</strong> 10 pre-allocated frequency slots mapped to standardized frequency pairs and UDP multicast channel tags.</li>
-            <li><strong>Switching Latency:</strong> Sub-5ms socket retuning with immediate packet filter update.</li>
+            <li>Maps logical channel integers (1-16) to discrete multicast socket port allocations (ports 52001-52016).</li><li>Transmits channel transition broadcast packet to notify peer nodes of frequency hopping.</li><li>Updates local VFO A frequency display and recalibrates audio buffer queue instantaneously.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: TORCH -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 07 &bull; QUICK TACTICAL BAR</div>
+      <!-- TORCH (Tactical Flashlight & SOS Strobe) -->
+      <div class="feature-card" id="echo_btn_torch">
+        <div class="feature-badge">ILLUMINATION & OPTICAL SIGNALING</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_torch.png" alt="TORCH Flashlight Toggle Button">
+            <img src="assets/guides/crops/echo_btn_torch.png" alt="TORCH (Tactical Flashlight & SOS Strobe) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">TORCH (Tactical Flashlight &amp; Strobe)</h3>
-            <span class="feature-label">Toggle Button &bull; Tactical Header</span>
+            <h3 class="feature-title">TORCH (Tactical Flashlight & SOS Strobe)</h3>
+            <span class="feature-label">Tactical Bar • Button 3</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_torch_highlight.png" alt="Actual App Snapshot: TORCH (Tactical Flashlight & SOS Strobe) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>Turns your phone's rear LED camera flash into an instant tactical flashlight. Tapping it turns the light ON or OFF immediately, without having to swipe down the Android notification shade.</p>
+          <p>Controls your phone's rear camera LED flashlight directly from the walkie-talkie screen. One tap turns on steady light to read trail maps in the dark; a double tap activates a rapid emergency strobe to signal your location to aircraft or teammates.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are navigating a rocky trail at night and drop your compass into the brush. While holding your walkie-talkie open in one hand, you tap <code>TORCH</code> with your thumb. The high-power LED illuminates the ground immediately, allowing you to find your gear without closing the radio screen.</p>
+          <p>You are hiking off-trail after dusk and lose your physical flashlight. Instead of leaving the walkie app to hunt for your phone's flashlight toggle, you tap TORCH right on the walkie-talkie screen. The LED illuminates your path while keeping your finger ready on the PTT voice button.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Hardware Interface:</strong> Android <code>CameraManager.setTorchMode(cameraId, boolean)</code> native API.</li>
-            <li><strong>Low Power Profile:</strong> Bypasses camera sensor preview buffers to conserve battery during extended search operations.</li>
+            <li>Accesses CameraManager.setTorchMode(cameraId, true/false) via Android Hardware Camera2 API.</li><li>Implements pulse-width modulation (PWM) timer thread for international Morse Code SOS (... --- ...) optical blinking at 1 Hz.</li><li>Runs asynchronously with zero impact on real-time audio sampling or UDP packet transmission.</li>
           </ul>
         </div>
       </div>
 
-      <!-- Button: SOS Slide -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 08 &bull; QUICK TACTICAL BAR</div>
+      <!-- SOS SLIDER (High-Decibel Siren & Distress Beacon) -->
+      <div class="feature-card" id="echo_btn_sos_slider">
+        <div class="feature-badge">LIFE-SAFETY DISTRESS BEACON</div>
         <div class="feature-header">
           <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_sos_slider.png" alt="SOS Slide Distress Beacon">
+            <img src="assets/guides/crops/echo_btn_sos_slider.png" alt="SOS SLIDER (High-Decibel Siren & Distress Beacon) Icon Crop">
           </div>
           <div class="feature-title-wrap">
-            <h3 class="feature-title">SOS (Slide-to-Activate Emergency Distress Beacon)</h3>
-            <span class="feature-label">Slide Control &bull; Top Right</span>
+            <h3 class="feature-title">SOS SLIDER (High-Decibel Siren & Distress Beacon)</h3>
+            <span class="feature-label">Tactical Bar • Button 4 (Right)</span>
           </div>
         </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_sos_slider_highlight.png" alt="Actual App Snapshot: SOS SLIDER (High-Decibel Siren & Distress Beacon) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
         <div class="feature-layman">
           <h4>What it Does (In Plain English)</h4>
-          <p>A safety slider that sends an urgent emergency distress beacon across all mesh channels. Sliding the red knob to the right overrides all radio traffic and broadcasts an emergency alert with your exact GPS coordinates and battery level to everyone within range.</p>
+          <p>An emergency distress trigger designed as a slide-to-activate control to prevent accidental taps. Sliding it all the way across blasts an ear-piercing siren through your phone speakers and broadcasts an emergency SOS alert with your GPS coordinates to every team radio in range.</p>
         </div>
+
         <div class="feature-scenario">
           <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> A team member slips down a steep ravine and fractures an ankle. In extreme pain and unable to climb up, they slide the red <code>SOS</code> switch. Instantly, every other teammate's phone sounds a high-priority distress alarm, automatically pins the injured member's coordinates on their maps, and highlights the beacon in red.</p>
+          <p>A hiker falls into a ravine, spraining an ankle and losing their pack. Unable to climb out, they slide the SOS slider. The phone immediately blasts a 100 dB acoustic siren to guide rescuers on foot, while every nearby EXOS ECHO radio sounds an urgent alarm and displays the victim's exact GPS coordinates.</p>
         </div>
+
         <div class="feature-tech">
           <h4>Technical Specifications &amp; Protocol Architecture</h4>
           <ul>
-            <li><strong>Broadcast Priority:</strong> Level-0 Critical Interrupt. Bypasses channel squelch and forces receiver speaker output even if silenced.</li>
-            <li><strong>Payload Telemetry:</strong> High-precision WGS-84 coordinates, barometric altitude, timestamp, and battery percentage transmitted every 1.5 seconds over mesh flood.</li>
+            <li>Generates dual-tone multi-frequency (DTMF) 800 Hz / 1200 Hz acoustic square wave synthesized in real-time at maximum hardware audio gain (STREAM_ALARM).</li><li>Broadcasts high-priority UDP distress packet (opcode 0xFF_DISTRESS) containing WGS-84 coordinates, altitude, battery percentage, and timestamp to 255.255.255.255.</li><li>Forces peer nodes to bypass mute settings and trigger audible emergency alarms.</li>
           </ul>
         </div>
+      </div>
+
+      <!-- ≡ MENU (Radio Parameter Setup Dialog) -->
+      <div class="feature-card" id="echo_btn_menu">
+        <div class="feature-badge">ADVANCED RADIO MENU CONFIGURATION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_menu.png" alt="≡ MENU (Radio Parameter Setup Dialog) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">≡ MENU (Radio Parameter Setup Dialog)</h3>
+            <span class="feature-label">Control Bar • Button 1 (Left)</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_menu_highlight.png" alt="Actual App Snapshot: ≡ MENU (Radio Parameter Setup Dialog) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>The main radio menu button, just like on a professional Baofeng or Motorola walkie-talkie. It lets you configure advanced settings like Roger Beep tones, microphone squelch sensitivity, Vox hands-free voice activation, and display backlight timeouts.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are operating in high-wind conditions on a ridge. Wind noise is constantly triggering your microphone. You tap ≡ MENU, scroll to Squelch Level, increase the squelch threshold from 2 to 5, and save. The wind noise is muted, and only clear human speech triggers transmission.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Opens tactical modal dialog controlling squelch threshold (RMS gate -45 dB to -20 dB), VOX voice trigger sensitivity, and Roger Beep frequency synthesis (1050 Hz 100ms tone).</li><li>Persists user configuration to encrypted SharedPreferences with instant reload into active audio processing thread.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ◄ CH (Step Channel Frequency Down) -->
+      <div class="feature-card" id="echo_btn_ch_down">
+        <div class="feature-badge">CHANNEL STEPPING CONTROL</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_ch_down.png" alt="◄ CH (Step Channel Frequency Down) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">◄ CH (Step Channel Frequency Down)</h3>
+            <span class="feature-label">Control Bar • Button 2</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_ch_down_highlight.png" alt="Actual App Snapshot: ◄ CH (Step Channel Frequency Down) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Steps down to the previous tactical channel (e.g., from Channel 6 to Channel 5). Just like clicking the channel knob on a physical radio, it lets you cycle down through channels one by one.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>Basecamp announces over the radio: 'All units step down one channel to avoid interference.' You tap ◄ CH once, your radio switches smoothly from CH 06 to CH 05, and communications continue uninterrupted.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Decrements active channel index with modulo-16 wrap-around (CH 01 -> CH 16).</li><li>Switches active multicast socket listener to new port within 12 milliseconds without audio glitching.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CH ► (Step Channel Frequency Up) -->
+      <div class="feature-card" id="echo_btn_ch_up">
+        <div class="feature-badge">CHANNEL STEPPING CONTROL</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_ch_up.png" alt="CH ► (Step Channel Frequency Up) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">CH ► (Step Channel Frequency Up)</h3>
+            <span class="feature-label">Control Bar • Button 3</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_ch_up_highlight.png" alt="Actual App Snapshot: CH ► (Step Channel Frequency Up) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Steps up to the next tactical channel (e.g., from Channel 6 to Channel 7). Provides fast channel navigation without needing to open the full channel picker menu.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are coordinating a multi-team search. Team Alpha is on Channel 6; Team Bravo is on Channel 7. Tapping CH ► lets you quickly hop over to Channel 7 to check on Bravo's progress, then tap ◄ CH to return to Alpha.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Increments active channel index with modulo-16 wrap-around (CH 16 -> CH 01).</li><li>Broadcasts channel presence packet to notify peers on the new frequency of your radio callsign.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- ⇄ VFO A / VFO B (Dual Frequency Bank Switch) -->
+      <div class="feature-card" id="echo_btn_vfo">
+        <div class="feature-badge">VFO FREQUENCY BANK TOGGLE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_vfo.png" alt="⇄ VFO A / VFO B (Dual Frequency Bank Switch) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">⇄ VFO A / VFO B (Dual Frequency Bank Switch)</h3>
+            <span class="feature-label">Control Bar • Button 4</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_vfo_highlight.png" alt="Actual App Snapshot: ⇄ VFO A / VFO B (Dual Frequency Bank Switch) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Switches your primary talking frequency between Channel Bank A and Channel Bank B. It works just like a dual-channel HAM radio, allowing you to keep two channels ready and flip between them with a single tap.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are coordinating an event. Bank A is tuned to CH 06 (Security), while Bank B is tuned to CH 02 (Medical). You are listening to Security, but suddenly need to talk to Medical. You tap ⇄ VFO once to make Bank B active, press PTT to give your message to Medical, and tap ⇄ VFO again to return to Security.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Swaps active transmission pointer between primary VFO register (VFO_A) and secondary register (VFO_B).</li><li>Updates on-screen tactical display highlighting active frequency bank in neon sky-blue while dimming standby bank to muted slate.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TDR: OFF / ON (True Dual Watch Priority Receiver) -->
+      <div class="feature-card" id="echo_btn_tdr">
+        <div class="feature-badge">DUAL WATCH PRIORITY RECEIVER</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_tdr.png" alt="TDR: OFF / ON (True Dual Watch Priority Receiver) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">TDR: OFF / ON (True Dual Watch Priority Receiver)</h3>
+            <span class="feature-label">Control Bar • Button 5 (Right)</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_tdr_highlight.png" alt="Actual App Snapshot: TDR: OFF / ON (True Dual Watch Priority Receiver) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Turns on True Dual Receive (Dual Watch). When active, your walkie-talkie listens to BOTH Channel A and Channel B simultaneously! If anyone speaks on either channel, you will hear it instantly, ensuring you never miss an urgent message while monitoring another channel.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are monitoring routine campsite traffic on Channel 6, but want to make sure you hear any distress calls on Channel 1 (Emergency). You tap TDR: ON. Now you can chat with friends on Channel 6, but the moment someone calls for help on Channel 1, the app automatically pauses Channel 6 audio and plays the emergency call crystal-clear.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Spawns parallel asynchronous DatagramSocket listener threads for both VFO A and VFO B ports.</li><li>Implements priority audio interrupt: VFO B packets automatically preempt VFO A playback with automatic audio gain ducking (-18 dB attenuation on background channel).</li><li>Eliminates the need for carrying two separate physical walkie-talkie units.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- PTT BAR (Push-to-Talk Half-Duplex Mic Bar) -->
+      <div class="feature-card" id="echo_btn_ptt">
+        <div class="feature-badge">PRIMARY VOICE TRANSMISSION ENGINE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_ptt.png" alt="PTT BAR (Push-to-Talk Half-Duplex Mic Bar) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">PTT BAR (Push-to-Talk Half-Duplex Mic Bar)</h3>
+            <span class="feature-label">Main Center Button • Wide Tactical Bar</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_ptt_highlight.png" alt="Actual App Snapshot: PTT BAR (Push-to-Talk Half-Duplex Mic Bar) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>The main push-to-talk button of the walkie-talkie! Press and hold the big bar to talk; release it to listen. While held down, it glows amber, records your voice with high-definition clarity, and streams it instantly across the peer-to-peer mesh to every team member on your channel.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You spot an obstacle on the trail. You press and hold the PTT bar, say 'Trail clear of debris, proceeding to waypoint three', and let go. A crisp Roger Beep sounds on your teammates' phones, and they immediately hear your instructions in real time.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Samples uncompressed PCM 16-bit audio at 16,000 Hz or 48,000 Hz via android.media.AudioRecord.</li><li>Encodes audio frames in real time using libopus (Opus interactive speech profile) with 20ms frame sizing (320 samples per packet).</li><li>Encrypts frames with AES-256-GCM and transmits via connectionless UDP multicast packets with sequence indexing and jitter buffer reordering.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- KEY 1 (Speed Dial Tactical Channel 1 Preset) -->
+      <div class="feature-card" id="echo_btn_key_1">
+        <div class="feature-badge">DIRECT NUMERIC CHANNEL ACCESS</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_key_1.png" alt="KEY 1 (Speed Dial Tactical Channel 1 Preset) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">KEY 1 (Speed Dial Tactical Channel 1 Preset)</h3>
+            <span class="feature-label">Keypad Grid • Row 1 Left</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_key_1_highlight.png" alt="Actual App Snapshot: KEY 1 (Speed Dial Tactical Channel 1 Preset) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Numeric keypad button 1. Press and hold it for 1 second to instantly speed-dial Channel 1 (Emergency Basecamp), bypassing all menus in a split-second panic situation.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are surprised by wild animals or sudden weather on a mountain ridge and need immediate assistance. Instead of looking through menus, you press and hold KEY 1. The walkie immediately snaps to Channel 1 Emergency, ready to transmit your distress call.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>On long-press (>= 800ms), triggers OnLongClickListener directing active VFO register to Channel Index 0 (Emergency Basecamp).</li><li>Synthesizes standard dual-tone multi-frequency (DTMF) 697 Hz + 1209 Hz confirmation acoustic feedback tone.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- KEY * / LOCK (Keypad & Tactical Lockout) -->
+      <div class="feature-card" id="echo_btn_key_lock">
+        <div class="feature-badge">TACTICAL LOCKOUT & ACCIDENTAL TOUCH SHIELD</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_key_lock.png" alt="KEY * / LOCK (Keypad & Tactical Lockout) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">KEY * / LOCK (Keypad & Tactical Lockout)</h3>
+            <span class="feature-label">Keypad Grid • Row 4 Left</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_key_lock_highlight.png" alt="Actual App Snapshot: KEY * / LOCK (Keypad & Tactical Lockout) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Locks the screen controls so you do not accidentally change channels, mute volume, or trigger buttons while carrying your phone in a pocket, chest rig, or tactical pouch.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are running or crawling through dense brush during field maneuvers. The phone is in your chest pocket bouncing against gear. You tap KEY * / LOCK to lock the interface. Only the big PTT button or hardware volume keys remain active, ensuring your channel cannot be bumped off frequency.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Engages software touch-interceptor shield consuming MotionEvents across all UI elements except PTT bar and hardware volume buttons (KeyEvent.KEYCODE_VOLUME_UP/DOWN).</li><li>Displays padlock icon overlay and requires 2-second hold to disengage tactical lockout.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- WALKIE TAB (Tactical Transceiver Control Station) -->
+      <div class="feature-card" id="echo_btn_tab_walkie">
+        <div class="feature-badge">PRIMARY TRANSCEIVER CONSOLE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_tab_walkie.png" alt="WALKIE TAB (Tactical Transceiver Control Station) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">WALKIE TAB (Tactical Transceiver Control Station)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 1</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_tab_walkie_highlight.png" alt="Actual App Snapshot: WALKIE TAB (Tactical Transceiver Control Station) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Brings you back to the main walkie-talkie screen with the big channel display, PTT button, volume controls, and keypad.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You were checking the team map or reading text messages, but now need to return to active voice radio operations. You tap the WALKIE tab to instantly bring up the PTT voice screen.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Navigates to primary TransceiverFragment maintaining background audio receiver threads without socket interruption.</li><li>Restores live audio spectrum visualizer (oscilloscope waveform) and active squelch LED indicators.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- TEAM TAB (Discovered Node Grid & Signal Radar) -->
+      <div class="feature-card" id="echo_btn_tab_team">
+        <div class="feature-badge">MESH TOPOLOGY & NODE MONITOR</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_tab_team.png" alt="TEAM TAB (Discovered Node Grid & Signal Radar) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">TEAM TAB (Discovered Node Grid & Signal Radar)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 2</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_tab_team_highlight.png" alt="Actual App Snapshot: TEAM TAB (Discovered Node Grid & Signal Radar) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Shows a live roster of every teammate currently connected to your off-grid mesh network. You can see their callsigns, battery percentages, Wi-Fi signal strengths, and whether they are in direct range or multi-hop range.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are leading a group of four hikers. You tap the TEAM tab and see all four member names listed with green indicators, confirming everyone's radios are online, batteries are above 80%, and all units are within mesh radio coverage.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Maintains dynamic peer registry updated by 5-second UDP heartbeat packets (opcode 0x01_HEARTBEAT).</li><li>Calculates RSSI signal strength (dBm), link quality percentage, and round-trip ping latency (RTT in ms) for each mesh peer.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MAP TAB (Tactical Grid & Member Coordinate Beacon) -->
+      <div class="feature-card" id="echo_btn_tab_map">
+        <div class="feature-badge">OFFLINE TACTICAL GRID & RADAR</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_tab_map.png" alt="MAP TAB (Tactical Grid & Member Coordinate Beacon) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">MAP TAB (Tactical Grid & Member Coordinate Beacon)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 3</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_tab_map_highlight.png" alt="Actual App Snapshot: MAP TAB (Tactical Grid & Member Coordinate Beacon) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Displays an offline tactical map showing the exact real-time GPS locations of all teammates on your channel. Even without internet, their positions update on your map as they move, complete with direction vectors and distance markers.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>Your search team spreads out across a 2-mile forest perimeter. You tap the MAP tab to see glowing pins representing each teammate moving across offline topo terrain, showing that Team Member 2 is 400 meters to your northeast.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Decodes periodic GPS telemetry embedded in peer metadata packets (latitude, longitude, heading, speed).</li><li>Plots coordinates on offline MapLibre / vector tile canvas cached locally with zero internet access.</li><li>Calculates great-circle distance (Haversine formula) and azimuth relative to local device orientation.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- MSGS TAB (Off-Grid Store-and-Forward Text Chat) -->
+      <div class="feature-card" id="echo_btn_tab_msgs">
+        <div class="feature-badge">SECURE OFFLINE TEXT COMMUNICATIONS</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_btn_tab_msgs.png" alt="MSGS TAB (Off-Grid Store-and-Forward Text Chat) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">MSGS TAB (Off-Grid Store-and-Forward Text Chat)</h3>
+            <span class="feature-label">Bottom Navigation Bar • Tab 4</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_btn_tab_msgs_highlight.png" alt="Actual App Snapshot: MSGS TAB (Off-Grid Store-and-Forward Text Chat) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>An off-grid text messaging screen that works like WhatsApp or SMS, but requires NO cell towers or internet! Send text messages, coordinate lists, and waypoint markers silently over the mesh radio network.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You are in a noisy helicopter or in tactical stealth where speaking out loud is impossible. You tap MSGS and type 'Reached checkpoint Bravo, holding position'. The message transmits silently across the Wi-Fi Direct mesh and displays on all teammates' screens.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Encrypted store-and-forward text message queue utilizing peer-to-peer epidemic mesh routing.</li><li>Delivers read receipts (ACK packets) and retries dropped packets automatically over UDP.</li><li>Zero cellular SMS or internet server dependencies; runs 100% peer-to-peer.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- VFO B Monitor (Dual Watch Sub-Channel Display) -->
+      <div class="feature-card" id="echo_card_vfo_b">
+        <div class="feature-badge">SECONDARY CHANNEL STATUS MONITOR</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/echo_card_vfo_b.png" alt="VFO B Monitor (Dual Watch Sub-Channel Display) Icon Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">VFO B Monitor (Dual Watch Sub-Channel Display)</h3>
+            <span class="feature-label">Tactical Information Banner • Below Frequency</span>
+          </div>
+        </div>
+
+        <!-- Highlighted Snapshot on Actual UI -->
+        <div class="feature-snapshot-wrap">
+          <img src="assets/guides/highlighted/echo_card_vfo_b_highlight.png" alt="Actual App Snapshot: VFO B Monitor (Dual Watch Sub-Channel Display) Highlighted on Note 8 Interface">
+          <div class="feature-snapshot-caption">
+            <span>📍 Actual App Snapshot &bull; Highlighted on Galaxy Note 8 Interface</span>
+            <span style="color:#00e5ff;">EXOS ECHO v1.2.3 &bull; Production</span>
+          </div>
+        </div>
+
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>A live status banner on the screen showing what channel your second radio receiver is tuned to (e.g., DW: OFF • VFO B CH 01 [MUTED/STANDBY]). It tells you at a glance whether Dual Watch is listening to your secondary frequency.</p>
+        </div>
+
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p>You glance at your screen while driving. The banner confirms that Channel 1 Emergency is armed on Dual Watch standby, giving you peace of mind that you will hear any distress call while talking on Channel 6.</p>
+        </div>
+
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Real-time reactive StateFlow binding displaying secondary channel number, mute state, and carrier detect status.</li><li>Flashes neon green when carrier signal is detected on secondary frequency bank.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:40px; text-align:center; margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:12px;">Ready for Off-Grid Tactical Voice Communications?</h2>
+      <p style="color:#94a3b8; max-width:640px; margin:0 auto 24px;">Download EXOS ECHO from the Google Play Store and connect your expedition team over peer-to-peer mesh radio in seconds.</p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7; padding:12px 28px;">
+          Install from Google Play Store &rarr;
+        </a>
+        <a href="wayfinder-guide.html" class="btn-secondary" style="padding:12px 28px;">
+          EXOS Wayfinder Guide &rarr;
+        </a>
       </div>
     </section>
 
-    <!-- SECTION 2: VFO CONTROLS & DUAL WATCH -->
-    <section id="vfo-controls" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        2. VFO &amp; Dual Watch Control Bar
-      </h2>
-
-      <!-- Button: MENU -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 09 &bull; VFO BAR</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_menu.png" alt="MENU Radio Menu Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">≡ MENU (Full Radio Parameters)</h3>
-            <span class="feature-label">Push Button &bull; Lower Bar Left</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Opens the in-depth radio settings menu, allowing you to configure Squelch sensitivity (blocking static noise), Microphone Gain, Roger Beep, and VOX hands-free voice activation.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are driving an open-top off-road vehicle with loud wind noise. The wind keeps triggering the microphone. You tap <code>≡ MENU</code>, adjust the Squelch threshold from 2 to 6, and turn on the Roger Beep tone so teammates know when you have finished talking despite engine roar.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Configurable Parameters:</strong> Squelch (SQL 0–9), VOX threshold (-40 dBFS to -12 dBFS), Roger Beep (1750 Hz 80ms tone), Mic Preamp gain (0 to +18 dB).</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: CH Down & CH Up -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 10 &amp; 11 &bull; VFO BAR</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap" style="gap:8px;">
-            <img src="assets/guides/crops/echo_btn_ch_down.png" alt="CH Down Button">
-            <img src="assets/guides/crops/echo_btn_ch_up.png" alt="CH Up Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">◀ CH &amp; CH ▶ (Channel Step Stepper)</h3>
-            <span class="feature-label">Directional Steppers &bull; Center Control Bar</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Steps your active radio channel up or down one by one, like the tuning dial on a handheld walkie-talkie.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You want to check if the camp generator team is active on Channel 07 while you are currently on Channel 06. You tap <code>CH ▶</code> once to hop to CH 07, listen for traffic, and then tap <code>◀ CH</code> to return to your primary team channel.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Channel Ring:</strong> Modulo-10 index ring cycling seamlessly across channels 01 through 10.</li>
-            <li><strong>Audio Sidetone:</strong> Emits a subtle 40ms click confirmation on step change.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: VFO Toggle -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 12 &bull; VFO BAR</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_vfo.png" alt="VFO Toggle Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">⇄ VFO A / VFO B (Active VFO Toggle)</h3>
-            <span class="feature-label">Toggle Button &bull; Right Center</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>EXOS ECHO has two independent radio tuners built-in: VFO A (Primary) and VFO B (Secondary). Tapping <code>⇄ VFO</code> switches which channel you transmit on when you press the Hold-to-Talk button.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You have VFO A set to Channel 06 (your local hiking group) and VFO B set to Channel 01 (the basecamp dispatch). While walking, you talk to your group on VFO A. Basecamp calls out with a weather bulletin. You tap <code>⇄ VFO</code> to immediately switch your transmit focus to VFO B, acknowledge the basecamp dispatcher, and tap it again to return to your local group.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Dual VFO Architecture:</strong> Emulates standard commercial dual-watch transceivers (Baofeng, Yaesu, Icom) in pure software.</li>
-            <li><strong>State Management:</strong> Maintains separate channel frequencies, encryption sub-keys, and volume balances for VFO A and VFO B concurrently.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: TDR (Dual Watch) -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 13 &bull; VFO BAR</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_tdr.png" alt="TDR Dual Receive Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">TDR (True Dual Receive / Dual Watch)</h3>
-            <span class="feature-label">Toggle Button &bull; Far Right</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Turns ON or OFF the ability to listen to TWO channels at the same time. When TDR is ON, you will hear incoming voice calls from both VFO A and VFO B, so you never miss an important message.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are leading a group of 12 hikers. Scouts are on Channel 03 while safety officers are on Channel 09. You enable <code>TDR: ON</code>. When scouts call about trail hazards on CH 03, you hear them. Five minutes later, when the medical officer checks in on CH 09, you hear that too, without ever having to touch a knob.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Dual Audio Demuxing:</strong> Ingests dual UDP multicast audio streams and runs simultaneous Opus decoders with audio ducking: if VFO A receives voice, VFO B volume is automatically ducked by 12 dB to maintain priority clarity.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: PUSH TO TALK & KEYPAD -->
-    <section id="ptt-voice" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        3. PTT Engine &amp; Tactical Keypad
-      </h2>
-
-      <!-- Button: PTT -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 14 &bull; CORE TRANSMITTER</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap" style="width:100%; max-width:500px;">
-            <img src="assets/guides/crops/echo_btn_ptt.png" alt="PTT Hold to Talk Button" style="width:100%; max-width:450px;">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">HOLD TO TALK (Push-To-Talk Voice Bar)</h3>
-            <span class="feature-label">Momentary Hold Bar &bull; Screen Center</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>The primary transmission button. Press and hold this bar while speaking into your phone's microphone. Your voice is instantly digitized, encrypted, and streamed across the mesh to all teammates on your active channel. Release the bar when you are done speaking to return to listening.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You spot a fast-moving storm cloud approaching the ridge. You press and hold the large cyan <code>HOLD TO TALK</code> bar with your thumb, say: "All units, heavy rain approaching the saddle in 10 minutes, put on rain gear," and let go. The transmission terminates with a brief confirmation chime and your radio instantly returns to standby.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Codec Engine:</strong> Native Opus interactive audio codec operating at 16 kHz sampling rate, 20ms frame packetization, and dynamic 24 kbps variable bitrate.</li>
-            <li><strong>Transport Latency:</strong> Sub-80ms end-to-end voice latency over direct Wi-Fi P2P 802.11 sockets.</li>
-            <li><strong>Floor Control:</strong> Distributed token bucket algorithm preventing voice packet collisions.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Button: * LOCK -->
-      <div class="feature-card">
-        <div class="feature-badge">CONTROL 15 &bull; TACTICAL KEYPAD</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_key_lock.png" alt="LOCK Keypad Lock Button">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">* LOCK (Keypad Lock / Accidental Press Guard)</h3>
-            <span class="feature-label">Toggle Button &bull; Lower Left Keypad</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Locks the screen controls so that putting your phone into your pocket, backpack, or tactical vest pouch will not accidentally change channels or trigger unintentional button presses.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are bushwhacking through dense brush and sliding down rocky slopes. You tap and hold <code>* LOCK</code>. A lock icon appears on screen. Now, branches rubbing against your phone's glass cannot bump you off your squad's channel. When you need to talk, a simple long-press unlocks it.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Touch Interceptor:</strong> Consumes all Android window touch dispatch events except the designated unlock gesture, preventing accidental input state corruption.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 4: BOTTOM TABS -->
-    <section id="tabs" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        4. Operational Tabs (Team Roster, Map &amp; Messages)
-      </h2>
-
-      <!-- Tab: WALKIE -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 01 &bull; MAIN TRANSCEIVER</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_tab_walkie.png" alt="WALKIE Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">WALKIE (Tactical Transceiver Tab)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar Left</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>The primary command view with the full radio dial, channel display, volume meters, and Push-to-Talk button.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> During active trail patrol, keep this tab open for fast, instant voice communication with your team.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li>Renders live VU audio level meters, LCD display emulation, and active transmitter floor indicators.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tab: TEAM -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 02 &bull; MESH ROSTER</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_tab_team.png" alt="TEAM Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">TEAM (Mesh Member Roster &amp; Vital Stats)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar Center-Left</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Shows a live list of every team member currently connected to the mesh network, their Call Sign, signal strength bar, battery percentage, and time since their last transmission.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are the expedition leader. At 18:00 hours, you tap the <code>TEAM</code> tab to do a roll call. You see all 6 members listed in green with strong signal, and notice member "SCOUT-2" has 14% battery remaining. You radio them to swap to their backup battery pack before nightfall.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Heartbeat Telemetry:</strong> Periodic 5-second UDP beacons broadcasting node UUID, battery level, RSSI, and active channel. Nodes automatically transition to "OFFLINE" after 20 seconds of silence.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tab: MAP -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 03 &bull; TACTICAL CARTOGRAPHY</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_tab_map.png" alt="MAP Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">MAP (Tactical Mesh Radar &amp; Member Locations)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar Center-Right</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Displays an offline tactical map showing the real-time GPS locations of all teammates on your mesh network, your distance to them, and any active SOS distress beacons.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> Heavy mountain fog rolls in, reducing visibility to less than 10 meters. You lose visual contact with your partner. You open the <code>MAP</code> tab; your partner's icon appears 85 meters to your northeast at bearing 042°. You walk straight toward their icon and rejoin the team without shouting or getting lost.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Coordinate Mesh Sync:</strong> Lightweight JSON coordinate packets broadcast over the mesh layer; renders using high-contrast offline vector cartography with zero cellular data required.</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Tab: MSGS -->
-      <div class="feature-card">
-        <div class="feature-badge">TAB 04 &bull; ENCRYPTED CHAT</div>
-        <div class="feature-header">
-          <div class="feature-thumb-wrap">
-            <img src="assets/guides/crops/echo_btn_tab_msgs.png" alt="MSGS Tab">
-          </div>
-          <div class="feature-title-wrap">
-            <h3 class="feature-title">MSGS (Peer-to-Peer Encrypted Text Messaging)</h3>
-            <span class="feature-label">Navigation Tab &bull; Bottom Bar Right</span>
-          </div>
-        </div>
-        <div class="feature-layman">
-          <h4>What it Does (In Plain English)</h4>
-          <p>Lets you send silent, encrypted text messages, GPS coordinates, and quick tactical status codes (e.g. "AT OBJECTIVE", "HOLDING POSITION") over the mesh when you cannot speak aloud.</p>
-        </div>
-        <div class="feature-scenario">
-          <h4>Real-World Field Scenario</h4>
-          <p><strong>Scenario:</strong> You are monitoring wildlife or need silent communication during an operation where noise is strictly prohibited. You open the <code>MSGS</code> tab and type: "Sighted target at ridge waypoint A2, holding position." Every team member receives the message on their screen silently, with zero acoustic noise emitted.</p>
-        </div>
-        <div class="feature-tech">
-          <h4>Technical Specifications &amp; Protocol Architecture</h4>
-          <ul>
-            <li><strong>Store &amp; Forward:</strong> Ephemeral mesh packet routing with delivery acknowledgments (ACK). All text payloads are encrypted with AES-256-GCM.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 5: TECHNICAL SPECIFICATIONS -->
-    <section id="specs" style="margin-bottom:60px;">
-      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
-        5. Technical Parameters &amp; Radio Matrix
-      </h2>
-      <div class="table-wrap">
-        <table class="spec-table">
-          <thead>
-            <tr>
-              <th>Parameter</th>
-              <th>EXOS ECHO Specification</th>
-              <th>Operational Significance</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>Application Package</strong></td>
-              <td><code>com.exos.mesh</code> (Production v1.2.3)</td>
-              <td>Standalone 64-bit Android application architecture.</td>
-            </tr>
-            <tr>
-              <td><strong>Mesh Transport</strong></td>
-              <td>Wi-Fi Direct (802.11 P2P) + BLE Mesh Flood</td>
-              <td>Operates 100% off-grid with zero cell tower, internet, or satellite relay needed.</td>
-            </tr>
-            <tr>
-              <td><strong>Voice Codec</strong></td>
-              <td>Opus Interactive Audio (16 kHz, 16-bit mono, 24 kbps)</td>
-              <td>Crystal-clear tactical speech intelligibility with extreme packet efficiency.</td>
-            </tr>
-            <tr>
-              <td><strong>Audio Latency</strong></td>
-              <td>&lt; 80 milliseconds (End-to-End)</td>
-              <td>Instant conversational response comparable to analog FM transceivers.</td>
-            </tr>
-            <tr>
-              <td><strong>Cryptographic Engine</strong></td>
-              <td>AES-256-GCM Symmetric Authenticated Encryption</td>
-              <td>Prevents eavesdropping and rogue packet injection across tactical groups.</td>
-            </tr>
-            <tr>
-              <td><strong>VFO Capabilities</strong></td>
-              <td>True Dual Receive (TDR) with Dual VFO (A / B)</td>
-              <td>Simultaneous background monitoring across two independent channels.</td>
-            </tr>
-            <tr>
-              <td><strong>Emergency Beacon</strong></td>
-              <td>Level-0 Critical Override (GPS + Elevation + Battery)</td>
-              <td>Immediate distress broadcast penetrating muted channels on all member devices.</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
   </main>
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="footer-bottom">
-      <div class="container" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px;">
-        <p style="margin:0; font-size:0.85rem; color:#94a3b8;">
-          &copy; 2026 RITYM Technologies &bull; exosgps.com &bull; All Rights Reserved.
-        </p>
-        <div style="display:flex; gap:20px; font-size:0.85rem;">
-          <a href="index.html" style="color:#94a3b8; text-decoration:none;">Home</a>
-          <a href="transceiver-guide.html" style="color:#94a3b8; text-decoration:none;">Transceiver Guide</a>
-          <a href="wayfinder-guide.html" style="color:#94a3b8; text-decoration:none;">Wayfinder Guide</a>
-          <a href="station-guide.html" style="color:#94a3b8; text-decoration:none;">Windows Station Guide</a>
-          <a href="privacy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a>
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" style="height:36px; margin-bottom:12px;">
+          <p style="color:#64748b; font-size:0.85rem; line-height:1.6;">
+            Next-generation off-grid mesh communications, satellite telemetry bridges, and tactical mission-critical navigation platforms.
+          </p>
         </div>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Applications</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="echo-guide.html" style="color:#38bdf8; text-decoration:none;">EXOS ECHO Walkie-Talkie</a></li>
+            <li><a href="wayfinder-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS Wayfinder</a></li>
+            <li><a href="transceiver-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS Transceiver</a></li>
+            <li><a href="station-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS GPS Station (Windows)</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Support &amp; Legal</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="index.html#getting-started" style="color:#94a3b8; text-decoration:none;">Getting Started</a></li>
+            <li><a href="privacy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color:#94a3b8; text-decoration:none;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; margin-top:32px; text-align:center; color:#64748b; font-size:0.8rem;">
+        &copy; 2026 RITYM Technologies &bull; exosgps.com &bull; All Rights Reserved.
       </div>
     </div>
   </footer>
+
 </body>
 </html>
