@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EXOS-GPS Station | Complete User Guide & Field Manual</title>
-  <meta name="description" content="Official user manual and technical guide for EXOS-GPS Station. Learn how to configure Transmitter and Receiver modes, setup Smart Guided Mock Location for Google Maps, and run the Windows Desktop client.">
+  <title>EXOS GPS Station (Windows) | Complete User Guide &amp; Tactical Telemetry Command Manual</title>
+  <meta name="description" content="Official user manual and complete technical button-by-button guide for EXOS GPS Station for Windows Desktop. Connect Bluetooth GPS, NMEA receivers, configure Windows Location Sensor Provider, and stream satellite telemetry.">
   <link rel="icon" type="image/png" href="assets/icon.png">
   
   <!-- Modern Tactical Fonts -->
@@ -36,741 +36,652 @@
       padding: 8px 16px;
       border-radius: var(--radius-sm);
       font-family: var(--font-mono);
-      font-size: 0.8rem;
+      font-size: 0.82rem;
+      font-weight: 700;
       color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .guide-tab-link:hover, .guide-tab-link.active {
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.08);
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 32px;
+      transition: border-color 0.2s ease;
+    }
+    .feature-card:hover {
+      border-color: #38bdf8;
+    }
+    .feature-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+    .feature-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .feature-thumb-wrap {
+      background: #090d14;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .feature-thumb-wrap img {
+      max-height: 52px;
+      max-width: 320px;
+      object-fit: contain;
+    }
+    .feature-title-wrap h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: #f0f6fc;
+      margin: 0 0 4px 0;
+    }
+    .feature-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .feature-layman {
+      background: rgba(2, 132, 199, 0.06);
+      border-left: 4px solid #0284c7;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+    }
+    .feature-layman h4 {
+      color: #38bdf8;
+      font-size: 0.95rem;
+      margin: 0 0 8px 0;
+      font-family: var(--font-mono);
+    }
+    .feature-layman p {
+      color: #e2e8f0;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .feature-scenario {
+      background: rgba(0, 255, 136, 0.06);
+      border-left: 4px solid #00ff88;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+    }
+    .feature-scenario h4 {
+      color: #00ff88;
+      font-size: 0.95rem;
+      margin: 0 0 8px 0;
+      font-family: var(--font-mono);
+    }
+    .feature-scenario p {
+      color: #e2e8f0;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .feature-tech {
+      background: rgba(15, 23, 42, 0.6);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.25s ease;
+      padding: 16px 20px;
+      border-radius: 8px;
+    }
+    .feature-tech h4 {
+      color: #94a3b8;
+      font-size: 0.88rem;
+      margin: 0 0 10px 0;
+      font-family: var(--font-mono);
       text-transform: uppercase;
       letter-spacing: 0.05em;
     }
-    .guide-tab-link:hover, .guide-tab-link.active {
-      color: var(--accent-green);
-      border-color: var(--border-glow);
-      background: rgba(0, 255, 136, 0.08);
-      box-shadow: 0 0 15px rgba(0, 255, 136, 0.15);
+    .feature-tech ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      line-height: 1.6;
     }
-    .guide-card {
+    .feature-tech li strong {
+      color: #f1f5f9;
+    }
+    .screens-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 36px 0;
+    }
+    .screen-card {
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      margin-bottom: 40px;
-      position: relative;
+      border-radius: var(--radius-md);
       overflow: hidden;
+      text-align: center;
+      padding: 16px;
     }
-    .guide-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 4px;
-      height: 100%;
-      background: var(--accent-green);
+    .screen-card img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 12px;
     }
-    .guide-card.cyan::before { background: var(--accent-cyan); }
-    .guide-card.amber::before { background: var(--accent-amber); }
-
-    .step-number-badge {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      background: rgba(0, 255, 136, 0.15);
-      border: 1px solid var(--accent-green);
-      color: var(--accent-green);
-      font-family: var(--font-mono);
-      font-weight: 700;
-      font-size: 0.9rem;
-      margin-right: 12px;
-      flex-shrink: 0;
-    }
-    .step-item {
-      display: flex;
-      align-items: flex-start;
-      margin-bottom: 24px;
-    }
-    .step-body {
-      flex: 1;
-    }
-    .step-body h4 {
+    .screen-card h4 {
+      color: #f0f6fc;
+      margin: 8px 0 4px;
       font-family: var(--font-display);
-      color: #fff;
-      font-size: 1.15rem;
-      margin-bottom: 6px;
     }
-    .step-body p {
+    .screen-card p {
       color: var(--text-muted);
-      line-height: 1.6;
-      font-size: 0.95rem;
-    }
-
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%; /* 16:9 */
-      height: 0;
-      overflow: hidden;
-      border-radius: var(--radius-md);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-glow);
-      margin: 30px 0;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .code-box {
-      background: rgba(5, 8, 12, 0.95);
-      border: 1px solid rgba(0, 255, 136, 0.2);
-      border-radius: var(--radius-sm);
-      padding: 16px 20px;
-      font-family: var(--font-mono);
       font-size: 0.85rem;
-      color: var(--accent-green);
-      overflow-x: auto;
-      margin: 16px 0;
-      line-height: 1.5;
-    }
-    .code-box span.comment { color: var(--text-dim); }
-    .code-box span.cmd { color: var(--accent-cyan); font-weight: bold; }
-    .code-box span.nmea { color: #f0f6fc; }
-
-    .callout-box {
-      background: rgba(0, 229, 255, 0.06);
-      border-left: 3px solid var(--accent-cyan);
-      padding: 16px 20px;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      margin: 20px 0;
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.6;
-    }
-    .callout-box strong { color: var(--accent-cyan); }
-
-    .img-preview-card {
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      background: var(--bg-panel);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-      margin: 20px 0;
-    }
-    .img-preview-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .img-preview-caption {
-      padding: 12px 18px;
-      font-family: var(--font-mono);
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      background: rgba(7, 10, 13, 0.95);
+      margin: 0;
     }
   </style>
 </head>
-<body>
+<body class="theme-station">
 
-  <!-- Top Telemetry Bar -->
-  <div class="telemetry-ticker">
-    <div class="ticker-items">
-      <div><span class="pulse-dot"></span>EXOS-STATION FIELD MANUAL</div>
-      <div>FREQUENCY: <strong style="color:#fff;">BLUETOOTH SPP 2.4 GHz</strong></div>
-      <div>ENCRYPTION: <strong style="color:var(--accent-cyan);">OFFLINE PEER-TO-PEER</strong></div>
-      <div>MOCK PROVIDER: <strong style="color:var(--accent-green);">SYSTEM GPS INJECTION</strong></div>
-    </div>
-    <div style="font-size:0.75rem; color:var(--text-muted); font-family:var(--font-mono);">
-      DOC-REV: 2026.09-REL4
-    </div>
-  </div>
-
-  <!-- Main Navigation -->
-  <header class="navbar">
-    <div class="nav-brand">
-      <a href="index.html" style="display:flex; align-items:center; gap:12px;">
-        <img src="assets/icon.png" alt="EXOS GPS" class="brand-icon">
-        <span class="brand-text">EXOS GPS</span>
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo-wrap">
+        <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" style="height:44px;">
       </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="station-guide.html" class="nav-link" style="color:#38bdf8; font-weight:700;">Windows Station</a>
+        <a href="transceiver-guide.html" class="nav-link">Transceiver</a>
+        <a href="wayfinder-guide.html" class="nav-link">Wayfinder</a>
+        <a href="echo-guide.html" class="nav-link">ECHO Walkie-Talkie</a>
+      </nav>
+      <div>
+        <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-primary" style="background-color:#0284c7; font-size:0.82rem; padding:8px 16px;">
+          Download Windows Installer &rarr;
+        </a>
+      </div>
     </div>
-    <nav class="nav-links">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="index.html#wayfinder" class="nav-link">Wayfinder App</a>
-      <a href="index.html#specifications" class="nav-link">Hardware Puck</a>
-      <a href="station-guide.html" class="nav-link" style="color:var(--accent-green); font-weight:700;">Station Guide</a>
-      <a href="support.html" class="nav-link">Support</a>
-    </nav>
-    <a href="https://play.google.com/apps/testing/com.ritym.exosgps" target="_blank" rel="noopener" class="nav-cta">TEST STATION</a>
   </header>
 
-  <!-- Sticky In-Page Navigation -->
-  <div class="guide-nav-bar container">
-    <a href="#overview" class="guide-tab-link">Overview</a>
-    <a href="#video-demo" class="guide-tab-link">Video Walkthrough</a>
-    <a href="#transmitter" class="guide-tab-link">Transmitter Mode</a>
-    <a href="#receiver" class="guide-tab-link">Receiver Mode</a>
-    <a href="#mock-location" class="guide-tab-link">Mock Location Guide</a>
-    <a href="#windows" class="guide-tab-link">Windows App</a>
-    <a href="#specs" class="guide-tab-link">Telemetry Specs</a>
+  <!-- Sub-Navigation Bar -->
+  <div class="guide-nav-bar">
+    <a href="#overview" class="guide-tab-link active">Station Overview</a>
+    <a href="#hardware-bar" class="guide-tab-link">Connection Toolbar</a>
+    <a href="#system-actions" class="guide-tab-link">System Actions</a>
+    <a href="#displays" class="guide-tab-link">Tactical Displays</a>
+    <a href="#telemetry-cards" class="guide-tab-link">Telemetry Cards</a>
+    <a href="#nmea-stream" class="guide-tab-link">NMEA Console</a>
+    <a href="#menus" class="guide-tab-link">Menu Features</a>
   </div>
 
-  <main class="container" style="padding-top:30px; padding-bottom:100px;">
-
-    <!-- Hero Header -->
-    <div class="guide-hero" id="overview">
-      <div class="section-tag">COMPREHENSIVE DEPLOYMENT MANUAL</div>
-      <h1 style="font-family:var(--font-display); font-size:clamp(2rem, 5vw, 3.2rem); margin-bottom:16px;">
-        EXOS-GPS STATION <span class="glow-green">USER GUIDE</span>
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="guide-hero" id="overview">
+      <div style="display:inline-block; margin-bottom:12px;" class="feature-badge">OFFICIAL WINDOWS TELEMETRY COMMAND CENTER &bull; NATIVE SENSOR PROVIDER &bull; BROWSER BRIDGE</div>
+      <h1 style="font-family:var(--font-display); font-size:2.4rem; color:#f0f6fc; margin-bottom:12px;">
+        EXOS GPS Station (Windows) Field Manual
       </h1>
-      <p style="max-width:760px; margin:0 auto 30px; color:var(--text-muted); font-size:1.1rem; line-height:1.6;">
-        Transform any standard Android smartphone, tablet, or Windows workstation into an autonomous, off-grid GNSS satellite transceiver. Stream raw NMEA 0183 telemetry over peer-to-peer Bluetooth with zero cloud dependency.
+      <p style="color:#94a3b8; max-width:780px; margin:0 auto 28px; font-size:1.05rem; line-height:1.6;">
+        Comprehensive, button-by-button operational guide for the EXOS GPS Station Windows desktop client (v0.17). Learn how to bridge satellite telemetry from the EXOS Transceiver mobile app, USB GNSS dongles, or Wi-Fi emitters directly into Windows native location services, browser mapping, and professional GIS suites.
       </p>
       <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-        <a href="#video-demo" class="btn-primary">WATCH DEMO VIDEO</a>
-        <a href="https://play.google.com/apps/testing/com.ritym.exosgps" target="_blank" rel="noopener" class="btn-secondary">JOIN GOOGLE PLAY BETA</a>
+        <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-primary" style="background-color:#0284c7;">
+          Download Windows Setup (v0.17) &rarr;
+        </a>
+        <a href="transceiver-guide.html" class="btn-secondary">
+          EXOS Transceiver Mobile Companion &rarr;
+        </a>
       </div>
-    </div>
+    </section>
 
-    <!-- Official Video Walkthrough -->
-    <section id="video-demo" style="margin-bottom:60px;">
-      <div class="guide-card cyan">
-        <div class="section-tag" style="color:var(--accent-cyan);">STEP-BY-STEP DEMO</div>
-        <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:12px; color:#fff;">
-          OFFICIAL VIDEO WALKTHROUGH
-        </h2>
-        <p style="color:var(--text-muted); margin-bottom:20px;">
-          Watch RITYM Technologies’ animated walkthrough demonstrating 1-tap device selection, live NMEA satellite streaming, and the Smart Guided Mock Location setup for Google Maps.
-        </p>
-        
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/embed/T90EW8cUiNY?rel=0" title="EXOS-GPS Station User Guide" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
-
-        <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; font-family:var(--font-mono); font-size:0.8rem; color:var(--text-muted);">
-          <div>Duration: <strong>03:05</strong> | Resolution: <strong>1080p Full HD</strong></div>
-          <div>Direct Link: <a href="https://youtu.be/T90EW8cUiNY" target="_blank" rel="noopener" style="color:var(--accent-cyan); text-decoration:underline;">youtu.be/T90EW8cUiNY</a></div>
+    <!-- App Screen Showcase -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; text-align:center; margin-bottom:8px;">Live Windows Desktop Interface</h2>
+      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">High-resolution mission-control dashboard running natively on Windows 10/11 x64 architecture.</p>
+      
+      <div class="screens-showcase-grid" style="grid-template-columns: 1fr;">
+        <div class="screen-card">
+          <img src="assets/guides/crops/station_win_header.png" alt="Station Header &amp; Branding" style="margin-bottom:12px;">
+          <img src="assets/station_windows_live.png" alt="EXOS GPS Station Windows Live Interface" style="max-height:560px; object-fit:contain;">
+          <h4>Full Telemetry Command Center &bull; Mission Control Layout</h4>
+          <p>Integrated hardware port scanner, C# Windows location sensor bridge, 3D compass horizon, Natural Earth vector globe, and raw NMEA stream monitor.</p>
         </div>
       </div>
     </section>
 
-    <!-- Architecture Overview -->
-    <section style="margin-bottom:60px;">
-      <div class="guide-card">
-        <div class="section-tag">DUAL-ENGINE TELEMETRY BRIDGE</div>
-        <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:16px; color:#fff;">
-          HOW EXOS-GPS STATION WORKS
-        </h2>
-        <p style="color:var(--text-muted); line-height:1.7; margin-bottom:24px;">
-          Modern smart devices often lack high-sensitivity GPS antennas or waste battery when multiple mapping apps run satellite fixes simultaneously. EXOS-GPS Station solves this with a lightweight, peer-to-peer telemetry bridge:
-        </p>
+    <!-- SECTION 1: HARDWARE CONNECTION TOOLBAR -->
+    <section id="hardware-bar" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        1. Unified Hardware Connection Toolbar
+      </h2>
 
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px; margin-bottom:24px;">
-          <div style="background:var(--bg-panel); border:1px solid var(--border-subtle); padding:24px; border-radius:var(--radius-md);">
-            <div style="font-family:var(--font-mono); color:var(--accent-green); font-weight:700; margin-bottom:8px;">01 // TRANSMITTER ENGINE</div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
-              Taps raw GNSS hardware (GPS, GLONASS, Galileo, BeiDou) on Device A. Formats high-precision NMEA-0183 sentences ($GPGGA, $GPRMC, $GPGSV) and broadcasts them over Bluetooth Serial Port Profile (SPP).
-            </p>
+      <!-- Feature 1: Rescan Ports Button -->
+      <div class="feature-card">
+        <div class="feature-badge">TOOLBAR CONTROL 01 &bull; PORT DETECTION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_connect_bar.png" alt="Rescan Ports Button Crop">
           </div>
-
-          <div style="background:var(--bg-panel); border:1px solid var(--border-cyan); padding:24px; border-radius:var(--radius-md);">
-            <div style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; margin-bottom:8px;">02 // RECEIVER & MOCK INJECTOR</div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
-              Device B (tablet, companion phone, or navigation HUD) connects via Bluetooth, parses the NMEA telemetry stream, and injects real-time fixes into the Android System Location Manager for all mapping apps.
-            </p>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Rescan Ports Button</h3>
+            <span class="feature-label">Hardware Toolbar &bull; Top Control Row</span>
           </div>
-
-          <div style="background:var(--bg-panel); border:1px solid rgba(255, 179, 0, 0.3); padding:24px; border-radius:var(--radius-md);">
-            <div style="font-family:var(--font-mono); color:var(--accent-amber); font-weight:700; margin-bottom:8px;">03 // ZERO CLOUD REQUIREMENT</div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6;">
-              Operates 100% offline in flight mode. Zero internet, zero external accounts, zero tracking servers. Pure hardware-to-hardware RFCOMM communication in deep wilderness or maritime environments.
-            </p>
-          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Searches your entire computer for all connected GPS devices and smartphones. It checks USB ports, Bluetooth connections, and Wi-Fi networks in seconds to update the device dropdown list.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You plug in a new USB GPS dongle or turn on Bluetooth pairing on your Android phone running EXOS Transceiver while EXOS GPS Station is already open. Instead of restarting the program, you simply click <code>Rescan Ports</code>. The software instantly queries Windows Plug and Play, detects the new device, and populates it into the dropdown ready for connection.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Enumeration Engine:</strong> Scans Windows PnP subsystem via <code>serial.tools.list_ports.comports()</code> and PowerShell <code>Get-PnpDevice -Class Ports</code>.</li>
+            <li><strong>Bluetooth Filter:</strong> Resolves outgoing RFCOMM COM ports bound to the Bluetooth SPP Service Class GUID <code>{00001101-0000-1000-8000-00805F9B34FB}</code>.</li>
+            <li><strong>Auto-Classification:</strong> Categorizes ports into Hardware USB Dongle, EXOS Transceiver Bluetooth Link, or Wi-Fi AP endpoints.</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Section: Transmitter Mode -->
-    <section id="transmitter" style="margin-bottom:60px;">
-      <div class="guide-card">
-        <div class="section-tag">STANDALONE GPS BROADCASTER</div>
-        <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:16px; color:#fff;">
-          TRANSMITTER MODE SETUP
-        </h2>
-        <p style="color:var(--text-muted); line-height:1.7; margin-bottom:28px;">
-          Use your phone or dedicated tablet with strong satellite line-of-sight as the primary GNSS source. It broadcasts continuous positional telemetry to your companion displays.
-        </p>
-
-        <div class="step-item">
-          <div class="step-number-badge">1</div>
-          <div class="step-body">
-            <h4>Select Your Receiver Companion Device</h4>
-            <p>
-              On the main dashboard, tap the prominent <strong>"Select Receiver Device"</strong> card. A clean paired Bluetooth picker will appear. Select the phone, tablet, or PC you wish to stream telemetry to.
-            </p>
+      <!-- Feature 2: Clear Cache Button -->
+      <div class="feature-card">
+        <div class="feature-badge">TOOLBAR CONTROL 02 &bull; CACHE MANAGEMENT</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_connect_bar.png" alt="Clear Cache Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Clear Cache Button</h3>
+            <span class="feature-label">Hardware Toolbar &bull; Top Control Row</span>
           </div>
         </div>
-
-        <div class="step-item">
-          <div class="step-number-badge">2</div>
-          <div class="step-body">
-            <h4>Verify Location Permissions & Satellite Fix</h4>
-            <p>
-              Ensure Location permissions are set to "Allow all the time" or "While using the app". EXOS-GPS Station automatically engages high-accuracy GNSS hardware. You will see active satellite count, accuracy (meters), elevation, and speed.
-            </p>
-          </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Cleans out old or disconnected Bluetooth entries that Windows might still remember. If you unpaired a phone or changed Bluetooth settings and the list still shows old connections, clicking this resets the device cache fresh.</p>
         </div>
-
-        <div class="step-item">
-          <div class="step-number-badge">3</div>
-          <div class="step-body">
-            <h4>Tap "Start Transmitting"</h4>
-            <p>
-              The status badge pulses green: <strong>"TRANSMITTING // ACTIVE"</strong>. The app begins generating standard NMEA-0183 sentences and pushes them across the Bluetooth SPP RFCOMM stream. A persistent background notification ensures uninterrupted transmission even with the screen locked.
-            </p>
-          </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You upgraded your field tablet from an older Android phone to a new Samsung Galaxy Note 8. Both used Bluetooth COM ports, but Windows kept showing the old device name in the list, causing confusion. Clicking <code>Clear Cache</code> wipes the stored registry and metadata cache, forces a complete discovery scan, and cleanly shows only the active Note 8.</p>
         </div>
-
-        <div class="img-preview-card">
-          <img src="assets/station_tx.png" alt="EXOS-GPS Station Transmitter Interface">
-          <div class="img-preview-caption">
-            FIGURE 1.0: Transmitter Mode active dashboard with live coordinate telemetry and satellite constellation meter.
-          </div>
-        </div>
-
-        <div class="callout-box">
-          <strong>5-Hour Generous Transmission Budget:</strong> Every new install includes a 5-hour cumulative active transmission budget. Active transmission time is only deducted while actively streaming coordinates. Receiver mode is always 100% free with unlimited usage forever.
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Storage Path:</strong> Purges JSON cache located at <code>%LOCALAPPDATA%\RiTym\Exos GPS Station\bluetooth_spp_ports.json</code>.</li>
+            <li><strong>PnP Cache Invalidation:</strong> Clears stale Bluetooth MAC mappings and forces a clean synchronous query against Windows SetupAPI.</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Section: Receiver Mode -->
-    <section id="receiver" style="margin-bottom:60px;">
-      <div class="guide-card cyan">
-        <div class="section-tag" style="color:var(--accent-cyan);">COMPANION HUD & FIELD DISPLAY</div>
-        <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:16px; color:#fff;">
-          RECEIVER MODE SETUP
-        </h2>
-        <p style="color:var(--text-muted); line-height:1.7; margin-bottom:28px;">
-          Receiver mode allows a secondary device (like a large cockpit tablet, vehicle dashboard, or off-grid laptop) to ingest external satellite fixes and feed them to any navigation software.
-        </p>
-
-        <div class="step-item">
-          <div class="step-number-badge" style="border-color:var(--accent-cyan); color:var(--accent-cyan); background:rgba(0,229,255,0.15);">1</div>
-          <div class="step-body">
-            <h4>Switch Mode to "Receiver"</h4>
-            <p>
-              At the top of the dashboard, toggle from <strong>Transmitter</strong> to <strong>Receiver</strong>.
-            </p>
+      <!-- Feature 3: Connect Station / Disconnect Station Button -->
+      <div class="feature-card">
+        <div class="feature-badge">TOOLBAR CONTROL 03 &bull; TELEMETRY STREAM TOGGLE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_connect_bar.png" alt="Connect Station Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Connect Station / Disconnect Station Button</h3>
+            <span class="feature-label">Hardware Toolbar &bull; Top Control Row (Right)</span>
           </div>
         </div>
-
-        <div class="step-item">
-          <div class="step-number-badge" style="border-color:var(--accent-cyan); color:var(--accent-cyan); background:rgba(0,229,255,0.15);">2</div>
-          <div class="step-body">
-            <h4>Select the Transmitter Device</h4>
-            <p>
-              Tap <strong>"Select Transmitter Device"</strong> and choose your broadcasting phone or GPS puck from your paired Bluetooth devices list.
-            </p>
-          </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>The master switch that starts or stops receiving satellite data. When you click Connect, it establishes the communication pipe with your GPS or phone, switches color to blue/red, and starts updating live coordinates on your screen.</p>
         </div>
-
-        <div class="step-item">
-          <div class="step-number-badge" style="border-color:var(--accent-cyan); color:var(--accent-cyan); background:rgba(0,229,255,0.15);">3</div>
-          <div class="step-body">
-            <h4>Tap "Start Receiving"</h4>
-            <p>
-              The app opens an RFCOMM socket, connects to the transmitter, and immediately begins receiving live NMEA sentences with sub-second latency.
-            </p>
-          </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You select <code>Hardware GPS - Bluetooth - Galaxy Note 8</code> from the dropdown and click <code>Connect Station</code>. The button changes to <code>Disconnect Station (Cancel)</code>. Within 1.5 seconds, the status indicator turns from red to green, the terminal floods with live satellite sentences, and your boat's position locks onto the map.</p>
         </div>
-
-        <div class="img-preview-card">
-          <img src="assets/station_rx.png" alt="EXOS-GPS Station Receiver Interface">
-          <div class="img-preview-caption">
-            FIGURE 2.0: Receiver Mode streaming coordinates from an external transmitter with Mock Location ready.
-          </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Threading Model:</strong> Spawns a dedicated asynchronous I/O daemon thread to prevent freezing the Tkinter graphical message loop.</li>
+            <li><strong>Kernel I/O Handling:</strong> Uses Win32 <code>CancelSynchronousIo</code> to cleanly abort blocked RFCOMM connection attempts without hanging the Windows COM subsystem.</li>
+            <li><strong>Buffer Sizing:</strong> Maintains an internal 4096-byte ring buffer with NMEA newline framing (<code>\r\n</code>) and XOR checksum verification.</li>
+          </ul>
         </div>
       </div>
+
     </section>
 
-    <!-- Section: Smart Guided Mock Location Assistant -->
-    <section id="mock-location" style="margin-bottom:60px;">
-      <div class="guide-card amber">
-        <div class="section-tag" style="color:var(--accent-amber);">SYSTEM-WIDE MAP INTEGRATION</div>
-        <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:16px; color:#fff;">
-          SMART GUIDED MOCK LOCATION ASSISTANT
-        </h2>
-        <p style="color:var(--text-muted); line-height:1.7; margin-bottom:24px;">
-          Want Google Maps, ATAK-CIV, OsmAnd, or EXOS Wayfinder to navigate using the external GPS coordinates? Android requires granting Mock Location authority to protect system integrity. EXOS-GPS Station features an intuitive 3-step assistant:
-        </p>
+    <!-- SECTION 2: SYSTEM ACTION BUTTONS -->
+    <section id="system-actions" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        2. System Actions &amp; Platform Bridges
+      </h2>
 
-        <div style="background:rgba(255, 179, 0, 0.05); border:1px solid rgba(255, 179, 0, 0.3); border-radius:var(--radius-md); padding:28px; margin-bottom:28px;">
-          <h3 style="font-family:var(--font-display); color:var(--accent-amber); font-size:1.3rem; margin-bottom:16px;">
-            3-STEP ACTIVATION PROCESS
-          </h3>
-
-          <div class="step-item">
-            <div class="step-number-badge" style="border-color:var(--accent-amber); color:var(--accent-amber); background:rgba(255,179,0,0.15);">A</div>
-            <div class="step-body">
-              <h4>Enable Developer Options</h4>
-              <p>
-                Go to Android <strong>Settings ➔ About Phone</strong>. Find <strong>Build Number</strong> and tap it <strong>7 times</strong> until you see the notification: <em>"You are now a developer!"</em>.
-              </p>
-            </div>
+      <!-- Feature 4: Launch Google Maps Button -->
+      <div class="feature-card">
+        <div class="feature-badge">ACTION BUTTON 01 &bull; BROWSER BRIDGE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_connect_bar.png" alt="Launch Google Maps Button Crop">
           </div>
-
-          <div class="step-item">
-            <div class="step-number-badge" style="border-color:var(--accent-amber); color:var(--accent-amber); background:rgba(255,179,0,0.15);">B</div>
-            <div class="step-body">
-              <h4>Select Mock Location App</h4>
-              <p>
-                In EXOS-GPS Station, tap the <strong>"Open Developer Options"</strong> button. The app takes you directly to Developer Settings. Scroll down to <strong>"Select mock location app"</strong> and choose <strong>Exos GPS Solutions</strong>.
-              </p>
-            </div>
-          </div>
-
-          <div class="step-item">
-            <div class="step-number-badge" style="border-color:var(--accent-amber); color:var(--accent-amber); background:rgba(255,179,0,0.15);">C</div>
-            <div class="step-body">
-              <h4>Automatic In-App Verification</h4>
-              <p>
-                Return to EXOS-GPS Station. The assistant automatically checks Android's `AppOpsManager` and displays a green <strong>"MOCK LOCATION VERIFIED ✅"</strong> status badge.
-              </p>
-            </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Launch Google Maps Button</h3>
+            <span class="feature-label">System Toolbar &bull; Row 2 (Left)</span>
           </div>
         </div>
-
-        <h3 style="font-family:var(--font-display); color:#fff; font-size:1.2rem; margin-bottom:12px;">
-          SUPPORTED NAVIGATION SUITES:
-        </h3>
-        <ul class="pillar-specs" style="margin-bottom:20px;">
-          <li><strong>Google Maps & Navigation:</strong> Full turn-by-turn navigation using external GPS fixes.</li>
-          <li><strong>ATAK-CIV & WinTAK:</strong> High-precision situational awareness and blue-force tracking.</li>
-          <li><strong>OsmAnd & Organic Maps:</strong> 100% offline contour mapping and topographic trails.</li>
-          <li><strong>EXOS Wayfinder:</strong> Native tactical HUD, MGRS waypoints, and backtrack trail recording.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Section: Windows Client -->
-    <section id="windows" style="margin-bottom:60px;">
-      <div class="guide-card cyan">
-        <div class="section-tag" style="color:var(--accent-cyan);">WORKSTATION & MISSION CONTROL CONSOLE</div>
-        <h2 style="font-family:var(--font-display); font-size:2rem; margin-bottom:16px; color:#fff;">
-          EXOS GPS STATION FOR WINDOWS (v0.17)
-        </h2>
-        <p style="color:var(--text-muted); line-height:1.7; font-size:1.05rem; margin-bottom:24px;">
-          The standalone mission control and GNSS telemetry command center for field laptops and rugged mobile workstations. EXOS GPS Station bridges high-accuracy satellite telemetry across USB COM ports, Bluetooth SPP, Bluetooth Low Energy (BLE), and Wi-Fi networks directly into Windows mapping environments, native location sensors, and marine GIS applications.
-        </p>
-
-        <!-- Windows Setup App Download Banner -->
-        <div style="background:linear-gradient(135deg, rgba(0, 229, 255, 0.08) 0%, rgba(13, 25, 38, 0.95) 100%); border:1px solid rgba(0, 229, 255, 0.3); border-radius:var(--radius-md); padding:28px; margin-bottom:32px; box-shadow:0 8px 32px rgba(0,0,0,0.4);">
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px;">
-            <div>
-              <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
-                <span style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; background:rgba(0, 229, 255, 0.15); color:var(--accent-cyan); padding:3px 10px; border-radius:var(--radius-sm); border:1px solid rgba(0, 229, 255, 0.3);">Official Windows Release</span>
-                <span style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8;">Build 0.17.0.0 &bull; Standalone Setup</span>
-              </div>
-              <h3 style="font-family:var(--font-display); font-size:1.45rem; color:#ffffff; margin-bottom:6px;">
-                EXOS GPS Station Windows Installer
-              </h3>
-              <p style="color:#cbd5e1; font-size:0.92rem; margin:0; max-width:620px; line-height:1.5;">
-                Native 64-bit Windows setup application with zero prerequisites. Installs the complete runtime, BLE WinRT drivers, C# Windows Location Sensor provider, and offline celestial maps with a clean uninstaller.
-              </p>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:10px; min-width:240px;">
-              <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-primary" style="text-align:center; background:linear-gradient(135deg, #0284c7, #00e5ff); color:#041019; font-weight:700; border:none; padding:14px 24px; font-size:0.95rem; box-shadow:0 0 20px rgba(0, 229, 255, 0.35);">
-                DOWNLOAD SETUP (17.2 MB) &darr;
-              </a>
-              <div style="display:flex; justify-content:space-between; font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; padding:0 4px;">
-                <span>Windows 10 / 11 (64-bit)</span>
-                <span>Self-Contained Exe</span>
-              </div>
-            </div>
-          </div>
-          <div style="display:flex; gap:20px; flex-wrap:wrap; margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.08); font-family:var(--font-mono); font-size:0.78rem; color:#94a3b8;">
-            <div><strong style="color:#f1f5f9;">Architecture:</strong> x86_64 / ARM64 (x64 Emulation)</div>
-            <div><strong style="color:#f1f5f9;">Dependencies:</strong> None (Bundled Python 3.11 + WinRT + PySerial)</div>
-            <div><strong style="color:#f1f5f9;">Installation:</strong> Dual-Mode (Standard User or Administrator)</div>
-          </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Opens Google Maps in your web browser centered exactly on your live GPS coordinates. It uses our built-in local background server so your browser gets real-time position updates even on laptops without built-in GPS.</p>
         </div>
-
-        <!-- Android EXOS Transceiver to Windows Bridge Callout -->
-        <div style="background:linear-gradient(135deg, rgba(0, 255, 136, 0.08) 0%, rgba(15, 23, 42, 0.95) 100%); border:1px solid rgba(0, 255, 136, 0.35); border-radius:var(--radius-md); padding:26px; margin-bottom:32px; box-shadow:0 8px 30px rgba(0,0,0,0.35);">
-          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-            <span style="font-family:var(--font-mono); font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; background:rgba(0, 255, 136, 0.15); color:var(--accent-green); padding:3px 10px; border-radius:var(--radius-sm); border:1px solid rgba(0, 255, 136, 0.3); font-weight:700;">KEY WORKFLOW</span>
-            <span style="font-family:var(--font-mono); font-size:0.78rem; color:#94a3b8;">Android Phone &rarr; Windows Navigation Bridge</span>
-          </div>
-          <h3 style="font-family:var(--font-display); font-size:1.35rem; color:#ffffff; margin-bottom:10px;">
-            Pair with EXOS Transceiver (Android) for Live GPS &amp; Compass Heading
-          </h3>
-          <p style="color:#cbd5e1; font-size:0.95rem; line-height:1.6; margin-bottom:18px;">
-            Most field laptops and Windows rugged tablets do not have built-in GPS or electronic compass hardware. With EXOS, you do not need expensive proprietary external antennas: simply run <strong>EXOS Transceiver</strong> on any Android phone or tablet to turn it into a high-precision satellite telemetry and compass emitter for Windows.
-          </p>
-
-          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:18px; margin-bottom:16px;">
-            <div style="background:rgba(7, 10, 13, 0.6); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-sm); padding:16px;">
-              <div style="color:var(--accent-green); font-family:var(--font-mono); font-size:0.82rem; font-weight:700; margin-bottom:6px;">
-                1. Full NMEA GNSS + Compass Stream
-              </div>
-              <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">
-                The Android phone accesses raw hardware GNSS satellites and its 3-axis geomagnetic compass sensor, broadcasting standard <code>$GPRMC</code>, <code>$GPGGA</code>, and true heading <code>$GPHDT</code> sentences.
-              </p>
-            </div>
-            <div style="background:rgba(7, 10, 13, 0.6); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-sm); padding:16px;">
-              <div style="color:var(--accent-green); font-family:var(--font-mono); font-size:0.82rem; font-weight:700; margin-bottom:6px;">
-                2. Wireless Peer-to-Peer Transmission
-              </div>
-              <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">
-                Connect over Bluetooth Classic SPP (RFCOMM), Bluetooth Low Energy (BLE), or local Wi-Fi LAN hotspot with zero internet, zero cellular data, and zero cloud accounts required.
-              </p>
-            </div>
-            <div style="background:rgba(7, 10, 13, 0.6); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-sm); padding:16px;">
-              <div style="color:var(--accent-green); font-family:var(--font-mono); font-size:0.82rem; font-weight:700; margin-bottom:6px;">
-                3. Windows Navigation Platform Active
-              </div>
-              <p style="color:#94a3b8; font-size:0.86rem; line-height:1.5; margin:0;">
-                EXOS GPS Station receives the stream, draws live orbital satellites, and feeds fixes into the Windows Location Platform and virtual COM ports for <strong>Google Maps, QGIS, OpenCPN, and WinTAK</strong>.
-              </p>
-            </div>
-          </div>
-
-          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; font-family:var(--font-mono); font-size:0.8rem; color:#94a3b8; border-top:1px solid rgba(255,255,255,0.08); padding-top:14px;">
-            <div>Companion App: <strong style="color:#ffffff;">EXOS Transceiver for Android</strong> (Google Play Store)</div>
-            <a href="#transmitter" style="color:var(--accent-green); text-decoration:underline;">Read Android Transceiver Manual &rarr;</a>
-          </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are in a moving vehicle with your Windows laptop. You click <code>Launch Google Maps</code>. Google Chrome automatically launches, queries the local bridge at <code>http://127.0.0.1:9001/location</code>, and places your blue location pin right on your real-world coordinates on satellite imagery.</p>
         </div>
-
-        <!-- Live Application Snapshot Showcase -->
-        <div style="margin-bottom:36px;">
-          <h3 style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:12px;">
-            MISSION CONTROL WORKBENCH
-          </h3>
-          <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:16px; line-height:1.6;">
-            High-resolution view of the active station console executing on Windows 11. The dashboard unifies orbital telemetry projections, satellite fix health, hardware connection status, and live NMEA stream logging into a single dark-mode command center.
-          </p>
-          <div style="position:relative; border-radius:var(--radius-md); overflow:hidden; border:1px solid rgba(0, 229, 255, 0.25); box-shadow:0 12px 40px rgba(0,0,0,0.6); background:#0b0e17;">
-            <div style="background:#0f172a; padding:10px 16px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; font-family:var(--font-mono); font-size:0.8rem; color:#94a3b8;">
-              <div style="display:flex; align-items:center; gap:8px;">
-                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#ef4444;"></span>
-                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#f59e0b;"></span>
-                <span style="display:inline-block; width:10px; height:10px; border-radius:50%; background:#10b981;"></span>
-                <span style="margin-left:8px; color:#cbd5e1; font-weight:600;">Exos GPS Station v0.17 &mdash; Telemetry Command Center</span>
-              </div>
-              <span style="color:var(--accent-cyan); font-weight:600;">Native Windows Execution</span>
-            </div>
-            <img src="assets/station_windows_live.png" alt="EXOS GPS Station Windows Application Interface" style="width:100%; height:auto; display:block;">
-          </div>
-          <div style="text-align:center; margin-top:10px; font-size:0.82rem; color:var(--text-muted); font-family:var(--font-mono);">
-            Figure 1.0: Real running instance of EXOS GPS Station v0.17 on Windows OS displaying 3D orbital radar, telemetry gauges, and NMEA log stream.
-          </div>
-        </div>
-
-        <!-- Core Feature Breakdown -->
-        <h3 style="font-family:var(--font-display); font-size:1.35rem; color:#fff; margin-bottom:20px;">
-          ENGINEERING ARCHITECTURE & CAPABILITIES
-        </h3>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; margin-bottom:36px;">
-          <!-- Feature 1 -->
-          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">01</span>
-              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">3D Celestial Skyview & Vector Globe</h4>
-            </div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
-              Bundled with offline Natural Earth geographic vector maps (<code>world_110m.geojson</code>), the interactive radar projects real-time satellite orbital azimuths, elevation masks, and polar constellations without an active internet connection.
-            </p>
-          </div>
-
-          <!-- Feature 2 -->
-          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">02</span>
-              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Native Windows Location Sensor Engine</h4>
-            </div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
-              Includes an in-house C# sensor provider (<code>ExosWindowsSensor.exe</code>) that links directly to the Microsoft Windows Location Sensor API. Injects received GPS fixes system-wide so Microsoft Maps, Edge, Weather, and third-party apps detect live positioning.
-            </p>
-          </div>
-
-          <!-- Feature 3 -->
-          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">03</span>
-              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Multi-Transport Hardware Interfacing</h4>
-            </div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
-              Autonomously discovers and connects to Seeed XIAO ESP32-S3 emitters, u-blox NEO-M9N GNSS antennas, Quectel EC200U cellular modems, standard USB-serial dongles, Bluetooth Classic SPP COM channels, and Bluetooth Low Energy (BLE NUS) streams.
-            </p>
-          </div>
-
-          <!-- Feature 4 -->
-          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">04</span>
-              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Chromium & Google Maps Live Bridge</h4>
-            </div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
-              Includes an automated Chrome and Microsoft Edge DevTools Protocol (CDP port 9222) geolocation override bridge with pre-approved permissions and bundled browser extension. One tap launches Google Maps with live tracking on the blue location dot.
-            </p>
-          </div>
-
-          <!-- Feature 5 -->
-          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">05</span>
-              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Dual Receiver & Transmitter Modes</h4>
-            </div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
-              Operate as a dedicated basecamp receiver acquiring remote telemetry from field devices, or switch to <strong>Transmitter Mode</strong> to broadcast a local USB GPS dongle's NMEA stream out to paired Android devices over Bluetooth or Wi-Fi TCP.
-            </p>
-          </div>
-
-          <!-- Feature 6 -->
-          <div style="background:rgba(20, 30, 42, 0.45); border:1px solid rgba(255, 255, 255, 0.08); border-radius:var(--radius-md); padding:24px;">
-            <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
-              <span style="font-family:var(--font-mono); color:var(--accent-cyan); font-weight:700; font-size:1.1rem;">06</span>
-              <h4 style="font-family:var(--font-display); font-size:1.1rem; color:#ffffff; margin:0;">Location Override & GIS Simulation</h4>
-            </div>
-            <p style="color:var(--text-muted); font-size:0.9rem; line-height:1.6; margin:0;">
-              Equipped with a precision coordinate simulator with world presets (Berlin, Tokyo, New York, London, custom coordinates) enabling surveyors and developers to simulate satellite movement and test WinTAK, QGIS, and OpenCPN navigation software.
-            </p>
-          </div>
-        </div>
-
-        <!-- 3-Step Setup Instructions -->
-        <h3 style="font-family:var(--font-display); font-size:1.25rem; color:#fff; margin-bottom:16px;">
-          DEPLOYMENT & INSTALLATION STEPS
-        </h3>
-        <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:32px;">
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <span class="step-number-badge">1</span>
-            <div>
-              <strong style="color:#ffffff; font-size:1rem;">Download and Run the Installer</strong>
-              <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px; line-height:1.5;">
-                Download <code>EXOS-GPS-Station-Setup-v0.17.exe</code> from the download card above. Launch the setup wizard. You can install for the current user (no Administrator elevation needed) or for all users on the workstation.
-              </p>
-            </div>
-          </div>
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <span class="step-number-badge">2</span>
-            <div>
-              <strong style="color:#ffffff; font-size:1rem;">Connect Your GPS Device or Network Source</strong>
-              <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px; line-height:1.5;">
-                Plug in your USB GPS receiver, or pair your Bluetooth Transceiver / ESP32 emitter in Windows Bluetooth Settings. Launch EXOS GPS Station from the Start Menu or Desktop shortcut, click <strong>Rescan Ports</strong>, and select your hardware.
-              </p>
-            </div>
-          </div>
-          <div style="display:flex; gap:16px; align-items:flex-start;">
-            <span class="step-number-badge">3</span>
-            <div>
-              <strong style="color:#ffffff; font-size:1rem;">Initiate Live Telemetry & Windows Sensor Bridge</strong>
-              <p style="color:var(--text-muted); font-size:0.9rem; margin-top:4px; line-height:1.5;">
-                Click <strong>Connect Station</strong>. Live NMEA satellite strings will stream into the log console, the 3D globe will track your position, and the native Windows Location Sensor engine will publish satellite fixes system-wide.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Virtual COM Port Routing for GIS & Marine Software -->
-        <h3 style="font-family:var(--font-display); font-size:1.15rem; color:#fff; margin-bottom:10px;">
-          Virtual COM Port Routing (QGIS, OpenCPN, WinTAK):
-        </h3>
-        <p style="color:var(--text-muted); line-height:1.6; margin-bottom:16px; font-size:0.92rem;">
-          Using <strong>com0com</strong> (Null-modem emulator) or Windows Bluetooth Serial Port, the Windows client exposes standard NMEA sentences on a virtual COM port (e.g. <code>COM5</code> &rarr; <code>COM6</code> at 115200 baud). Any desktop GIS or marine software connects to <code>COM6</code> as if a commercial Trimble or Garmin antenna was plugged in!
-        </p>
-
-        <div class="code-box">
-          <span class="comment"># Sample Live Telemetry Output across COM Port:</span><br>
-          <span class="nmea">$GPRMC,214210.00,A,3403.1320,N,11814.6220,W,0.02,184.2,060926,,,A*7F</span><br>
-          <span class="nmea">$GPGGA,214210.00,3403.1320,N,11814.6220,W,1,09,0.92,142.4,M,-32.8,M,,*5C</span><br>
-          <span class="nmea">$GPGSV,3,1,11,02,42,120,38,06,28,045,41,12,74,290,44,19,15,310,32*78</span>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Embedded Server:</strong> Built-in lightweight HTTP server listening on <code>127.0.0.1:9001</code>.</li>
+            <li><strong>REST Endpoint:</strong> Returns live JSON payload on <code>GET /location</code> with <code>lat</code>, <code>lon</code>, <code>alt</code>, <code>speed</code>, <code>bearing</code>, and <code>sats</code>.</li>
+            <li><strong>CORS Support:</strong> Sends <code>Access-Control-Allow-Origin: *</code> allowing web mapping engines (Leaflet, Mapbox, Google Maps) to query telemetry locally.</li>
+          </ul>
         </div>
       </div>
-    </section>
 
-    <!-- Section: Technical Specifications -->
-    <section id="specs" style="margin-bottom:60px;">
-      <div class="guide-card">
-        <div class="section-tag">TELEMETRY & PROTOCOL MATRIX</div>
-        <h2 style="font-family:var(--font-display); font-size:1.8rem; margin-bottom:20px; color:#fff;">
-          TECHNICAL SPECIFICATIONS
-        </h2>
-
-        <div class="spec-table-wrap">
-          <table class="spec-table">
-            <thead>
-              <tr>
-                <th>Parameter</th>
-                <th>EXOS-GPS Station (Android)</th>
-                <th>EXOS Station (Windows)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Communication Profile</strong></td>
-                <td class="highlight">Bluetooth 5.0+ SPP / RFCOMM</td>
-                <td class="highlight">RFCOMM / Virtual COM (com0com)</td>
-              </tr>
-              <tr>
-                <td><strong>NMEA Ingestion</strong></td>
-                <td>$GPGGA, $GPRMC, $GPGSV, $GPGSA</td>
-                <td>$GPGGA, $GPRMC, $GPGSV, $GPGSA</td>
-              </tr>
-              <tr>
-                <td><strong>Mock Location Provider</strong></td>
-                <td class="highlight">System GPS Provider (Fused Location)</td>
-                <td>N/A (Serial Stream to GIS)</td>
-              </tr>
-              <tr>
-                <td><strong>Refresh Frequency</strong></td>
-                <td>1 Hz – 5 Hz Dynamic GNSS Polling</td>
-                <td>Up to 10 Hz Serial Throughput</td>
-              </tr>
-              <tr>
-                <td><strong>Supported Platforms</strong></td>
-                <td>Android 7.0 (API 24) to Android 16 (API 36)</td>
-                <td>Windows 10, Windows 11 (64-bit)</td>
-              </tr>
-              <tr>
-                <td><strong>Internet Requirement</strong></td>
-                <td class="highlight">ZERO (100% Offline Autonomy)</td>
-                <td class="highlight">ZERO (100% Offline Autonomy)</td>
-              </tr>
-              <tr>
-                <td><strong>Security & Permissions</strong></td>
-                <td>Foreground Service (Location + Device)</td>
-                <td>Local User Space (No Admin Required)</td>
-              </tr>
-            </tbody>
-          </table>
+      <!-- Feature 5: Native Windows Sensor Setup Button -->
+      <div class="feature-card">
+        <div class="feature-badge">ACTION BUTTON 02 &bull; WINDOWS GEOLOCATION PLATFORM</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_sensor_btn.png" alt="Native Windows Sensor Setup Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Native Windows Sensor Setup Button</h3>
+            <span class="feature-label">System Toolbar &bull; Row 2 (Center)</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Installs and manages the special Windows driver that feeds your GPS position directly into Windows itself. This makes native Windows apps like Windows Maps, Weather, and Cortana see your real GPS position just like a built-in tablet sensor.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You use offline Windows Maps for field navigation in areas with zero internet connectivity. Normally, Windows Maps says "Location unavailable" on laptops. By clicking <code>Native Windows Sensor Setup</code>, the C# Sensor Driver registers EXOS GPS as the official system Location Provider. Windows Maps immediately wakes up and displays real-time turn-by-turn guidance.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Native Driver Bridge:</strong> Powered by <code>windows_sensor_manager.py</code> and in-house compiled C# COM DLLs.</li>
+            <li><strong>Windows API Integration:</strong> Implements <code>ILocationProvider</code> and <code>ISensorDriver</code> interfaces for Windows 10/11 Location Platform.</li>
+            <li><strong>Security:</strong> Runs under user privilege with UAC elevation only during initial UMDF driver registration.</li>
+          </ul>
         </div>
       </div>
+
+      <!-- Feature 6: Location Override (Germany/Custom) Button -->
+      <div class="feature-card">
+        <div class="feature-badge">ACTION BUTTON 03 &bull; TACTICAL SIMULATION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_connect_bar.png" alt="Location Override Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Location Override (Germany/Custom) Button</h3>
+            <span class="feature-label">System Toolbar &bull; Row 2 (Right)</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Allows developers and mission planners to simulate being in any location in the world without having to physically travel there. Perfect for testing software, emergency response drills, and offline map verification.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are preparing an expedition to Berlin, Germany, but you are currently sitting in an office in New York. You click <code>Location Override</code>, choose Berlin (or enter custom coordinates 52.5200° N, 13.4050° E), and activate override. All your connected navigation programs immediately behave as though you are standing in Berlin, allowing you to test routing and waypoint accuracy before departure.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Synthetic NMEA Generator:</strong> Bypasses physical COM stream and generates mathematically consistent <code>$GPGGA</code>, <code>$GPRMC</code> sentences at 1.0 Hz.</li>
+            <li><strong>Checksum Integrity:</strong> Each synthetic packet is stamped with valid NMEA XOR hexadecimal checksums (e.g. <code>*47</code>).</li>
+          </ul>
+        </div>
+      </div>
+
     </section>
 
-    <!-- Beta Testing Call to Action -->
-    <section style="margin-bottom:40px;">
-      <div class="beta-portal">
-        <div class="section-tag" style="color:var(--accent-cyan);">DEPLOY TODAY</div>
-        <h2>JOIN THE CLOSED BETA ON GOOGLE PLAY</h2>
-        <p>
-          EXOS-GPS Station is currently live in closed beta testing on Google Play across 176 countries. Help us test off-grid companion navigation!
-        </p>
+    <!-- SECTION 3: TACTICAL DISPLAYS -->
+    <section id="displays" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        3. Tactical Displays &amp; Visualizers
+      </h2>
 
-        <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap; margin-top:24px;">
-          <a href="https://play.google.com/apps/testing/com.ritym.exosgps" target="_blank" rel="noopener" class="btn-primary" style="font-size:0.95rem; padding:16px 32px;">
-            OPT-IN AS A TESTER
-          </a>
-          <a href="mailto:support@exosgps.com" class="btn-secondary" style="font-size:0.95rem; padding:16px 32px;">
-            CONTACT SUPPORT: SUPPORT@EXOSGPS.COM
-          </a>
+      <!-- Feature 7: 3D Compass & Artificial Horizon Widget -->
+      <div class="feature-card">
+        <div class="feature-badge">DISPLAY WIDGET 01 &bull; ATTITUDE &amp; HEADING</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_compass_widget.png" alt="3D Compass Widget Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">3D Compass &amp; Artificial Horizon Canvas</h3>
+            <span class="feature-label">Main Canvas Display &bull; Left Side</span>
+          </div>
         </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>A graphical aircraft-style artificial horizon and digital compass rose that shows which direction your vessel is pointing in real time, along with pitch and roll tilt angles.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> During night navigation or dense fog at sea, visual references to the horizon are lost. The 3D Compass reads True Heading (<code>$GPHDT</code>) streamed from EXOS Transceiver on your phone, providing a stable, gyro-stabilized heading indicator that does not spin or lag when the vessel rocks.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Rendering Engine:</strong> Hardware-accelerated Tkinter Canvas vector graphics with trigonometric sine/cosine rotation matrix.</li>
+            <li><strong>Sentence Binding:</strong> Driven by NMEA True Heading sentence <code>$GPHDT,xxx.x,T*hh</code> or Course Over Ground from <code>$GPRMC</code>.</li>
+            <li><strong>Refresh Rate:</strong> Smooth 30 FPS animation loop with starfield background parallax.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 8: Offline Tactical World Map Widget -->
+      <div class="feature-card">
+        <div class="feature-badge">DISPLAY WIDGET 02 &bull; VECTOR GEOGRAPHY</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_map_widget.png" alt="World Map Widget Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Offline Tactical World Map Canvas</h3>
+            <span class="feature-label">Main Canvas Display &bull; Center / Background</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>A built-in global world map that requires zero internet connection to work. It draws continental coastlines and country borders directly on your screen and places a glowing pulse marker where you are.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are in the middle of the Pacific Ocean or deep in the Sahara Desert with no cellular or satellite internet access. You open EXOS GPS Station. The world map renders immediately from local memory, plotting your vessel's exact position on the globe.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Vector Source:</strong> Natural Earth 110m resolution GeoJSON polygon database cached locally at <code>assets/world_110m.geojson</code>.</li>
+            <li><strong>Projection:</strong> Equirectangular cylindrical projection mapped to canvas coordinate space <code>(x = (lon + 180) * width / 360, y = (90 - lat) * height / 180)</code>.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: TELEMETRY DASHBOARD CARDS -->
+    <section id="telemetry-cards" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        4. High-Contrast Telemetry Dashboard Cards
+      </h2>
+
+      <!-- Feature 9: Satellites in Fix & Inspector Button -->
+      <div class="feature-card">
+        <div class="feature-badge">TELEMETRY CARD 01 &bull; ORBITAL CONSTELLATION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/station_windows_live.png" alt="Satellite Inspector Button Crop" style="max-height:48px;">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Satellites in Fix &amp; Satellite Inspector Button</h3>
+            <span class="feature-label">Telemetry Grid &bull; Card Row 2</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Shows how many GPS satellites your antenna can see right now and how strong the signal is. Clicking "Inspect Satellites..." opens a detailed window showing each satellite's individual signal strength bar and orbit identification number.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You notice your position is jumping around slightly in an urban canyon with tall buildings. You click <code>Inspect Satellites...</code> and observe that while 12 satellites are listed, only 4 have strong Signal-to-Noise Ratios (SNR &gt; 35 dB-Hz) due to building reflections (multipath). You reposition your antenna toward an open sky sector and immediately verify signal bars greening up.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>NMEA Source:</strong> Decodes <code>$GPGSV</code> (Satellites in View) and <code>$GPGSA</code> (DOP and Active Satellites) sentences.</li>
+            <li><strong>SNR Spectrum:</strong> Measures carrier-to-noise density ratio ($C/N_0$) in dB-Hz for GPS (PRN 1-32), GLONASS (PRN 65-96), and Galileo (PRN 301-336).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Feature 10: Altitude, Speed & Position Cards -->
+      <div class="feature-card">
+        <div class="feature-badge">TELEMETRY CARD 02 &bull; FLIGHT &amp; SURFACE TELEMETRY</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/station_windows_live.png" alt="Telemetry Cards Crop" style="max-height:48px;">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Position, Speed, Heading &amp; Altitude (MSL) Cards</h3>
+            <span class="feature-label">Telemetry Grid &bull; Cards 1, 3, 4</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>A crystal-clear, high-contrast dashboard displaying your exact latitude, longitude, speed in both knots and kilometers per hour, compass heading, and altitude above sea level.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are conducting high-speed coastal survey runs. Looking at the high-contrast dashboard, you monitor ground speed in both knots and km/h simultaneously without squinting, verifying vessel stability and track maintenance.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Contrast Compliance:</strong> Rendered on tactical light green background (<code>#A9D9B3</code>) with deep charcoal typography (<code>#0f172a</code>) achieving WCAG AAA contrast ratio exceeding 7:1.</li>
+            <li><strong>Speed Smoothing:</strong> Uses a 5-sample moving average filter on <code>$GPRMC</code> ground speed to eliminate GPS jitter at low velocities.</li>
+            <li><strong>Datum:</strong> Altitude calculated relative to the WGS-84 ellipsoid datum via <code>$GPGGA</code> field 9 (Antenna Altitude Above Mean Sea Level).</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 5: LIVE NMEA CONSOLE -->
+    <section id="nmea-stream" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        5. Live NMEA 0183 Telemetry Stream Console
+      </h2>
+
+      <!-- Feature 11: Raw NMEA Console -->
+      <div class="feature-card">
+        <div class="feature-badge">CONSOLE &bull; LOW-LEVEL PACKET MONITOR</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_nmea_console.png" alt="NMEA Console Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Live NMEA 0183 Signal Telemetry Stream Console</h3>
+            <span class="feature-label">Lower Console &bull; Full Width Terminal</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>The "heart monitor" of your GPS connection. It prints out the actual raw text sentences sent by the satellites every second, giving engineers and navigators total visibility into the live data feed.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> An external hydrographic sensor isn't receiving position fixes from your Windows setup. You look at the NMEA Console and immediately see lines starting with <code>$GPGGA</code> and <code>$GPRMC</code> streaming by with valid checksums (e.g. <code>*72</code>). You instantly confirm that the GPS receiver is functioning perfectly and that the issue lies in the downstream cabling.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Monospace Buffer:</strong> Rendered in Consolas 9pt monospace with cyber-blue highlighting (<code>#38bdf8</code>) on obsidian black (<code>#070a12</code>).</li>
+            <li><strong>Packet Logging:</strong> Automatically scrolls to the newest sentence, retaining a ring history of the last 200 packets for diagnostic review.</li>
+            <li><strong>Outbound Forwarding:</strong> Outbound NMEA sentences are simultaneously broadcast on local virtual COM loopback for third-party navigation software (OpenCPN, MaxSea, Coastal Explorer).</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 6: MENU & LICENSING FEATURES -->
+    <section id="menus" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        6. Application Menu &amp; License System
+      </h2>
+
+      <div class="feature-card">
+        <div class="feature-badge">LICENSING &bull; RITYM COMMERCIAL ENGINE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/station_win_header.png" alt="License System Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">License Manager &amp; Help Menu</h3>
+            <span class="feature-label">Application Menu Bar &bull; Help &gt; Enter Serial Key</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Enables entering your commercial license key to unlock unlimited operational sessions, removing evaluation trial restrictions and registering the software to your company or vessel name.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You test the application on evaluation trial during sea trials. Upon purchasing a commercial license from <code>exosgps.com</code>, you click <code>Help &gt; Enter Serial Key</code>, enter your <code>EXOS-2026-XXXX-XXXX</code> key and company name, and click Activate. The top banner turns bright green reading "Registered License: Full Commercial Features Unlocked".</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Cryptographic Verification:</strong> Validates license key structure using SHA-256 hash digests and digital signature checksums.</li>
+            <li><strong>Secure Storage:</strong> Encrypts registration token locally in <code>%APPDATA%\EXOS_GPS\license.json</code> with machine-bound entropy.</li>
+            <li><strong>Evaluation Grace:</strong> Provides full-featured 7-day evaluation trial with zero telemetry throttling before activation.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:40px; text-align:center; margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:12px;">Ready to Deploy Tactical Satellite Telemetry?</h2>
+      <p style="color:#94a3b8; max-width:640px; margin:0 auto 24px;">Download the official standalone Windows setup package and connect your mobile or hardware GPS in minutes.</p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-primary" style="background-color:#0284c7; padding:12px 28px;">
+          Download Windows Setup (v0.17) &rarr;
+        </a>
+        <a href="index.html" class="btn-secondary" style="padding:12px 28px;">
+          Return to EXOS GPS Home &rarr;
+        </a>
       </div>
     </section>
 
@@ -778,51 +689,34 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <div class="container">
+    <div class="footer-container">
       <div class="footer-grid">
-        <div class="footer-col">
-          <div class="nav-brand" style="margin-bottom:16px;">
-            <img src="assets/icon.png" alt="EXOS GPS" class="brand-icon">
-            <span class="brand-text">EXOS GPS</span>
-          </div>
-          <p style="color:var(--text-muted); line-height:1.6; max-width:320px;">
-            Tactical off-grid GPS navigation, telemetry transceivers, and basecamp command hardware for the most demanding wilderness environments.
+        <div>
+          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" style="height:36px; margin-bottom:12px;">
+          <p style="color:#64748b; font-size:0.85rem; line-height:1.6;">
+            Next-generation off-grid mesh communications, satellite telemetry bridges, and tactical mission-critical navigation platforms.
           </p>
         </div>
-
-        <div class="footer-col">
-          <h5>Ecosystem</h5>
-          <ul class="footer-links">
-            <li><a href="index.html#wayfinder">EXOS Wayfinder App</a></li>
-            <li><a href="station-guide.html">EXOS-GPS Station Guide</a></li>
-            <li><a href="index.html#specifications">EXOS-GPS Hardware Puck</a></li>
-            <li><a href="index.html#specifications">Telemetry Specs</a></li>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Applications</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="station-guide.html" style="color:#38bdf8; text-decoration:none;">EXOS GPS Station (Windows)</a></li>
+            <li><a href="transceiver-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS Transceiver</a></li>
+            <li><a href="wayfinder-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS Wayfinder</a></li>
+            <li><a href="echo-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS ECHO Walkie-Talkie</a></li>
           </ul>
         </div>
-
-        <div class="footer-col">
-          <h5>Testers & Devs</h5>
-          <ul class="footer-links">
-            <li><a href="https://play.google.com/apps/testing/com.ritym.exosgps" target="_blank" rel="noopener">Station Play Store Opt-In</a></li>
-            <li><a href="https://play.google.com/apps/testing/com.exos.wayfinder" target="_blank" rel="noopener">Wayfinder Play Store Opt-In</a></li>
-            <li><a href="https://github.com/exosgps" target="_blank" rel="noopener">GitHub Organization</a></li>
-            <li><a href="support.html">Contact & FAQ</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h5>Legal & Support</h5>
-          <ul class="footer-links">
-            <li><a href="privacy.html">Privacy Policy</a></li>
-            <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="mailto:support@exosgps.com">support@exosgps.com</a></li>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Support &amp; Legal</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="index.html#getting-started" style="color:#94a3b8; text-decoration:none;">Getting Started</a></li>
+            <li><a href="privacy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color:#94a3b8; text-decoration:none;">Terms of Service</a></li>
           </ul>
         </div>
       </div>
-
-      <div class="footer-bottom">
-        <div>&copy; 2026 EXOS GPS Ecosystem. All rights reserved.</div>
-        <div>DOMAIN: <span style="color:var(--accent-green);">EXOSGPS.COM</span> // HOSTED VIA GITHUB PAGES</div>
+      <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; margin-top:32px; text-align:center; color:#64748b; font-size:0.8rem;">
+        &copy; 2026 RITYM Technologies &bull; exosgps.com &bull; All Rights Reserved.
       </div>
     </div>
   </footer>

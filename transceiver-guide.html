@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXOS Transceiver | Complete User Guide &amp; GNSS Bridge Field Manual</title>
+  <meta name="description" content="Official user manual and technical guide for EXOS Transceiver. Learn how to configure Transmitter and Receiver modes, setup Smart Guided Mock Location for Google Maps, and bridge raw NMEA over Bluetooth.">
+  <link rel="icon" type="image/png" href="assets/icon.png">
+  
+  <!-- Modern Tactical Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .guide-hero {
+      padding: 60px 0 40px;
+      text-align: center;
+      position: relative;
+    }
+    .guide-nav-bar {
+      position: sticky;
+      top: 67px;
+      z-index: 90;
+      background: rgba(13, 19, 25, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .guide-tab-link {
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+    .guide-tab-link:hover, .guide-tab-link.active {
+      color: #00e5ff;
+      border-color: rgba(0, 229, 255, 0.4);
+      background: rgba(0, 229, 255, 0.08);
+    }
+    .feature-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      margin-bottom: 32px;
+      transition: border-color 0.2s ease;
+    }
+    .feature-card:hover {
+      border-color: #00e5ff;
+    }
+    .feature-badge {
+      display: inline-block;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #00e5ff;
+      background: rgba(0, 229, 255, 0.12);
+      border: 1px solid rgba(0, 229, 255, 0.3);
+      padding: 3px 10px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      letter-spacing: 0.05em;
+    }
+    .feature-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .feature-thumb-wrap {
+      background: #090d14;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+    .feature-thumb-wrap img {
+      max-height: 52px;
+      max-width: 320px;
+      object-fit: contain;
+    }
+    .feature-title-wrap h3 {
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      color: #f0f6fc;
+      margin: 0 0 4px 0;
+    }
+    .feature-label {
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+    .feature-layman {
+      background: rgba(0, 229, 255, 0.06);
+      border-left: 4px solid #00e5ff;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+    }
+    .feature-layman h4 {
+      color: #38bdf8;
+      font-size: 0.95rem;
+      margin: 0 0 8px 0;
+      font-family: var(--font-mono);
+    }
+    .feature-layman p {
+      color: #e2e8f0;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .feature-scenario {
+      background: rgba(0, 255, 136, 0.06);
+      border-left: 4px solid #00ff88;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 18px;
+    }
+    .feature-scenario h4 {
+      color: #00ff88;
+      font-size: 0.95rem;
+      margin: 0 0 8px 0;
+      font-family: var(--font-mono);
+    }
+    .feature-scenario p {
+      color: #e2e8f0;
+      font-size: 0.94rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+    .feature-tech {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 16px 20px;
+      border-radius: 8px;
+    }
+    .feature-tech h4 {
+      color: #94a3b8;
+      font-size: 0.88rem;
+      margin: 0 0 10px 0;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .feature-tech ul {
+      margin: 0;
+      padding-left: 20px;
+      color: #cbd5e1;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+    .feature-tech li strong {
+      color: #f1f5f9;
+    }
+    .screens-showcase-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 36px 0;
+    }
+    .screen-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      text-align: center;
+      padding: 16px;
+    }
+    .screen-card img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 12px;
+    }
+    .screen-card h4 {
+      color: #f0f6fc;
+      margin: 8px 0 4px;
+      font-family: var(--font-display);
+    }
+    .screen-card p {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="theme-station">
+
+  <!-- Header Navigation -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo-wrap">
+        <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" style="height:44px;">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="transceiver-guide.html" class="nav-link" style="color:#00e5ff; font-weight:700;">Transceiver</a>
+        <a href="wayfinder-guide.html" class="nav-link">Wayfinder</a>
+        <a href="echo-guide.html" class="nav-link">ECHO Walkie-Talkie</a>
+        <a href="station-guide.html" class="nav-link">Windows Station</a>
+      </nav>
+      <div>
+        <a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7; font-size:0.82rem; padding:8px 16px;">
+          Google Play Store &rarr;
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sub-Navigation Bar -->
+  <div class="guide-nav-bar">
+    <a href="#overview" class="guide-tab-link active">Overview &amp; Screens</a>
+    <a href="#modes" class="guide-tab-link">Dual Architecture</a>
+    <a href="#top-bar" class="guide-tab-link">Top Bar Actions</a>
+    <a href="#transmitter-mode" class="guide-tab-link">Transmitter Controls</a>
+    <a href="#receiver-mode" class="guide-tab-link">Receiver Controls</a>
+    <a href="#mock-location" class="guide-tab-link">Mock Location Setup</a>
+    <a href="#diagnostics" class="guide-tab-link">Diagnostic Tools</a>
+    <a href="#specs" class="guide-tab-link">Tech Specs</a>
+  </div>
+
+  <main class="container">
+    <!-- Hero Section -->
+    <section class="guide-hero" id="overview">
+      <div style="display:inline-block; margin-bottom:12px;" class="feature-badge">UNIVERSAL BLUETOOTH GNSS BRIDGE &bull; MOCK LOCATION &bull; COMPASS HDT</div>
+      <h1 style="font-family:var(--font-display); font-size:2.4rem; color:#f0f6fc; margin-bottom:12px;">
+        EXOS Transceiver Field Operations Manual
+      </h1>
+      <p style="color:#94a3b8; max-width:760px; margin:0 auto 28px; font-size:1.05rem; line-height:1.6;">
+        Complete field manual and detailed button-by-button operational guide for EXOS Transceiver (<code>com.ritym.exosgps</code>). Learn how to broadcast raw NMEA satellite fixes and compass heading to Windows laptops, or bridge external high-precision GNSS hardware into Android apps via Smart Guided Mock Location.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7;">
+          Get Transceiver on Google Play Store &rarr;
+        </a>
+        <a href="station-guide.html#windows" class="btn-secondary">
+          Windows Desktop Station &rarr;
+        </a>
+      </div>
+    </section>
+
+    <!-- App Screen Showcase -->
+    <section style="margin-bottom:48px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; text-align:center; margin-bottom:8px;">Live Production Interface Screens</h2>
+      <p style="color:#94a3b8; text-align:center; margin-bottom:28px; font-size:0.95rem;">Authentic screenshots captured directly on Samsung Galaxy field hardware running EXOS Transceiver v1.1.4.</p>
+      
+      <div class="screens-showcase-grid">
+        <div class="screen-card">
+          <img src="assets/guides/transceiver_tx_top.png" alt="EXOS Transceiver Transmitter Screen">
+          <h4>Transmitter Mode &amp; Orbit Radar</h4>
+          <p>Real-time 3D Earth orbit globe, satellite tracks, and local GPS sensor data.</p>
+        </div>
+        <div class="screen-card">
+          <img src="assets/guides/transceiver_tx_bottom.png" alt="EXOS Transceiver Controls Screen">
+          <h4>Broadcast Controls &amp; NMEA Stream</h4>
+          <p>Bluetooth SPP/BLE emitter toggles, Compass HDT injection, and live terminal.</p>
+        </div>
+        <div class="screen-card">
+          <img src="assets/guides/transceiver_rx_top.png" alt="EXOS Transceiver Receiver Screen">
+          <h4>Receiver Mode &amp; External GPS</h4>
+          <p>Pairs with external ESP32 or Bluetooth pucks, displaying signal SNR levels.</p>
+        </div>
+        <div class="screen-card">
+          <img src="assets/guides/transceiver_rx_bottom.png" alt="EXOS Transceiver Mock Location Screen">
+          <h4>Smart Guided Mock Location</h4>
+          <p>Injects external satellite fixes into Google Maps, ATAK, OsmAnd, and QGIS.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 1: DUAL ARCHITECTURE -->
+    <section id="modes" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        1. Primary Mode Selection Cards
+      </h2>
+
+      <!-- Mode 1: Transmitter -->
+      <div class="feature-card">
+        <div class="feature-badge">MODE 01 &bull; SENSOR BROADCASTER</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_tab_tx.png" alt="Transmitter Mode Card">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Transmitter Mode (Broadcast GPS &amp; Compass)</h3>
+            <span class="feature-label">Primary Mode Card &bull; Top Left</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Turns your Android phone into an external Bluetooth GPS antenna and electronic compass for other computers. When active, your phone sends its raw GPS satellite coordinates and True Heading ($GPHDT) to your Windows laptop or tablet over Bluetooth.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are navigating a sailboat or field vehicle using a rugged Windows laptop running OpenCPN or QGIS. The laptop has no built-in GPS or compass hardware. You open EXOS Transceiver on your Android phone, select <code>Transmitter Mode</code>, and place the phone near the dashboard window. The laptop connects to the phone over Bluetooth and receives high-precision position and heading updates at 1 Hz, turning the laptop into a marine navigation chartplotter.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Bluetooth SPP Server:</strong> Listens on RFCOMM channel 1 with standard Serial Port Profile UUID <code>00001101-0000-1000-8000-00805F9B34FB</code>.</li>
+            <li><strong>NMEA Protocol:</strong> Transmits standard NMEA 0183 v4.10 sentences: <code>$GPGGA</code>, <code>$GPRMC</code>, <code>$GPGSA</code>, <code>$GPGSV</code>, and true heading <code>$GPHDT</code>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Mode 2: Receiver -->
+      <div class="feature-card">
+        <div class="feature-badge">MODE 02 &bull; EXTERNAL RECEIVER BRIDGE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_tab_rx.png" alt="Receiver Mode Card">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Receiver Mode (Bridge External Hardware GPS)</h3>
+            <span class="feature-label">Primary Mode Card &bull; Top Right</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Connects your phone to an external high-accuracy GPS puck (like a professional survey antenna or ESP32 RTK GPS). Your phone receives survey-grade position data and replaces its internal phone GPS so Google Maps or ATAK benefits from sub-meter accuracy.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are performing forestry surveying where heavy tree canopy blocks consumer phone GPS signals. You carry an external helical antenna on your survey pole connected to an ESP32 GNSS receiver. In EXOS Transceiver, you select <code>Receiver Mode</code>, pair with the survey pole, and activate Mock Location. Your surveying GIS app now maps trees with centimeter precision.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Baud Rate Support:</strong> Connects to external Bluetooth serial devices at 4800, 9600, 38400, 57600, 115200, and 230400 bps.</li>
+            <li><strong>Parser Engine:</strong> Asynchronous circular buffer with real-time XOR checksum verification and RTK differential fix parsing (GGA Fix Quality 4 &amp; 5).</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 2: TOP BAR ACTIONS -->
+    <section id="top-bar" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        2. Top Action Bar Controls
+      </h2>
+
+      <!-- Button: TRIAL Badge & Upgrade -->
+      <div class="feature-card">
+        <div class="feature-badge">LICENSING &bull; TOP RIGHT</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_trial.png" alt="TRIAL Badge Crop">
+            <img src="assets/guides/crops/transceiver_btn_upgrade.png" alt="Upgrade Button Crop" style="margin-left:8px;">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Trial Budget Badge &amp; Upgrade Button</h3>
+            <span class="feature-label">Status Badge &bull; Top Bar Right</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Shows how much free satellite broadcasting time you have left (every user gets 5 free hours). Tapping Upgrade unlocks unlimited, perpetual lifetime satellite streaming without subscriptions.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are testing EXOS Transceiver on a weekend off-road trip. The counter starts at 5h 00m. It only counts down while actively broadcasting data over Bluetooth. After testing, you tap Upgrade to unlock permanent unlimited operation for your vehicle navigation rig.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Metering Accuracy:</strong> Increments consumption based strictly on active RFCOMM transmission byte streams; pauses immediately when disconnected.</li>
+            <li><strong>Licensing:</strong> Google Play In-App Billing (IAP v6) one-time non-consumable unlock token stored securely with cryptographic receipt verification.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Button: TT -->
+      <div class="feature-card">
+        <div class="feature-badge">ACTION &bull; ACCESSIBILITY</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_tt.png" alt="TT Font Size Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">TT (Text &amp; Terminal Size Toggle)</h3>
+            <span class="feature-label">Push Button &bull; Top Bar Diagnostic Row</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Increases or decreases font sizes on screen. Perfect when the phone is mounted on a vehicle windshield several feet away so you can read coordinates and satellite counts without taking your eyes off the trail.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> Your phone is clamped to the passenger dashboard in direct desert sunlight while navigating a 4x4 trail. The standard font is too small to read at a glance. You tap <code>TT</code> to toggle high-visibility large typography, making coordinates and satellite SNR instantly readable.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Cycles dynamically between Standard (12sp), Tactical Medium (16sp), and High-Visibility Large (20sp) layout themes without reloading the activity lifecycle.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Button: User Guide -->
+      <div class="feature-card">
+        <div class="feature-badge">DOCUMENTATION &bull; TOP BAR</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_guide.png" alt="User Guide Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">User Guide (Field Documentation Dialog)</h3>
+            <span class="feature-label">Action Icon &bull; Top Bar</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Opens an offline field guide right on your screen explaining how to pair with Windows, set up Google Maps mock location, and configure NMEA stream baud rates without needing an internet connection.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You are setting up your navigation rig in an area with zero cellular service. You forget which Bluetooth menu setting to enable on Windows. You tap the <code>User Guide</code> icon on Transceiver and read the exact step-by-step pairing instructions cached offline in memory.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Embedded local Markdown/HTML dialog compiled directly into application asset bundle; zero network calls or external web dependencies.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Button: Info / About -->
+      <div class="feature-card">
+        <div class="feature-badge">INFO &bull; ABOUT DIALOG</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_info.png" alt="About Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">About &amp; System Version Dialog</h3>
+            <span class="feature-label">Action Icon &bull; Top Bar Right</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Displays application version, build number, Bluetooth MAC address, copyright notices, and RITYM Technologies engineering details.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> An enterprise fleet manager needs to verify that all tablets are updated to version 1.1.4 before an expedition. Tapping <code>About</code> displays the exact build hash, package name, and legal entity verification.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Queries Android <code>PackageManager.getPackageInfo()</code> and displays official signature fingerprints and legal entity verification for RITYM Technologies.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 3: TRANSMITTER MODE CONTROLS -->
+    <section id="transmitter-mode" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        3. Transmitter Mode Controls &amp; Sensor Stream
+      </h2>
+
+      <!-- Control: Broadcast vs P2P Dedicated Mode -->
+      <div class="feature-card">
+        <div class="feature-badge">TRANSMISSION TOPOLOGY &bull; SECTION 2</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_broadcast_mode.png" alt="Broadcast Mode Toggle Crop">
+            <img src="assets/guides/crops/transceiver_btn_p2p_mode.png" alt="P2P Mode Toggle Crop" style="margin-left:8px;">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Transmission Mode: BROADCAST vs P2P DEDICATED</h3>
+            <span class="feature-label">Topology Selector &bull; Transmitter Controls</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Lets you choose between sharing your GPS coordinates with multiple nearby computers at once (Broadcast Mode) or creating a locked, high-speed one-to-one link to a single laptop (P2P Dedicated Mode).</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> In a mobile command vehicle, three officers on three separate tablets need live coordinates from the vehicle's roof-mounted smartphone. Setting the mode to <code>BROADCAST</code> allows all three tablets to connect simultaneously, receiving synchronized GPS telemetry.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Broadcast Mode:</strong> Multi-client RFCOMM socket server allowing up to 7 concurrent paired Bluetooth clients with dynamic disconnect controls.</li>
+            <li><strong>P2P Dedicated Mode:</strong> Exclusive single-client channel with maximum throughput buffer utilization and reduced latency (&lt; 15 ms).</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Control: START BROADCASTING -->
+      <div class="feature-card">
+        <div class="feature-badge">TRANSMITTER ENGINE &bull; PRIMARY ACTION</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_start_broadcast.png" alt="Start Broadcasting Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">START BROADCASTING / STOP BROADCASTING</h3>
+            <span class="feature-label">Primary Action Button &bull; Transmitter Screen</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>The main push button that turns on the satellite transmitter engine. Once tapped, your phone starts streaming live GPS coordinates and compass orientation over Bluetooth.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You mount your phone to your boat's helm station, tap <code>START BROADCASTING</code>, and walk down to the cabin. The button pulses green to indicate active transmission. Your laptop in the cabin instantly receives the stream and begins charting your course.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Service Lifecycle:</strong> Starts <code>TransmitterService</code> as an Android Foreground Service with continuous <code>PARTIAL_WAKE_LOCK</code>.</li>
+            <li><strong>Sensor Fusion:</strong> Fuses Android GNSS measurements with geomagnetic vector calculations to output continuous <code>$GPGGA</code>, <code>$GPRMC</code>, <code>$GPGSA</code>, <code>$GPGSV</code>, and <code>$GPHDT</code>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Sensor Card: Local GPS & Hardware Status -->
+      <div class="feature-card">
+        <div class="feature-badge">TELEMETRY MONITOR &bull; SENSOR STATUS</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_card_local_gps.png" alt="Local GPS Data Card Crop">
+            <img src="assets/guides/crops/transceiver_card_hardware_status.png" alt="Hardware Status Card Crop" style="margin-left:8px;">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Local GPS Data &amp; Hardware Status Cards</h3>
+            <span class="feature-label">Telemetry Cards &bull; Transmitter Screen</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Shows how many satellites are currently locked, your positioning accuracy in meters, and whether your electronic compass sensor is calibrated and active.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> Before starting a boat run, you check the Hardware Status card. It shows "GPS Satellite Lock: Active" with 18 satellites locked and "Compass: Active". You know your navigation telemetry is rock-solid before untying from the dock.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Reads raw NMEA constellation data via <code>GnssStatus.Callback</code> and reports horizontal dilution of precision (HDOP), position error margin (RMS), and 3-axis compass calibration quality.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 4: RECEIVER MODE & MOCK LOCATION -->
+    <section id="receiver-mode" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        4. Receiver Mode &amp; Smart Guided Mock Location
+      </h2>
+
+      <!-- Feature: Smart Mock Location Card -->
+      <div class="feature-card" id="mock-location">
+        <div class="feature-badge">RECEIVER BRIDGE &bull; MOCK LOCATION ENGINE</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_card_mock_location.png" alt="Mock Location Card Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Smart Guided Mock Location Provider</h3>
+            <span class="feature-label">System Switch &bull; Receiver Screen</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Injects satellite coordinates from an external GPS antenna directly into Android's system location provider. Every navigation app on your phone (including Google Maps, Waze, and ATAK) now uses the external antenna automatically.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> You have an Android tablet without built-in GPS. You pair it to your external GPS antenna using EXOS Transceiver in Receiver Mode and turn on <code>Smart Guided Mock Location</code>. Google Maps immediately shows your blue navigation dot and provides full turn-by-turn guidance.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li><strong>Mock Provider:</strong> Utilizes Android <code>LocationManager.setTestProviderLocation()</code> on <code>LocationManager.GPS_PROVIDER</code>.</li>
+            <li><strong>Guided Setup:</strong> Automatically detects if Developer Options mock location app is selected and provides deep links to Android settings if configuration is required.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 5: DIAGNOSTICS & LOGS -->
+    <section id="diagnostics" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        5. Diagnostic Logs &amp; Report Tools
+      </h2>
+
+      <div class="feature-card">
+        <div class="feature-badge">DIAGNOSTICS &bull; BOTTOM TOOLBAR</div>
+        <div class="feature-header">
+          <div class="feature-thumb-wrap">
+            <img src="assets/guides/crops/transceiver_btn_report.png" alt="Diagnostic Report Button Crop">
+          </div>
+          <div class="feature-title-wrap">
+            <h3 class="feature-title">Diagnostic Logs &amp; Report Button</h3>
+            <span class="feature-label">Action Button &bull; Bottom Section</span>
+          </div>
+        </div>
+        <div class="feature-layman">
+          <h4>What it Does (In Plain English)</h4>
+          <p>Captures technical connection logs and diagnostic information if you ever encounter Bluetooth connection issues, allowing you to copy or send the report directly to RITYM engineering support.</p>
+        </div>
+        <div class="feature-scenario">
+          <h4>Real-World Field Scenario</h4>
+          <p><strong>Scenario:</strong> A rare third-party Bluetooth receiver drops connection unexpectedly. You tap <code>Report</code>. A formatted technical log showing Bluetooth error codes and serial buffer status is generated and ready to share with support.</p>
+        </div>
+        <div class="feature-tech">
+          <h4>Technical Specifications &amp; Protocol Architecture</h4>
+          <ul>
+            <li>Generates sanitized ring buffer log with timestamped RFCOMM socket state, RFCOMM disconnect cause codes, and NMEA checksum integrity statistics.</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECTION 6: TECHNICAL SPECIFICATIONS -->
+    <section id="specs" style="margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:12px;">
+        6. Technical Specifications &amp; Protocol Matrix
+      </h2>
+      <div style="overflow-x:auto;">
+        <table class="spec-table" style="width:100%; border-collapse:collapse; background:var(--bg-card); border-radius:8px; overflow:hidden;">
+          <thead>
+            <tr style="background:#1e293b; color:#38bdf8; font-family:var(--font-mono); font-size:0.85rem; text-align:left;">
+              <th style="padding:12px 16px;">Parameter</th>
+              <th style="padding:12px 16px;">Transmitter Mode</th>
+              <th style="padding:12px 16px;">Receiver Mode</th>
+            </tr>
+          </thead>
+          <tbody style="color:#cbd5e1; font-size:0.9rem; line-height:1.6;">
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Primary Function</td>
+              <td style="padding:12px 16px;">Broadcasts phone GPS &amp; Compass to Windows PCs/tablets</td>
+              <td style="padding:12px 16px;">Bridges external GPS puck into Android via Mock Location</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Bluetooth Profile</td>
+              <td style="padding:12px 16px;">SPP Server (RFCOMM Ch 1) + BLE Emitter</td>
+              <td style="padding:12px 16px;">SPP Client (Auto-reconnect with backoff)</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">NMEA Sentences</td>
+              <td style="padding:12px 16px;">$GPGGA, $GPRMC, $GPGSA, $GPGSV, $GPHDT</td>
+              <td style="padding:12px 16px;">Full NMEA 0183 v4.10 parser with checksum validation</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.06);">
+              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Update Rate</td>
+              <td style="padding:12px 16px;">1 Hz to 10 Hz (sensor-driven)</td>
+              <td style="padding:12px 16px;">Up to 20 Hz (hardware-dependent)</td>
+            </tr>
+            <tr>
+              <td style="padding:12px 16px; font-weight:600; color:#f0f6fc;">Compatibility</td>
+              <td style="padding:12px 16px;">Windows 10/11, macOS, Linux, OpenCPN, QGIS</td>
+              <td style="padding:12px 16px;">Google Maps, ATAK, Waze, OsmAnd, Gaia GPS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section style="background:var(--bg-card); border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:40px; text-align:center; margin-bottom:60px;">
+      <h2 style="font-family:var(--font-display); color:#f0f6fc; margin-bottom:12px;">Deploy EXOS Transceiver in the Field</h2>
+      <p style="color:#94a3b8; max-width:640px; margin:0 auto 24px;">Install from Google Play Store or download the Windows Station companion to start streaming satellite telemetry today.</p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener" class="btn-primary" style="background-color:#0284c7; padding:12px 28px;">
+          Install from Google Play Store &rarr;
+        </a>
+        <a href="station-guide.html#windows" class="btn-secondary" style="padding:12px 28px;">
+          Windows Station Field Manual &rarr;
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div>
+          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" style="height:36px; margin-bottom:12px;">
+          <p style="color:#64748b; font-size:0.85rem; line-height:1.6;">
+            Next-generation off-grid mesh communications, satellite telemetry bridges, and tactical mission-critical navigation platforms.
+          </p>
+        </div>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Applications</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="transceiver-guide.html" style="color:#00e5ff; text-decoration:none;">EXOS Transceiver</a></li>
+            <li><a href="station-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS GPS Station (Windows)</a></li>
+            <li><a href="wayfinder-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS Wayfinder</a></li>
+            <li><a href="echo-guide.html" style="color:#94a3b8; text-decoration:none;">EXOS ECHO Walkie-Talkie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="color:#f0f6fc; font-family:var(--font-mono); font-size:0.85rem; margin-bottom:12px; text-transform:uppercase;">Support &amp; Legal</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; line-height:2;">
+            <li><a href="index.html#getting-started" style="color:#94a3b8; text-decoration:none;">Getting Started</a></li>
+            <li><a href="privacy.html" style="color:#94a3b8; text-decoration:none;">Privacy Policy</a></li>
+            <li><a href="terms.html" style="color:#94a3b8; text-decoration:none;">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="border-top:1px solid rgba(255,255,255,0.06); padding-top:20px; margin-top:32px; text-align:center; color:#64748b; font-size:0.8rem;">
+        &copy; 2026 RITYM Technologies &bull; exosgps.com &bull; All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
