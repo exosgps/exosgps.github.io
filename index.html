@@ -1,6 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) - Privacy-safe anonymous analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNKE55GVQD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HNKE55GVQD', {
+      'anonymize_ip': true
+    });
+
+    // Auto-track Windows Station and application download clicks
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('a[href*=".exe"], a[href*="downloads/"]').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          if (typeof gtag === 'function') {
+            gtag('event', 'file_download', {
+              'file_name': 'EXOS-GPS-Station-Setup-v0.17.exe',
+              'file_extension': 'exe',
+              'link_text': (btn.innerText || '').trim(),
+              'link_url': btn.getAttribute('href')
+            });
+            gtag('event', 'download_windows_station', {
+              'event_category': 'Software Download',
+              'event_label': 'EXOS GPS Station Windows Setup',
+              'value': 1
+            });
+          }
+        });
+      });
+    });
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>EXOS Navigation Systems | GNSS Telemetry, Offline Mapping & Radio Mesh</title>
