@@ -36,8 +36,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>EXOS GPS Station (Windows) | Official Operational Manual & Field Guide</title>
-  <meta name="description" content="Official user guide for EXOS GPS Station for Windows Desktop. Connect Bluetooth GPS receivers, stream NMEA telemetry, configure Windows Sensor API, and navigate offline.">
+  <title>EXOS GPS Station (Windows) | Official Operational Manual &amp; Field Guide</title>
+  <meta name="description" content="Official enterprise documentation and operational manual for EXOS GPS Station for Windows Desktop. Connect Bluetooth GPS receivers, stream NMEA telemetry, configure Windows Sensor API, and navigate offline.">
   <link rel="icon" type="image/png" href="assets/icon.png">
 
   <!-- Enterprise Human-Aesthetic Typography -->
@@ -47,30 +47,35 @@
 
   <style>
     :root {
-      --canvas: #070a11;
-      --canvas-subtle: #0d121d;
-      --card-bg: rgba(15, 23, 42, 0.55);
-      --card-bg-hover: rgba(22, 34, 60, 0.65);
-      --card-border: rgba(255, 255, 255, 0.08);
-      --card-border-focus: rgba(56, 189, 248, 0.35);
-      --sky-primary: #0284c7;
-      --sky-glow: #38bdf8;
-      --sky-tint: rgba(56, 189, 248, 0.1);
-      --emerald-glow: #10b981;
-      --emerald-tint: rgba(16, 185, 129, 0.12);
-      --amber-glow: #f59e0b;
-      --text-white: #f8fafc;
-      --text-sub: #cbd5e1;
-      --text-muted: #94a3b8;
-      --text-faint: #64748b;
+      /* Corporate Light Design Tokens */
+      --canvas: #f8fafc;
+      --canvas-pure: #ffffff;
+      --canvas-slate: #f1f5f9;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --card-border-hover: #cbd5e1;
+      --primary: #0284c7;
+      --primary-dark: #0369a1;
+      --primary-light: #e0f2fe;
+      --primary-tint: #f0f9ff;
+      --emerald: #10b981;
+      --emerald-dark: #15803d;
+      --emerald-tint: #f0fdf4;
+      --emerald-border: #bbf7d0;
+      --amber: #f59e0b;
+      --text-heading: #0f172a;
+      --text-body: #334155;
+      --text-muted: #64748b;
+      --text-faint: #94a3b8;
       --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 22px;
+      --radius-lg: 20px;
       --radius-pill: 9999px;
-      --shadow-ambient: 0 20px 40px -15px rgba(0, 0, 0, 0.6);
-      --shadow-glow: 0 0 35px -5px rgba(56, 189, 248, 0.25);
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+      --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+      --shadow-hover: 0 20px 40px -12px rgba(2, 132, 199, 0.14), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
     }
 
     * {
@@ -82,7 +87,7 @@
     html {
       scroll-behavior: smooth;
       background-color: var(--canvas);
-      color: var(--text-white);
+      color: var(--text-body);
       font-family: var(--font-sans);
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
@@ -90,13 +95,11 @@
 
     body {
       background: 
-        radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.14) 0%, transparent 45%),
-        radial-gradient(circle at 90% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 10% 60%, rgba(16, 185, 129, 0.04) 0%, transparent 40%),
+        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(2, 132, 199, 0.07) 0%, transparent 65%),
         var(--canvas);
       min-height: 100vh;
-      line-height: 1.6;
-      color: var(--text-sub);
+      line-height: 1.65;
+      color: var(--text-body);
     }
 
     a {
@@ -104,23 +107,22 @@
       text-decoration: none;
     }
 
-    /* Container */
     .container {
       width: 100%;
-      max-width: 1240px;
+      max-width: 1220px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Primary Navigation */
+    /* Enterprise Navigation Header */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(7, 10, 17, 0.82);
+      background: rgba(255, 255, 255, 0.92);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--card-border);
-      transition: all 0.3s ease;
+      transition: all 0.25s ease;
     }
 
     .header-inner {
@@ -143,20 +145,20 @@
 
     .brand-badge {
       font-size: 0.72rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      padding: 3px 9px;
+      padding: 3px 10px;
       border-radius: var(--radius-pill);
-      background: var(--sky-tint);
-      color: var(--sky-glow);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid #bae6fd;
     }
 
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
     }
 
     .nav-item {
@@ -169,13 +171,13 @@
     }
 
     .nav-item:hover {
-      color: var(--text-white);
-      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-heading);
+      background: var(--canvas-slate);
     }
 
     .nav-item.active {
-      color: var(--sky-glow);
-      background: var(--sky-tint);
+      color: var(--primary-dark);
+      background: var(--primary-light);
       font-weight: 600;
     }
 
@@ -183,40 +185,41 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+      background: var(--primary);
       color: #ffffff;
       font-size: 0.86rem;
       font-weight: 600;
-      padding: 10px 18px;
+      padding: 10px 20px;
       border-radius: var(--radius-pill);
-      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
       transition: all 0.25s ease;
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: none;
     }
 
     .btn-download-primary:hover {
+      background: var(--primary-dark);
+      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.4);
       transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.55);
-      background: linear-gradient(135deg, #0369a1 0%, #0284c7 100%);
     }
 
     .btn-secondary {
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-white);
+      background: #ffffff;
+      color: var(--text-heading);
       font-size: 0.86rem;
-      font-weight: 500;
-      padding: 10px 18px;
+      font-weight: 600;
+      padding: 10px 20px;
       border-radius: var(--radius-pill);
       border: 1px solid var(--card-border);
+      box-shadow: var(--shadow-sm);
       transition: all 0.25s ease;
     }
 
     .btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(255, 255, 255, 0.2);
+      background: var(--canvas-slate);
+      border-color: var(--card-border-hover);
     }
 
     /* Sticky Module Bar */
@@ -224,10 +227,11 @@
       position: sticky;
       top: 72px;
       z-index: 95;
-      background: rgba(10, 15, 26, 0.88);
-      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--card-border);
       padding: 12px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
     }
 
     .module-nav-bar {
@@ -241,7 +245,7 @@
     .module-tabs {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 8px;
       overflow-x: auto;
       padding-bottom: 2px;
       scrollbar-width: none;
@@ -255,26 +259,25 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      padding: 7px 14px;
+      padding: 7px 15px;
       font-size: 0.82rem;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text-muted);
       border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.03);
+      background: var(--canvas-slate);
       border: 1px solid transparent;
       white-space: nowrap;
       transition: all 0.2s ease;
     }
 
     .module-tab-pill:hover {
-      color: var(--text-white);
-      background: rgba(255, 255, 255, 0.07);
+      color: var(--text-heading);
+      background: #e2e8f0;
     }
 
     .module-tab-pill.active {
-      color: var(--sky-glow);
-      background: var(--sky-tint);
-      border-color: rgba(56, 189, 248, 0.3);
+      color: #ffffff;
+      background: var(--primary);
       font-weight: 600;
     }
 
@@ -282,7 +285,7 @@
       display: flex;
       align-items: center;
       gap: 8px;
-      background: rgba(255, 255, 255, 0.04);
+      background: #ffffff;
       border: 1px solid var(--card-border);
       border-radius: var(--radius-pill);
       padding: 6px 14px;
@@ -290,18 +293,17 @@
     }
 
     .module-search-box:focus-within {
-      border-color: var(--sky-glow);
-      background: rgba(255, 255, 255, 0.07);
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
     }
 
     .module-search-box input {
       background: transparent;
       border: none;
       outline: none;
-      color: var(--text-white);
+      color: var(--text-heading);
       font-size: 0.82rem;
-      width: 160px;
+      width: 170px;
       font-family: var(--font-sans);
     }
 
@@ -311,9 +313,8 @@
 
     /* Hero Section */
     .hero-section {
-      padding: 72px 0 54px;
+      padding: 64px 0 48px;
       text-align: center;
-      position: relative;
     }
 
     .hero-eyebrow {
@@ -321,41 +322,41 @@
       align-items: center;
       gap: 8px;
       font-size: 0.78rem;
-      font-weight: 600;
+      font-weight: 700;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: var(--radius-pill);
-      background: rgba(56, 189, 248, 0.08);
-      color: var(--sky-glow);
-      border: 1px solid rgba(56, 189, 248, 0.25);
-      margin-bottom: 22px;
+      background: var(--primary-light);
+      color: var(--primary-dark);
+      border: 1px solid #bae6fd;
+      margin-bottom: 20px;
     }
 
     .hero-title {
-      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-size: clamp(2.3rem, 5vw, 3.4rem);
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.15;
-      color: #ffffff;
-      margin-bottom: 18px;
-      max-width: 940px;
+      color: var(--text-heading);
+      margin-bottom: 16px;
+      max-width: 900px;
       margin-left: auto;
       margin-right: auto;
     }
 
     .hero-title span {
-      background: linear-gradient(135deg, #38bdf8 0%, #0284c7 60%, #38bdf8 100%);
+      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
     .hero-desc {
-      font-size: 1.1rem;
-      line-height: 1.65;
+      font-size: 1.08rem;
+      line-height: 1.68;
       color: var(--text-muted);
-      max-width: 760px;
-      margin: 0 auto 32px;
+      max-width: 740px;
+      margin: 0 auto 30px;
     }
 
     .hero-actions {
@@ -367,26 +368,33 @@
       margin-bottom: 48px;
     }
 
-    /* Hero Live Interface Showcase */
+    /* Hero Live Interface Showcase Card */
     .interface-showcase-card {
-      background: rgba(13, 19, 31, 0.75);
-      backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #ffffff;
+      border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
       padding: 16px;
-      box-shadow: 0 25px 60px -20px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
-      margin-bottom: 72px;
+      box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.12), 0 2px 8px -2px rgba(15, 23, 42, 0.04);
+      margin-bottom: 64px;
       position: relative;
+    }
+
+    /* Dark Hardware Window Bezel inside Light Card (Jewel Contrast) */
+    .window-bezel-frame {
+      background: #0f172a;
+      border-radius: var(--radius-md);
       overflow: hidden;
+      box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.35);
+      border: 1px solid #1e293b;
     }
 
     .window-header-chrome {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 8px 12px 14px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-      margin-bottom: 14px;
+      padding: 10px 14px;
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
     }
 
     .window-dots {
@@ -407,18 +415,19 @@
     .window-title {
       font-family: var(--font-mono);
       font-size: 0.76rem;
-      color: var(--text-muted);
+      color: #94a3b8;
       letter-spacing: 0.05em;
+      font-weight: 500;
     }
 
     .window-badge {
       font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--emerald-glow);
-      background: var(--emerald-tint);
+      font-weight: 700;
+      color: #38bdf8;
+      background: rgba(56, 189, 248, 0.15);
       padding: 2px 8px;
       border-radius: var(--radius-pill);
-      border: 1px solid rgba(16, 185, 129, 0.25);
+      border: 1px solid rgba(56, 189, 248, 0.35);
     }
 
     .interface-showcase-img {
@@ -426,41 +435,40 @@
       height: auto;
       max-height: 580px;
       object-fit: contain;
-      border-radius: var(--radius-md);
       display: block;
-      background: #060910;
+      background: #070a12;
       cursor: zoom-in;
-      transition: transform 0.3s ease;
+      transition: transform 0.25s ease;
     }
 
     .interface-showcase-img:hover {
-      transform: scale(1.006);
+      transform: scale(1.004);
     }
 
     /* Section Module Dividers */
     .module-header-block {
-      padding: 48px 0 24px;
+      padding: 44px 0 20px;
       margin-bottom: 24px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+      border-bottom: 2px solid #e2e8f0;
     }
 
     .module-num-pill {
       font-family: var(--font-mono);
       font-size: 0.76rem;
       font-weight: 700;
-      color: var(--sky-glow);
+      color: var(--primary);
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       display: inline-block;
     }
 
     .module-headline {
-      font-size: 1.85rem;
-      font-weight: 700;
+      font-size: 1.8rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      color: #ffffff;
-      margin-bottom: 8px;
+      color: var(--text-heading);
+      margin-bottom: 6px;
     }
 
     .module-subtext {
@@ -469,27 +477,26 @@
       max-width: 680px;
     }
 
-    /* Redesigned Asymmetric Feature Showcase (The Anti-Rectangle Design) */
+    /* Clean Enterprise Asymmetric Showcase Card (Anti-Rectangle Design) */
     .feature-showcase-card {
       background: var(--card-bg);
-      backdrop-filter: blur(16px);
       border: 1px solid var(--card-border);
       border-radius: var(--radius-lg);
       padding: 32px;
-      margin-bottom: 36px;
-      box-shadow: var(--shadow-ambient);
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-card);
       transition: all 0.3s ease;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.05fr 1fr;
       gap: 36px;
       align-items: center;
       position: relative;
     }
 
     .feature-showcase-card:hover {
-      border-color: var(--card-border-focus);
-      background: var(--card-bg-hover);
-      box-shadow: var(--shadow-ambient), var(--shadow-glow);
+      border-color: var(--card-border-hover);
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
     }
 
     /* Left Visual Column */
@@ -498,18 +505,12 @@
     }
 
     .snapshot-frame {
-      background: #080c16;
-      border: 1px solid rgba(255, 255, 255, 0.09);
+      background: #0f172a;
+      border: 1px solid #1e293b;
       border-radius: var(--radius-md);
       overflow: hidden;
-      box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.22);
       position: relative;
-      transition: transform 0.25s ease;
-    }
-
-    .snapshot-frame:hover {
-      transform: translateY(-2px);
-      border-color: rgba(56, 189, 248, 0.35);
     }
 
     .snapshot-top-bar {
@@ -517,15 +518,15 @@
       align-items: center;
       justify-content: space-between;
       padding: 8px 12px;
-      background: rgba(15, 23, 42, 0.85);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      background: #1e293b;
+      border-bottom: 1px solid #334155;
     }
 
     .snapshot-tag {
       font-family: var(--font-mono);
       font-size: 0.72rem;
       font-weight: 600;
-      color: var(--text-muted);
+      color: #94a3b8;
       display: flex;
       align-items: center;
       gap: 6px;
@@ -537,20 +538,20 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--sky-glow);
+      background: #38bdf8;
     }
 
     .snapshot-zoom-hint {
       font-size: 0.68rem;
-      color: var(--text-faint);
+      color: #64748b;
     }
 
     .snapshot-image {
       width: 100%;
-      max-height: 420px;
+      max-height: 400px;
       object-fit: contain;
       display: block;
-      background: #060910;
+      background: #070a12;
       cursor: zoom-in;
     }
 
@@ -559,8 +560,8 @@
       align-items: center;
       gap: 12px;
       margin-top: 14px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: var(--canvas-slate);
+      border: 1px solid var(--card-border);
       border-radius: var(--radius-md);
       padding: 8px 14px;
     }
@@ -570,9 +571,9 @@
       max-width: 140px;
       object-fit: contain;
       border-radius: 6px;
-      background: #0c1220;
+      background: #ffffff;
       padding: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid #cbd5e1;
     }
 
     .crop-caption {
@@ -582,15 +583,16 @@
     }
 
     .crop-caption strong {
-      color: var(--text-white);
+      color: var(--text-heading);
       display: block;
+      font-size: 0.82rem;
     }
 
     /* Right Editorial Content Column */
     .editorial-column {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
     }
 
     .feature-category-pill {
@@ -603,52 +605,50 @@
       text-transform: uppercase;
       padding: 4px 10px;
       border-radius: var(--radius-pill);
-      background: var(--sky-tint);
-      color: var(--sky-glow);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: var(--primary-tint);
+      color: var(--primary-dark);
+      border: 1px solid #bae6fd;
       align-self: flex-start;
     }
 
     .feature-name {
-      font-size: 1.45rem;
-      font-weight: 700;
+      font-size: 1.42rem;
+      font-weight: 800;
       letter-spacing: -0.02em;
-      color: #ffffff;
+      color: var(--text-heading);
       line-height: 1.25;
     }
 
     .feature-location {
       font-family: var(--font-mono);
       font-size: 0.78rem;
-      color: var(--text-faint);
+      color: var(--text-muted);
       display: flex;
       align-items: center;
       gap: 6px;
     }
 
-    .feature-location::before {
-      content: '📍';
-      font-size: 0.82rem;
-    }
-
     .feature-lead-text {
       font-size: 0.96rem;
-      line-height: 1.65;
-      color: var(--text-sub);
+      line-height: 1.68;
+      color: var(--text-body);
     }
 
-    /* Seamless Field Scenario Callout (No clunky box!) */
+    /* Seamless Corporate Field Scenario Callout */
     .scenario-pill-context {
-      background: linear-gradient(90deg, rgba(16, 185, 129, 0.08) 0%, rgba(16, 185, 129, 0.02) 100%);
-      border-left: 3px solid var(--emerald-glow);
+      background: var(--emerald-tint);
+      border-left: 3px solid var(--emerald);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       padding: 12px 16px;
+      border-top: 1px solid var(--emerald-border);
+      border-right: 1px solid var(--emerald-border);
+      border-bottom: 1px solid var(--emerald-border);
     }
 
     .scenario-title {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--emerald-glow);
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--emerald-dark);
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin-bottom: 4px;
@@ -659,21 +659,21 @@
 
     .scenario-desc {
       font-size: 0.88rem;
-      color: #e2e8f0;
+      color: #1e293b;
       line-height: 1.55;
     }
 
     /* Technical Specs (Apple-style clean bulleted list) */
     .specs-group {
-      padding-top: 6px;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 8px;
+      border-top: 1px solid var(--card-border);
     }
 
     .specs-heading {
       font-family: var(--font-mono);
       font-size: 0.74rem;
       font-weight: 700;
-      color: var(--text-faint);
+      color: var(--text-muted);
       text-transform: uppercase;
       letter-spacing: 0.07em;
       margin-bottom: 8px;
@@ -688,7 +688,7 @@
 
     .specs-list li {
       font-size: 0.84rem;
-      color: var(--text-muted);
+      color: var(--text-body);
       line-height: 1.5;
       position: relative;
       padding-left: 14px;
@@ -696,7 +696,7 @@
 
     .specs-list li::before {
       content: '•';
-      color: var(--sky-glow);
+      color: var(--primary);
       position: absolute;
       left: 0;
       top: 0;
@@ -706,11 +706,11 @@
     .specs-list li code {
       font-family: var(--font-mono);
       font-size: 0.78rem;
-      color: var(--sky-glow);
-      background: rgba(56, 189, 248, 0.08);
-      padding: 1px 5px;
+      color: var(--primary-dark);
+      background: var(--primary-light);
+      padding: 1px 6px;
       border-radius: 4px;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid #bae6fd;
     }
 
     /* Lightbox Modal */
@@ -719,7 +719,7 @@
       position: fixed;
       inset: 0;
       z-index: 999;
-      background: rgba(3, 7, 18, 0.94);
+      background: rgba(15, 23, 42, 0.92);
       backdrop-filter: blur(14px);
       align-items: center;
       justify-content: center;
@@ -744,7 +744,7 @@
       max-height: 85vh;
       object-fit: contain;
       border-radius: var(--radius-md);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
 
@@ -754,7 +754,7 @@
       right: 0;
       color: #ffffff;
       font-size: 1.5rem;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.15);
       width: 36px;
       height: 36px;
       border-radius: 50%;
@@ -762,45 +762,46 @@
       align-items: center;
       justify-content: center;
       cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       transition: all 0.2s ease;
     }
 
     .lightbox-close-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255, 255, 255, 0.3);
     }
 
-    /* Final CTA Banner */
+    /* Final CTA Banner (Clean Ice-Blue Gradient) */
     .cta-banner {
-      background: linear-gradient(135deg, rgba(2, 132, 199, 0.15) 0%, rgba(15, 23, 42, 0.8) 100%);
-      border: 1px solid rgba(56, 189, 248, 0.25);
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #bae6fd;
       border-radius: var(--radius-lg);
       padding: 56px 36px;
       text-align: center;
       margin: 64px 0 80px;
-      box-shadow: var(--shadow-ambient), 0 0 45px -10px rgba(2, 132, 199, 0.2);
+      box-shadow: var(--shadow-card);
     }
 
     .cta-headline {
-      font-size: clamp(1.8rem, 4vw, 2.4rem);
+      font-size: clamp(1.8rem, 4vw, 2.3rem);
       font-weight: 800;
-      color: #ffffff;
+      color: var(--text-heading);
       margin-bottom: 12px;
       letter-spacing: -0.02em;
     }
 
     .cta-desc {
-      color: var(--text-muted);
+      color: var(--text-body);
       max-width: 620px;
       margin: 0 auto 28px;
       font-size: 1.05rem;
     }
 
-    /* Footer */
+    /* Corporate Dark Footer (Anchoring the Light Site) */
     .site-footer {
-      border-top: 1px solid var(--card-border);
-      padding: 54px 0 36px;
-      background: rgba(5, 8, 14, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 64px 0 36px;
+      background: #0b1120;
+      color: #94a3b8;
     }
 
     .footer-grid {
@@ -811,12 +812,13 @@
     }
 
     .footer-logo {
-      height: 34px;
+      height: 36px;
       margin-bottom: 14px;
+      filter: brightness(0) invert(1);
     }
 
     .footer-desc {
-      color: var(--text-faint);
+      color: #64748b;
       font-size: 0.85rem;
       max-width: 380px;
       line-height: 1.6;
@@ -824,8 +826,8 @@
 
     .footer-heading {
       font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-white);
+      font-weight: 700;
+      color: #f8fafc;
       text-transform: uppercase;
       letter-spacing: 0.06em;
       margin-bottom: 16px;
@@ -839,22 +841,22 @@
     }
 
     .footer-links a {
-      color: var(--text-muted);
+      color: #94a3b8;
       font-size: 0.86rem;
       transition: color 0.2s ease;
     }
 
     .footer-links a:hover {
-      color: var(--sky-glow);
+      color: #38bdf8;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       padding-top: 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      color: var(--text-faint);
+      color: #64748b;
       font-size: 0.8rem;
       flex-wrap: wrap;
       gap: 12px;
@@ -915,7 +917,7 @@
         <a href="station-guide.html" class="nav-item active">Windows Station</a>
         <a href="transceiver-guide.html" class="nav-item">Transceiver</a>
         <a href="wayfinder-guide.html" class="nav-item">Wayfinder</a>
-        <a href="echo-guide.html" class="nav-item">ECHO Walkie</a>
+        <a href="echo-guide.html" class="nav-item">EXOS Echo</a>
       </nav>
       <div>
         <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-download-primary">
@@ -965,18 +967,20 @@
         </a>
       </div>
 
-      <!-- Live Window Showcase Card -->
+      <!-- Live Window Showcase Card (Jewel Bezel) -->
       <div class="interface-showcase-card">
-        <div class="window-header-chrome">
-          <div class="window-dots">
-            <span class="window-dot red"></span>
-            <span class="window-dot yellow"></span>
-            <span class="window-dot green"></span>
+        <div class="window-bezel-frame">
+          <div class="window-header-chrome">
+            <div class="window-dots">
+              <span class="window-dot red"></span>
+              <span class="window-dot yellow"></span>
+              <span class="window-dot green"></span>
+            </div>
+            <span class="window-title">EXOS GPS STATION &bull; MISSION CONTROL v0.17 (x64)</span>
+            <span class="window-badge">PRODUCTION LIVE</span>
           </div>
-          <span class="window-title">EXOS GPS STATION &bull; MISSION CONTROL v0.17 (x64)</span>
-          <span class="window-badge">PRODUCTION LIVE</span>
+          <img src="assets/station_windows_live.png" alt="EXOS GPS Station Windows Live Interface" class="interface-showcase-img" onclick="openLightbox(this.src)">
         </div>
-        <img src="assets/station_windows_live.png" alt="EXOS GPS Station Windows Live Interface" class="interface-showcase-img" onclick="openLightbox(this.src)">
       </div>
     </section>
 
@@ -990,7 +994,7 @@
 
       <!-- Card: Space-Tech Title & Corporate Identity Bar -->
       <article class="feature-showcase-card" id="station_win_header" data-search="space-tech title & corporate identity bar mission control identity & copyright top application banner • full width">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1029,7 +1033,7 @@
 
       <!-- Card: Hardware Status & Registered License Banner -->
       <article class="feature-showcase-card" id="station_win_license_badge" data-search="hardware status & registered license banner commercial license & hardware check sub-header banner • status indicator">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1077,7 +1081,7 @@
 
       <!-- Card: Station Mode Selector (Receiver Mode) -->
       <article class="feature-showcase-card" id="station_win_mode_dropdown" data-search="station mode selector (receiver mode) station operational architecture hardware toolbar • row 1 (left)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1116,7 +1120,7 @@
 
       <!-- Card: GPS Device Hardware Dropdown Selector -->
       <article class="feature-showcase-card" id="station_win_device_dropdown" data-search="gps device hardware dropdown selector device & com port enumeration hardware toolbar • row 1 (center)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1155,7 +1159,7 @@
 
       <!-- Card: Rescan Ports Button (Windows PnP Scanner) -->
       <article class="feature-showcase-card" id="station_win_rescan_btn" data-search="rescan ports button (windows pnp scanner) hot-plug hardware detection hardware toolbar • row 1 (center-right)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1194,7 +1198,7 @@
 
       <!-- Card: Clear Cache Button (Flush Bluetooth SPP Registry) -->
       <article class="feature-showcase-card" id="station_win_clear_cache_btn" data-search="clear cache button (flush bluetooth spp registry) bluetooth cache invalidation hardware toolbar • row 1 (center-right)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1233,7 +1237,7 @@
 
       <!-- Card: Connect Station / Disconnect Station Master Switch -->
       <article class="feature-showcase-card" id="station_win_connect_btn" data-search="connect station / disconnect station master switch telemetry stream master switch hardware toolbar • row 1 (right)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1281,7 +1285,7 @@
 
       <!-- Card: Launch Google Maps Button (Local HTTP Bridge) -->
       <article class="feature-showcase-card" id="station_win_launch_maps_btn" data-search="launch google maps button (local http bridge) browser mapping integration system actions toolbar • row 2 (left)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1320,7 +1324,7 @@
 
       <!-- Card: Native Windows Sensor Setup (C# Geolocation Driver) -->
       <article class="feature-showcase-card" id="station_win_sensor_btn" data-search="native windows sensor setup (c# geolocation driver) windows geolocation platform system actions toolbar • row 2 (center)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1359,7 +1363,7 @@
 
       <!-- Card: Location Override Simulation (Custom Coordinates Spoofing) -->
       <article class="feature-showcase-card" id="station_win_override_btn" data-search="location override simulation (custom coordinates spoofing) tactical simulation & spoofing system actions toolbar • row 2 (right)">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1407,7 +1411,7 @@
 
       <!-- Card: 3D Compass & Artificial Horizon Widget -->
       <article class="feature-showcase-card" id="station_win_compass_widget" data-search="3d compass & artificial horizon widget attitude & gyro heading display main visualizer canvas • left half">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1446,7 +1450,7 @@
 
       <!-- Card: Offline Natural Earth 110m Vector World Map -->
       <article class="feature-showcase-card" id="station_win_map_widget" data-search="offline natural earth 110m vector world map offline vector geography main visualizer canvas • center & background">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1494,7 +1498,7 @@
 
       <!-- Card: High-Contrast Telemetry Dashboard Cards -->
       <article class="feature-showcase-card" id="station_win_telemetry_cards" data-search="high-contrast telemetry dashboard cards surface & flight telemetry right telemetry panel • 4 dedicated cards">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1533,7 +1537,7 @@
 
       <!-- Card: Inspect Satellites... Button (Constellation Signal Spectrum) -->
       <article class="feature-showcase-card" id="station_win_satellite_inspect_btn" data-search="inspect satellites... button (constellation signal spectrum) satellite spectrum & snr bars telemetry card 2 • blue action button">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1572,7 +1576,7 @@
 
       <!-- Card: Live NMEA 0183 Signal Telemetry Stream Console -->
       <article class="feature-showcase-card" id="station_win_nmea_console" data-search="live nmea 0183 signal telemetry stream console low-level protocol monitor bottom console panel • full width monospace terminal">
-        <!-- Visual Column -->
+        <!-- Visual Column (Dark Hardware Window Bezel) -->
         <div class="visual-column">
           <div class="snapshot-frame">
             <div class="snapshot-top-bar">
@@ -1636,7 +1640,7 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Corporate Dark Footer -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
@@ -1649,7 +1653,7 @@
         <div>
           <h4 class="footer-heading">Product Guides</h4>
           <ul class="footer-links">
-            <li><a href="station-guide.html" style="color:var(--sky-glow); font-weight:600;">EXOS Station (Windows)</a></li>
+            <li><a href="station-guide.html" style="color:#38bdf8; font-weight:600;">EXOS Station (Windows)</a></li>
             <li><a href="transceiver-guide.html">EXOS Transceiver Manual</a></li>
             <li><a href="wayfinder-guide.html">EXOS Wayfinder Guide</a></li>
             <li><a href="echo-guide.html">EXOS Echo Walkie Manual</a></li>
