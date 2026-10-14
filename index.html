@@ -37,7 +37,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <title>EXOS Navigation Systems | GNSS Telemetry, Offline Mapping & Radio Mesh</title>
-  <meta name="description" content="High-precision off-grid positioning and communications suite engineered by RITYM Technologies. Featuring EXOS Transceiver, EXOS Wayfinder, EXOS ECHO Mesh Walkie-Talkie, and Exos Watchout Wear OS Watch Face.">
+  <meta name="description" content="High-precision off-grid positioning and communications suite engineered by RITYM Technologies. Featuring EXOS Transceiver, EXOS Wayfinder, EXOS Echo Mesh Walkie-Talkie, and EXOS Watchout Wear OS Watch Face.">
   <link rel="icon" type="image/png" href="assets/icon.png">
 
   <!-- Enterprise Human-Aesthetic Typography -->
@@ -420,7 +420,7 @@
     /* 4-Card Overview Grid */
     .overview-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 24px;
     }
     .overview-card {
@@ -975,7 +975,7 @@
 
           <div class="hero-actions">
             <a href="#getting-started" class="btn btn-primary">Download on Google Play</a>
-            <a href="#transceiver" class="btn btn-secondary">Explore 4 Applications</a>
+            <a href="#transceiver" class="btn btn-secondary">Explore 5 Platforms</a>
             <a href="https://ritym.com" target="_blank" rel="noopener" class="btn btn-dark" style="border: 1px solid rgba(255,255,255,0.2);">RITYM Hardware & ESP32 &nearr;</a>
           </div>
 
@@ -985,7 +985,7 @@
               <div class="hero-metric-lbl">Offline-First Execution</div>
             </div>
             <div>
-              <div class="hero-metric-val">4 Platforms</div>
+              <div class="hero-metric-val">5 Platforms</div>
               <div class="hero-metric-lbl">Handheld, Tablet, Watch & PC</div>
             </div>
             <div>
@@ -1019,7 +1019,7 @@
           <div class="watch-bezel-wrap">
             <div class="watch-bezel">
               <div class="watch-screen">
-                <img src="assets/wayfinder_watch_teal.png" alt="Exos Watchout Wear OS Chronograph Dial">
+                <img src="assets/wayfinder_watch_teal.png" alt="EXOS Watchout Wear OS Chronograph Dial">
               </div>
             </div>
             <div class="watch-label">4. Watchout</div>
@@ -1036,7 +1036,7 @@
     <div class="container">
       <div class="section-header">
         <span class="section-eyebrow">The EXOS Platform Suite</span>
-        <h2 class="section-title">Four Applications. Complete Field Autonomy.</h2>
+        <h2 class="section-title">Five Integrated Platforms. Complete Field Autonomy.</h2>
         <p class="section-desc">
           Presented in their exact architectural sequence: bridging satellite coordinates, navigating off-grid terrain, coordinating teams over mesh radio, and monitoring heading on your wrist.
         </p>
@@ -1074,11 +1074,11 @@
           </div>
         </div>
 
-        <!-- Card 3: EXOS ECHO -->
+        <!-- Card 3: EXOS Echo -->
         <div class="overview-card">
           <span class="order-badge">PLATFORM 03</span>
           <div class="card-pkg">Peer-to-Peer Mesh</div>
-          <h3 class="card-title">EXOS ECHO</h3>
+          <h3 class="card-title">EXOS Echo</h3>
           <p class="card-desc">
             Off-grid digital walkie-talkie connecting Android devices over Wi-Fi Direct and BLE mesh with low-latency push-to-talk voice, offline text chat, and distress beacons.
           </p>
@@ -1088,11 +1088,26 @@
           </div>
         </div>
 
-        <!-- Card 4: Exos Watchout -->
+        <!-- Card 4: EXOS GPS Station -->
+        <div class="overview-card" style="border: 2px solid var(--primary); box-shadow: 0 4px 16px rgba(2, 132, 199, 0.12);">
+          <span class="order-badge" style="background:#e0f2fe; color:#0369a1;">PLATFORM 04</span>
+          <div class="card-pkg">Windows Desktop (x64)</div>
+          <h3 class="card-title">EXOS GPS Station</h3>
+          <p class="card-desc">
+            Windows telemetry command center and native C# Sensor API driver bridge. Streams satellite telemetry, renders 3D compass horizons, and feeds live GPS fixes to Windows Maps.
+          </p>
+          <div class="card-links">
+            <a href="#station" class="btn btn-secondary" style="font-size:0.84rem; padding:8px;">Deep Dive &rarr;</a>
+            <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn btn-primary" style="font-size:0.84rem; padding:8px; text-align:center; font-weight:700; background-color:#0284c7;">Download .exe &darr;</a>
+            <a href="station-guide.html#windows" class="btn btn-secondary" style="font-size:0.84rem; padding:8px; text-align:center; font-weight:700; color:var(--primary); border-color:var(--primary);">User Guide &amp; Manual &rarr;</a>
+          </div>
+        </div>
+
+        <!-- Card 5: EXOS Watchout -->
         <div class="overview-card">
-          <span class="order-badge">PLATFORM 04</span>
+          <span class="order-badge">PLATFORM 05</span>
           <div class="card-pkg">exos.ritym.watchout.watchface</div>
-          <h3 class="card-title">Exos Watchout</h3>
+          <h3 class="card-title">EXOS Watchout</h3>
           <p class="card-desc">
             Precision Wear OS analog chronograph watch face paired with an instant 3D tilt-compensated compass companion, dual color themes (Obsidian Teal & Heritage Orange), and ultra-low-power AOD.
           </p>
@@ -1311,7 +1326,7 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 3. DEEP DIVE: EXOS ECHO (THIRD)                                           -->
+  <!-- 3. DEEP DIVE: EXOS Echo (THIRD)                                           -->
   <!-- ========================================================================= -->
   <section class="section" id="echo">
     <div class="container">
@@ -1320,9 +1335,9 @@
           <span class="showcase-tag" style="background-color: #fef3c7; color: #b45309;">
             Platform 03 &bull; Off-Grid Mesh Walkie-Talkie
           </span>
-          <h2 class="showcase-title">EXOS ECHO</h2>
+          <h2 class="showcase-title">EXOS Echo</h2>
           <p class="showcase-desc">
-            An off-grid digital walkie-talkie and wilderness mesh transceiver connecting Android devices directly over Wi-Fi Direct and Bluetooth Low Energy. EXOS ECHO delivers low-latency digital voice and text communications where cellular coverage does not exist.
+            An off-grid digital walkie-talkie and wilderness mesh transceiver connecting Android devices directly over Wi-Fi Direct and Bluetooth Low Energy. EXOS Echo delivers low-latency digital voice and text communications where cellular coverage does not exist.
           </p>
 
           <ul class="feature-list">
@@ -1368,7 +1383,7 @@
             <div class="phone-mockup">
               <div class="phone-speaker-pill"></div>
               <div class="phone-screen">
-                <img src="assets/echo_walkie.png" alt="EXOS ECHO Walkie-Talkie Push-to-Talk Interface">
+                <img src="assets/echo_walkie.png" alt="EXOS Echo Walkie-Talkie Push-to-Talk Interface">
               </div>
               <div class="phone-label">PTT Voice Engine</div>
             </div>
@@ -1377,7 +1392,7 @@
             <div class="phone-mockup">
               <div class="phone-speaker-pill"></div>
               <div class="phone-screen">
-                <img src="assets/echo_msgs.png" alt="EXOS ECHO Offline Text Messaging Interface">
+                <img src="assets/echo_msgs.png" alt="EXOS Echo Offline Text Messaging Interface">
               </div>
               <div class="phone-label">Mesh Text Chat</div>
             </div>
@@ -1398,7 +1413,100 @@
             </div>
           </div>
           <div class="showcase-caption">
-            Production screenshots: EXOS ECHO push-to-talk voice interface and offline encrypted messaging.
+            Production screenshots: EXOS Echo push-to-talk voice interface and offline encrypted messaging.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- ========================================================================= -->
+  <!-- 4. DEEP DIVE: EXOS GPS STATION (WINDOWS DESKTOP SENSOR BRIDGE)            -->
+  <!-- ========================================================================= -->
+  <section class="section section-slate" id="station">
+    <div class="container">
+      <div class="product-showcase reverse">
+        <div class="showcase-text">
+          <span class="showcase-tag" style="background-color: #e0f2fe; color: #0369a1;">
+            Platform 04 &bull; Windows Telemetry Command Center &amp; Sensor Bridge
+          </span>
+          <h2 class="showcase-title">EXOS GPS Station</h2>
+          <p class="showcase-desc">
+            A standalone mission-control telemetry command center and native Windows Sensor driver bridge. EXOS GPS Station connects to Android smartphones, external Bluetooth GNSS receivers, or USB serial dongles, streaming live satellite telemetry, rendering 3D compass orientation and Natural Earth vector maps, and feeding live GPS fixes to Windows 10/11 system location services and browser maps without internet.
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-bullet">&check;</span>
+              <div>
+                <strong>Native Windows Sensor Provider (C# Geolocation Driver):</strong> Injects live GPS telemetry directly into Windows Sensor API, powering Windows Maps, Edge, and location-aware desktop apps natively.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-bullet">&check;</span>
+              <div>
+                <strong>Dual Operational Modes (Receiver &amp; Transmitter):</strong> Listen for incoming smartphone Bluetooth SPP telemetry or broadcast local USB GPS coordinates to network receivers.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-bullet">&check;</span>
+              <div>
+                <strong>3D Compass Horizon &amp; Natural Earth Vector Globe:</strong> Real-time 50Hz attitude gyroscope, compass azimuth, and offline 110m vector world map rendered with zero internet.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-bullet">&check;</span>
+              <div>
+                <strong>Live NMEA 0183 Diagnostic Stream &amp; Satellite Inspector:</strong> Monitor raw NMEA sentences ($GPGGA, $GPRMC, $GPGSV) in real time and inspect constellation SNR signal bars.
+              </div>
+            </li>
+          </ul>
+
+          <div class="showcase-actions">
+            <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn btn-primary" style="background-color:#0284c7; font-weight:700;">
+              Download Windows Setup &darr; (17.2 MB)
+            </a>
+            <a href="station-guide.html#windows" class="btn btn-secondary">
+              User Guide &amp; Field Manual &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="showcase-visual">
+          <div class="desktop-mockup" style="background:#0b0f19; border:2px solid #334155; border-radius:14px; box-shadow:0 20px 35px -5px rgba(0,0,0,0.5); overflow:hidden; width:100%;">
+            <div style="background:#1e293b; padding:8px 12px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #334155;">
+              <div style="display:flex; gap:6px;">
+                <span style="width:10px; height:10px; border-radius:50%; background:#ef4444; display:inline-block;"></span>
+                <span style="width:10px; height:10px; border-radius:50%; background:#f59e0b; display:inline-block;"></span>
+                <span style="width:10px; height:10px; border-radius:50%; background:#10b981; display:inline-block;"></span>
+              </div>
+              <span style="font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; font-weight:600;">EXOS GPS Station v0.17 &bull; Windows x64</span>
+              <span style="font-size:0.68rem; font-weight:700; color:#38bdf8; background:rgba(56,189,248,0.12); padding:2px 8px; border-radius:10px; border:1px solid rgba(56,189,248,0.3);">LIVE FIX</span>
+            </div>
+            <div style="background:#070a12; padding:4px;">
+              <img src="assets/station_windows_live.png" alt="EXOS GPS Station Windows Live Interface" style="width:100%; height:auto; display:block; border-radius:8px;">
+            </div>
+            <div style="background:#1e293b; padding:7px 12px; font-family:var(--font-mono); font-size:0.75rem; color:#94a3b8; text-align:center;">
+              Mission Control Dashboard &bull; C# Sensor Bridge &bull; 3D Compass
+            </div>
+          </div>
+
+          <div class="telemetry-row">
+            <div class="telemetry-badge">
+              <div class="telemetry-badge-val">&lt; 2 ms</div>
+              <div class="telemetry-badge-lbl">Socket Latency</div>
+            </div>
+            <div class="telemetry-badge">
+              <div class="telemetry-badge-val">Native C#</div>
+              <div class="telemetry-badge-lbl">Windows Sensor API</div>
+            </div>
+            <div class="telemetry-badge">
+              <div class="telemetry-badge-val">100% Offline</div>
+              <div class="telemetry-badge-lbl">Zero Cloud Telemetry</div>
+            </div>
+          </div>
+          <div class="showcase-caption">
+            Production screenshot: EXOS GPS Station mission control running natively on Windows 11.
           </div>
         </div>
       </div>
@@ -1406,18 +1514,18 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 4. DEEP DIVE: EXOS WATCHOUT (FOURTH - NO 'TACTICAL' FLUFF)                -->
+  <!-- 5. DEEP DIVE: EXOS WATCHOUT (FOURTH - NO 'TACTICAL' FLUFF)                -->
   <!-- ========================================================================= -->
-  <section class="section section-slate" id="watchout">
+  <section class="section" id="watchout">
     <div class="container">
       <div class="product-showcase reverse">
         <div class="showcase-text">
           <span class="showcase-tag" style="background-color: #ccfbf1; color: #0f766e;">
-            Platform 04 &bull; Wear OS Compass Watch Face & Companion
+            Platform 05 &bull; Wear OS Compass Watch Face & Companion
           </span>
-          <h2 class="showcase-title">Exos Watchout: Compass Watch Face</h2>
+          <h2 class="showcase-title">EXOS Watchout: Compass Watch Face</h2>
           <p class="showcase-desc">
-            Exos Watchout pairs a high-altitude Swiss chronograph aesthetic with an expedition-grade 3D outdoor compass engine for Wear OS smartwatches. Designed for clean wrist orientation, it combines an official Google Watch Face Format (WFF v1) dial with seamless companion sensor telemetry.
+            EXOS Watchout pairs a high-altitude Swiss chronograph aesthetic with an expedition-grade 3D outdoor compass engine for Wear OS smartwatches. Designed for clean wrist orientation, it combines an official Google Watch Face Format (WFF v1) dial with seamless companion sensor telemetry.
           </p>
 
           <ul class="feature-list">
@@ -1463,7 +1571,7 @@
             <div class="watch-bezel-wrap">
               <div class="watch-bezel">
                 <div class="watch-screen">
-                  <img src="assets/wayfinder_watch_teal.png" alt="Exos Watchout Obsidian Teal Watch Face">
+                  <img src="assets/wayfinder_watch_teal.png" alt="EXOS Watchout Obsidian Teal Watch Face">
                 </div>
               </div>
               <div class="watch-label">Obsidian Teal Theme</div>
@@ -1473,7 +1581,7 @@
             <div class="watch-bezel-wrap">
               <div class="watch-bezel">
                 <div class="watch-screen">
-                  <img src="assets/wayfinder_watch_orange.png" alt="Exos Watchout Heritage Orange Watch Face">
+                  <img src="assets/wayfinder_watch_orange.png" alt="EXOS Watchout Heritage Orange Watch Face">
                 </div>
               </div>
               <div class="watch-label">Heritage Orange Theme</div>
@@ -1495,7 +1603,7 @@
             </div>
           </div>
           <div class="showcase-caption">
-            Production screenshots: Exos Watchout dual-theme chronograph watch faces in titanium smartwatch bezel frames.
+            Production screenshots: EXOS Watchout dual-theme chronograph watch faces in titanium smartwatch bezel frames.
           </div>
         </div>
       </div>
@@ -1519,11 +1627,12 @@
         <table class="spec-table">
           <thead>
             <tr>
-              <th style="width: 20%;">Parameter</th>
-              <th style="width: 20%; background-color:#e0f2fe; color:#0369a1;">1. EXOS Transceiver</th>
-              <th style="width: 20%;">2. EXOS Wayfinder</th>
-              <th style="width: 20%;">3. EXOS ECHO</th>
-              <th style="width: 20%;">4. Exos Watchout</th>
+              <th style="width: 16%;">Parameter</th>
+              <th style="width: 17%; background-color:#e0f2fe; color:#0369a1;">1. EXOS Transceiver</th>
+              <th style="width: 17%;">2. EXOS Wayfinder</th>
+              <th style="width: 17%;">3. EXOS Echo</th>
+              <th style="width: 17%; background-color:#e0f2fe; color:#0369a1;">4. EXOS GPS Station</th>
+              <th style="width: 16%;">5. EXOS Watchout</th>
             </tr>
           </thead>
           <tbody>
@@ -1532,6 +1641,7 @@
               <td style="background-color:#f0f9ff; font-weight:600;">Bluetooth GNSS Bridge & Mock Location</td>
               <td>Standalone Offline Topo Navigation</td>
               <td>Peer-to-Peer Mesh Walkie-Talkie</td>
+              <td style="background-color:#f0f9ff; font-weight:600;">Windows Telemetry Command Center & C# Sensor Bridge</td>
               <td>Wear OS Chronograph & 3D Compass</td>
             </tr>
             <tr>
@@ -1539,6 +1649,7 @@
               <td style="background-color:#f0f9ff;">Android 8.0+ & Windows 10/11</td>
               <td>Android 8.0+ (Handheld & Tablet)</td>
               <td>Android 8.0+ (Handheld & Tablet)</td>
+              <td style="background-color:#f0f9ff;">Windows 10 / 11 x64 (Native Desktop)</td>
               <td>Wear OS 4 & 5 (API 33+)</td>
             </tr>
             <tr>
@@ -1546,6 +1657,7 @@
               <td style="background-color:#f0f9ff;">Bluetooth Classic SPP & BLE NUS</td>
               <td>BLE Peer Radar Beacons</td>
               <td>Wi-Fi Direct & BLE Mesh</td>
+              <td style="background-color:#f0f9ff;">Bluetooth SPP, Serial COM & TCP</td>
               <td>Bluetooth 5.0 Sensor Link</td>
             </tr>
             <tr>
@@ -1553,6 +1665,7 @@
               <td style="background-color:#f0f9ff;">NMEA 0183 (RMC, GGA, VTG, HDT)</td>
               <td>MGRS, UTM, GPX 1.1, GeoJSON</td>
               <td>Opus Audio, Encrypted Packets</td>
+              <td style="background-color:#f0f9ff;">NMEA 0183 & Windows Sensor API</td>
               <td>Google Watch Face Format (WFF v1)</td>
             </tr>
             <tr>
@@ -1560,6 +1673,7 @@
               <td style="background-color:#f0f9ff;">Google Maps, OsmAnd, Waze, ATAK, OpenCPN</td>
               <td>Standalone Native Vector Engine</td>
               <td>Decentralized Standalone Mesh</td>
+              <td style="background-color:#f0f9ff;">Windows Maps, Edge, OpenCPN, QGIS</td>
               <td>Wear OS Complications & Companion</td>
             </tr>
             <tr>
@@ -1567,6 +1681,7 @@
               <td style="background-color:#f0f9ff;"><strong>0% (Strictly Local RFCOMM)</strong></td>
               <td><strong>0% (100% Offline Vector Maps)</strong></td>
               <td><strong>0% (Peer-to-Peer Mesh)</strong></td>
+              <td style="background-color:#f0f9ff;"><strong>0% (100% Local Serial Bridge)</strong></td>
               <td><strong>0% (On-Watch Sensor Processing)</strong></td>
             </tr>
             <tr>
@@ -1633,7 +1748,7 @@
         <!-- Watchout Play Card -->
         <div class="step-card">
           <div class="step-num">03</div>
-          <h3 class="step-title">Exos Watchout</h3>
+          <h3 class="step-title">EXOS Watchout</h3>
           <p class="step-desc">
             Install the official Watch Face Format (WFF v1) chronograph dial and 3D compass companion on your Wear OS watch.
           </p>
@@ -1787,21 +1902,21 @@
                 <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
               </tr>
               <tr>
-                <td><strong>3. EXOS ECHO</strong></td>
+                <td><strong>3. EXOS Echo</strong></td>
                 <td><code>exos.echo.mesh</code></td>
                 <td>Android 8.0+</td>
                 <td>Ephemeral RAM Buffer</td>
                 <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">P2P Radio Only (0 Cloud)</span></td>
               </tr>
               <tr>
-                <td><strong>4. Exos Watchout (Watch Face)</strong></td>
+                <td><strong>4. EXOS Watchout (Watch Face)</strong></td>
                 <td><code>exos.ritym.watchout.watchface</code></td>
                 <td>Wear OS (WFF v1)</td>
                 <td>RAM Complication Only</td>
                 <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
               </tr>
               <tr>
-                <td><strong>5. Exos Watchout (Companion)</strong></td>
+                <td><strong>5. EXOS Watchout (Companion)</strong></td>
                 <td><code>exos.ritym.watchout</code></td>
                 <td>Android & Wear OS</td>
                 <td>Local RAM Only</td>
@@ -1902,7 +2017,7 @@
             <h4 style="font-size:1.1rem; font-weight:700; color:var(--text-heading); margin:0;">Wear OS Watch Face Format (WFF v1)</h4>
           </div>
           <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.65; margin:0;">
-            Exos Watchout strictly adopts Google's declarative Watch Face Format. The ambient Always-On Display (AOD) maintains an On-Pixel Ratio (OPR) below 2.5%, completely eliminating display burn-in and background battery drain while providing zero vector for unauthorized background code execution.
+            EXOS Watchout strictly adopts Google's declarative Watch Face Format. The ambient Always-On Display (AOD) maintains an On-Pixel Ratio (OPR) below 2.5%, completely eliminating display burn-in and background battery drain while providing zero vector for unauthorized background code execution.
           </p>
         </div>
 
@@ -1966,8 +2081,8 @@
           <ul class="footer-links">
             <li><a href="#transceiver">1. EXOS Transceiver</a></li>
             <li><a href="#wayfinder">2. EXOS Wayfinder</a></li>
-            <li><a href="#echo">3. EXOS ECHO</a></li>
-            <li><a href="#watchout">4. Exos Watchout</a></li>
+            <li><a href="#echo">3. EXOS Echo</a></li>
+            <li><a href="#watchout">4. EXOS Watchout</a></li>
             <li><a href="station-guide.html#windows">5. EXOS GPS Station (Windows)</a></li>
             <li><a href="#specifications">Hardware Specs</a></li>
           </ul>
@@ -1979,7 +2094,7 @@
             <li><a href="station-guide.html" style="color:#38bdf8; font-weight:600;">EXOS GPS Station (Windows)</a></li>
             <li><a href="transceiver-guide.html">EXOS Transceiver Manual</a></li>
             <li><a href="wayfinder-guide.html">EXOS Wayfinder Manual</a></li>
-            <li><a href="echo-guide.html">EXOS ECHO Walkie Manual</a></li>
+            <li><a href="echo-guide.html">EXOS Echo Walkie Manual</a></li>
             <li><a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe">Download Windows Setup</a></li>
           </ul>
         </div>
