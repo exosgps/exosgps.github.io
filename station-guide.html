@@ -1,1736 +1,1026 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) - Privacy-safe anonymous analytics -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXOS GPS Station for Windows • Enterprise Satellite GNSS Terminal & Sensor Platform</title>
+  <meta name="description" content="Official enterprise product guide for EXOS GPS Station on Windows 10/11. Universal GNSS pairing, native Windows Location sensor driver injection, 3D planetary tracking, offline vector mapping, and industrial NMEA 0183 stream diagnostics.">
+  <link rel="icon" type="image/x-icon" href="assets/exos_logo_dark.png">
+
+  <!-- Inter & JetBrains Mono Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Google tag (gtag.js) - Private Enterprise Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNKE55GVQD"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-HNKE55GVQD', {
-      'anonymize_ip': true
-    });
-
-    // Auto-track Windows Station and application download clicks
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('a[href*=".exe"], a[href*="downloads/"]').forEach(function(btn) {
-        btn.addEventListener('click', function() {
-          if (typeof gtag === 'function') {
-            gtag('event', 'file_download', {
-              'file_name': 'EXOS-GPS-Station-Setup-v0.17.exe',
-              'file_extension': 'exe',
-              'link_text': (btn.innerText || '').trim(),
-              'link_url': btn.getAttribute('href')
-            });
-            gtag('event', 'download_windows_station', {
-              'event_category': 'Software Download',
-              'event_label': 'EXOS GPS Station Windows Setup',
-              'value': 1
-            });
-          }
-        });
-      });
+      'anonymize_ip': true,
+      'send_page_view': true
     });
   </script>
 
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>EXOS GPS Station (Windows) | Official Operational Manual &amp; Field Guide</title>
-  <meta name="description" content="Official enterprise documentation and operational manual for EXOS GPS Station for Windows Desktop. Connect Bluetooth GPS receivers, stream NMEA telemetry, configure Windows Sensor API, and navigate offline.">
-  <link rel="icon" type="image/png" href="assets/icon.png">
-
-  <!-- Enterprise Human-Aesthetic Typography -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
-      /* Corporate Light Design Tokens */
-      --canvas: #f8fafc;
-      --canvas-pure: #ffffff;
-      --canvas-slate: #f1f5f9;
-      --card-bg: #ffffff;
-      --card-border: #e2e8f0;
-      --card-border-hover: #cbd5e1;
-      --primary: #0284c7;
-      --primary-dark: #0369a1;
-      --primary-light: #e0f2fe;
-      --primary-tint: #f0f9ff;
-      --emerald: #10b981;
-      --emerald-dark: #15803d;
-      --emerald-tint: #f0fdf4;
-      --emerald-border: #bbf7d0;
-      --amber: #f59e0b;
-      --text-heading: #0f172a;
-      --text-body: #334155;
-      --text-muted: #64748b;
-      --text-faint: #94a3b8;
-      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-pill: 9999px;
-      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-      --shadow-card: 0 10px 30px -10px rgba(15, 23, 42, 0.07), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
-      --shadow-hover: 0 20px 40px -12px rgba(2, 132, 199, 0.14), 0 4px 12px -2px rgba(15, 23, 42, 0.05);
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --bg-card-alt: #f1f5f9;
+      --border-subtle: #e2e8f0;
+      --border-strong: #cbd5e1;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+      --text-light: #64748b;
+      --color-primary: #0284c7;
+      --color-primary-hover: #0369a1;
+      --color-accent: #0ea5e9;
+      --color-emerald: #059669;
+      --color-amber: #d97706;
+      --color-purple: #7c3aed;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+      --shadow-md: 0 4px 12px -2px rgba(15, 23, 42, 0.08);
+      --shadow-lg: 0 12px 28px -6px rgba(15, 23, 42, 0.1);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      background-color: var(--canvas);
-      color: var(--text-body);
-      font-family: var(--font-sans);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: 
-        radial-gradient(ellipse 80% 50% at 50% -10%, rgba(2, 132, 199, 0.07) 0%, transparent 65%),
-        var(--canvas);
-      min-height: 100vh;
-      line-height: 1.65;
-      color: var(--text-body);
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1220px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Enterprise Navigation Header */
-    .site-header {
+    /* Navigation */
+    .navbar {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--card-border);
-      transition: all 0.25s ease;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-subtle);
     }
-
-    .header-inner {
+    .nav-container {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 14px 24px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 72px;
     }
-
-    .brand-wrap {
+    .nav-logo-group {
       display: flex;
       align-items: center;
       gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
     }
-
-    .brand-wrap img {
-      height: 38px;
-      display: block;
-    }
-
-    .brand-badge {
-      font-size: 0.72rem;
+    .nav-logo-img { height: 32px; width: auto; }
+    .nav-brand-title {
       font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      border: 1px solid #bae6fd;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+      color: #0f172a;
     }
-
-    .nav-menu {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 24px;
+      list-style: none;
     }
-
-    .nav-item {
-      padding: 8px 14px;
-      font-size: 0.88rem;
+    .nav-link {
+      font-size: 0.9rem;
       font-weight: 500;
       color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--color-primary); }
+    .nav-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0284c7;
+      color: #ffffff;
+      padding: 9px 18px;
       border-radius: var(--radius-sm);
-      transition: all 0.2s ease;
-    }
-
-    .nav-item:hover {
-      color: var(--text-heading);
-      background: var(--canvas-slate);
-    }
-
-    .nav-item.active {
-      color: var(--primary-dark);
-      background: var(--primary-light);
+      font-size: 0.88rem;
       font-weight: 600;
-    }
-
-    .btn-download-primary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--primary);
-      color: #ffffff;
-      font-size: 0.86rem;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
-      transition: all 0.25s ease;
-      border: none;
-    }
-
-    .btn-download-primary:hover {
-      background: var(--primary-dark);
-      box-shadow: 0 6px 18px rgba(2, 132, 199, 0.4);
-      transform: translateY(-1px);
-    }
-
-    .btn-secondary {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #ffffff;
-      color: var(--text-heading);
-      font-size: 0.86rem;
-      font-weight: 600;
-      padding: 10px 20px;
-      border-radius: var(--radius-pill);
-      border: 1px solid var(--card-border);
+      text-decoration: none;
       box-shadow: var(--shadow-sm);
-      transition: all 0.25s ease;
+      transition: all 0.15s ease;
+    }
+    .nav-cta-btn:hover { background: var(--color-primary-hover); transform: translateY(-1px); }
+
+    /* Main Container */
+    .main-content {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 32px 24px 80px;
     }
 
-    .btn-secondary:hover {
-      background: var(--canvas-slate);
-      border-color: var(--card-border-hover);
-    }
-
-    /* Sticky Module Bar */
-    .module-nav-wrapper {
-      position: sticky;
-      top: 72px;
-      z-index: 95;
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--card-border);
-      padding: 12px 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
-    }
-
-    .module-nav-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .module-tabs {
+    /* Breadcrumbs */
+    .breadcrumb {
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 2px;
-      scrollbar-width: none;
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-bottom: 24px;
     }
-
-    .module-tabs::-webkit-scrollbar {
-      display: none;
-    }
-
-    .module-tab-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 7px 15px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      border-radius: var(--radius-pill);
-      background: var(--canvas-slate);
-      border: 1px solid transparent;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-    }
-
-    .module-tab-pill:hover {
-      color: var(--text-heading);
-      background: #e2e8f0;
-    }
-
-    .module-tab-pill.active {
-      color: #ffffff;
-      background: var(--primary);
-      font-weight: 600;
-    }
-
-    .module-search-box {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-pill);
-      padding: 6px 14px;
-      transition: all 0.2s ease;
-    }
-
-    .module-search-box:focus-within {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
-    }
-
-    .module-search-box input {
-      background: transparent;
-      border: none;
-      outline: none;
-      color: var(--text-heading);
-      font-size: 0.82rem;
-      width: 170px;
-      font-family: var(--font-sans);
-    }
-
-    .module-search-box input::placeholder {
-      color: var(--text-faint);
-    }
+    .breadcrumb a { color: var(--text-light); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--color-primary); }
 
     /* Hero Section */
-    .hero-section {
-      padding: 64px 0 48px;
-      text-align: center;
+    .hero-panel {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
     }
-
-    .hero-eyebrow {
-      display: inline-flex;
+    .hero-panel::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #0284c7, #0ea5e9, #10b981);
+    }
+    .hero-badge-row {
+      display: flex;
       align-items: center;
-      gap: 8px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 14px;
-      border-radius: var(--radius-pill);
-      background: var(--primary-light);
-      color: var(--primary-dark);
-      border: 1px solid #bae6fd;
-      margin-bottom: 20px;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
     }
+    .hero-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .hero-badge.primary { background: #e0f2fe; color: #0284c7; }
+    .hero-badge.success { background: #dcfce7; color: #166534; }
+    .hero-badge.neutral { background: #f1f5f9; color: #475569; }
 
     .hero-title {
-      font-size: clamp(2.3rem, 5vw, 3.4rem);
+      font-size: 2.6rem;
       font-weight: 800;
       letter-spacing: -0.03em;
+      color: #0f172a;
       line-height: 1.15;
-      color: var(--text-heading);
-      margin-bottom: 16px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin-bottom: 14px;
     }
-
-    .hero-title span {
-      background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .hero-subtitle {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #0284c7;
+      margin-bottom: 18px;
     }
-
-    .hero-desc {
-      font-size: 1.08rem;
-      line-height: 1.68;
+    .hero-description {
+      font-size: 1.05rem;
       color: var(--text-muted);
-      max-width: 740px;
-      margin: 0 auto 30px;
+      max-width: 900px;
+      line-height: 1.7;
+      margin-bottom: 32px;
     }
-
     .hero-actions {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
-    }
-
-    /* Hero Live Interface Showcase Card */
-    .interface-showcase-card {
-      background: #ffffff;
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      padding: 16px;
-      box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.12), 0 2px 8px -2px rgba(15, 23, 42, 0.04);
-      margin-bottom: 64px;
-      position: relative;
-    }
-
-    /* Dark Hardware Window Bezel inside Light Card (Jewel Contrast) */
-    .window-bezel-frame {
-      background: #0f172a;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.35);
-      border: 1px solid #1e293b;
-    }
-
-    .window-header-chrome {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 14px;
-      background: #1e293b;
-      border-bottom: 1px solid #334155;
-    }
-
-    .window-dots {
-      display: flex;
-      gap: 6px;
-    }
-
-    .window-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-    }
-
-    .window-dot.red { background: #ef4444; }
-    .window-dot.yellow { background: #f59e0b; }
-    .window-dot.green { background: #10b981; }
-
-    .window-title {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      color: #94a3b8;
-      letter-spacing: 0.05em;
-      font-weight: 500;
-    }
-
-    .window-badge {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #38bdf8;
-      background: rgba(56, 189, 248, 0.15);
-      padding: 2px 8px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(56, 189, 248, 0.35);
-    }
-
-    .interface-showcase-img {
-      width: 100%;
-      height: auto;
-      max-height: 580px;
-      object-fit: contain;
-      display: block;
-      background: #070a12;
-      cursor: zoom-in;
-      transition: transform 0.25s ease;
-    }
-
-    .interface-showcase-img:hover {
-      transform: scale(1.004);
-    }
-
-    /* Section Module Dividers */
-    .module-header-block {
-      padding: 44px 0 20px;
-      margin-bottom: 24px;
-      border-bottom: 2px solid #e2e8f0;
-    }
-
-    .module-num-pill {
-      font-family: var(--font-mono);
-      font-size: 0.76rem;
-      font-weight: 700;
-      color: var(--primary);
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-      display: inline-block;
-    }
-
-    .module-headline {
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text-heading);
-      margin-bottom: 6px;
-    }
-
-    .module-subtext {
-      color: var(--text-muted);
-      font-size: 0.98rem;
-      max-width: 680px;
-    }
-
-    /* Clean Enterprise Asymmetric Showcase Card (Anti-Rectangle Design) */
-    .feature-showcase-card {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-      margin-bottom: 32px;
-      box-shadow: var(--shadow-card);
-      transition: all 0.3s ease;
-      display: grid;
-      grid-template-columns: 1.05fr 1fr;
-      gap: 36px;
-      align-items: center;
-      position: relative;
-    }
-
-    .feature-showcase-card:hover {
-      border-color: var(--card-border-hover);
-      box-shadow: var(--shadow-hover);
-      transform: translateY(-2px);
-    }
-
-    /* Left Visual Column */
-    .visual-column {
-      position: relative;
-    }
-
-    .snapshot-frame {
-      background: #0f172a;
-      border: 1px solid #1e293b;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.22);
-      position: relative;
-    }
-
-    .snapshot-top-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 8px 12px;
-      background: #1e293b;
-      border-bottom: 1px solid #334155;
-    }
-
-    .snapshot-tag {
-      font-family: var(--font-mono);
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: #94a3b8;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .snapshot-tag::before {
-      content: '';
-      display: inline-block;
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #38bdf8;
-    }
-
-    .snapshot-zoom-hint {
-      font-size: 0.68rem;
-      color: #64748b;
-    }
-
-    .snapshot-image {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-      background: #070a12;
-      cursor: zoom-in;
-    }
-
-    .crop-badge-strip {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 14px;
-      background: var(--canvas-slate);
-      border: 1px solid var(--card-border);
-      border-radius: var(--radius-md);
-      padding: 8px 14px;
-    }
-
-    .crop-thumb {
-      height: 38px;
-      max-width: 140px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: #ffffff;
-      padding: 4px;
-      border: 1px solid #cbd5e1;
-    }
-
-    .crop-caption {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.4;
-    }
-
-    .crop-caption strong {
-      color: var(--text-heading);
-      display: block;
-      font-size: 0.82rem;
-    }
-
-    /* Right Editorial Content Column */
-    .editorial-column {
-      display: flex;
-      flex-direction: column;
       gap: 16px;
+      flex-wrap: wrap;
     }
-
-    .feature-category-pill {
+    .btn-lg-primary {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      background: var(--primary-tint);
-      color: var(--primary-dark);
-      border: 1px solid #bae6fd;
-      align-self: flex-start;
+      gap: 10px;
+      background: #0284c7;
+      color: #ffffff;
+      padding: 14px 28px;
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      transition: all 0.15s ease;
     }
-
-    .feature-name {
-      font-size: 1.42rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--text-heading);
-      line-height: 1.25;
+    .btn-lg-primary:hover { background: #0369a1; transform: translateY(-1px); }
+    .btn-lg-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 14px 24px;
+      border: 1px solid var(--border-strong);
+      border-radius: var(--radius-sm);
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.15s ease;
     }
+    .btn-lg-secondary:hover { background: #f8fafc; border-color: #94a3b8; }
 
-    .feature-location {
+    /* Value Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pillar-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .pillar-num {
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .feature-lead-text {
-      font-size: 0.96rem;
-      line-height: 1.68;
-      color: var(--text-body);
-    }
-
-    /* Seamless Corporate Field Scenario Callout */
-    .scenario-pill-context {
-      background: var(--emerald-tint);
-      border-left: 3px solid var(--emerald);
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      padding: 12px 16px;
-      border-top: 1px solid var(--emerald-border);
-      border-right: 1px solid var(--emerald-border);
-      border-bottom: 1px solid var(--emerald-border);
-    }
-
-    .scenario-title {
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       font-weight: 700;
-      color: var(--emerald-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      color: #0284c7;
+      margin-bottom: 8px;
     }
-
-    .scenario-desc {
+    .pillar-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+    }
+    .pillar-desc {
       font-size: 0.88rem;
-      color: #1e293b;
+      color: var(--text-muted);
       line-height: 1.55;
     }
 
-    /* Technical Specs (Apple-style clean bulleted list) */
-    .specs-group {
-      padding-top: 8px;
-      border-top: 1px solid var(--card-border);
+    /* Section Header */
+    .section-header {
+      margin-bottom: 32px;
     }
-
-    .specs-heading {
+    .section-tag {
       font-family: var(--font-mono);
-      font-size: 0.74rem;
+      font-size: 0.75rem;
       font-weight: 700;
-      color: var(--text-muted);
+      color: #0284c7;
       text-transform: uppercase;
-      letter-spacing: 0.07em;
+      letter-spacing: 0.08em;
+      margin-bottom: 6px;
+      display: block;
+    }
+    .section-title {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #0f172a;
       margin-bottom: 8px;
     }
+    .section-desc {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 800px;
+    }
 
-    .specs-list {
+    /* Product Module Showcase Card */
+    .module-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
+    }
+    @media (max-width: 980px) {
+      .module-card { grid-template-columns: 1fr; padding: 24px; gap: 24px; }
+    }
+
+    .module-header-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .tag-blue { background: #e0f2fe; color: #0369a1; }
+    .tag-green { background: #dcfce7; color: #15803d; }
+    .tag-purple { background: #f3e8ff; color: #7e22ce; }
+    .tag-amber { background: #fef3c7; color: #b45309; }
+    .tag-sky { background: #f0f9ff; color: #0284c7; }
+
+    .module-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0f172a;
+      line-height: 1.25;
+      margin-bottom: 12px;
+    }
+    .module-lead {
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: #0284c7;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .module-body {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .module-feature-list {
       list-style: none;
+      padding: 0;
+      margin-bottom: 24px;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
     }
-
-    .specs-list li {
-      font-size: 0.84rem;
-      color: var(--text-body);
+    .module-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      color: #1e293b;
       line-height: 1.5;
-      position: relative;
-      padding-left: 14px;
+    }
+    .module-feature-item svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: #0284c7;
+      stroke-width: 2.2;
+      flex-shrink: 0;
+      margin-top: 2px;
     }
 
-    .specs-list li::before {
-      content: '•';
-      color: var(--primary);
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-weight: bold;
+    .module-callout {
+      background: var(--bg-card-alt);
+      border-left: 3px solid #0284c7;
+      padding: 12px 16px;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.85rem;
+      color: #334155;
+      line-height: 1.5;
     }
+    .module-callout strong { color: #0f172a; }
 
-    .specs-list li code {
+    /* Visual Showcase Box */
+    .module-visual-pane {
+      background: #0b0e17;
+      border: 1px solid #1e293b;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+    }
+    .module-visual-pane img {
+      width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+    .module-visual-pane img:hover {
+      transform: scale(1.01);
+    }
+    .visual-caption {
+      background: #0f172a;
+      padding: 10px 16px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-family: var(--font-mono);
-      font-size: 0.78rem;
-      color: var(--primary-dark);
-      background: var(--primary-light);
-      padding: 1px 6px;
-      border-radius: 4px;
-      border: 1px solid #bae6fd;
+      font-size: 0.75rem;
+      color: #94a3b8;
+    }
+    .visual-caption .badge-live {
+      color: #38bdf8;
+      font-weight: 600;
+    }
+
+    /* Specifications Table */
+    .specs-card {
+      background: #ffffff;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      box-shadow: var(--shadow-md);
+      margin-bottom: 48px;
+    }
+    .specs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 20px;
+    }
+    .specs-table th {
+      text-align: left;
+      padding: 12px 16px;
+      background: #f8fafc;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #475569;
+      border-bottom: 2px solid var(--border-subtle);
+    }
+    .specs-table td {
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+      color: #334155;
+    }
+    .specs-table tr:last-child td { border-bottom: none; }
+    .specs-table td:first-child { font-weight: 600; color: #0f172a; width: 30%; }
+
+    /* Final CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border-radius: var(--radius-lg);
+      padding: 56px 40px;
+      text-align: center;
+      color: #ffffff;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-banner::after {
+      content: '';
+      position: absolute;
+      top: -50%; right: -20%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(2, 132, 199, 0.25) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .cta-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .cta-desc {
+      font-size: 1.05rem;
+      color: #94a3b8;
+      max-width: 640px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
     }
 
     /* Lightbox Modal */
-    .lightbox-overlay {
+    .lightbox-modal {
       display: none;
       position: fixed;
-      inset: 0;
-      z-index: 999;
-      background: rgba(15, 23, 42, 0.92);
-      backdrop-filter: blur(14px);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(11, 15, 25, 0.9);
+      backdrop-filter: blur(8px);
+      z-index: 9999;
       align-items: center;
       justify-content: center;
       padding: 24px;
-      opacity: 0;
-      transition: opacity 0.25s ease;
     }
-
-    .lightbox-overlay.active {
-      display: flex;
-      opacity: 1;
-    }
-
-    .lightbox-content-box {
-      max-width: 92vw;
+    .lightbox-modal.active { display: flex; }
+    .lightbox-content {
+      max-width: 90vw;
       max-height: 90vh;
-      position: relative;
-    }
-
-    .lightbox-img {
-      max-width: 100%;
-      max-height: 85vh;
-      object-fit: contain;
       border-radius: var(--radius-md);
-      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
       border: 1px solid rgba(255, 255, 255, 0.15);
     }
-
-    .lightbox-close-btn {
+    .lightbox-close {
       position: absolute;
-      top: -44px;
-      right: 0;
-      color: #ffffff;
-      font-size: 1.5rem;
+      top: 24px; right: 28px;
       background: rgba(255, 255, 255, 0.15);
-      width: 36px;
-      height: 36px;
+      border: none;
+      color: #ffffff;
+      font-size: 24px;
+      width: 40px; height: 40px;
       border-radius: 50%;
+      cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      transition: all 0.2s ease;
     }
 
-    .lightbox-close-btn:hover {
-      background: rgba(255, 255, 255, 0.3);
-    }
-
-    /* Final CTA Banner (Clean Ice-Blue Gradient) */
-    .cta-banner {
-      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-      border: 1px solid #bae6fd;
-      border-radius: var(--radius-lg);
-      padding: 56px 36px;
-      text-align: center;
-      margin: 64px 0 80px;
-      box-shadow: var(--shadow-card);
-    }
-
-    .cta-headline {
-      font-size: clamp(1.8rem, 4vw, 2.3rem);
-      font-weight: 800;
-      color: var(--text-heading);
-      margin-bottom: 12px;
-      letter-spacing: -0.02em;
-    }
-
-    .cta-desc {
-      color: var(--text-body);
-      max-width: 620px;
-      margin: 0 auto 28px;
-      font-size: 1.05rem;
-    }
-
-    /* Corporate Dark Footer (Anchoring the Light Site) */
-    .site-footer {
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-      padding: 64px 0 36px;
-      background: #0b1120;
+    /* Footer */
+    .footer {
+      background: #0f172a;
       color: #94a3b8;
+      padding: 60px 24px 30px;
+      border-top: 1px solid #1e293b;
     }
-
+    .footer-container { max-width: 1240px; margin: 0 auto; }
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr 1fr;
       gap: 40px;
-      margin-bottom: 36px;
+      margin-bottom: 40px;
     }
-
-    .footer-logo {
-      height: 36px;
-      margin-bottom: 14px;
-      filter: brightness(0) invert(1);
+    @media (max-width: 768px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 30px; }
+      .hero-panel { padding: 32px 20px; }
+      .hero-title { font-size: 2rem; }
     }
-
-    .footer-desc {
-      color: #64748b;
+    .footer-title {
+      font-family: var(--font-mono);
       font-size: 0.85rem;
-      max-width: 380px;
-      line-height: 1.6;
-    }
-
-    .footer-heading {
-      font-size: 0.82rem;
       font-weight: 700;
-      color: #f8fafc;
+      color: #f1f5f9;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       margin-bottom: 16px;
     }
-
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-links a {
-      color: #94a3b8;
-      font-size: 0.86rem;
-      transition: color 0.2s ease;
-    }
-
-    .footer-links a:hover {
-      color: #38bdf8;
-    }
-
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: color 0.15s; }
+    .footer-links a:hover { color: #38bdf8; }
     .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-top: 1px solid #1e293b;
       padding-top: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      text-align: center;
+      font-size: 0.82rem;
       color: #64748b;
-      font-size: 0.8rem;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    /* Responsive */
-    @media (max-width: 992px) {
-      .feature-showcase-card {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        padding: 24px;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-      .module-search-box {
-        display: none;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .header-inner {
-        height: 64px;
-      }
-      .nav-menu {
-        display: none;
-      }
-      .hero-title {
-        font-size: 2rem;
-      }
-      .hero-actions {
-        flex-direction: column;
-      }
-      .btn-download-primary, .btn-secondary {
-        width: 100%;
-        justify-content: center;
-      }
-      .feature-showcase-card {
-        padding: 18px;
-      }
     }
   </style>
 </head>
-<body id="windows">
+<body>
 
-  <!-- Header Navigation -->
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand-wrap">
-        <a href="index.html">
-          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems">
-        </a>
-        <span class="brand-badge">Windows Suite</span>
-      </div>
-      <nav class="nav-menu">
-        <a href="index.html" class="nav-item">Home</a>
-        <a href="station-guide.html" class="nav-item active">Windows Station</a>
-        <a href="transceiver-guide.html" class="nav-item">Transceiver</a>
-        <a href="wayfinder-guide.html" class="nav-item">Wayfinder</a>
-        <a href="echo-guide.html" class="nav-item">EXOS Echo</a>
-      </nav>
-      <div>
-        <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-download-primary">
-          Download Installer &darr;
-        </a>
-      </div>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="nav-logo-group">
+        <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" class="nav-logo-img">
+        <span class="nav-brand-title">EXOS GPS Platform</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#platforms" class="nav-link">Platforms</a></li>
+        <li><a href="echo-guide.html" class="nav-link">EXOS Echo</a></li>
+        <li><a href="wayfinder-guide.html" class="nav-link">EXOS Wayfinder</a></li>
+        <li><a href="transceiver-guide.html" class="nav-link">EXOS Transceiver</a></li>
+        <li><a href="station-guide.html" class="nav-link active">EXOS GPS Station</a></li>
+      </ul>
+      <a href="downloads/EXOS-GPS-Station-v0.17-Setup.exe" class="nav-cta-btn" id="nav-download-btn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download (.exe)
+      </a>
     </div>
-  </header>
+  </nav>
 
-  <!-- Sticky Module Navigator with Quick Jump & Filter -->
-  <div class="module-nav-wrapper">
-    <div class="container module-nav-bar">
-      <div class="module-tabs">
-        <a href="#overview" class="module-tab-pill active">Overview</a>
-        <a href="#module-identity" class="module-tab-pill">01 Identity & License</a>
-        <a href="#module-hardware" class="module-tab-pill">02 Hardware & Ports</a>
-        <a href="#module-sensors" class="module-tab-pill">03 Sensor Bridge</a>
-        <a href="#module-avionics" class="module-tab-pill">04 Tactical Avionics</a>
-        <a href="#module-telemetry" class="module-tab-pill">05 Satellites & NMEA</a>
-      </div>
-      <div class="module-search-box">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-faint);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-        <input type="text" id="featureSearch" placeholder="Search button or feature..." onkeyup="filterFeatures()">
-      </div>
+  <!-- Main Content -->
+  <main class="main-content">
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="index.html#station">Platforms</a>
+      <span>/</span>
+      <span style="color:#0f172a; font-weight:600;">EXOS GPS Station for Windows</span>
     </div>
-  </div>
-
-  <main class="container">
 
     <!-- Hero Section -->
-    <section class="hero-section" id="overview">
-      <div class="hero-eyebrow">
-        <span>●</span> OFFICIAL WINDOWS TELEMETRY COMMAND MANUAL &bull; BUILD v0.17
+    <section class="hero-panel">
+      <div class="hero-badge-row">
+        <span class="hero-badge primary">Enterprise Desktop Suite</span>
+        <span class="hero-badge success">Windows 10 / 11 Certified (x64)</span>
+        <span class="hero-badge neutral">100% Offline Capable</span>
       </div>
-      <h1 class="hero-title">
-        EXOS GPS Station <span>Operational Field Guide</span>
-      </h1>
-      <p class="hero-desc">
-        Engineered for precision mission control, commercial hydrography, and off-grid navigation. This comprehensive visual manual walks through every control, serial port setting, native Windows sensor bridge, and raw NMEA telemetry channel.
+      <h1 class="hero-title">EXOS GPS Station for Windows</h1>
+      <p class="hero-subtitle">Mission-Control Satellite GNSS Workstation &amp; Windows Location Sensor Platform</p>
+      <p class="hero-description">
+        Transform any standard Windows PC, rugged field laptop, or maritime command bridge into an industrial-grade satellite navigation workstation. Seamlessly connect external GNSS hardware, inject high-accuracy coordinates into the native Windows Location Services platform, track global orbital constellations in real-time 3D, and navigate 100% offline with zero cellular or cloud dependencies.
       </p>
       <div class="hero-actions">
-        <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-download-primary" style="padding:12px 24px; font-size:0.92rem;">
-          Download Windows Setup v0.17 &darr;
+        <a href="downloads/EXOS-GPS-Station-v0.17-Setup.exe" class="btn-lg-primary" id="hero-download-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Free Evaluation (Windows x64)
         </a>
-        <a href="#module-identity" class="btn-secondary" style="padding:12px 24px; font-size:0.92rem;">
-          Explore Button Breakdown &rarr;
+        <a href="#capabilities" class="btn-lg-secondary">
+          Explore Product Capabilities &darr;
         </a>
       </div>
+    </section>
 
-      <!-- Live Window Showcase Card (Jewel Bezel) -->
-      <div class="interface-showcase-card">
-        <div class="window-bezel-frame">
-          <div class="window-header-chrome">
-            <div class="window-dots">
-              <span class="window-dot red"></span>
-              <span class="window-dot yellow"></span>
-              <span class="window-dot green"></span>
-            </div>
-            <span class="window-title">EXOS GPS STATION &bull; MISSION CONTROL v0.17 (x64)</span>
-            <span class="window-badge">PRODUCTION LIVE</span>
-          </div>
-          <img src="assets/station_windows_live.png" alt="EXOS GPS Station Windows Live Interface" class="interface-showcase-img" onclick="openLightbox(this.src)">
-        </div>
+    <!-- Value Proposition Pillars -->
+    <section class="pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-num">01 / CONNECTIVITY</div>
+        <h3 class="pillar-title">Universal Hardware Pairing</h3>
+        <p class="pillar-desc">Auto-discovers and bridges USB, Bluetooth SPP, and RS-232 serial GPS receivers (u-blox, Garmin, RTK) with zero manual COM port configuration.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">02 / INTEGRATION</div>
+        <h3 class="pillar-title">Windows Sensor Injection</h3>
+        <p class="pillar-desc">Pipes satellite coordinates directly into native Windows Location Services so Google Maps, Microsoft Edge, and desktop GIS tools get instant hardware GPS.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">03 / AUTONOMY</div>
+        <h3 class="pillar-title">100% Offline Vector Maps</h3>
+        <p class="pillar-desc">Complete situational awareness with zero internet. Integrated Natural Earth 110m vector geography, 3D compass rose, and dynamic artificial horizon.</p>
+      </div>
+      <div class="pillar-card">
+        <div class="pillar-num">04 / DIAGNOSTICS</div>
+        <h3 class="pillar-title">Industrial NMEA 0183 Suite</h3>
+        <p class="pillar-desc">Real-time serial stream terminal decoding $GPGGA, $GPRMC, and $GPGSV packets with CRC checksum verification for marine, survey, and field engineers.</p>
       </div>
     </section>
 
-    <!-- Module: System Identity & Registration -->
-    <section id="module-identity">
-      <div class="module-header-block">
-        <span class="module-num-pill">MODULE 01</span>
-        <h2 class="module-headline">System Identity & Registration</h2>
-        <p class="module-subtext">Application licensing, mission-control branding, and secure hardware token authentication.</p>
+    <!-- Section: Product Capabilities -->
+    <div class="section-header" id="capabilities">
+      <span class="section-tag">Core Engineering Capabilities</span>
+      <h2 class="section-title">Engineered for High-Reliability Operations</h2>
+      <p class="section-desc">Designed from the ground up for maritime bridges, aerospace monitoring, disaster response, and field surveying where consumer apps fail.</p>
+    </div>
+
+    <!-- MODULE 01: Hardware Connection & Discovery -->
+    <article class="module-card" id="module-hardware-hub">
+      <div class="module-text-pane">
+        <span class="module-header-tag tag-blue">PLUG-AND-PLAY HARDWARE HUB</span>
+        <h3 class="module-title">Intelligent Port Discovery &amp; Bluetooth SPP Bridge</h3>
+        <p class="module-lead">Connect any GPS receiver to your Windows workstation in seconds without device manager headaches.</p>
+        <p class="module-body">
+          Traditional serial GPS software requires manual COM port matching, baud rate guessing, and registry digging. EXOS GPS Station eliminates this friction with an automated Windows Plug-and-Play (PnP) hardware scanner that enumerates all attached USB-to-Serial interfaces and RFCOMM Bluetooth Serial Port Profile (SPP) links instantly.
+        </p>
+        <ul class="module-feature-list">
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Automated PnP Hardware Scanner:</strong> 1-click port re-scan detects newly connected GPS dongles, RTK receivers, and handhelds.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Bluetooth SPP Cache Flusher:</strong> Purges stale or orphaned Windows Bluetooth serial ports with a single click.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Multi-Role Station Architecture:</strong> Toggle instantly between Autonomous Receiver Mode and Network Relay modes.</span>
+          </li>
+        </ul>
+        <div class="module-callout">
+          <strong>Field Operational Scenario:</strong> In high-pressure operations, plugging in a replacement GPS puck requires just clicking <em>Rescan Ports</em> and <em>Connect Station</em>. The system binds the serial stream and locks onto telemetry immediately.
+        </div>
       </div>
 
-      <!-- Card: Space-Tech Title & Corporate Identity Bar -->
-      <article class="feature-showcase-card" id="station_win_header" data-search="space-tech title & corporate identity bar mission control identity & copyright top application banner • full width">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_header_spotlight.png" alt="Space-Tech Title & Corporate Identity Bar Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_header.png" alt="Space-Tech Title & Corporate Identity Bar Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Space-Tech Title & Corporate Identity Bar</strong>
-              <span>Top Application Banner • Full Width</span>
-            </div>
-          </div>
+      <div class="module-visual-pane">
+        <img src="assets/guides/spotlights/station_showcase_hardware_hub.png" 
+             alt="Intelligent Port Discovery & Bluetooth SPP Hub" 
+             onclick="openLightbox(this.src)">
+        <div class="visual-caption">
+          <span>Native UI Crop &bull; Hardware Connection Center</span>
+          <span class="badge-live">100% UNCOMPRESSED CRISP</span>
         </div>
+      </div>
+    </article>
 
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">MISSION CONTROL IDENTITY & COPYRIGHT</span>
-          <h3 class="feature-name">Space-Tech Title & Corporate Identity Bar</h3>
-          <div class="feature-location">Top Application Banner • Full Width</div>
-          
-          <p class="feature-lead-text">The mission-control header at the very top of the window displaying the NASA-style spaced title 'E X O S  G P S  S T A T I O N', along with the official RITYM Technologies legal branding and exosgps.com link.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You launch EXOS GPS Station on your Windows 11 laptop. The glowing blue header confirms that the application is running in registered mission-control mode with authentic digital signatures.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Rendered on dark obsidian canvas (#0b0e17) with dual-layer glow text in monospace Courier New bold.</li><li>Integrates official satellite vector icon asset and dynamic title bar decoration with active license state.</li></ul></div>
+    <!-- MODULE 02: Windows Location Sensor Platform -->
+    <article class="module-card" id="module-windows-sensor">
+      <div class="module-text-pane">
+        <span class="module-header-tag tag-green">SYSTEM-WIDE SENSOR DRIVER</span>
+        <h3 class="module-title">Native Windows Location Sensor Platform Integration</h3>
+        <p class="module-lead">Bridge external high-precision satellite telemetry directly into the Windows OS Location Subsystem.</p>
+        <p class="module-body">
+          Windows laptops do not have built-in GPS chips, leaving desktop applications and web browsers dependent on inaccurate Wi-Fi triangulation. EXOS GPS Station bridges your external high-gain satellite antenna directly into the native Windows Geolocation Service (<code>Windows.Devices.Geolocation</code>).
+        </p>
+        <ul class="module-feature-list">
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>System-Wide Location Injection:</strong> Every Windows app—Google Maps in Chrome, Microsoft Edge, ArcGIS, and desktop tools—receives real hardware GPS.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>One-Touch Google Maps Coordinate Launch:</strong> Opens the live browser map centered precisely on your active GPS coordinates.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Sub-Meter Field Accuracy:</strong> Overrides imprecise IP-based location estimation with genuine geodetic satellite fixes.</span>
+          </li>
+        </ul>
+        <div class="module-callout">
+          <strong>Business Value:</strong> Equipping field inspection teams or logistics fleets with rugged laptops no longer requires expensive cellular SIM contracts or proprietary GIS tracking hardware.
         </div>
-      </article>
-
-      <!-- Card: Hardware Status & Registered License Banner -->
-      <article class="feature-showcase-card" id="station_win_license_badge" data-search="hardware status & registered license banner commercial license & hardware check sub-header banner • status indicator">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_license_badge_spotlight.png" alt="Hardware Status & Registered License Banner Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_license_badge.png" alt="Hardware Status & Registered License Banner Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Hardware Status & Registered License Banner</strong>
-              <span>Sub-Header Banner • Status Indicator</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">COMMERCIAL LICENSE & HARDWARE CHECK</span>
-          <h3 class="feature-name">Hardware Status & Registered License Banner</h3>
-          <div class="feature-location">Sub-Header Banner • Status Indicator</div>
-          
-          <p class="feature-lead-text">Shows whether your software is registered or running in evaluation trial mode. When activated, it turns bright green showing your company name and unlocking unlimited continuous sessions.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You test the application on evaluation trial during sea trials. Upon purchasing a commercial license from exosgps.com, you enter your serial key. The banner turns bright green reading 'Registered License: Full Commercial Features Unlocked'.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Validates cryptographic license tokens via <code>SHA-256</code> digital signature stored in %APPDATA%/EXOS_GPS/license.json.</li><li>Toggles UI feature gates and unthrottles background outbound COM loopback forwarders.</li></ul></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Module: Hardware Connectivity & Ports -->
-    <section id="module-hardware">
-      <div class="module-header-block">
-        <span class="module-num-pill">MODULE 02</span>
-        <h2 class="module-headline">Hardware Connectivity & Ports</h2>
-        <p class="module-subtext">Operating modes, Bluetooth SPP discovery, baud rate negotiation, and master telemetry switches.</p>
       </div>
 
-      <!-- Card: Station Mode Selector (Receiver Mode) -->
-      <article class="feature-showcase-card" id="station_win_mode_dropdown" data-search="station mode selector (receiver mode) station operational architecture hardware toolbar • row 1 (left)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_mode_dropdown_spotlight.png" alt="Station Mode Selector (Receiver Mode) Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_mode_dropdown.png" alt="Station Mode Selector (Receiver Mode) Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Station Mode Selector (Receiver Mode)</strong>
-              <span>Hardware Toolbar • Row 1 (Left)</span>
-            </div>
-          </div>
+      <div class="module-visual-pane">
+        <img src="assets/guides/spotlights/station_showcase_windows_sensor.png" 
+             alt="Native Windows Location Sensor Platform Integration" 
+             onclick="openLightbox(this.src)">
+        <div class="visual-caption">
+          <span>Native UI Crop &bull; Location Sensor & Maps Bridge</span>
+          <span class="badge-live">100% UNCOMPRESSED CRISP</span>
         </div>
+      </div>
+    </article>
 
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">STATION OPERATIONAL ARCHITECTURE</span>
-          <h3 class="feature-name">Station Mode Selector (Receiver Mode)</h3>
-          <div class="feature-location">Hardware Toolbar • Row 1 (Left)</div>
-          
-          <p class="feature-lead-text">Sets whether your computer is RECEIVING GPS data from a smartphone/puck or TRANSMITTING its own USB GPS data to other computers across your local network.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You connect your Samsung Galaxy Note 8 to your Windows laptop. The mode is set to 'RECEIVER MODE', telling the Windows app to listen for incoming Bluetooth NMEA sentences from your phone.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Selects between client serial stream consumer loop (RECEIVER) and local TCP server broadcaster (TRANSMITTER).</li><li>Initializes socket worker threads and internal telemetry message queues.</li></ul></div>
+    <!-- MODULE 03: Live Mission Telemetry -->
+    <article class="module-card" id="module-telemetry">
+      <div class="module-text-pane">
+        <span class="module-header-tag tag-sky">HIGH-PRECISION TELEMETRY</span>
+        <h3 class="module-title">Live Tactical Telemetry Dashboard &amp; Constellation Monitor</h3>
+        <p class="module-lead">High-contrast, sunlight-readable instrumentation designed for cockpit, bridge, and field viewing.</p>
+        <p class="module-body">
+          Whether operating in direct sunlight on an open vessel or under low-light night-vision conditions, EXOS GPS Station provides razor-sharp, zero-latency situational metrics. The tactical dashboard renders essential geodetic coordinates, speed, heading, and altitude in bold, high-contrast digital cards.
+        </p>
+        <ul class="module-feature-list">
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Geodetic Fix Coordinates:</strong> Real-time Latitude and Longitude displayed with high decimal precision.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Dynamics Odometer:</strong> Real-time Ground Speed (km/h, knots, mph) and Course Over Ground (COG) heading.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Altitude Above MSL:</strong> Accurate Mean Sea Level elevation tracking for mountainous or aerial navigation.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Inspect Satellites Modal:</strong> One-click modal displaying individual satellite PRNs, elevation angles, and SNR signal levels.</span>
+          </li>
+        </ul>
+        <div class="module-callout">
+          <strong>Cockpit Legibility:</strong> High-contrast sage green cards with bold slate typography prevent eye strain and ensure immediate legibility in extreme lighting.
         </div>
-      </article>
-
-      <!-- Card: GPS Device Hardware Dropdown Selector -->
-      <article class="feature-showcase-card" id="station_win_device_dropdown" data-search="gps device hardware dropdown selector device & com port enumeration hardware toolbar • row 1 (center)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_device_dropdown_spotlight.png" alt="GPS Device Hardware Dropdown Selector Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_device_dropdown.png" alt="GPS Device Hardware Dropdown Selector Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>GPS Device Hardware Dropdown Selector</strong>
-              <span>Hardware Toolbar • Row 1 (Center)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">DEVICE & COM PORT ENUMERATION</span>
-          <h3 class="feature-name">GPS Device Hardware Dropdown Selector</h3>
-          <div class="feature-location">Hardware Toolbar • Row 1 (Center)</div>
-          
-          <p class="feature-lead-text">Lists every connected GPS device, USB dongle, and paired smartphone. It clearly displays friendly device names like 'Hardware GPS - Bluetooth - Galaxy Note 8' so you don't have to guess random COM port numbers.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You open the dropdown. Instead of showing cryptic port names like COM7 or COM14, EXOS GPS Station clearly lists 'Hardware GPS - Bluetooth - Galaxy Note 8 [SPP]'. You click your phone name and you are ready to connect.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Queries Windows PnP SetupAPI and resolves Bluetooth remote device names, SDP service records, and USB VID/PID hardware identifiers.</li><li>Prioritizes low-latency RFCOMM COM ports bound to the Bluetooth SPP GUID.</li></ul></div>
-        </div>
-      </article>
-
-      <!-- Card: Rescan Ports Button (Windows PnP Scanner) -->
-      <article class="feature-showcase-card" id="station_win_rescan_btn" data-search="rescan ports button (windows pnp scanner) hot-plug hardware detection hardware toolbar • row 1 (center-right)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_rescan_btn_spotlight.png" alt="Rescan Ports Button (Windows PnP Scanner) Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_rescan_btn.png" alt="Rescan Ports Button (Windows PnP Scanner) Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Rescan Ports Button (Windows PnP Scanner)</strong>
-              <span>Hardware Toolbar • Row 1 (Center-Right)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">HOT-PLUG HARDWARE DETECTION</span>
-          <h3 class="feature-name">Rescan Ports Button (Windows PnP Scanner)</h3>
-          <div class="feature-location">Hardware Toolbar • Row 1 (Center-Right)</div>
-          
-          <p class="feature-lead-text">Searches your entire computer for newly connected GPS devices, USB cables, or paired phones without having to restart the program.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You plug in a new USB GPS receiver or turn on Bluetooth on your phone while EXOS GPS Station is already open. You click Rescan Ports: the dropdown instantly refreshes, displaying the new device ready for connection.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Scans serial.tools.list_ports.comports() and executes asynchronous PowerShell Get-PnpDevice -Class Ports queries.</li><li>Flushes stale handles and repopulates the Tkinter Combobox model in under 500ms.</li></ul></div>
-        </div>
-      </article>
-
-      <!-- Card: Clear Cache Button (Flush Bluetooth SPP Registry) -->
-      <article class="feature-showcase-card" id="station_win_clear_cache_btn" data-search="clear cache button (flush bluetooth spp registry) bluetooth cache invalidation hardware toolbar • row 1 (center-right)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_clear_cache_btn_spotlight.png" alt="Clear Cache Button (Flush Bluetooth SPP Registry) Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_clear_cache_btn.png" alt="Clear Cache Button (Flush Bluetooth SPP Registry) Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Clear Cache Button (Flush Bluetooth SPP Registry)</strong>
-              <span>Hardware Toolbar • Row 1 (Center-Right)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">BLUETOOTH CACHE INVALIDATION</span>
-          <h3 class="feature-name">Clear Cache Button (Flush Bluetooth SPP Registry)</h3>
-          <div class="feature-location">Hardware Toolbar • Row 1 (Center-Right)</div>
-          
-          <p class="feature-lead-text">Cleans out old or disconnected Bluetooth entries that Windows might still remember, forcing a fresh, clean device scan.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You upgraded your field phone to a new model, but Windows kept showing the old phone's name in the list. Clicking Clear Cache wipes the old cached records, cleanly displaying only the active new phone.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Deletes cached metadata JSON at %LOCALAPPDATA%/RiTym/Exos GPS Station/bluetooth_spp_ports.json.</li><li>Forces clean synchronous query against Windows SetupAPI and PnP subsystem.</li></ul></div>
-        </div>
-      </article>
-
-      <!-- Card: Connect Station / Disconnect Station Master Switch -->
-      <article class="feature-showcase-card" id="station_win_connect_btn" data-search="connect station / disconnect station master switch telemetry stream master switch hardware toolbar • row 1 (right)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_connect_btn_spotlight.png" alt="Connect Station / Disconnect Station Master Switch Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_connect_btn.png" alt="Connect Station / Disconnect Station Master Switch Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Connect Station / Disconnect Station Master Switch</strong>
-              <span>Hardware Toolbar • Row 1 (Right)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">TELEMETRY STREAM MASTER SWITCH</span>
-          <h3 class="feature-name">Connect Station / Disconnect Station Master Switch</h3>
-          <div class="feature-location">Hardware Toolbar • Row 1 (Right)</div>
-          
-          <p class="feature-lead-text">The master power switch that starts or stops receiving satellite data. When you click Connect, it establishes the communication pipe, turns bright red, and begins streaming live coordinates.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You select your Galaxy Note 8 from the dropdown and click Connect Station. Within 1.5 seconds, the status indicator turns from red to green, the terminal floods with live satellite sentences, and your position locks onto the map.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Spawns dedicated asynchronous I/O daemon thread to prevent freezing the graphical message loop.</li><li>Uses Win32 CancelSynchronousIo to cleanly abort blocked RFCOMM connection attempts without hanging the Windows serial subsystem.</li></ul></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Module: Spatial Bridges & Sensor Drivers -->
-    <section id="module-sensors">
-      <div class="module-header-block">
-        <span class="module-num-pill">MODULE 03</span>
-        <h2 class="module-headline">Spatial Bridges & Sensor Drivers</h2>
-        <p class="module-subtext">Windows native Sensor API integration, local browser HTTP streaming, and simulation spoofing.</p>
       </div>
 
-      <!-- Card: Launch Google Maps Button (Local HTTP Bridge) -->
-      <article class="feature-showcase-card" id="station_win_launch_maps_btn" data-search="launch google maps button (local http bridge) browser mapping integration system actions toolbar • row 2 (left)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_launch_maps_btn_spotlight.png" alt="Launch Google Maps Button (Local HTTP Bridge) Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_launch_maps_btn.png" alt="Launch Google Maps Button (Local HTTP Bridge) Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Launch Google Maps Button (Local HTTP Bridge)</strong>
-              <span>System Actions Toolbar • Row 2 (Left)</span>
-            </div>
-          </div>
+      <div class="module-visual-pane">
+        <img src="assets/guides/spotlights/station_showcase_telemetry.png" 
+             alt="Live Mission Telemetry Dashboard & Constellation Monitor" 
+             onclick="openLightbox(this.src)">
+        <div class="visual-caption">
+          <span>Native UI Crop &bull; Mission Telemetry Dashboard</span>
+          <span class="badge-live">100% UNCOMPRESSED CRISP</span>
         </div>
+      </div>
+    </article>
 
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">BROWSER MAPPING INTEGRATION</span>
-          <h3 class="feature-name">Launch Google Maps Button (Local HTTP Bridge)</h3>
-          <div class="feature-location">System Actions Toolbar • Row 2 (Left)</div>
-          
-          <p class="feature-lead-text">Opens Google Maps in your web browser centered exactly on your live GPS coordinates using our built-in local background server.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You are navigating with your laptop in a vehicle. You click Launch Google Maps. Google Chrome opens automatically and centers satellite imagery directly on your live moving vehicle position.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Starts local embedded HTTP server listening on 127.0.0.1:9001.</li><li>Returns live JSON payload on GET /location with lat, lon, alt, speed, bearing, and sats with Access-Control-Allow-Origin: * CORS headers.</li></ul></div>
+    <!-- MODULE 04: 3D Orbital Tracking & Offline Map -->
+    <article class="module-card" id="module-orbital-map">
+      <div class="module-text-pane">
+        <span class="module-header-tag tag-blue">100% OFFLINE GEOGRAPHY</span>
+        <h3 class="module-title">3D Planetary Constellation Tracking &amp; Offline Vector World Map</h3>
+        <p class="module-lead">Autonomous global situational awareness without internet, cellular coverage, or tile servers.</p>
+        <p class="module-body">
+          Most modern mapping applications fail the moment you lose internet access. EXOS GPS Station embeds a high-performance Natural Earth 110m vector world map and an interactive 3D celestial tracking globe directly into the client. Plot your vehicle's live position, ground track, and celestial satellites anywhere on the planet with complete independence from external servers.
+        </p>
+        <ul class="module-feature-list">
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Autonomous Vector Engine:</strong> Renders coastlines, country borders, and geographic grids completely off-grid.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>3D Orbital Constellation Radar:</strong> Visualizes real-time planetary satellite geometry and orbital passes.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>3D Artificial Horizon &amp; Compass:</strong> Live pitch and roll attitude indicators paired with a dynamic azimuth rose.</span>
+          </li>
+        </ul>
+        <div class="module-callout">
+          <strong>Maritime &amp; Remote Operations:</strong> Whether crossing mid-ocean passages or navigating deep backcountry terrain, your navigation display remains 100% operational.
         </div>
-      </article>
-
-      <!-- Card: Native Windows Sensor Setup (C# Geolocation Driver) -->
-      <article class="feature-showcase-card" id="station_win_sensor_btn" data-search="native windows sensor setup (c# geolocation driver) windows geolocation platform system actions toolbar • row 2 (center)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_sensor_btn_spotlight.png" alt="Native Windows Sensor Setup (C# Geolocation Driver) Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_sensor_btn.png" alt="Native Windows Sensor Setup (C# Geolocation Driver) Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Native Windows Sensor Setup (C# Geolocation Driver)</strong>
-              <span>System Actions Toolbar • Row 2 (Center)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">WINDOWS GEOLOCATION PLATFORM</span>
-          <h3 class="feature-name">Native Windows Sensor Setup (C# Geolocation Driver)</h3>
-          <div class="feature-location">System Actions Toolbar • Row 2 (Center)</div>
-          
-          <p class="feature-lead-text">Installs and manages the special Windows driver that feeds your GPS position directly into Windows itself, allowing native apps like Windows Maps, Weather, and Cortana to see your real GPS position.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You use offline Windows Maps on your laptop with no internet. Clicking Native Windows Sensor Setup registers EXOS GPS as the official system Location Provider. Windows Maps immediately wakes up and displays real-time navigation.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Native driver bridge powered by windows_sensor_manager.py and compiled <code>C#</code> COM DLLs.</li><li>Implements ILocationProvider and ISensorDriver interfaces for the Windows 10/11 Location Platform.</li></ul></div>
-        </div>
-      </article>
-
-      <!-- Card: Location Override Simulation (Custom Coordinates Spoofing) -->
-      <article class="feature-showcase-card" id="station_win_override_btn" data-search="location override simulation (custom coordinates spoofing) tactical simulation & spoofing system actions toolbar • row 2 (right)">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_override_btn_spotlight.png" alt="Location Override Simulation (Custom Coordinates Spoofing) Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_override_btn.png" alt="Location Override Simulation (Custom Coordinates Spoofing) Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Location Override Simulation (Custom Coordinates Spoofing)</strong>
-              <span>System Actions Toolbar • Row 2 (Right)</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">TACTICAL SIMULATION & SPOOFING</span>
-          <h3 class="feature-name">Location Override Simulation (Custom Coordinates Spoofing)</h3>
-          <div class="feature-location">System Actions Toolbar • Row 2 (Right)</div>
-          
-          <p class="feature-lead-text">Allows developers and planners to simulate being in any location in the world without having to physically travel there. Perfect for testing software, emergency response drills, and offline map verification.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You are preparing an expedition to Berlin, Germany, but you are currently in an office in New York. You click Location Override, choose Berlin (52.5200° N, 13.4050° E), and activate override. All your connected navigation programs immediately behave as though you are in Berlin.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Bypasses physical COM stream and generates mathematically consistent <code>$GPGGA</code>, <code>$GPRMC</code> sentences at 1.<code>0 Hz</code> with valid XOR checksums.</li></ul></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Module: Tactical Avionics & Vector Geography -->
-    <section id="module-avionics">
-      <div class="module-header-block">
-        <span class="module-num-pill">MODULE 04</span>
-        <h2 class="module-headline">Tactical Avionics & Vector Geography</h2>
-        <p class="module-subtext">Offline Natural Earth geospatial cartography, 3D attitude gyro, and magnetic heading tracking.</p>
       </div>
 
-      <!-- Card: 3D Compass & Artificial Horizon Widget -->
-      <article class="feature-showcase-card" id="station_win_compass_widget" data-search="3d compass & artificial horizon widget attitude & gyro heading display main visualizer canvas • left half">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_compass_widget_spotlight.png" alt="3D Compass & Artificial Horizon Widget Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_compass_widget.png" alt="3D Compass & Artificial Horizon Widget Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>3D Compass & Artificial Horizon Widget</strong>
-              <span>Main Visualizer Canvas • Left Half</span>
-            </div>
-          </div>
+      <div class="module-visual-pane">
+        <img src="assets/guides/spotlights/station_showcase_orbital_map.png" 
+             alt="3D Planetary Constellation Tracking & Offline Vector World Map" 
+             onclick="openLightbox(this.src)">
+        <div class="visual-caption">
+          <span>Native UI Crop &bull; 3D Planetary Tracking & Vector Map</span>
+          <span class="badge-live">100% UNCOMPRESSED CRISP</span>
         </div>
+      </div>
+    </article>
 
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">ATTITUDE & GYRO HEADING DISPLAY</span>
-          <h3 class="feature-name">3D Compass & Artificial Horizon Widget</h3>
-          <div class="feature-location">Main Visualizer Canvas • Left Half</div>
-          
-          <p class="feature-lead-text">An aircraft-style artificial horizon and digital compass rose showing which direction your vessel is pointing in real time, along with pitch and roll tilt angles.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">During night navigation or dense fog at sea, visual references to the horizon are lost. The 3D Compass reads True Heading ($GPHDT) streamed from your phone, providing a stable heading indicator that does not lag when the vessel rocks.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Hardware-accelerated Tkinter Canvas vector graphics with trigonometric sine/cosine rotation matrix.</li><li>Driven by NMEA True Heading sentence <code>$GPHDT</code>,xxx.x,T*hh or Course Over Ground from <code>$GPRMC</code> at 30 FPS.</li></ul></div>
+    <!-- MODULE 05: Industrial NMEA Stream -->
+    <article class="module-card" id="module-nmea">
+      <div class="module-text-pane">
+        <span class="module-header-tag tag-purple">PROTOCOL DIAGNOSTICS</span>
+        <h3 class="module-title">Industrial NMEA 0183 Telemetry Stream &amp; Protocol Analyzer</h3>
+        <p class="module-lead">Real-time raw serial sentence inspection for marine electronics, surveyors, and field engineers.</p>
+        <p class="module-body">
+          For mission-critical installations, understanding raw signal integrity is paramount. EXOS GPS Station features an integrated high-speed terminal that decodes and displays standard NMEA 0183 serial sentences in real time. Validate baud rates, inspect raw payload strings, and verify packet CRC checksums without launching third-party terminal emulators.
+        </p>
+        <ul class="module-feature-list">
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Standard Sentence Support:</strong> Full parsing for <code>$GPGGA</code> (Fix Data), <code>$GPRMC</code> (Transit Data), <code>$GPGSV</code> (Satellites in View), and multi-GNSS sentences.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Packet Integrity &amp; CRC Validation:</strong> Instant visual identification of dropped packets, parity errors, or serial noise.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Timestamped Telemetry Logging:</strong> Record mission telemetry to standard NMEA log files for post-operation GIS analysis.</span>
+          </li>
+        </ul>
+        <div class="module-callout">
+          <strong>Field Technician Tool:</strong> Rapidly diagnose whether a connection issue stems from antenna positioning, baud rate mismatch, or cable degradation within seconds.
         </div>
-      </article>
-
-      <!-- Card: Offline Natural Earth 110m Vector World Map -->
-      <article class="feature-showcase-card" id="station_win_map_widget" data-search="offline natural earth 110m vector world map offline vector geography main visualizer canvas • center & background">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_map_widget_spotlight.png" alt="Offline Natural Earth 110m Vector World Map Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_map_widget.png" alt="Offline Natural Earth 110m Vector World Map Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Offline Natural Earth 110m Vector World Map</strong>
-              <span>Main Visualizer Canvas • Center & Background</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">OFFLINE VECTOR GEOGRAPHY</span>
-          <h3 class="feature-name">Offline Natural Earth 110m Vector World Map</h3>
-          <div class="feature-location">Main Visualizer Canvas • Center & Background</div>
-          
-          <p class="feature-lead-text">A built-in global world map that requires zero internet connection to work. It draws continental coastlines and country borders directly on your screen and places a glowing pulse marker where you are.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You are in the middle of the ocean with zero cellular or satellite internet access. You open EXOS GPS Station. The world map renders immediately from local memory, plotting your vessel's exact position on the globe.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Natural Earth <code>110m</code> resolution GeoJSON polygon database cached locally at assets/world_<code>110m</code>.geojson.</li><li>Equirectangular cylindrical projection mapped to canvas coordinate space.</li></ul></div>
-        </div>
-      </article>
-    </section>
-
-    <!-- Module: Diagnostics, Satellites & NMEA Console -->
-    <section id="module-telemetry">
-      <div class="module-header-block">
-        <span class="module-num-pill">MODULE 05</span>
-        <h2 class="module-headline">Diagnostics, Satellites & NMEA Console</h2>
-        <p class="module-subtext">Constellation orbital SNR spectrum, high-contrast surface telemetry, and raw NMEA 0183 protocol streams.</p>
       </div>
 
-      <!-- Card: High-Contrast Telemetry Dashboard Cards -->
-      <article class="feature-showcase-card" id="station_win_telemetry_cards" data-search="high-contrast telemetry dashboard cards surface & flight telemetry right telemetry panel • 4 dedicated cards">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_telemetry_cards_spotlight.png" alt="High-Contrast Telemetry Dashboard Cards Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_telemetry_cards.png" alt="High-Contrast Telemetry Dashboard Cards Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>High-Contrast Telemetry Dashboard Cards</strong>
-              <span>Right Telemetry Panel • 4 Dedicated Cards</span>
-            </div>
-          </div>
+      <div class="module-visual-pane">
+        <img src="assets/guides/spotlights/station_showcase_nmea_console.png" 
+             alt="Industrial NMEA 0183 Telemetry Stream Console" 
+             onclick="openLightbox(this.src)">
+        <div class="visual-caption">
+          <span>Native UI Crop &bull; Live NMEA 0183 Serial Terminal</span>
+          <span class="badge-live">100% UNCOMPRESSED CRISP</span>
         </div>
+      </div>
+    </article>
 
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">SURFACE & FLIGHT TELEMETRY</span>
-          <h3 class="feature-name">High-Contrast Telemetry Dashboard Cards</h3>
-          <div class="feature-location">Right Telemetry Panel • 4 Dedicated Cards</div>
-          
-          <p class="feature-lead-text">A crystal-clear, high-contrast dashboard displaying your exact latitude, longitude, speed in both knots and kilometers per hour, compass heading, and altitude above sea level.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You are conducting high-speed coastal survey runs. Looking at the high-contrast dashboard, you monitor ground speed in both knots and km/h simultaneously without squinting, verifying vessel stability.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Tactical light green background (#A9D9B3) with deep charcoal typography (#0f172a) achieving WCAG AAA contrast ratio exceeding 7:1.</li><li>5-sample moving average filter on <code>$GPRMC</code> ground speed eliminates GPS jitter at low velocities.</li></ul></div>
+    <!-- MODULE 06: Mission Simulation & Location Override -->
+    <article class="module-card" id="module-simulation">
+      <div class="module-text-pane">
+        <span class="module-header-tag tag-amber">TESTING &amp; SIMULATION</span>
+        <h3 class="module-title">Field Mission Simulation &amp; Custom Coordinate Override</h3>
+        <p class="module-lead">Rehearse expeditions and validate software workflows from the comfort of your desk.</p>
+        <p class="module-body">
+          Testing location-aware Windows applications shouldn't require taking your laptop into the field or waiting for outdoor satellite lock. EXOS GPS Station features an integrated coordinate simulation engine that allows developers, navigators, and mission planners to inject synthetic geodetic trajectories directly into the Windows system.
+        </p>
+        <ul class="module-feature-list">
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Synthetic Position Injection:</strong> Override system coordinates with custom target locations or pre-set testing waypoints.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Geofence &amp; Workflow Testing:</strong> Validate how your proprietary desktop software responds to boundary crossings.</span>
+          </li>
+          <li class="module-feature-item">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+            <span><strong>Zero-Hardware Development:</strong> Build and debug location-dependent mapping systems without requiring a physical GPS puck.</span>
+          </li>
+        </ul>
+        <div class="module-callout">
+          <strong>Developer Efficiency:</strong> Seamlessly switch between genuine live hardware feeds and controlled simulations with a single toggle.
         </div>
-      </article>
+      </div>
 
-      <!-- Card: Inspect Satellites... Button (Constellation Signal Spectrum) -->
-      <article class="feature-showcase-card" id="station_win_satellite_inspect_btn" data-search="inspect satellites... button (constellation signal spectrum) satellite spectrum & snr bars telemetry card 2 • blue action button">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_satellite_inspect_btn_spotlight.png" alt="Inspect Satellites... Button (Constellation Signal Spectrum) Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_satellite_inspect_btn.png" alt="Inspect Satellites... Button (Constellation Signal Spectrum) Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Inspect Satellites... Button (Constellation Signal Spectrum)</strong>
-              <span>Telemetry Card 2 • Blue Action Button</span>
-            </div>
-          </div>
+      <div class="module-visual-pane">
+        <img src="assets/guides/spotlights/station_showcase_simulation.png" 
+             alt="Field Mission Simulation & Custom Coordinate Override" 
+             onclick="openLightbox(this.src)">
+        <div class="visual-caption">
+          <span>Native UI Crop &bull; Coordinate Override & Simulation</span>
+          <span class="badge-live">100% UNCOMPRESSED CRISP</span>
         </div>
+      </div>
+    </article>
 
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">SATELLITE SPECTRUM & SNR BARS</span>
-          <h3 class="feature-name">Inspect Satellites... Button (Constellation Signal Spectrum)</h3>
-          <div class="feature-location">Telemetry Card 2 • Blue Action Button</div>
-          
-          <p class="feature-lead-text">Opens a detailed window showing each satellite's individual signal strength bar and orbit identification number across GPS, GLONASS, and Galileo constellations.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">You notice your position is jumping around slightly in an urban canyon with tall buildings. You click Inspect Satellites... and observe that only 4 satellites have strong Signal-to-Noise Ratios (SNR > 35 dB-Hz). You reposition your antenna toward an open sky sector and immediately verify signal bars greening up.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Decodes <code>$GPGSV</code> and <code>$GPGSA</code> sentences.</li><li>Measures carrier-to-noise density ratio (C/No) in <code>dB-Hz</code> for GPS (<code>PRN 1-32</code>), GLONASS (<code>PRN 65-96</code>), and Galileo (<code>PRN 301-336</code>).</li></ul></div>
-        </div>
-      </article>
+    <!-- Technical Specifications Table -->
+    <section class="specs-card" id="specifications">
+      <span class="section-tag">System Specifications</span>
+      <h3 style="font-size:1.6rem; font-weight:800; color:#0f172a; margin-bottom:8px;">Enterprise Architecture &amp; Compatibility</h3>
+      <p style="color:var(--text-muted); font-size:0.95rem;">Engineered for high performance, minimal CPU overhead, and standalone offline execution.</p>
 
-      <!-- Card: Live NMEA 0183 Signal Telemetry Stream Console -->
-      <article class="feature-showcase-card" id="station_win_nmea_console" data-search="live nmea 0183 signal telemetry stream console low-level protocol monitor bottom console panel • full width monospace terminal">
-        <!-- Visual Column (Pristine High-Resolution Regional Spotlight) -->
-        <div class="visual-column">
-          <div class="snapshot-frame">
-            <div class="snapshot-top-bar">
-              <span class="snapshot-tag">Interface Spotlight &bull; Native High-Res</span>
-              <span class="snapshot-zoom-hint">Click to enlarge 🔍</span>
-            </div>
-            <img src="assets/guides/spotlights/station_win_nmea_console_spotlight.png" alt="Live NMEA 0183 Signal Telemetry Stream Console Native High-Res Spotlight" class="snapshot-image" onclick="openLightbox(this.src)">
-          </div>
-          <div class="crop-badge-strip">
-            <img src="assets/guides/crops/station_win_nmea_console.png" alt="Live NMEA 0183 Signal Telemetry Stream Console Button Crop" class="crop-thumb" onerror="this.src='assets/icon.png'">
-            <div class="crop-caption">
-              <strong>Live NMEA 0183 Signal Telemetry Stream Console</strong>
-              <span>Bottom Console Panel • Full Width Monospace Terminal</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Editorial Content Column -->
-        <div class="editorial-column">
-          <span class="feature-category-pill">LOW-LEVEL PROTOCOL MONITOR</span>
-          <h3 class="feature-name">Live NMEA 0183 Signal Telemetry Stream Console</h3>
-          <div class="feature-location">Bottom Console Panel • Full Width Monospace Terminal</div>
-          
-          <p class="feature-lead-text">The 'heart monitor' of your GPS connection. It prints out the actual raw text sentences sent by the satellites every second, giving engineers and navigators total visibility into the live data feed.</p>
-          
-          <div class="scenario-pill-context">
-            <div class="scenario-title">
-              <span>✦</span> Field Mission Deployment
-            </div>
-            <p class="scenario-desc">An external hydrographic sensor isn't receiving position fixes from your Windows setup. You look at the NMEA Console and immediately see lines starting with $GPGGA and $GPRMC streaming by with valid checksums (*72). You instantly confirm that the GPS receiver is functioning perfectly.</p>
-          </div>
-          
-          <div class="specs-group"><div class="specs-heading">Technical Specifications &amp; Architecture</div><ul class="specs-list"><li>Consolas 9pt monospace terminal with cyber-blue highlighting (#38bdf8) on obsidian black (#070a12).</li><li>Retains ring history of the last 200 packets for diagnostic review and forwards sentences to outbound virtual COM loopbacks.</li></ul></div>
-        </div>
-      </article>
+      <table class="specs-table">
+        <tbody>
+          <tr>
+            <td>Operating System</td>
+            <td>Windows 10, Windows 11 (64-bit Architecture, fully verified on build 22H2+)</td>
+          </tr>
+          <tr>
+            <td>Hardware Interfaces</td>
+            <td>USB Serial (FTDI, Prolific, CP210x, CH340), Bluetooth SPP (RFCOMM), RS-232 COM Ports</td>
+          </tr>
+          <tr>
+            <td>Baud Rate Support</td>
+            <td>Auto-detect and standard rates: 4800, 9600, 19200, 38400, 57600, 115200 bps</td>
+          </tr>
+          <tr>
+            <td>Supported Protocols</td>
+            <td>NMEA 0183 standard sentences ($GPGGA, $GPRMC, $GPGSV, $GPGLL, $GPVTG, $GN* multi-constellation)</td>
+          </tr>
+          <tr>
+            <td>Windows Sensor Driver</td>
+            <td>Native C# bridge binding directly to <code>Windows.Devices.Geolocation</code> subsystem</td>
+          </tr>
+          <tr>
+            <td>Mapping &amp; Graphics</td>
+            <td>Built-in Natural Earth 110m Vector Engine &bull; Zero external tile servers or cloud required</td>
+          </tr>
+          <tr>
+            <td>Installation Package</td>
+            <td>Self-contained Inno Setup Windows installer with desktop and start menu shortcuts &bull; Zero bloatware</td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
-    <!-- Final CTA Banner -->
+    <!-- Final Call to Action -->
     <section class="cta-banner">
-      <h2 class="cta-headline">Deploy Mission-Control Telemetry on Windows</h2>
+      <h2 class="cta-title">Ready to Upgrade Your Windows Navigation Bridge?</h2>
       <p class="cta-desc">
-        Turn your laptop or rugged field PC into an expedition-grade GNSS navigation station. Download the standalone installer and connect in under two minutes.
+        Download EXOS GPS Station today. Connect your satellite receiver, stream coordinates into Windows Location, and navigate with military-grade precision.
       </p>
-      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
-        <a href="downloads/EXOS-GPS-Station-Setup-v0.17.exe" class="btn-download-primary" style="padding:14px 32px; font-size:0.95rem;">
-          Download Windows Setup v0.17 &darr;
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap; position:relative; z-index:2;">
+        <a href="downloads/EXOS-GPS-Station-v0.17-Setup.exe" class="btn-lg-primary" style="background:#0284c7; box-shadow:0 4px 20px rgba(2, 132, 199, 0.4);" id="cta-download-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Free Evaluation for Windows (.exe)
         </a>
-        <a href="index.html" class="btn-secondary" style="padding:14px 28px; font-size:0.95rem;">
-          Return to EXOS Navigation Home &rarr;
+        <a href="index.html" class="btn-lg-secondary" style="background:transparent; color:#ffffff; border-color:rgba(255,255,255,0.25);">
+          Return to Platform Overview &rarr;
         </a>
       </div>
     </section>
 
   </main>
 
-  <!-- Fullscreen Lightbox Modal -->
-  <div class="lightbox-overlay" id="lightboxModal" onclick="closeLightbox(event)">
-    <div class="lightbox-content-box" onclick="event.stopPropagation()">
-      <button class="lightbox-close-btn" onclick="closeLightbox()">&times;</button>
-      <img src="" alt="Enlarged Interface Snapshot" id="lightboxImg" class="lightbox-img">
-    </div>
+  <!-- Image Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightbox-img" class="lightbox-content" src="" alt="Enlarged Showcase View">
   </div>
 
-  <!-- Corporate Dark Footer -->
-  <footer class="site-footer">
-    <div class="container">
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
       <div class="footer-grid">
         <div>
-          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" class="footer-logo">
-          <p class="footer-desc">
-            High-precision off-grid positioning and communications suite engineered by RITYM Technologies. Designed for zero-internet wilderness navigation, tactical teams, and research expeditions.
+          <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" style="height:34px; margin-bottom:14px;">
+          <p style="font-size:0.88rem; line-height:1.6; color:#64748b; max-width:380px;">
+            Next-generation off-grid mesh communications, satellite telemetry bridges, and tactical mission-critical navigation platforms.
           </p>
         </div>
         <div>
-          <h4 class="footer-heading">Product Guides</h4>
+          <h4 class="footer-title">Navigation Platforms</h4>
           <ul class="footer-links">
-            <li><a href="station-guide.html" style="color:#38bdf8; font-weight:600;">EXOS Station (Windows)</a></li>
-            <li><a href="transceiver-guide.html">EXOS Transceiver Manual</a></li>
-            <li><a href="wayfinder-guide.html">EXOS Wayfinder Guide</a></li>
-            <li><a href="echo-guide.html">EXOS Echo Walkie Manual</a></li>
+            <li><a href="station-guide.html">EXOS GPS Station (Windows)</a></li>
+            <li><a href="echo-guide.html">EXOS Echo Walkie-Talkie</a></li>
+            <li><a href="wayfinder-guide.html">EXOS Wayfinder</a></li>
+            <li><a href="transceiver-guide.html">EXOS Transceiver</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="footer-heading">Legal &amp; Support</h4>
+          <h4 class="footer-title">Support &amp; Corporate</h4>
           <ul class="footer-links">
+            <li><a href="index.html#getting-started">Deployment Hub</a></li>
             <li><a href="privacy.html">Privacy Policy</a></li>
             <li><a href="terms.html">Terms of Service</a></li>
-            <li><a href="refund.html">Refund &amp; Cancellation</a></li>
-            <li><a href="support.html">Customer Care &amp; Support</a></li>
-            <li><a href="mailto:assist@ritym.com">assist@ritym.com</a></li>
+            <li><a href="index.html#support">Enterprise Support</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <div>&copy; 2026 EXOS Navigation Systems &bull; A Division of RITYM Technologies. All rights reserved.</div>
-        <div>Zero Telemetry &bull; 100% Offline-First Architecture &bull; NMEA 0183 Compliant</div>
+        &copy; 2026 RITYM Technologies &bull; exosgps.com &bull; All Rights Reserved.
       </div>
     </div>
   </footer>
 
-  <!-- Lightbox & Search Interaction Script -->
   <script>
     function openLightbox(src) {
-      const modal = document.getElementById('lightboxModal');
-      const img = document.getElementById('lightboxImg');
+      const modal = document.getElementById('lightbox-modal');
+      const img = document.getElementById('lightbox-img');
       img.src = src;
       modal.classList.add('active');
-      document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox() {
-      const modal = document.getElementById('lightboxModal');
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
+      document.getElementById('lightbox-modal').classList.remove('active');
     }
-
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox();
     });
 
-    function filterFeatures() {
-      const query = document.getElementById('featureSearch').value.toLowerCase().trim();
-      const cards = document.querySelectorAll('.feature-showcase-card');
-      
-      cards.forEach(card => {
-        const searchData = card.getAttribute('data-search') || '';
-        const cardText = card.innerText.toLowerCase();
-        if (!query || searchData.includes(query) || cardText.includes(query)) {
-          card.style.display = 'grid';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Smooth active tab highlighting on scroll
-    window.addEventListener('scroll', function() {
-      const sections = document.querySelectorAll('section[id]');
-      const scrollY = window.pageYOffset;
-      
-      sections.forEach(current => {
-        const sectionHeight = current.offsetHeight;
-        const sectionTop = current.offsetTop - 140;
-        const sectionId = current.getAttribute('id');
-        
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-          document.querySelectorAll('.module-tab-pill').forEach(pill => {
-            pill.classList.remove('active');
-            if (pill.getAttribute('href') === '#' + sectionId) {
-              pill.classList.add('active');
-            }
-          });
-        }
-      });
+    // Automatic private analytics for installer downloads
+    document.addEventListener('click', function(e) {
+      const target = e.target.closest('a');
+      if (target && target.href && target.href.endsWith('.exe')) {
+        gtag('event', 'download_windows_station', {
+          'event_category': 'software_download',
+          'event_label': target.href,
+          'value': 1
+        });
+      }
     });
   </script>
 
