@@ -639,7 +639,7 @@
     /* Deployment Steps Section */
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 24px;
     }
     .step-card {
@@ -1077,13 +1077,14 @@
         <!-- Card 3: EXOS Echo -->
         <div class="overview-card">
           <span class="order-badge">PLATFORM 03</span>
-          <div class="card-pkg">Peer-to-Peer Mesh</div>
+          <div class="card-pkg">com.exos.mesh</div>
           <h3 class="card-title">EXOS Echo</h3>
           <p class="card-desc">
             Off-grid digital walkie-talkie connecting Android devices over Wi-Fi Direct and BLE mesh with low-latency push-to-talk voice, offline text chat, and distress beacons.
           </p>
           <div class="card-links">
             <a href="#echo" class="btn btn-secondary" style="font-size:0.84rem; padding:8px;">Deep Dive &rarr;</a>
+            <a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener" class="btn-playstore" style="text-align:center;">Google Play Store</a>
             <a href="echo-guide.html" class="btn btn-secondary" style="font-size:0.84rem; padding:8px; text-align:center; font-weight:700; color:var(--primary); border-color:var(--primary);">User Guide &amp; Manual &rarr;</a>
           </div>
         </div>
@@ -1368,11 +1369,11 @@
           </ul>
 
           <div class="showcase-actions">
-            <a href="echo-guide.html" class="btn btn-primary" style="background-color:#0284c7; font-weight:700;">
-              User Guide &amp; Field Manual &rarr;
+            <a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener" class="btn btn-primary" style="background-color:#0284c7; font-weight:700;">
+              Get on Google Play &rarr;
             </a>
-            <a href="#specifications" class="btn btn-secondary">
-              View Audio Specifications
+            <a href="echo-guide.html" class="btn btn-secondary">
+              User Guide &amp; Field Manual &rarr;
             </a>
           </div>
         </div>
@@ -1688,7 +1689,7 @@
               <td><strong>Package Identifier</strong></td>
               <td style="background-color:#f0f9ff; font-family:var(--font-mono); font-size:0.75rem;">com.ritym.exosgps</td>
               <td style="font-family:var(--font-mono); font-size:0.75rem;">com.exos.wayfinder</td>
-              <td style="font-family:var(--font-mono); font-size:0.75rem;">P2P Audio Mesh Engine</td>
+              <td style="font-family:var(--font-mono); font-size:0.75rem;">com.exos.mesh</td>
               <td style="font-family:var(--font-mono); font-size:0.75rem;">exos.ritym.watchout.watchface</td>
             </tr>
           </tbody>
@@ -1745,19 +1746,19 @@
           </div>
         </div>
 
-        <!-- Watchout Play Card -->
+        <!-- Echo Play Card -->
         <div class="step-card">
           <div class="step-num">03</div>
-          <h3 class="step-title">EXOS Watchout</h3>
+          <h3 class="step-title">EXOS Echo</h3>
           <p class="step-desc">
-            Install the official Watch Face Format (WFF v1) chronograph dial and 3D compass companion on your Wear OS watch.
+            Install the off-grid digital walkie-talkie and mesh communicator for low-latency PTT voice and offline group text.
           </p>
           <div style="display:flex; flex-direction:column; gap:8px;">
-            <a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout.watchface" target="_blank" rel="noopener" class="btn btn-primary" style="background-color:#0d9488; font-size:0.86rem;">
-              Watch Face on Play Store &rarr;
+            <a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener" class="btn btn-primary" style="font-size:0.86rem;">
+              Google Play Store &rarr;
             </a>
-            <a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.82rem;">
-              Companion App on Play Store
+            <a href="echo-guide.html" class="btn btn-secondary" style="font-size:0.82rem; font-weight:700; color:var(--primary); border-color:var(--primary);">
+              User Guide &amp; Manual &rarr;
             </a>
           </div>
         </div>
@@ -1776,6 +1777,23 @@
             </a>
             <a href="station-guide.html#windows" class="btn btn-secondary" style="font-size:0.82rem; font-weight:600;">
               Field Manual &amp; Architecture &rarr;
+            </a>
+          </div>
+        </div>
+
+        <!-- Watchout Play Card -->
+        <div class="step-card">
+          <div class="step-num">05</div>
+          <h3 class="step-title">EXOS Watchout</h3>
+          <p class="step-desc">
+            Install the official Watch Face Format (WFF v1) chronograph dial and 3D compass companion on your Wear OS watch.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout.watchface" target="_blank" rel="noopener" class="btn btn-primary" style="background-color:#0d9488; font-size:0.86rem;">
+              Watch Face on Play Store &rarr;
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout" target="_blank" rel="noopener" class="btn btn-secondary" style="font-size:0.82rem;">
+              Companion App on Play Store
             </a>
           </div>
         </div>
@@ -2104,6 +2122,7 @@
           <ul class="footer-links">
             <li><a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener">Transceiver App</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener">Wayfinder App</a></li>
+            <li><a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener">EXOS Echo Walkie</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout.watchface" target="_blank" rel="noopener">Watchout Watch Face</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout" target="_blank" rel="noopener">Watchout Companion</a></li>
             <li><a href="https://ritym.com" target="_blank" rel="noopener">RITYM ESP32 Firmware</a></li>
