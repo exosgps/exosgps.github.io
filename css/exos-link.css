@@ -1,0 +1,38 @@
+/* Scoped EXOS LINK launch preview; preserves the existing EXOS site styles. */
+#exos-link { scroll-margin-top: 100px; }
+.link-launch { background: #0d1117; color: #d4dbe4; border-color: #29313c; }
+.link-launch-heading { max-width: 810px; margin-bottom: 38px; }
+.link-launch-badge, .link-product-status { display: inline-flex; align-items: center; border: 1px solid #7d602b; background: #2a2216; color: #f5cd83; border-radius: 999px; padding: 5px 13px; font-size: .78rem; font-weight: 700; }
+.link-launch-eyebrow { margin: 22px 0 10px; font-family: var(--font-mono); font-size: .77rem; letter-spacing: .12em; color: #aab9cb; }
+.link-launch h2 { font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.08; letter-spacing: -.04em; color: #f6f8fb; margin-bottom: 20px; }
+.link-launch-intro { color: #b7c2d0; font-size: 1.08rem; line-height: 1.75; }
+.link-launch-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.link-product { min-width: 0; overflow: hidden; display: flex; flex-direction: column; background: #151b23; border: 1px solid #35404e; border-radius: 18px; }
+.link-product-visual { display: block; background: #090d12; border-bottom: 1px solid #35404e; }
+.link-product-visual img { display: block; width: 100%; height: auto; }
+.link-product-visual:hover { opacity: .92; }
+.link-product-copy { padding: 28px; flex-grow: 1; display: flex; flex-direction: column; align-items: flex-start; }
+.link-product-kicker { color: #aab9cb; font-family: var(--font-mono); letter-spacing: .07em; font-size: .72rem; margin-bottom: 9px; }
+.link-product h3 { color: #f6f8fb; font-size: 1.65rem; letter-spacing: -.025em; line-height: 1.2; margin-bottom: 16px; }
+.link-product-copy > p:not(.link-product-kicker) { color: #c1cbd8; font-size: .95rem; line-height: 1.75; }
+.link-product-features { display: flex; flex-wrap: wrap; gap: 8px; list-style: none; margin: 22px 0 24px; }
+.link-product-features li { border: 1px solid #414e5d; border-radius: 6px; padding: 5px 9px; font-size: .74rem; color: #d7e1ed; }
+.link-product-status { margin-top: auto; }
+.link-launch-bottom { margin-top: 28px; display: flex; justify-content: space-between; align-items: center; gap: 24px; }
+.link-launch-bottom p { color: #aab9cb; max-width: 760px; font-size: .85rem; }
+.link-launch-contact { color: #f5cd83; font-weight: 600; font-size: .9rem; white-space: nowrap; padding: 8px 0; }
+.link-launch-contact:hover { color: #fff0cd; text-decoration: underline; }
+.link-hero-teaser { display: inline-flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: -16px 0 28px; color: #f5cd83; font-size: .88rem; line-height: 1.6; }
+.link-hero-teaser:hover { color: #fff0cd; text-decoration: underline; }
+.link-hero-teaser strong { font-weight: 700; }
+.link-launch a:focus-visible, .link-hero-teaser:focus-visible { outline: 3px solid #f5cd83; outline-offset: 5px; border-radius: 4px; }
+@media (max-width: 760px) {
+  .link-launch-grid { grid-template-columns: minmax(0, 1fr); gap: 22px; }
+  .link-product-copy { padding: 24px 20px; }
+  .link-launch-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .link-launch-heading { margin-bottom: 28px; }
+  .link-hero-teaser { margin-top: -12px; font-size: .84rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-launch a, .link-hero-teaser { transition: none; }
+}
