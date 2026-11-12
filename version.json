@@ -1,0 +1,8 @@
+{
+  "latestVersionCode": 15,
+  "latestVersionName": "1.2.9",
+  "minSupportedVersionCode": 1,
+  "releaseNotes": "In-app Google Play update detector, athletic sprint speed tracking up to 45 km/h, GNSS satellite lock validation for expedition start, and stationary drift suppression.",
+  "playStoreUrl": "https://play.google.com/store/apps/details?id=com.exos.wayfinder",
+  "publishedDate": "2026-11-12"
+}
