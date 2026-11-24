@@ -89,11 +89,11 @@
 
   <div class="content-wrap">
     <h1>Privacy Policy</h1>
-    <span class="meta-badge">Effective Date: September 25, 2026 &bull; Production Revision 2.4 &bull; Compliance Review Standard</span>
+    <span class="meta-badge">Effective Date: November 24, 2026 &bull; Production Revision 2.5 &bull; Compliance Review Standard</span>
 
     <div class="guarantee-box">
-      <strong>Strict Offline-First Data Sovereignty Guarantee:</strong><br>
-      RITYM Technologies and EXOS Navigation Systems operate strictly around on-device data sovereignty. All satellite location coordinates, sensor telemetry, audio streams, and waypoint logs are processed 100% locally on your physical hardware. We do not collect, monitor, transmit to cloud servers, store externally, or monetize any user data. No user account registration is required, and zero third-party advertising or tracking SDKs are embedded in any of our applications.
+      <strong>Privacy-First On-Device Data Sovereignty Guarantee:</strong><br>
+      RITYM Technologies and EXOS Systems operate strictly around on-device data sovereignty. All satellite location coordinates, sensor telemetry, local broadcast recordings, saved station favorites, and waypoint logs are processed and stored 100% locally on your device. We do not collect, monitor, transmit to EXOS cloud servers, store externally, or monetize any user data. No user account registration is required, and zero third-party advertising or tracking SDKs are embedded in any of our applications.
     </div>
 
     <h2>1. Identification of the Data Controller</h2>
@@ -115,6 +115,11 @@
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td><strong>EXOS FM Radio Tuner</strong></td>
+            <td><code>com.exos.fmradio</code> (Android)</td>
+            <td>Worldwide live internet radio streaming, on-demand podcasts, local broadcast recording, and optional EXOS USB-C / Bluetooth FM receiver companion.</td>
+          </tr>
           <tr>
             <td><strong>EXOS GPS Transceiver</strong></td>
             <td><code>com.ritym.exosgps</code> (Android)</td>
@@ -181,14 +186,20 @@
             <td>Injected solely into the local Android OS location subsystem so user-installed mapping apps (ATAK, Google Maps, OpenCPN) can read external fixes. Zero cloud transmission.</td>
           </tr>
           <tr>
+            <td><code>INTERNET</code><br><code>ACCESS_NETWORK_STATE</code></td>
+            <td>EXOS FM Radio Tuner</td>
+            <td>Connects directly from your device to public third-party live radio streams, podcast RSS feeds, station artwork URLs, the open-source Radio-Browser directory, and Google Play In-App Updates.</td>
+            <td>Audio streams and station logos are fetched directly between your device and the selected public broadcaster (which receives standard network connection metadata such as IP address). EXOS does not proxy, log, or track your listening history.</td>
+          </tr>
+          <tr>
             <td><code>BLUETOOTH</code><br><code>BLUETOOTH_CONNECT</code><br><code>BLUETOOTH_SCAN</code><br><code>BLUETOOTH_ADVERTISE</code></td>
-            <td>Transceiver,<br>Wayfinder,<br>ECHO</td>
-            <td>Establishes local point-to-point RFCOMM/SPP and BLE serial bridges with paired external GNSS hardware receivers, marine plotters, PC COM ports, and peer radar beacons.</td>
+            <td>Transceiver,<br>Wayfinder,<br>ECHO,<br>EXOS FM Radio Tuner</td>
+            <td>Establishes local point-to-point RFCOMM/SPP and BLE bridges with paired external GNSS hardware receivers, EXOS FM receiver hardware (requested only when pairing), marine plotters, PC COM ports, and peer radar beacons. On Android 12+, <code>BLUETOOTH_SCAN</code> in EXOS FM Radio Tuner declares <code>neverForLocation</code>.</td>
             <td>All data packets remain on local short-range radio connections. No data is stored externally or routed across internet infrastructure.</td>
           </tr>
           <tr>
             <td><code>RECORD_AUDIO</code></td>
-            <td>ECHO</td>
+            <td>ECHO <em>(NOT requested by EXOS FM Radio Tuner)</em></td>
             <td>Captures half-duplex digital voice only when the user actively presses and holds the Push-to-Talk (PTT) interface.</td>
             <td>Audio frames are encoded locally into real-time packets and streamed peer-to-peer over Wi-Fi Direct/BLE mesh. Audio is never recorded to disk, never transcribed, and never sent to any server.</td>
           </tr>
@@ -208,7 +219,18 @@
       </table>
     </div>
 
-    <h2>4. Wear OS Health & Sensor Data Compliance</h2>
+    <h2>4. EXOS FM Radio Tuner (<code>com.exos.fmradio</code>) Streaming, Recording &amp; Support Logs</h2>
+    <p>For <strong>EXOS FM Radio Tuner</strong> (<code>com.exos.fmradio</code>):</p>
+    <ul>
+      <li><strong>No Account &amp; No Tracking:</strong> EXOS FM Radio Tuner requires no sign-in and collects zero personal information, listening history, or analytics.</li>
+      <li><strong>Third-Party Public Streams:</strong> When you play a live internet radio station or podcast, your device connects directly to the third-party broadcaster's public stream server, RSS feed, or the open-source Radio-Browser directory. Those third-party endpoints operate under their own privacy policies and receive standard network headers (such as IP address) solely to deliver audio.</li>
+      <li><strong>Local Recordings &amp; No Microphone Access:</strong> EXOS FM Radio Tuner does <strong>not</strong> request microphone (<code>RECORD_AUDIO</code>) permission. Any broadcasts you choose to record are captured directly from the active audio stream and saved exclusively to local storage on your device, where you can play, share, or delete them at any time.</li>
+      <li><strong>Optional Hardware &amp; Permissions:</strong> Bluetooth and USB-C permissions are requested strictly on demand when you choose to connect an optional EXOS FM receiver. No location data is collected.</li>
+      <li><strong>Voluntary Diagnostic Support Logs:</strong> Local diagnostic logs remain on your device and are only shared if you explicitly tap <em>Send Logs</em> in Settings, which opens your own email client addressed to <a href="mailto:assist@ritym.com">assist@ritym.com</a>.</li>
+      <li><strong>In-App Updates:</strong> Uses the official Google Play In-App Updates API solely to check whether a newer app version is available on Google Play.</li>
+    </ul>
+
+    <h2>5. Wear OS Health &amp; Sensor Data Compliance</h2>
     <p>For EXOS Watchout (<code>exos.ritym.watchout.watchface</code> and <code>exos.ritym.watchout</code>):</p>
     <ul>
       <li>Heart rate telemetry collected via <code>BODY_SENSORS</code> is strictly utilized for immediate visual rendering on the active dial complication.</li>
@@ -216,7 +238,7 @@
       <li>Ambient Always-On Display (AOD) adheres strictly to Google's Watch Face Format (WFF v1) specifications, maintaining an On-Pixel Ratio (OPR) below 2.5% with zero background battery drain.</li>
     </ul>
 
-    <h2>5. Microsoft Windows Desktop & Serial Bridge Policy</h2>
+    <h2>6. Microsoft Windows Desktop &amp; Serial Bridge Policy</h2>
     <p>For the EXOS GPS Windows Client and Virtual COM Sensor Provider:</p>
     <ul>
       <li>The Windows desktop client operates purely as a local communications bridge between Bluetooth serial COM ports and the Windows Location Sensor Provider API.</li>
@@ -224,10 +246,10 @@
       <li>Zero network sockets are opened to external internet hosts.</li>
     </ul>
 
-    <h2>6. Financial Transactions & In-App Purchases</h2>
+    <h2>7. Financial Transactions &amp; In-App Purchases</h2>
     <p>All software license upgrades (such as Pro Lifetime unlocks) are managed exclusively through official <strong>Google Play In-App Billing</strong>. RITYM Technologies does not process, handle, view, or store payment card numbers, banking details, or billing addresses. All billing records are maintained securely by Google LLC.</p>
 
-    <h2>7. Zero Third-Party Analytics, Advertising & Data Brokers</h2>
+    <h2>8. Zero Third-Party Analytics, Advertising &amp; Data Brokers</h2>
     <p>Our applications contain:</p>
     <ul>
       <li><strong>ZERO Advertising Networks:</strong> We do not integrate Google AdMob, Unity Ads, AppLovin, or any commercial ad network.</li>
@@ -235,18 +257,18 @@
       <li><strong>ZERO Data Monetization:</strong> We do not sell, rent, license, or trade user location data, device identifiers, or sensor telemetry to data brokers or commercial entities under any circumstances.</li>
     </ul>
 
-    <h2>8. User Rights, Data Retention & Deletion Instructions</h2>
-    <p>Because all data generated by our applications (such as saved waypoint markers and trail backtrack history) resides exclusively in local on-device SQLite databases, you maintain complete data autonomy:</p>
+    <h2>9. User Rights, Data Retention &amp; Deletion Instructions</h2>
+    <p>Because all data generated by our applications (such as saved waypoint markers, station favorites, local broadcast recordings, and trail backtrack history) resides exclusively in local on-device storage, you maintain complete data autonomy:</p>
     <ul>
-      <li><strong>Immediate Data Deletion:</strong> You can purge all stored waypoints and trek logs at any time from within the application settings by tapping <em>Clear Local Database</em>.</li>
+      <li><strong>Immediate Data Deletion:</strong> You can delete saved recordings, station favorites, diagnostic logs, or local databases at any time directly inside each application's settings or library.</li>
       <li><strong>Application Uninstall:</strong> Uninstalling the application immediately and permanently removes all application databases and configuration files stored in Android private app storage.</li>
       <li><strong>No Account Deletion Delay:</strong> Because our applications require no user account registration, no remote personal records exist on any cloud server to request deletion for.</li>
     </ul>
 
-    <h2>9. Child Safety & COPPA / GDPR-K Compliance</h2>
-    <p>Our applications are designed for general outdoor exploration, navigational assistance, and amateur radio telemetry. We do not knowingly collect, solicit, or maintain personal information from children under the age of 13 (or under 16 in the European Union), in full compliance with COPPA and GDPR-K regulations.</p>
+    <h2>10. Child Safety &amp; COPPA / GDPR-K Compliance</h2>
+    <p>Our applications are designed for general audiences (13+), outdoor exploration, navigational assistance, and radio listening. We do not knowingly collect, solicit, or maintain personal information from children under the age of 13 (or under 16 in the European Union), in full compliance with COPPA and GDPR-K regulations.</p>
 
-    <h2>10. Inquiries & Legal Point of Contact</h2>
+    <h2>11. Inquiries &amp; Legal Point of Contact</h2>
     <p>For questions, formal compliance verifications, or technical inquiries regarding this Privacy Policy, please contact our engineering and legal compliance team:</p>
     <div style="background:#f1f5f9; padding:20px; border-radius:8px; border:1px solid #cbd5e1; margin-top:12px;">
       <p style="margin:0 0 6px 0;"><strong>EXOS Navigation Systems &bull; RITYM Technologies</strong></p>
