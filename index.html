@@ -116,6 +116,7 @@
       align-items: center;
       gap: 14px;
       text-decoration: none;
+      flex-shrink: 0;
     }
     .brand-logo-img {
       height: 52px;
@@ -195,6 +196,8 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      white-space: nowrap;
+      flex-shrink: 0;
     }
     .nav-cta-btn:hover { background-color: var(--primary-dark); }
 
@@ -814,6 +817,13 @@
     display: block;
   }
 
+  /* Compact Laptops, Tablets & Landscape Phones (max-width: 1120px) */
+  @media (max-width: 1120px) {
+    .nav-container { padding: 0 20px; gap: 14px; }
+    .nav-menu { display: none; }
+    .mobile-quick-nav { display: flex; align-items: center; }
+  }
+
   /* Tablet & Medium Screens (max-width: 1024px) */
   @media (max-width: 1024px) {
     .nav-container { padding: 0 20px; }
@@ -821,11 +831,11 @@
     .hero-actions { justify-content: center; }
     .hero-metrics { justify-content: center; }
     .hero-composite-wrap { justify-content: center; flex-wrap: wrap; }
-    .overview-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .overview-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
     .product-showcase, .product-showcase.reverse { grid-template-columns: 1fr; gap: 36px; }
     .product-showcase.reverse .showcase-text { order: 1; }
     .product-showcase.reverse .showcase-visual { order: 2; }
-    .steps-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .steps-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
     .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
   }
 
