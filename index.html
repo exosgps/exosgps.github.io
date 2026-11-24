@@ -36,8 +36,8 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-  <title>EXOS Navigation Systems | GNSS Telemetry, Offline Mapping & Radio Mesh</title>
-  <meta name="description" content="High-precision off-grid positioning and communications suite engineered by RITYM Technologies. Featuring EXOS Transceiver, EXOS Wayfinder, EXOS Echo Mesh Walkie-Talkie, and EXOS Watchout Wear OS Watch Face.">
+  <title>EXOS Systems | GNSS Telemetry, Offline Mapping, Radio Mesh &amp; FM Radio</title>
+  <meta name="description" content="Precision navigation, communications, and radio suite engineered by RITYM Technologies. Featuring EXOS Transceiver, EXOS Wayfinder, EXOS Echo, EXOS GPS Station, EXOS Watchout, and EXOS FM Radio Tuner.">
   <link rel="icon" type="image/png" href="assets/icon.png">
 
   <!-- Enterprise Human-Aesthetic Typography -->
@@ -128,16 +128,53 @@
     .nav-menu {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 18px;
       list-style: none;
     }
     .nav-link {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       font-weight: 500;
       color: #cbd5e1;
       padding: 6px 0;
       position: relative;
+      white-space: nowrap;
     }
+    .mobile-quick-nav {
+      display: none;
+      background-color: #0b1120;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 10px 14px;
+      gap: 8px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .mobile-quick-nav::-webkit-scrollbar { display: none; }
+    .mobile-quick-pill {
+      display: inline-flex;
+      align-items: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #e2e8f0;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      line-height: 1.2;
+    }
+    .mobile-quick-pill:hover, .mobile-quick-pill:active {
+      background: rgba(56, 189, 248, 0.16);
+      border-color: rgba(56, 189, 248, 0.5);
+      color: #ffffff;
+    }
+    .mobile-quick-pill.privacy-pill {
+      color: #86efac;
+      border-color: rgba(134, 239, 172, 0.35);
+      background: rgba(16, 185, 129, 0.1);
+    }
+    section[id] { scroll-margin-top: 92px; }
     .nav-link:hover { color: #ffffff; }
     .nav-link.active::after {
       content: '';
@@ -432,10 +469,10 @@
       font-family: var(--font-mono);
     }
 
-    /* 4-Card Overview Grid */
+    /* 6-Card Overview Grid (3x2 desktop, 2x3 tablet, 1x6 mobile) */
     .overview-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
     }
     .overview-card {
@@ -448,6 +485,7 @@
       box-shadow: var(--shadow-sm);
       transition: all 0.25s ease;
       position: relative;
+      min-width: 0;
     }
     .overview-card:hover {
       transform: translateY(-4px);
@@ -471,6 +509,8 @@
       font-size: 0.75rem;
       color: var(--text-muted);
       margin-bottom: 10px;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
     .card-title {
       font-size: 1.25rem;
@@ -654,7 +694,7 @@
     /* Deployment Steps Section */
     .steps-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 24px;
     }
     .step-card {
@@ -665,6 +705,7 @@
       display: flex;
       flex-direction: column;
       box-shadow: var(--shadow-sm);
+      min-width: 0;
     }
     .step-num {
       width: 36px;
@@ -703,8 +744,8 @@
     }
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.8fr 1fr 1fr 1fr;
-      gap: 48px;
+      grid-template-columns: 1.65fr repeat(4, minmax(0, 1fr));
+      gap: 36px;
       margin-bottom: 56px;
     }
     .footer-logo {
@@ -904,17 +945,183 @@
     }
   }
 
-  /* Compact Smartphones (iPhone SE, max-width: 420px) */
-  @media (max-width: 420px) {
-    .hero-title { font-size: 1.75rem; }
+  /* Compact Smartphones (Galaxy S24 / iPhone SE, max-width: 440px) */
+  @media (max-width: 440px) {
+    .container { padding: 0 16px; }
+    .hero-title { font-size: 1.82rem; line-height: 1.2; }
+    .hero-badge { font-size: 0.7rem; padding: 5px 11px; max-width: 100%; }
     .hero-metrics {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       text-align: center;
-      gap: 12px;
+      gap: 8px;
     }
-    .phone-mockup { max-width: 220px; }
-    .watch-bezel { width: 160px; height: 160px; }
+    .hero-metric-val { font-size: 1.02rem; }
+    .hero-metric-lbl { font-size: 0.68rem; line-height: 1.3; }
+    .phone-mockup { max-width: 235px; }
+    .watch-bezel { width: 164px; height: 164px; }
     .brand-logo-img { height: 38px; max-width: 165px; }
+    .section-title { font-size: 1.6rem; }
+    .showcase-title { font-size: 1.52rem; }
+    .video-title { font-size: 1.48rem; }
+  }
+
+  /* Prevent overflow/clipping inside grids, mockups, and tables on all viewports */
+  .showcase-text, .showcase-visual, .video-info-column, .video-media-column, .footer-grid > div {
+    min-width: 0;
+  }
+  code {
+    font-family: var(--font-mono);
+    font-size: 0.82rem;
+    background: #f1f5f9;
+    padding: 2px 5px;
+    border-radius: 4px;
+    color: #0f172a;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .table-scroll-hint {
+    display: none;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    text-align: right;
+  }
+  @media (max-width: 768px) {
+    .table-scroll-hint { display: block; }
+    .privacy-pillars-grid { grid-template-columns: 1fr !important; }
+    .privacy-cta-banner { padding: 24px 18px !important; }
+    .privacy-cta-banner .btn { width: 100%; }
+  }
+
+  /* EXOS FM Radio Snapshot Gallery & Hardware Unit Panel */
+  .fm-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    justify-items: center;
+  }
+  .fm-gallery-grid .phone-mockup {
+    max-width: 215px;
+    width: 100%;
+  }
+  .fm-hardware-panel {
+    margin-top: 44px;
+    background: linear-gradient(135deg, #0b111e 0%, #131c2e 100%);
+    border: 1px solid rgba(251, 146, 60, 0.32);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.55);
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 40px;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .fm-hardware-panel::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f97316, #38bdf8, #10b981);
+  }
+  .fm-hw-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #fdba74;
+    background: rgba(249, 115, 22, 0.14);
+    border: 1px solid rgba(249, 115, 22, 0.35);
+    border-radius: 999px;
+    padding: 5px 12px;
+    margin-bottom: 16px;
+  }
+  .fm-hw-title {
+    font-size: 1.85rem;
+    font-weight: 800;
+    color: #f8fafc;
+    line-height: 1.24;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .fm-hw-desc {
+    font-size: 0.96rem;
+    color: #cbd5e1;
+    line-height: 1.68;
+    margin-bottom: 22px;
+  }
+  .fm-hw-card {
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 18px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+  }
+  .fm-hw-art {
+    width: 100%;
+    max-width: 240px;
+    border-radius: 22px;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+  .fm-hw-specs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    list-style: none;
+    width: 100%;
+  }
+  .fm-hw-specs li {
+    font-family: var(--font-mono);
+    font-size: 0.74rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 6px;
+    padding: 5px 10px;
+  }
+  @media (max-width: 960px) {
+    .fm-hardware-panel {
+      grid-template-columns: 1fr;
+      padding: 28px 20px;
+      gap: 28px;
+    }
+  }
+  @media (max-width: 520px) {
+    .fm-gallery-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .fm-gallery-grid .phone-mockup {
+      max-width: 100%;
+      padding: 4px 4px 8px 4px;
+      border-radius: 18px;
+      border-width: 2px;
+    }
+    .fm-gallery-grid .phone-screen {
+      border-radius: 13px;
+    }
+    .fm-gallery-grid .phone-label {
+      font-size: 0.68rem;
+      line-height: 1.25;
+      margin-top: 6px;
+    }
+    .fm-hw-title { font-size: 1.48rem; }
+    .fm-hw-card { padding: 18px 14px; }
+    .fm-hw-art { max-width: 190px; }
   }
   
     /* EXOS Echo Field Video Showcase */
@@ -1178,7 +1385,7 @@
     <div>
       <span>Engineered by </span>
       <a href="https://ritym.com" target="_blank" rel="noopener">RITYM Technologies</a>
-      <span> &bull; Embedded Systems, ESP32 Hardware & Navigation Software</span>
+      <span> &bull; Embedded Systems, Custom RF Hardware &amp; Navigation Software</span>
     </div>
     <div>
       <span>Visit Parent Engineering Labs: </span>
@@ -1198,11 +1405,11 @@
           <li><a href="#transceiver" class="nav-link">1. Transceiver</a></li>
           <li><a href="#wayfinder" class="nav-link">2. Wayfinder</a></li>
           <li><a href="#echo" class="nav-link">3. ECHO</a></li>
-          <li><a href="#watchout" class="nav-link">4. Watchout</a></li>
-          <li><a href="#specifications" class="nav-link">Specifications</a></li>
+          <li><a href="#watchout" class="nav-link">5. Watchout</a></li>
+          <li><a href="#fmradio" class="nav-link" style="color:#fdba74; font-weight:600;">6. FM Radio</a></li>
+          <li><a href="#specifications" class="nav-link">Specs</a></li>
           <li><a href="station-guide.html#windows" class="nav-link" style="color:#38bdf8; font-weight:600;">Windows Station</a></li>
           <li><a href="#privacy" class="nav-link">Privacy</a></li>
-          <li><a href="https://ritym.com" target="_blank" rel="noopener" class="nav-link" style="color:#38bdf8;">RITYM Labs &nearr;</a></li>
         </ul>
       </nav>
 
@@ -1214,15 +1421,15 @@
 
   <!-- Mobile Quick Navigation Strip -->
   <div class="mobile-quick-nav">
+    <a href="#fmradio" class="mobile-quick-pill" style="color:#fdba74; border-color:rgba(251, 146, 60, 0.45); background:rgba(249, 115, 22, 0.12);">6. FM Radio</a>
     <a href="#transceiver" class="mobile-quick-pill">1. Transceiver</a>
     <a href="#wayfinder" class="mobile-quick-pill">2. Wayfinder</a>
     <a href="#echo" class="mobile-quick-pill">3. ECHO</a>
-    <a href="#exos-link" class="mobile-quick-pill">EXOS LINK &bull; Coming shortly</a>
-    <a href="#watchout" class="mobile-quick-pill">4. Watchout</a>
+    <a href="#exos-link" class="mobile-quick-pill">EXOS LINK</a>
+    <a href="#station" class="mobile-quick-pill">4. Windows Station</a>
+    <a href="#watchout" class="mobile-quick-pill">5. Watchout</a>
     <a href="#specifications" class="mobile-quick-pill">Specs</a>
-    <a href="station-guide.html#windows" class="mobile-quick-pill" style="color:#38bdf8; border-color:rgba(56, 189, 248, 0.4);">Windows Station</a>
     <a href="#privacy" class="mobile-quick-pill privacy-pill">&#x1F6E1;&#xFE0F; Privacy Policy</a>
-    <a href="https://ritym.com" target="_blank" rel="noopener" class="mobile-quick-pill" style="color:#38bdf8;">RITYM Labs &nearr;</a>
   </div>
 
   <!-- ========================================================================= -->
@@ -1233,35 +1440,35 @@
       <div class="hero-grid">
         <div>
           <div class="hero-badge">
-            <span>RITYM TECHNOLOGIES &bull; NAVIGATION SYSTEMS DIVISION</span>
+            <span>RITYM TECHNOLOGIES &bull; EXOS SYSTEMS DIVISION</span>
           </div>
           <h1 class="hero-title">
-            High-Precision <span>GNSS Telemetry</span> & Offline Navigation
+            High-Precision <span>GNSS Telemetry</span>, Offline Navigation &amp; Radio
           </h1>
           <p class="hero-subtitle">
-            Engineered by RITYM Technologies for zero-connectivity environments. A complete hardware-integrated software ecosystem featuring Bluetooth GNSS Bridges, Offline Backcountry Topographic Mapping, Peer-to-Peer Mesh Walkie-Talkies, and Sensor-Fused Wear OS Chronographs.
+            Engineered by RITYM Technologies for reliability anywhere. A complete hardware-integrated software ecosystem featuring Bluetooth GNSS Bridges, Offline Backcountry Topographic Mapping, Peer-to-Peer Mesh Walkie-Talkies, Wear OS Chronographs, and Worldwide &amp; Offline FM Radio.
           </p>
 
           <div class="hero-actions">
             <a href="#getting-started" class="btn btn-primary">Download on Google Play</a>
-            <a href="#transceiver" class="btn btn-secondary">Explore 5 Platforms</a>
-            <a href="https://ritym.com" target="_blank" rel="noopener" class="btn btn-dark" style="border: 1px solid rgba(255,255,255,0.2);">RITYM Hardware & ESP32 &nearr;</a>
+            <a href="#platforms" class="btn btn-secondary">Explore 6 Platforms</a>
+            <a href="#fmradio" class="btn btn-dark" style="border: 1px solid rgba(251,146,60,0.45); color:#fdba74;">EXOS FM Radio &amp; Receiver &rarr;</a>
           </div>
 
           <a href="#exos-link" class="link-hero-teaser"><strong>EXOS LINK S1 + L1</strong><span>Coming shortly &rarr;</span></a>
 
           <div class="hero-metrics">
             <div>
-              <div class="hero-metric-val">100%</div>
-              <div class="hero-metric-lbl">Offline-First Execution</div>
+              <div class="hero-metric-val">Zero Ads</div>
+              <div class="hero-metric-lbl">Privacy-First Software</div>
             </div>
             <div>
-              <div class="hero-metric-val">5 Platforms</div>
-              <div class="hero-metric-lbl">Handheld, Tablet, Watch & PC</div>
+              <div class="hero-metric-val">6 Platforms</div>
+              <div class="hero-metric-lbl">Phone, Tablet, Watch &amp; PC</div>
             </div>
             <div>
-              <div class="hero-metric-val">NMEA 0183</div>
-              <div class="hero-metric-lbl">Universal Hardware Bridge</div>
+              <div class="hero-metric-val">RF &amp; GNSS</div>
+              <div class="hero-metric-lbl">Companion Hardware</div>
             </div>
           </div>
         </div>
@@ -1301,15 +1508,15 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 4-PLATFORM OVERVIEW GRID (EXACT ORDER)                                    -->
+  <!-- 6-PLATFORM OVERVIEW GRID (EXACT ORDER)                                    -->
   <!-- ========================================================================= -->
   <section class="section section-slate" id="platforms">
     <div class="container">
       <div class="section-header">
         <span class="section-eyebrow">The EXOS Platform Suite</span>
-        <h2 class="section-title">Five Integrated Platforms. Complete Field Autonomy.</h2>
+        <h2 class="section-title">Six Integrated Platforms. Complete Field Autonomy.</h2>
         <p class="section-desc">
-          Presented in their exact architectural sequence: bridging satellite coordinates, navigating off-grid terrain, coordinating teams over mesh radio, and monitoring heading on your wrist.
+          Presented in sequence across navigation, off-grid voice mesh, desktop telemetry, wrist instrumentation, and global &amp; offline FM radio reception.
         </p>
       </div>
 
@@ -1381,11 +1588,26 @@
           <div class="card-pkg">exos.ritym.watchout.watchface</div>
           <h3 class="card-title">EXOS Watchout</h3>
           <p class="card-desc">
-            Precision Wear OS analog chronograph watch face paired with an instant 3D tilt-compensated compass companion, dual color themes (Obsidian Teal & Heritage Orange), and ultra-low-power AOD.
+            Precision Wear OS analog chronograph watch face paired with an instant 3D tilt-compensated compass companion, dual color themes (Obsidian Teal &amp; Heritage Orange), and ultra-low-power AOD.
           </p>
           <div class="card-links">
             <a href="#watchout" class="btn btn-secondary" style="font-size:0.84rem; padding:8px;">Deep Dive &rarr;</a>
             <a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout.watchface" target="_blank" rel="noopener" class="btn-playstore" style="text-align:center;">Google Play Store</a>
+          </div>
+        </div>
+
+        <!-- Card 6: EXOS FM Radio Tuner -->
+        <div class="overview-card" style="border: 2px solid #f97316; box-shadow: 0 4px 16px rgba(249, 115, 22, 0.12);">
+          <span class="order-badge" style="background:#ffedd5; color:#c2410c;">PLATFORM 06</span>
+          <div class="card-pkg">com.exos.fmradio</div>
+          <h3 class="card-title">EXOS FM Radio Tuner</h3>
+          <p class="card-desc">
+            Retro-modern Hi-Fi radio deck with 200+ curated world stations, 80+ news channels, free podcasts, 1-tap recording, live track metadata, and optional EXOS USB-C / Bluetooth offline FM receiver support.
+          </p>
+          <div class="card-links">
+            <a href="#fmradio" class="btn btn-secondary" style="font-size:0.84rem; padding:8px;">Deep Dive &rarr;</a>
+            <a href="https://play.google.com/store/apps/details?id=com.exos.fmradio" target="_blank" rel="noopener" class="btn-playstore" style="text-align:center;">Google Play Store</a>
+            <a href="fmradio-guide.html" class="btn btn-secondary" style="font-size:0.84rem; padding:8px; text-align:center; font-weight:700; color:#c2410c; border-color:#f97316;">User Guide &amp; Hardware &rarr;</a>
           </div>
         </div>
       </div>
@@ -1411,7 +1633,7 @@
             <li class="feature-item">
               <span class="feature-bullet">&check;</span>
               <div>
-                <strong>Dual Transmitter & Receiver Architecture:</strong> In Transmitter mode, the app accesses raw hardware GNSS fixes and broadcasts standard NMEA 0183 sentences ($GPRMC, $GPGGA, $GPVTG, $GPHDT) over Bluetooth Classic SPP (RFCOMM UUID 00001101) and BLE NUS. In Receiver mode, it pairs with external Bluetooth GPS hardware, marine chartplotters, or ESP32 stations.
+                <strong>Dual Transmitter & Receiver Architecture:</strong> In Transmitter mode, the app accesses raw hardware GNSS fixes and broadcasts standard NMEA 0183 sentences ($GPRMC, $GPGGA, $GPVTG, $GPHDT) over Bluetooth Classic SPP (RFCOMM UUID 00001101) and BLE NUS. In Receiver mode, it pairs with external Bluetooth GPS hardware, marine chartplotters, or EXOS hardware stations.
               </div>
             </li>
             <li class="feature-item">
@@ -1448,7 +1670,7 @@
               User Guide &amp; Field Manual &rarr;
             </a>
             <a href="https://ritym.com" target="_blank" rel="noopener" class="btn btn-dark">
-              ESP32 Hardware Bridge &nearr;
+              EXOS Hardware Bridge &nearr;
             </a>
           </div>
         </div>
@@ -1925,7 +2147,7 @@
 
         <div class="showcase-visual">
           <div class="desktop-mockup" style="background:#0b0f19; border:2px solid #334155; border-radius:14px; box-shadow:0 20px 35px -5px rgba(0,0,0,0.5); overflow:hidden; width:100%;">
-            <div style="background:#1e293b; padding:8px 12px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #334155;">
+            <div style="background:#1e293b; padding:8px 12px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; border-bottom:1px solid #334155;">
               <div style="display:flex; gap:6px;">
                 <span style="width:10px; height:10px; border-radius:50%; background:#ef4444; display:inline-block;"></span>
                 <span style="width:10px; height:10px; border-radius:50%; background:#f59e0b; display:inline-block;"></span>
@@ -1965,11 +2187,11 @@
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 5. DEEP DIVE: EXOS WATCHOUT (FOURTH - NO 'TACTICAL' FLUFF)                -->
+  <!-- 5. DEEP DIVE: EXOS WATCHOUT                                               -->
   <!-- ========================================================================= -->
   <section class="section" id="watchout">
     <div class="container">
-      <div class="product-showcase reverse">
+      <div class="product-showcase">
         <div class="showcase-text">
           <span class="showcase-tag" style="background-color: #ccfbf1; color: #0f766e;">
             Platform 05 &bull; Wear OS Compass Watch Face & Companion
@@ -2062,6 +2284,182 @@
   </section>
 
   <!-- ========================================================================= -->
+  <!-- 6. DEEP DIVE: EXOS FM RADIO TUNER & EXOS FM HARDWARE RECEIVER             -->
+  <!-- ========================================================================= -->
+  <section class="section section-slate" id="fmradio">
+    <div class="container">
+      <div class="product-showcase reverse">
+        <div class="showcase-text">
+          <span class="showcase-tag" style="background-color: #ffedd5; color: #c2410c;">
+            Platform 06 &bull; Worldwide Radio, Podcasts &amp; Offline FM
+          </span>
+          <h2 class="showcase-title">EXOS FM Radio Tuner</h2>
+          <p class="showcase-desc">
+            A retro-modern Hi-Fi radio deck built for Android. Stream over 200 curated live stations across 38 countries, follow 80+ global news and business channels, listen to free podcasts, record broadcasts directly to your phone with one tap, and pair an optional EXOS FM hardware unit to bring true offline over-the-air FM radio back to modern Android smartphones.
+          </p>
+
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-bullet" style="background-color:#ffedd5; color:#c2410c;">&check;</span>
+              <div>
+                <strong>200+ Curated World Stations &amp; Global Directory:</strong> Verified live radio across 38 countries plus a live searchable Radio-Browser directory by country, city, or genre &mdash; from music and storytelling to sports and family stations.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-bullet" style="background-color:#ffedd5; color:#c2410c;">&check;</span>
+              <div>
+                <strong>Dedicated World News Hub &amp; Free Podcasts:</strong> Instant access to CNN, BBC World Service, Al Jazeera, Bloomberg Radio, CNBC, NPR, and regional broadcasters alongside on-demand podcasts with quick -15s / +15s skip controls.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-bullet" style="background-color:#ffedd5; color:#c2410c;">&check;</span>
+              <div>
+                <strong>Hi-Fi OLED Display &amp; Live Track Metadata:</strong> Official station logos, real-time Now Playing song and program titles, animated 5-bar audio spectrum, LED volume metering, and 5 customizable retro-modern console skins.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-bullet" style="background-color:#ffedd5; color:#c2410c;">&check;</span>
+              <div>
+                <strong>1-Tap Broadcast Recording &amp; Built-In Library:</strong> Record live broadcasts locally with zero microphone permission (<code>RECORD_AUDIO</code> is never requested). Open <em>Recordings</em> right below the console to play, share, or manage clips.
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-bullet" style="background-color:#ffedd5; color:#c2410c;">&check;</span>
+              <div>
+                <strong>Live Text Scaling &amp; Privacy-First Design:</strong> Resize menus and station titles live from Compact (88%) to X-Large (130%), automatic last-station recall, Google Play In-App Updates, zero ads, and no sign-in required.
+              </div>
+            </li>
+          </ul>
+
+          <div class="showcase-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.exos.fmradio" target="_blank" rel="noopener" class="btn btn-primary" style="background-color:#ea580c;">
+              Get EXOS FM Radio on Google Play
+            </a>
+            <a href="fmradio-guide.html" class="btn btn-secondary" style="font-weight:700; color:#c2410c; border-color:#f97316;">
+              User Guide &amp; Hardware Setup &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="showcase-visual">
+          <div class="fm-gallery-grid">
+            <div class="phone-mockup">
+              <div class="phone-speaker-pill"></div>
+              <div class="phone-screen">
+                <img src="assets/fmradio_console_live.png" alt="EXOS FM Radio Hi-Fi OLED Console with Live Now Playing Track Metadata" loading="lazy">
+              </div>
+              <div class="phone-label">Live Console &amp; Track Info</div>
+            </div>
+
+            <div class="phone-mockup">
+              <div class="phone-speaker-pill"></div>
+              <div class="phone-screen">
+                <img src="assets/fmradio_world_news.png" alt="EXOS FM Radio Dedicated World News Tab with Station Logos" loading="lazy">
+              </div>
+              <div class="phone-label">World News &amp; Logos</div>
+            </div>
+
+            <div class="phone-mockup">
+              <div class="phone-speaker-pill"></div>
+              <div class="phone-screen">
+                <img src="assets/fmradio_world_grid.png" alt="EXOS FM Radio Worldwide Featured Stations Grid" loading="lazy">
+              </div>
+              <div class="phone-label">200+ World Stations</div>
+            </div>
+
+            <div class="phone-mockup">
+              <div class="phone-speaker-pill"></div>
+              <div class="phone-screen">
+                <img src="assets/fmradio_settings_text.png" alt="EXOS FM Radio Live Text Size Scaling and Diagnostics Settings" loading="lazy">
+              </div>
+              <div class="phone-label">Live Text Size &amp; Themes</div>
+            </div>
+          </div>
+
+          <div class="telemetry-row">
+            <div class="telemetry-badge">
+              <div class="telemetry-badge-val">200+ Live</div>
+              <div class="telemetry-badge-lbl">38 Countries + Global</div>
+            </div>
+            <div class="telemetry-badge">
+              <div class="telemetry-badge-val">80+ News</div>
+              <div class="telemetry-badge-lbl">CNN &bull; BBC &bull; Bloomberg</div>
+            </div>
+            <div class="telemetry-badge">
+              <div class="telemetry-badge-val">1-Tap REC</div>
+              <div class="telemetry-badge-lbl">Zero Mic &bull; Zero Ads</div>
+            </div>
+          </div>
+          <div class="showcase-caption">
+            Actual v1.1.1 production screenshots captured on Samsung Galaxy S24 FE.
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional EXOS FM Receiver Hardware Unit Companion Panel -->
+      <div class="fm-hardware-panel" id="fmradio-hardware">
+        <div>
+          <div class="fm-hw-badge">
+            <span>Optional Companion Hardware &bull; USB-C &amp; Bluetooth</span>
+          </div>
+          <h3 class="fm-hw-title">EXOS FM Receiver: Bring True Offline FM Radio Back to Android</h3>
+          <p class="fm-hw-desc">
+            Most modern Android smartphones no longer include an internal FM radio receiver. The compact <strong>EXOS FM Hardware Unit</strong> connects directly to your phone over USB-C or wirelessly via Bluetooth to restore genuine over-the-air FM reception (87.5 &ndash; 108.0 MHz) &mdash; delivering live local news, emergency alerts, music, and sports with zero internet or cellular data required.
+          </p>
+
+          <div class="video-highlights-grid">
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fdba74" stroke-width="2.2"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.1 19.1 19"/></svg>
+              <div>
+                <strong>Full Offline FM Band (87.5 &ndash; 108.0 MHz):</strong>
+                <span>Precision 0.1 MHz tuning with stereo carrier lock, live RSSI signal metering, and zero cellular dependency during emergencies or road trips.</span>
+              </div>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2.2"><path d="M10 2v7.31"/><path d="M14 9.3V1.99"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/></svg>
+              <div>
+                <strong>Plug-and-Play USB-C &amp; Wireless Bluetooth:</strong>
+                <span>Connect directly to your Android phone's USB-C port for instant audio routing and power, or pair via Bluetooth to position the receiver for optimal reception.</span>
+              </div>
+            </div>
+            <div class="video-highlight-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#34d399" stroke-width="2.2"><rect x="3" y="4" width="18" height="16" rx="2"/><line x1="7" y1="9" x2="17" y2="9"/><line x1="7" y1="14" x2="13" y2="14"/></svg>
+              <div>
+                <strong>Seamless Hybrid Tuner Console:</strong>
+                <span>Use EXOS FM Radio standalone over Wi-Fi/5G anytime; plug in or pair the EXOS FM unit to instantly unlock the tactile analog FM dial, presets, and local FM recording.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="video-cta-group">
+            <a href="mailto:assist@ritym.com?subject=EXOS%20FM%20Receiver%20Hardware%20Enquiry" class="btn btn-primary" style="background-color:#ea580c;">
+              Enquire About EXOS FM Hardware &rarr;
+            </a>
+            <a href="fmradio-guide.html#hardware" class="btn btn-white-action">
+              Hardware Compatibility Guide &rarr;
+            </a>
+          </div>
+        </div>
+
+        <div class="fm-hw-card">
+          <img src="assets/fmradio_icon.png" alt="EXOS FM Radio Tuner and Hardware Companion" class="fm-hw-art" loading="lazy">
+          <div>
+            <div style="font-size:1.1rem; font-weight:800; color:#f8fafc; margin-bottom:4px;">EXOS FM Hardware Unit</div>
+            <div style="font-size:0.84rem; color:#94a3b8;">Dedicated Offline FM Receiver for Android</div>
+          </div>
+          <ul class="fm-hw-specs" aria-label="EXOS FM Receiver key capabilities">
+            <li>87.5 &ndash; 108.0 MHz FM</li>
+            <li>0.1 MHz Step Tuning</li>
+            <li>USB-C + Bluetooth</li>
+            <li>Stereo &amp; Signal Meter</li>
+            <li>Zero Cellular Needed</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
   <!-- SPECIFICATIONS TABLE (DELL / HITACHI ENTERPRISE MATRIX)                   -->
   <!-- ========================================================================= -->
   <section class="section" id="specifications"><div id="specs" style="position:relative; top:-80px;"></div><div id="hardware" style="position:relative; top:-80px;"></div>
@@ -2070,54 +2468,60 @@
         <span class="section-eyebrow">Technical Specifications</span>
         <h2 class="section-title">Engineering Parameters & Hardware Matrix</h2>
         <p class="section-desc">
-          Rigorous technical specifications across all four EXOS software platforms and the parent RITYM ESP32 hardware station.
+          Technical specifications across all six EXOS software platforms and companion EXOS hardware units.
         </p>
       </div>
 
+      <div class="table-scroll-hint">&larr; Swipe horizontally to view all platforms &rarr;</div>
       <div class="spec-table-wrap">
         <table class="spec-table">
           <thead>
             <tr>
-              <th style="width: 16%;">Parameter</th>
-              <th style="width: 17%; background-color:#e0f2fe; color:#0369a1;">1. EXOS Transceiver</th>
-              <th style="width: 17%;">2. EXOS Wayfinder</th>
-              <th style="width: 17%;">3. EXOS Echo</th>
-              <th style="width: 17%; background-color:#e0f2fe; color:#0369a1;">4. EXOS GPS Station</th>
-              <th style="width: 16%;">5. EXOS Watchout</th>
+              <th style="width: 14%;">Parameter</th>
+              <th style="width: 14%; background-color:#e0f2fe; color:#0369a1;">1. EXOS Transceiver</th>
+              <th style="width: 14%;">2. EXOS Wayfinder</th>
+              <th style="width: 14%;">3. EXOS Echo</th>
+              <th style="width: 14%; background-color:#e0f2fe; color:#0369a1;">4. EXOS GPS Station</th>
+              <th style="width: 14%;">5. EXOS Watchout</th>
+              <th style="width: 16%; background-color:#ffedd5; color:#c2410c;">6. EXOS FM Radio</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>Primary Function</strong></td>
-              <td style="background-color:#f0f9ff; font-weight:600;">Bluetooth GNSS Bridge & Mock Location</td>
+              <td style="background-color:#f0f9ff; font-weight:600;">Bluetooth GNSS Bridge &amp; Mock Location</td>
               <td>Standalone Offline Topo Navigation</td>
               <td>Peer-to-Peer Mesh Walkie-Talkie</td>
-              <td style="background-color:#f0f9ff; font-weight:600;">Windows Telemetry Command Center & C# Sensor Bridge</td>
-              <td>Wear OS Chronograph & 3D Compass</td>
+              <td style="background-color:#f0f9ff; font-weight:600;">Windows Telemetry Command Center &amp; C# Sensor Bridge</td>
+              <td>Wear OS Chronograph &amp; 3D Compass</td>
+              <td style="background-color:#fff7ed; font-weight:600;">Worldwide Radio, Podcasts &amp; Offline FM Tuner</td>
             </tr>
             <tr>
               <td><strong>Target Platforms</strong></td>
-              <td style="background-color:#f0f9ff;">Android 8.0+ & Windows 10/11</td>
-              <td>Android 8.0+ (Handheld & Tablet)</td>
-              <td>Android 8.0+ (Handheld & Tablet)</td>
+              <td style="background-color:#f0f9ff;">Android 8.0+ &amp; Windows 10/11</td>
+              <td>Android 8.0+ (Handheld &amp; Tablet)</td>
+              <td>Android 8.0+ (Handheld &amp; Tablet)</td>
               <td style="background-color:#f0f9ff;">Windows 10 / 11 x64 (Native Desktop)</td>
-              <td>Wear OS 4 & 5 (API 33+)</td>
+              <td>Wear OS 4 &amp; 5 (API 33+)</td>
+              <td style="background-color:#fff7ed;">Android 8.0+ (API 26&ndash;36)</td>
             </tr>
             <tr>
-              <td><strong>Wireless Protocol</strong></td>
-              <td style="background-color:#f0f9ff;">Bluetooth Classic SPP & BLE NUS</td>
+              <td><strong>Wireless / Bus Protocol</strong></td>
+              <td style="background-color:#f0f9ff;">Bluetooth Classic SPP &amp; BLE NUS</td>
               <td>BLE Peer Radar Beacons</td>
-              <td>Wi-Fi Direct & BLE Mesh</td>
-              <td style="background-color:#f0f9ff;">Bluetooth SPP, Serial COM & TCP</td>
+              <td>Wi-Fi Direct &amp; BLE Mesh</td>
+              <td style="background-color:#f0f9ff;">Bluetooth SPP, Serial COM &amp; TCP</td>
               <td>Bluetooth 5.0 Sensor Link</td>
+              <td style="background-color:#fff7ed;">HTTPS/HLS Streams, USB-C &amp; Bluetooth FM Receiver</td>
             </tr>
             <tr>
               <td><strong>Data Payload / Standards</strong></td>
               <td style="background-color:#f0f9ff;">NMEA 0183 (RMC, GGA, VTG, HDT)</td>
               <td>MGRS, UTM, GPX 1.1, GeoJSON</td>
               <td>Opus Audio, Encrypted Packets</td>
-              <td style="background-color:#f0f9ff;">NMEA 0183 & Windows Sensor API</td>
+              <td style="background-color:#f0f9ff;">NMEA 0183 &amp; Windows Sensor API</td>
               <td>Google Watch Face Format (WFF v1)</td>
+              <td style="background-color:#fff7ed;">MP3 / AAC / HLS / ICY Metadata &amp; 87.5&ndash;108 MHz FM</td>
             </tr>
             <tr>
               <td><strong>Third-Party Integration</strong></td>
@@ -2125,22 +2529,26 @@
               <td>Standalone Native Vector Engine</td>
               <td>Decentralized Standalone Mesh</td>
               <td style="background-color:#f0f9ff;">Windows Maps, Edge, OpenCPN, QGIS</td>
-              <td>Wear OS Complications & Companion</td>
+              <td>Wear OS Complications &amp; Companion</td>
+              <td style="background-color:#fff7ed;">Radio-Browser Directory, Public RSS &amp; EXOS FM Unit</td>
             </tr>
             <tr>
-              <td><strong>Cloud Requirement</strong></td>
+              <td><strong>Cloud / Tracking</strong></td>
               <td style="background-color:#f0f9ff;"><strong>0% (Strictly Local RFCOMM)</strong></td>
               <td><strong>0% (100% Offline Vector Maps)</strong></td>
               <td><strong>0% (Peer-to-Peer Mesh)</strong></td>
               <td style="background-color:#f0f9ff;"><strong>0% (100% Local Serial Bridge)</strong></td>
               <td><strong>0% (On-Watch Sensor Processing)</strong></td>
+              <td style="background-color:#fff7ed;"><strong>0 Tracking / 0 Ads (Offline with FM Unit)</strong></td>
             </tr>
             <tr>
               <td><strong>Package Identifier</strong></td>
               <td style="background-color:#f0f9ff; font-family:var(--font-mono); font-size:0.75rem;">com.ritym.exosgps</td>
               <td style="font-family:var(--font-mono); font-size:0.75rem;">com.exos.wayfinder</td>
               <td style="font-family:var(--font-mono); font-size:0.75rem;">com.exos.mesh</td>
+              <td style="background-color:#f0f9ff; font-family:var(--font-mono); font-size:0.75rem;">Windows Setup (.exe)</td>
               <td style="font-family:var(--font-mono); font-size:0.75rem;">exos.ritym.watchout.watchface</td>
+              <td style="background-color:#fff7ed; font-family:var(--font-mono); font-size:0.75rem;">com.exos.fmradio</td>
             </tr>
           </tbody>
         </table>
@@ -2247,6 +2655,24 @@
             </a>
           </div>
         </div>
+
+        <!-- EXOS FM Radio Play Card -->
+        <div class="step-card" style="border: 2px solid #f97316; box-shadow: 0 4px 16px rgba(249, 115, 22, 0.12);">
+          <div class="step-num" style="background-color: #ea580c; color: #ffffff;">06</div>
+          <span style="display:inline-block; font-size:0.75rem; font-weight:700; color:#c2410c; background:#ffedd5; padding:3px 8px; border-radius:4px; margin-bottom:12px; width:fit-content; letter-spacing:0.04em;">ANDROID &bull; OPTIONAL FM RECEIVER</span>
+          <h3 class="step-title">EXOS FM Radio Tuner</h3>
+          <p class="step-desc">
+            Stream 200+ world stations, 80+ news feeds, and free podcasts with 1-tap recording, or pair an EXOS FM hardware unit for true offline FM reception.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <a href="https://play.google.com/store/apps/details?id=com.exos.fmradio" target="_blank" rel="noopener" class="btn btn-primary" style="background-color:#ea580c; font-size:0.86rem;">
+              Google Play Store &rarr;
+            </a>
+            <a href="fmradio-guide.html" class="btn btn-secondary" style="font-size:0.82rem; font-weight:700; color:#c2410c; border-color:#f97316;">
+              User Guide &amp; FM Hardware &rarr;
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -2301,7 +2727,7 @@
       </div>
 
       <!-- 4 Pillars Grid -->
-      <div class="overview-grid" style="margin-bottom: 48px;">
+      <div class="overview-grid privacy-pillars-grid" style="margin-bottom: 48px; grid-template-columns: repeat(2, minmax(0, 1fr));">
         <div class="overview-card" style="border-top: 4px solid #10b981;">
           <div style="color:#059669; font-size:1.5rem; margin-bottom:8px;">&#x1F4E1;</div>
           <h3 class="card-title" style="font-size:1.15rem; margin-top:0;">Zero Cloud Transmissions</h3>
@@ -2398,9 +2824,16 @@
                 <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
               </tr>
               <tr>
-                <td><strong>7. RITYM ESP32 Console Stations</strong></td>
-                <td>ESP32-S3 Hardware Stations</td>
-                <td>FreeRTOS Embedded</td>
+                <td><strong>7. EXOS FM Radio Tuner</strong></td>
+                <td><code>com.exos.fmradio</code></td>
+                <td>Android 8.0+</td>
+                <td>Local Recordings &amp; Prefs</td>
+                <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Tracking (Direct Streams)</span></td>
+              </tr>
+              <tr>
+                <td><strong>8. EXOS Hardware Instruments</strong></td>
+                <td>EXOS Hardware Receivers &amp; Stations</td>
+                <td>Embedded Firmware</td>
                 <td>Ephemeral Hardware Bus</td>
                 <td><span style="display:inline-block; padding:3px 8px; border-radius:4px; font-weight:700; font-size:0.8rem; background:#dcfce7; color:#15803d;">0 Bytes (None)</span></td>
               </tr>
@@ -2445,18 +2878,27 @@
               </tr>
               <tr>
                 <td>
+                  <code>INTERNET</code><br>
+                  <code>ACCESS_NETWORK_STATE</code>
+                </td>
+                <td>EXOS FM Radio Tuner</td>
+                <td>Connects directly from your device to public live radio streams, podcast RSS feeds, station artwork, Radio-Browser directory, and Google Play In-App Updates.</td>
+                <td>Streams load directly from public third-party broadcasters. EXOS operates zero tracking servers and never logs listening history.</td>
+              </tr>
+              <tr>
+                <td>
                   <code>BLUETOOTH</code><br>
                   <code>BLUETOOTH_CONNECT</code><br>
                   <code>BLUETOOTH_SCAN</code><br>
                   <code>BLUETOOTH_ADVERTISE</code>
                 </td>
-                <td>Transceiver,<br>Wayfinder,<br>ECHO</td>
-                <td>Establishes local point-to-point RFCOMM/SPP and BLE serial bridges with paired external GNSS hardware receivers, marine plotters, PC COM ports, and peer radar beacons.</td>
+                <td>Transceiver,<br>Wayfinder,<br>ECHO,<br>EXOS FM Radio Tuner</td>
+                <td>Establishes local point-to-point RFCOMM/SPP and BLE bridges with paired external GNSS hardware receivers, EXOS FM receivers (on demand only, declaring <code>neverForLocation</code>), marine plotters, and PC COM ports.</td>
                 <td>All data packets remain on local short-range radio connections. No data is stored externally or routed across internet infrastructure.</td>
               </tr>
               <tr>
                 <td><code>RECORD_AUDIO</code></td>
-                <td>ECHO</td>
+                <td>ECHO <em>(NOT requested by EXOS FM Radio)</em></td>
                 <td>Captures half-duplex digital voice only when the user actively presses and holds the Push-to-Talk (PTT) interface.</td>
                 <td>Audio frames are encoded locally into real-time packets and streamed peer-to-peer over Wi-Fi Direct/BLE mesh. Audio is never recorded to disk, never transcribed, and never sent to any server.</td>
               </tr>
@@ -2501,13 +2943,13 @@
       </div>
 
       <!-- Action & Full Policy Document Banner -->
-      <div style="background-color:#0f172a; color:#ffffff; border-radius:14px; padding:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; box-shadow:var(--shadow-md);">
+      <div class="privacy-cta-banner" style="background-color:#0f172a; color:#ffffff; border-radius:14px; padding:32px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:24px; box-shadow:var(--shadow-md);">
         <div>
-          <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:8px;">
             <span style="background:rgba(16,185,129,0.2); color:#86efac; border:1px solid rgba(16,185,129,0.4); border-radius:4px; padding:2px 8px; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em;">
               Audit-Ready Documentation
             </span>
-            <span style="color:#94a3b8; font-size:0.85rem;">Revision 2.4 &bull; September 2026</span>
+            <span style="color:#94a3b8; font-size:0.85rem;">Revision 2.5 &bull; November 2026</span>
           </div>
           <h4 style="font-size:1.3rem; font-weight:800; color:#ffffff; margin-bottom:8px;">
             Read Full Standalone Privacy Policy & Legal Disclosures
@@ -2537,7 +2979,7 @@
         <div>
           <img src="assets/exos_logo_dark.png" alt="EXOS Navigation Systems" class="footer-logo">
           <p class="footer-company-desc">
-            EXOS is an advanced navigation, GNSS telemetry, and radio mesh platform engineered and maintained by <strong>RITYM Technologies</strong>. Specializing in embedded systems, custom ESP32 hardware engineering, and high-reliability offline mobile software.
+            EXOS is an advanced navigation, GNSS telemetry, radio mesh, and Hi-Fi broadcast platform engineered and maintained by <strong>RITYM Technologies</strong>. Specializing in embedded systems, custom RF hardware engineering, and high-reliability mobile software.
           </p>
           <div style="font-size: 0.84rem; color: #cbd5e1;">
             Parent Engineering Organization: <a href="https://ritym.com" target="_blank" rel="noopener" style="color: #38bdf8; text-decoration: underline;">ritym.com &nearr;</a>
@@ -2550,16 +2992,18 @@
             <li><a href="#transceiver">1. EXOS Transceiver</a></li>
             <li><a href="#wayfinder">2. EXOS Wayfinder</a></li>
             <li><a href="#echo">3. EXOS Echo</a></li>
-            <li><a href="#exos-link">EXOS LINK S1 &amp; L1 &bull; Coming shortly</a></li>
-            <li><a href="#watchout">4. EXOS Watchout</a></li>
-            <li><a href="station-guide.html#windows">5. EXOS GPS Station (Windows)</a></li>
-            <li><a href="#specifications">Hardware Specs</a></li>
+            <li><a href="#exos-link">EXOS LINK S1 &amp; L1</a></li>
+            <li><a href="#station">4. EXOS GPS Station</a></li>
+            <li><a href="#watchout">5. EXOS Watchout</a></li>
+            <li><a href="#fmradio" style="color:#fdba74; font-weight:600;">6. EXOS FM Radio Tuner</a></li>
+            <li><a href="#specifications">Technical Specs</a></li>
           </ul>
         </div>
 
         <div>
           <h4 class="footer-col-title">User Guides &amp; Field Manuals</h4>
           <ul class="footer-links">
+            <li><a href="fmradio-guide.html" style="color:#fdba74; font-weight:600;">EXOS FM Radio Guide</a></li>
             <li><a href="station-guide.html" style="color:#38bdf8; font-weight:600;">EXOS GPS Station (Windows)</a></li>
             <li><a href="transceiver-guide.html">EXOS Transceiver Manual</a></li>
             <li><a href="wayfinder-guide.html">EXOS Wayfinder Manual</a></li>
@@ -2571,12 +3015,13 @@
         <div>
           <h4 class="footer-col-title">Google Play Links</h4>
           <ul class="footer-links">
+            <li><a href="https://play.google.com/store/apps/details?id=com.exos.fmradio" target="_blank" rel="noopener" style="color:#fdba74; font-weight:600;">EXOS FM Radio Tuner</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.ritym.exosgps" target="_blank" rel="noopener">Transceiver App</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.exos.wayfinder" target="_blank" rel="noopener">Wayfinder App</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=com.exos.mesh" target="_blank" rel="noopener">EXOS Echo Walkie</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout.watchface" target="_blank" rel="noopener">Watchout Watch Face</a></li>
             <li><a href="https://play.google.com/store/apps/details?id=exos.ritym.watchout" target="_blank" rel="noopener">Watchout Companion</a></li>
-            <li><a href="https://ritym.com" target="_blank" rel="noopener">RITYM ESP32 Firmware</a></li>
+            <li><a href="https://ritym.com" target="_blank" rel="noopener">RITYM Hardware Labs</a></li>
           </ul>
         </div>
 

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HNKE55GVQD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HNKE55GVQD', { 'anonymize_ip': true });
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <title>EXOS FM Radio Tuner | User Guide &amp; FM Hardware Receiver Setup</title>
+  <meta name="description" content="Official user guide and hardware setup manual for EXOS FM Radio Tuner on Android. Learn how to stream 200+ world stations, record broadcasts, customize text size, and connect the EXOS FM USB-C / Bluetooth hardware unit.">
+  <link rel="icon" type="image/png" href="assets/fmradio_icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #090e1a; color: #cbd5e1; line-height: 1.7; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    a { color: #38bdf8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .header { background: #0f172a; border-bottom: 1px solid rgba(255,255,255,0.1); padding: 14px 20px; position: sticky; top: 0; z-index: 100; }
+    .header-inner { max-width: 1080px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+    .header img { height: 42px; width: auto; display: block; }
+    .back-link { font-size: 0.88rem; font-weight: 600; color: #e2e8f0; white-space: nowrap; }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 48px 20px 72px; }
+    .eyebrow { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #fdba74; background: rgba(249,115,22,0.14); border: 1px solid rgba(249,115,22,0.35); padding: 5px 12px; border-radius: 999px; margin-bottom: 16px; }
+    h1 { font-size: clamp(1.9rem, 4vw, 2.75rem); color: #f8fafc; font-weight: 800; line-height: 1.18; letter-spacing: -0.025em; margin-bottom: 14px; }
+    .lead { font-size: 1.04rem; color: #94a3b8; max-width: 780px; margin-bottom: 28px; }
+    .cta-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 44px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 11px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; text-decoration: none !important; transition: transform 0.15s ease; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-orange { background: #ea580c; color: #fff; }
+    .btn-outline { background: rgba(255,255,255,0.06); color: #f1f5f9; border: 1px solid rgba(148,163,184,0.3); }
+    .card { background: #111827; border: 1px solid #1f2b3f; border-radius: 16px; padding: 28px; margin-bottom: 28px; }
+    .card h2 { font-size: 1.35rem; color: #f8fafc; margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+    .card p { margin-bottom: 12px; font-size: 0.95rem; }
+    .card ul { padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 0.94rem; }
+    .card li strong { color: #f8fafc; }
+    .shots-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
+    .shot-box { background: #0b1120; border: 1px solid #24324a; border-radius: 14px; padding: 10px; text-align: center; }
+    .shot-box img { width: 100%; height: auto; border-radius: 10px; display: block; }
+    .shot-box span { display: block; margin-top: 8px; font-family: 'JetBrains Mono', monospace; font-size: 0.74rem; color: #94a3b8; }
+    .hw-box { border-color: rgba(249,115,22,0.45); background: linear-gradient(135deg, #0d1424 0%, #161f33 100%); }
+    code { font-family: 'JetBrains Mono', monospace; background: rgba(148,163,184,0.15); color: #e2e8f0; padding: 2px 6px; border-radius: 4px; font-size: 0.84rem; }
+    footer { text-align: center; padding: 32px 20px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 0.84rem; color: #64748b; }
+    @media (max-width: 720px) {
+      .wrap { padding: 32px 16px 56px; }
+      .card { padding: 20px 16px; }
+      .shots-row { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+      .cta-row .btn { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="/"><img src="assets/exos_logo_dark.png" alt="EXOS Logo"></a>
+      <a href="/#fmradio" class="back-link">&larr; Back to EXOS Portal</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <span class="eyebrow">EXOS FM Radio Tuner &bull; v1.1.1 User Guide</span>
+    <h1>Worldwide Radio, Podcasts &amp; Offline FM Hardware Manual</h1>
+    <p class="lead">
+      Everything you need to stream 200+ global stations, record live broadcasts, customize console themes and text sizes, and pair the optional EXOS FM Receiver for offline over-the-air FM reception on Android.
+    </p>
+
+    <div class="cta-row">
+      <a href="https://play.google.com/store/apps/details?id=com.exos.fmradio" target="_blank" rel="noopener" class="btn btn-orange">Get on Google Play &rarr;</a>
+      <a href="#hardware" class="btn btn-outline">EXOS FM Hardware Unit &darr;</a>
+      <a href="privacy.html" class="btn btn-outline">Privacy Policy</a>
+    </div>
+
+    <section class="card">
+      <h2>1. World Radio, News Hub &amp; Podcasts</h2>
+      <p>EXOS FM Radio Tuner opens straight into <strong>Digital Stream</strong> mode so you can start listening immediately with no hardware required.</p>
+      <ul>
+        <li><strong>ALL Tab:</strong> Filter 200+ live stations across 38 countries by genre (Storytelling, Music, Jazz, Classical, Sports, Kids &amp; Family, Business) or by country.</li>
+        <li><strong>NEWS Tab:</strong> Dedicated world news hub featuring CNN, BBC World Service, Al Jazeera, Bloomberg Radio, CNBC, NPR, and regional news filter pills.</li>
+        <li><strong>PODCASTS Tab:</strong> Browse free podcasts with episode descriptions and <code>-15s / +15s</code> seek controls right in the OLED display.</li>
+        <li><strong>GLOBAL Tab:</strong> Search thousands of additional worldwide live stations via the open Radio-Browser directory.</li>
+      </ul>
+      <div class="shots-row">
+        <div class="shot-box">
+          <img src="assets/fmradio_console_live.png" alt="Hi-Fi OLED Console Live Track" loading="lazy">
+          <span>Hi-Fi Console &amp; Live Track</span>
+        </div>
+        <div class="shot-box">
+          <img src="assets/fmradio_world_news.png" alt="World News Channels Tab" loading="lazy">
+          <span>World News Hub</span>
+        </div>
+        <div class="shot-box">
+          <img src="assets/fmradio_recordings.png" alt="Station Recordings Library" loading="lazy">
+          <span>Recordings Library</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2. Recording Broadcasts &amp; Managing Favorites</h2>
+      <ul>
+        <li><strong>1-Tap Recording:</strong> Tap <strong>REC</strong> on the console while listening to capture the active stream directly to local device storage. No microphone permission is requested.</li>
+        <li><strong>Instant Library Access:</strong> Tap the <strong>RECORDINGS</strong> tile directly below the console to play back, share, or delete saved recordings anytime.</li>
+        <li><strong>Automatic Recall &amp; Favorites:</strong> Bookmark favorite stations with the heart or <strong>SAVE</strong> button. The app automatically remembers your last played station when you return.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>3. Display, Console Themes, Text Size &amp; Support Logs</h2>
+      <ul>
+        <li><strong>Live Text Size Scaling:</strong> Open <strong>Settings &rarr; Display &amp; Appearance</strong> and choose <em>Compact (88%)</em>, <em>Standard (100%)</em>, <em>Large (115%)</em>, or <em>X-Large (130%)</em> &mdash; every menu and label resizes immediately in real time.</li>
+        <li><strong>5 Console Skins:</strong> Tap <strong>SKINS</strong> below the console to switch between EXOS Hi-Fi Dark, Vintage Amber, Studio Emerald, Midnight Cobalt, and Crimson Night.</li>
+        <li><strong>Compact Tuner View:</strong> Toggle <em>Compact Tuner View</em> in Settings (or tap the dismiss <code>&times;</code> button) to hide the hardware banner if you stream exclusively over the internet.</li>
+        <li><strong>1-Tap Diagnostics &amp; App Updates:</strong> In Settings, send diagnostic logs (INFO / DEBUG / VERBOSE) directly to <a href="mailto:assist@ritym.com">assist@ritym.com</a> or tap <em>Check for App Updates</em> anytime.</li>
+      </ul>
+    </section>
+
+    <section class="card hw-box" id="hardware">
+      <h2>4. Optional EXOS FM Hardware Receiver (Offline Over-the-Air FM)</h2>
+      <p>
+        Modern Android phones typically omit built-in FM receiver hardware. Connecting the optional <strong>EXOS FM Hardware Unit</strong> restores true offline FM broadcast reception (<strong>87.5 &ndash; 108.0 MHz</strong>) without cellular data or Wi-Fi.
+      </p>
+      <ul>
+        <li><strong>USB-C Direct Mode:</strong> Plug the EXOS FM receiver into your phone's USB-C port and tap <strong>DETECT USB-C</strong>. Audio and tuner controls run directly over USB with minimal latency.</li>
+        <li><strong>Wireless Bluetooth Mode:</strong> Power on your EXOS FM unit and tap <strong>CONNECT BT</strong>. Bluetooth access is requested only when you tap connect.</li>
+        <li><strong>Precision Analog Dial &amp; Presets:</strong> Drag the illuminated dial in 0.1 MHz steps, tap the MHz readout for direct frequency entry, monitor stereo lock &amp; signal strength, and save local FM presets.</li>
+      </ul>
+      <div style="margin-top:18px;">
+        <a href="mailto:assist@ritym.com?subject=EXOS%20FM%20Receiver%20Hardware%20Enquiry" class="btn btn-orange">Enquire About EXOS FM Hardware &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 EXOS (<a href="https://exosgps.com">exosgps.com</a>) &bull; RITYM Technologies. All rights reserved. &bull; Support: <a href="mailto:assist@ritym.com">assist@ritym.com</a>
+  </footer>
+</body>
+</html>
